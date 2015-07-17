@@ -1,0 +1,87 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM PLC_PRG_backup
+VAR
+	(*Bloques de control de PWM y cartucho*)
+	PID_husillo:PID;
+	PID_nozzle:PID;
+	sp_husillo: REAL;
+	sp_nozzle: REAL;
+	PWM_husillo:PWM;
+	PWM_nozzle:PWM;
+	(*Bloque RTC*)
+	reloj:CLOCK;
+	(*TEmporizador para retardo*)
+	T1:TON;
+	marcha:BOOL:=FALSE;
+	pausa:BOOL:=TRUE;
+	(*fase del programa	*)
+	step :BYTE:=0;
+	(*Bloques escritura SD*)
+	EscribirSD: Write_SD_Card;
+	fichero:STRING:=' ';
+	datos:STRING:=' ';
+	separador:STRING(1):=',';
+	retorno:STRING := '$R$N';
+	(*Bloques escritura MYSQL*)
+	BDConnect:MYSQL_CONNECT_APP;
+	BDDisconnect:MYSQL_DISCONNECT_APP;
+	BDExecute:MYSQL_EXECUTE_APP;
+	datosBD:zMYSQL_PROPERTIES_TYPE_App;
+	con:zMYSQL_CONNECTION_TYPE_App;
+	ipServidor:STRING(15):='172.16.0.90';
+	portServidor:WORD:=3306;
+	insertBD:STRING(75):='INSERT INTO pruebas.hola (pruebaINT, pruebaSTR) VALUES (1,hola)';
+
+END_VAR
+(* @END_DECLARATION := '0' *)
+(*Rellenamos datos de usuario y contraseñas*)
+datosBD.sUser:='root';
+datosBD.sPassword:='toor';
+datosBD.sDatabase:='pruebas';
+datosBD.sTable:='hola';
+(*Entramos en producción*)
+	CASE step OF
+
+		0:
+			BDConnect(EN:=TRUE,IP:=ipServidor,PORT:=portServidor,PROPS:=datosBD);
+			IF BDConnect.DONE THEN
+				IF NOT BDConnect.ERR THEN
+					con:=BDConnect.CON;
+					step:=10;
+				ELSE
+					step:=40;
+				END_IF
+			END_IF
+		10: (*USAR DB*)
+		BDExecute(EN:=TRUE, STATEMENT:=CONCAT('USE ',datosBD.sDatabase), CON:=con);
+		IF BDExecute.DONE THEN
+			IF NOT BDExecute.ERR THEN
+				step:= 30;
+			END_IF
+			BDExecute(EN:=FALSE, STATEMENT:='', CON:=con);
+		END_IF
+
+		30: (*Escribir*)
+				(* Build INSERT-Statement *)
+		BDExecute(EN:=TRUE, STATEMENT:=insertBD, CON:=con);
+		IF BDExecute.DONE THEN
+			IF NOT BDExecute.ERR OR BDExecute.SQL_ERNO = 1062 THEN
+				step:= 40;															(* INSERT statement successfully send *)
+			END_IF
+			BDExecute(EN:=FALSE, STATEMENT:='', CON:=con);
+		END_IF
+		40:
+		BDDisconnect(EN:=TRUE, CON:=con);
+			IF BDDisconnect.DONE THEN
+				BDConnect(EN:=FALSE, IP:='', PORT:=0, PROPS:=datosBD);
+				BDExecute(EN:=FALSE, STATEMENT:='', CON:=con);
+				step:= 0;
+			ELSE
+				step:= 40;
+			END_IF
+	END_CASE
+END_PROGRAM

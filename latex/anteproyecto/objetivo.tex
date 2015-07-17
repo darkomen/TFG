@@ -1,0 +1,36 @@
+\chapter{Objetivos}
+\label{objetivos}
+
+Como se ha comentado a lo largo del capítulo introductorio, para el correcto funcionamiento de la línea es necesario un operador que controle y supervise el funcionamiento de la misma, realice la carga de granza en la extrusora y la carga y descarga de los carretes en la bobinadora. Debido a ello se generan  errores en la producción que sólo son visibles una vez que el producto ha sido almacenado y es sometido a las convenientes pruebas de calidad, almacenando asi un producto que no es de la calidad necesaria para comercializarlo.\\
+
+ Para minimizar el error humano, se propone la implementación de un sistema de aquisición y procesamiento de datos (SCADA) que permita el análisis durante y posterior la producción, de los diferentes parámetros del sistema. Con el fin de modelar parcialmente el mismo para tratar de cerrar el lazo de control entre la unidad tractora y el sistema de control del diámetro. De esta manera, podemos ver los aspectos que influyen en el diámetro y que el propio sistema sea capaz de corregirlo en tiempo real durante la producción.
+
+El proyecto está definido por dos fases:\\
+
+La primera fase en la que se desarrollará el sistema de adquisición de datos constará de los siguientes puntos:
+\begin{itemize}
+    \item Recopilación y análisis de la documentación de todos los dispositivos de interés para el proyecto de la línea de extrusión. Ya que actualmente disponemos de instrumentación que no hemos elegido nosotros, deberemos adquirir toda la documentación para poder lograr conseguir la automatización del sistema y ver cómo funciona individualmente cada uno.
+    \item Defición de los requisitos respecto a comunicaciones necesarias entre los dispositivos de la línea y el sistema de adquisición.
+    \item Determinar los requisitos del autómata progamable industrial (PLC) a utilizar.
+    \item Programación del PLC. Puesto que será el encargado de llevar el control de la planta, deberemos programar la adquisición de datos, para establecer el control sobre la linea.
+\end{itemize}
+
+En esta fase, se pondrá en marcha todo el sistema en la planta, instalando el PLC y cableando toda la red de comunicaciones y sensores que disponemos. Así mismo se almacenarán datos de los seis sensores de temperatura que dispone la planta (cinco de ellos en extrusora y uno en bañera de enfriamiento), y sensor de diámetro. Con los datos adquiridos se modelará parcialmente la planta para intentar hacer un control en lazo cerrado entre la unión tractora de filamento y el sensor de diámetro del mismo. Durante esta fase se diseñará un sistema, para poder visualizar los datos adquiridos de forma remota.\\
+
+La segunda fase del proyecto, consistirá en la implementación en planta de los distintos reguladores diseñados y probados en la fase anterior. Como primera aproximación la salida a controlar será el diámetro del filamento y la entrada la velocidad de extrusión, ya que es la variable que influye directamente en el diámetro a conseguir. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, fuzzy, etc. para posteriormente estudiar los beneficiós e inconvenientes de cada uno de ellos.\\
+
+Para el completo desarrollo de esta segunda fase, y poder demostrar el correcto funcionamiento en la línea, necesitaremos la aprobación de la empresa que explota la línea de extrusión. Aunque se tratará de un sistema modular que será fácil de integrar en otras líneas de producción parecidas. Siendo el sistema totalmente compatible y escalable para futuras lineas de extrusión que se adquieran.\\
+
+A continuación, se detallan los objetivos a conseguir en el proyecto y un diagrama de gant con la planificación inicial del proyecto:
+
+\begin{itemize}
+	\item Documentación de la instrumentación de la planta.
+	\item Definir la arquitectura para la comunicación del PLC y la instumentación
+	\item Definir requisitos del PLC a adquirir.
+	\item Programación del PLC.
+	\item Realización del armario eléctrico para montar en la fábrica.
+	\item Estudio de los datos adquiridos y desarrollo del modelo teórico de la planta.
+	\item Comprobar qué regulador se amolda a nuestras necesidades.
+	\item Puesta en marcha del regulador en planta y comprobar resultados.
+\end{itemize}
+

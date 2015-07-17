@@ -1,0 +1,86 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK PWM	(*Supported in PLC FW version V2.1.3 or higher*)
+(* Generate PWM signal with cycletime and duty *)
+
+VAR_INPUT
+	EN:			BOOL		 := FALSE;		(*1: enabling of the block processing *)
+	RATIO:			INT		 := 20;             		(*2: indicates the PWM pulse duty factor between 0...100% *)
+	SAMPLING_RATE: 	TIME		 := T#10ms;  		(*3: the time of samples *)
+	DUTY_CYCLE: 	TIME		 := T#10s;    		(*4: Cycle duration of PWM *)
+	RESET: 		BOOL		 := FALSE;           	(*5: Reset the PWM *)
+END_VAR
+
+VAR_OUTPUT
+	DONE:			BOOL		:= FALSE;		(*1: Block processed completely *)
+	ERR:			BOOL		:= FALSE;		(*2: Error message OF the block *)
+	ERNO:			WORD		:= 0;			(*3: Error number *)
+  	OUTPUT: 		BOOL		:= FALSE;                	(*4: Pulse width modulated output signal *)
+END_VAR
+
+
+(* FB history *)
+(* Index	Supported in PLC FW Version	Remark *)
+(* --------------------------------------------------------------------------------- *)
+(* A		V2.1.3 or higher 			first version 		*)
+
+
+{library private}
+(* detailed history - internal use *)
+(* Index	DATE		Autor		Remark, Description *)
+(* ----------------------------------------------------------------------------------------------- *)
+(* A		12-01-23	TRu		first version *)
+
+VAR_TEMP
+  	diOff : 		DINT;
+	diMax : 	DINT;
+END_VAR
+
+VAR
+	diStep : 	DINT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+IF NOT EN  THEN					(* If function block not enabled, then return *)
+	RETURN;
+
+ELSE
+	IF DUTY_CYCLE = t#0s OR SAMPLING_RATE = t#0s THEN	(* check if time bigger than zero *)
+		DONE := FALSE;
+		ERR := TRUE;
+		ERNO := 100;
+		OUTPUT := FALSE;
+	ELSIF RATIO < 0 OR RATIO > 100 THEN				(* check if value between 0..100 *)
+		DONE := FALSE;
+		ERR := TRUE;
+		ERNO := 200;
+		OUTPUT := FALSE;
+	ELSE
+		ERR := FALSE;
+		ERNO := 0;
+
+		diMax :=TIME_TO_DINT(DUTY_CYCLE) / TIME_TO_DINT(SAMPLING_RATE);
+
+		diOff := diMax * RATIO / 100;		(* calculate the OFF time *)
+		diStep := diStep + 1;    		(* Zyklen addieren *)
+
+		IF diStep >= diMax THEN		(* set cycle couter to 0 *)
+			diStep := 0;
+			DONE := TRUE;
+		ELSE
+			DONE := FALSE;
+		END_IF
+
+		IF diStep >= diOff THEN   		(* Disable output *)
+			OUTPUT := FALSE;
+		ELSIF RESET THEN     		(*  Reset *)
+			diStep := 0;
+			OUTPUT := FALSE;
+		ELSE                 	  		(* Enable output *)
+			OUTPUT := TRUE;
+		END_IF
+	END_IF
+END_IF
+END_FUNCTION_BLOCK

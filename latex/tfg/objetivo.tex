@@ -1,0 +1,22 @@
+\chapter{Objetivos}
+\label{objetivos}
+
+Como se ha comentado anteriormente, no existe un control totalmente automatizado de la fábrica, generando así errores en la producción que sólo son visibles una vez que el producto ha sido almacenado y es sometido a las convenientes pruebas de calidad. Por ello, se propone generar un sistema automatizado encargado de la producción. El proyecto está definido por dos fases:\\
+
+Una primera fase en la que se desarrollará el sistema de adquisición de datos de la planta:
+\begin{itemize}
+    \item Determinar especificaciones técnicas del PLC a utilizar
+    \item Documentación de todos los sensores de la planta.
+    \item Definición de las comunicaciones necesarias entre maestro (PLC) y esclavos (sensores y actuadores) de la planta.
+    \item Programación del PLC.
+\end{itemize}
+En esta fase, se pondrá en marcha todo el sistema, instalando el PLC y cableando toda la red de comunicaciones y sensores que disponemos. Así mismo se almacenarán datos de los seis sensores de temperatura que dispone la planta (cinco de ellos en extrusora y uno en bañera de enfriamiento), y sensor de diámetro. Con los datos adquiridos se modelará la planta para intentar hacer un control en lazo cerrado. Durante esta fase se diseñará un sistema, para poder visualizar los datos adquiridos de forma remota.\\
+
+La segunda fase del proyecto, consistirá en el control de la planta mediante el modelo adquirido en la primera fase. Como primera aproximación la salida a controlar será el diámetro del filamento y la entrada la velocidad de extrusión. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, fuzzy, etc.\\
+
+Para el completo desarrollo de esta segunda fase, y poder demostrar el correcto funcionamiento en la línea, necesitamos aprobación de la empresa en la que está instalada la máquina. Sin embargo, el trabajo realizado, se podrá llevar a cabo en futuras líneas de extrusión que compre la empresa bq. Siendo el sistema totalmente compatible y escalable para futuras lineas de extrusión que se adquieran.\\
+
+
+
+
+

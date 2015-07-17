@@ -1,0 +1,324 @@
+
+(* @NESTEDCOMMENTS := 'No' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK Write_SD_Card
+VAR_INPUT
+	enable					: BOOL				:= FALSE;					(* enable the FUNCTION block *)
+	sFileName			: STRING(30)		:= 'sdcard\plan.csv';		(* absolute path of file to operate on *)
+	strData				: STRING(200)	:= '';						(* buffer for outgoing write data*)
+END_VAR
+VAR_OUTPUT
+	done					: BOOL;
+	error					: BOOL;
+END_VAR
+VAR
+	Open_file				: FILE_Open;
+
+	FileMode				: FILE_MODE		:= FILE_MAPPD;			(* open for write access, file stream pointer at end of the file *)
+	Write_file				: FILE_Write;
+	File_Handle			: CAA_HANDLE;
+
+	close_file				: FILE_Close;
+
+	count_closes			: CTU;
+	counter_value_close	: DWORD;
+	count_opened			: CTU;
+	counter_value_open	: DWORD;
+
+	zustand				: SR;
+	error_open: BOOL;
+	error_open_number: INT;
+	error_write: BOOL;
+	error_write_number: INT;
+	error_close: BOOL;
+	error_close_number: INT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+_FBD_BODY
+_NETWORKS : 5
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+count_opened
+_BOX_EXPR : 3
+_FUNCTIONBLOCK
+Open_file
+_BOX_EXPR : 4
+_FUNCTIONBLOCK
+zustand
+_BOX_EXPR : 2
+_OPERAND
+_EXPRESSION
+_POSITIV
+enable
+_OPERATOR
+_BOX_EXPR : 2
+_OPERAND
+_EXPRESSION
+_POSITIV
+done
+_OPERAND
+_EXPRESSION
+_POSITIV
+error
+_EXPRESSION
+_POSITIV
+OR
+_EXPRESSION
+_POSITIV
+SR
+_OUTPUTS : 0
+_OPERAND
+_EXPRESSION
+_POSITIV
+sFileName
+_OPERAND
+_EXPRESSION
+_POSITIV
+FileMode
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+FILE_Open
+_OUTPUTS : 4
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+error_open
+_OUTPUT
+_POSITIV
+_NO_SET
+error_open_number
+_OUTPUT
+_POSITIV
+_NO_SET
+File_Handle
+_OPERAND
+_EXPRESSION
+_POSITIV
+count_opened.Q
+_OPERAND
+_EXPRESSION
+_POSITIV
+65535
+_EXPRESSION
+_POSITIV
+CTU
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+counter_value_open
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+Write_file
+_BOX_EXPR : 6
+_OPERATOR
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+Open_file.xDone
+_OPERAND
+_EXPRESSION
+_NEGATIV
+Open_file.xBusy
+_OPERAND
+_EXPRESSION
+_NEGATIV
+Open_file.xError
+_EXPRESSION
+_POSITIV
+AND
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+File_Handle
+_OPERATOR
+_BOX_EXPR : 1
+_OPERAND
+_EXPRESSION
+_POSITIV
+strData
+_EXPRESSION
+_POSITIV
+ADR
+_FUNCTION
+_BOX_EXPR : 1
+_OPERAND
+_EXPRESSION
+_POSITIV
+strData
+_EXPRESSION
+_POSITIV
+LEN
+_EXPRESSION
+_POSITIV
+FILE_Write
+_OUTPUTS : 4
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+error_write
+_OUTPUT
+_POSITIV
+_NO_SET
+error_write_number
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+count_closes
+_BOX_EXPR : 3
+_FUNCTIONBLOCK
+close_file
+_BOX_EXPR : 2
+_OPERATOR
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+Write_file.xDone
+_OPERAND
+_EXPRESSION
+_NEGATIV
+Write_file.xBusy
+_OPERAND
+_EXPRESSION
+_NEGATIV
+Write_file.xError
+_EXPRESSION
+_POSITIV
+AND
+_OPERAND
+_EXPRESSION
+_POSITIV
+File_Handle
+_EXPRESSION
+_POSITIV
+FILE_Close
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+error_close
+_OUTPUT
+_POSITIV
+_NO_SET
+error_close_number
+_OPERAND
+_EXPRESSION
+_POSITIV
+count_closes.Q
+_OPERAND
+_EXPRESSION
+_POSITIV
+65535
+_EXPRESSION
+_POSITIV
+CTU
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+counter_value_close
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_ASSIGN
+_OPERATOR
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+close_file.xDone
+_OPERAND
+_EXPRESSION
+_NEGATIV
+close_file.xError
+_OPERAND
+_EXPRESSION
+_NEGATIV
+close_file.xBusy
+_EXPRESSION
+_POSITIV
+AND
+_EXPRESSION
+_POSITIV
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+done
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_ASSIGN
+_OPERATOR
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+Open_file.xError
+_OPERAND
+_EXPRESSION
+_POSITIV
+Write_file.xError
+_OPERAND
+_EXPRESSION
+_POSITIV
+close_file.xError
+_EXPRESSION
+_POSITIV
+OR
+_EXPRESSION
+_POSITIV
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+error
+
+END_FUNCTION_BLOCK

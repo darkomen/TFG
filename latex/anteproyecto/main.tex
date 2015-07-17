@@ -1,0 +1,143 @@
+\documentclass[12pt]{report}
+
+
+% General imports:
+\usepackage[utf8]{inputenc}
+%\usepackage[utf8x]{inputenc} 
+\usepackage[T1]{fontenc}	% For using icelandic Thorn character
+\usepackage{amsmath}
+\usepackage{amsfonts}		% Mathematic fonts (such Real numbers set)
+\usepackage{graphicx}
+\usepackage[spanish]{babel} 
+
+% Imports for images
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+% Imports for euro symbol support
+\usepackage[official]{eurosym}
+\DeclareUnicodeCharacter{20AC}{\euro{}}
+%\newcommand{\euro}{€}
+
+% Other imports:
+\usepackage{indentfirst} % Indent first paragraph
+%\usepackage[nottoc,numbib]{tocbibind} % Add bibliography to table of contents
+\usepackage{url}	% Cite URLs
+\usepackage{color}	% Color text
+\usepackage{hyperref} % Create hyperlinks within the text
+
+% Formatting margins of the pages:
+\usepackage[top=1.6cm, bottom=2.29cm, left=1.6cm, right=1.47cm]{geometry}
+
+% Import for headers
+\usepackage{fancyhdr}
+
+\lhead{}
+\chead{}
+\rhead{}
+\pagestyle{empty}
+
+
+% Definitions of important data
+\renewcommand{\author}{Santiago López Pina}
+\renewcommand{\title}{SCADA Y MODELADO PARCIAL DE SISTEMA DE EXTRUSIÓN DE FILAMENTO}
+\newcommand{\department}{Departamento de Sistemas y Automática}
+\newcommand{\teacher}{Victor Gonzalez Pacheco}
+
+%% All this is used for inserting C++ code on some parts of the thesis
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+% This is for writing algorithms on pseudocode (nicely)
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% Each chapter will have its own header
+%\newcommand{\headchapter}[1]{\chapter{#1}\rhead{#1}}
+
+% Each section will have its own header
+%\newcommand{\headsection}[1]{\section{#1}}\rhead{#1}}
+
+% Change 'Chapter' to something more logical
+%\renewcommand{\chaptername}{}
+
+% Define a command for comments
+\newcommand{\comment}[1]{\textbf{\color{red} #1}}
+
+
+% Define commands for setting the language to be used in listings
+\newcommand{\Cpp}{ \lstset{frame=single,
+  		language=C++,
+  		aboveskip=3mm,
+  		belowskip=3mm,
+  		showstringspaces=false,
+  		columns=flexible,
+  		basicstyle={\small\ttfamily},
+  		numbers=none,
+  		numberstyle=\tiny\color{gray},
+  		keywordstyle=\color{blue},
+  		commentstyle=\color{dkgreen},
+  		stringstyle=\color{mauve},
+  		breaklines=true,
+  		breakatwhitespace=true
+  		tabsize=3
+	}}
+
+
+\newcommand{\XML}{
+	\lstset{ language=XML, 
+		morekeywords={ModularRobot, name, simulationFile, gaitTableFolder, frequencyTable, frequencyTable,
+		 Module, Joint, Connections, front, left, right, back, connectedTo, connector, orientation, 
+		 Orientation, Roll, Pitch, Yaw, serialPort}}}
+
+\newcommand{\Bash}{
+	\lstset{language=bash, morekeywords={mkdir, ls, make, sudo, apt-get, add-apt-repository, python}}}
+
+% This is used for adding appendices:	
+\usepackage[toc,page]{appendix}
+
+% This is used for tables spanning more than one page:
+\usepackage{longtable}
+	
+% This is for units not appearing as italics
+\usepackage{siunitx}
+		
+% This is for including pdf files
+\usepackage{pdfpages}
+
+% Inhibit hyphenation
+\usepackage[none]{hyphenat}
+% Include PDF files
+\usepackage{pdfpages}
+\begin{document}
+
+%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{portada}
+\pagestyle{plain}
+
+%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\newpage
+
+
+% Adding some header text on top of the page:
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyhead[R]{}
+\fancyhead[LO]{}
+\pagestyle{fancy}
+
+% Secciones del documento
+\input{introduccion}
+\input{objetivo}
+\includepdf[pages=-]{gantt.pdf}
+%\input{software}
+%\input{conclusiones}
+
+\end{document}

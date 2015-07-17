@@ -3,8 +3,9 @@
 
 \section{Impresoras 3D}
 \label{arte_immpresoras}
-En los últimos años ha tenido un gran auge las denominadas impresoras 3D. Máquinas capaces de crear un objeto físico de cero. El motivo de su crecimiento ha sido gracias a que han surgido unos modelos \textit{Do It Yourself} (DIY), de tal manera que uno mismo es capaz de fabricarse una, reduciendo así el precio de la máquina. También se ha generado una gran comunidad de usuarios en donde se comparte conocimientos y vivencias de los usuarios, haciendo más facil la iniciativa a que la gente construya sus propias impresoras. Las impresoras más extendidas son las que se basan en el modelado por deposición fundida (\textbf{FDM\textregistered} en inglés). Aunque estas siglas están registradas por la empresa Stratasys Inc. y por ello se usa el término equivalente fabricación con filamento fundido (\textbf{FFF})          
 
+En los últimos años ha tenido un gran auge las denominadas impresoras 3D. Máquinas capaces de crear un objeto físico de cero mediante un proceso de fabricación de modelado por deposición fundido (\textbf{FDM\textregistered} en inglés). Aunque estas siglas están registradas por la empresa Stratasys Inc. ya que su co-fundador,  \textbf{S. Scott Crump} fué quien desarrollo está tecnología, y poseedor de la patente en la que se detalla su funcionamiento. Por ello, se usa el término equivalente, fabricación con filamento fundido (\textbf{FFF}).\\  
+    
     \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{images/FDM_by_Zureks.png}
@@ -12,8 +13,35 @@ En los últimos años ha tenido un gran auge las denominadas impresoras 3D. Máq
             \label{fig:impr_fdm}
     \end{figure}
 
-El principio de funcionamiento de este tipo de impresoras es la deposición de un material, en este caso un plástico fundido, en distintas capas. La máquina dispone de un elemento fusor, que está por encima de la temperatura de fusión del polímero, haciendo que entre en un estado viscoso y maleable. El fusor a su vez es capaz de desplazarse en los tres ejes cartesianos (X,Y,Z) a la vez que va depositando el polímero fundido. De este modo, la pieza es creada con el filamento que solidifica al salir del fusor.
+En la imagen \ref{fig:impr_fdm} podemos ver en detalle el principio de funcionamiento de este tipo de impresoras. La máquina dispone de un elemento fusor (1), que está por encima de la temperatura de transición vítrea del polímero, haciendo que entre en un estado viscoso y maleable. El fusor deposita el polímero (2) en distintos niveles sobre una superficie plana (3) a la vez que se desplaza en los tres ejes cartesianos (X,Y,Z), de este modo, la pieza es creada con el filamento que solidifica al salir del fusor.\\
 
+%(LINK DE LA PATENTE https://www.google.com/patents/US5121329)
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/estado.arte/US5340433-2.png}
+            \caption{Esquema de la patente de S. Scott Crump}
+            \label{fig:impr_patente_sistema}
+    \end{figure}
+
+Este sistema de producción de fabricación, tiene tres pasos definidos:
+\begin{itemize}
+    \item \textbf{Pre-procesado:} Un software especial lamina en capas y calcula las trayectorias necesarias para crear el objeto que queremos fabricar.
+    \item \textbf{Producción:} La impresora 3D calienta el termoplástico hasta alcanzar un estado viscoso y maleable y lo va depositando en capas muy finas siguiendo las trayectorias anteriormente calculadas por el software. En los sitios en los que es necesario un soporte, la impresora pone material que posteriormente será quitado de la pieza final.
+    \item \textbf{Post-procesado:} Una vez la impresora termina, la pieza será usable. En caso de haber puesto material, el usuario deberá removerlo antes de poder dar la pieza por terminada.
+\end{itemize}
+
+La tecnología FFF tiene varios beneficios que la hacen idonea para fabricar:
+\begin{itemize}
+    \item La tecnología es limpia y facil de usar por el usuario.
+    \item Los termoplásticos usados son estables mecanicamente y con el medio ambiente.
+    \item Formas complejas que con otra tecnología serían costosas de fabricar, con FFF son mucho más practicas de realizar.
+\end{itemize}
+
+
+
+
+El motivo de su crecimiento ha sido gracias a que han surgido unos modelos \textit{Do It Yourself} (DIY), de tal manera que uno mismo es capaz de fabricarse una, reduciendo así el precio de la máquina. También se ha generado una gran comunidad de usuarios en donde se comparte conocimientos y vivencias de los usuarios, haciendo más facil la iniciativa a que la gente construya sus propias impresoras. Las impresoras más extendidas son las que se basan en el modelado por deposición fundida (\textbf{FDM\textregistered} en inglés). Aunque estas siglas están registradas por la empresa Stratasys Inc. y por ello dentro de la comunidad de usuarios, se usa el término equivalente fabricación con filamento fundido (\textbf{FFF}) para poder utilizarlo sin tener ninguna repercusión legal.     
 \subsection{Materiales usados en impresión 3D}
 \label{impreso_materiales}
 En la actualidad hay multitud de materiales que se pueden usar en las impresoras 3D. Siendo la mayoría de ellos polímeros termoplásticos, ya que si se les aplica una temperatura alta se vuelven deformables y al enfriarlos, pasando por un estado de transición vítrea, se endurecen.\\
@@ -32,13 +60,12 @@ Por ello, el método de fabricación del consumible es la extrusión, ya que es 
 
 \section{Extrusión de polímeros}
 \label{arte_extrusion}
-La extrusión de polímeros es un proceso industrial de fabricación, en el cual  se hace pasar por un troquel (también denominado dado) la matería prima previamente prensada y calentada. El proceso de prensado y calentamiento, se hace en una cámara, que contiene un tornillo sin fin el cual gira concentricamente y es alimentado por una tolva. Al hacer pasar el polímero por el troquel, se consigue un objeto con un perfil constante y una longitud variable, pudiendo llegar a ser de centímetros, o en algunos casos de metros.\footnote{ \url{http://es.wikipedia.org/wiki/Extrusi%C3%B3n_de_pol%C3%ADmero} }\\ 
+La extrusión de polímeros es un proceso industrial de fabricación, en el cual  se hace pasar por un troquel (también denominado dado) la matería prima previamente prensada y calentada. El proceso de prensado y calentamiento, se hace en una cámara, que contiene un tornillo sin fin el cual gira concentricamente y es alimentado por una tolva. Al hacer pasar el polímero por el troquel, se consigue un objeto con un perfil constante y una longitud variable, pudiendo llegar a ser de centímetros, o en algunos casos de metros.
 
 \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\textwidth]{images/extrusor.png}
         \caption{Esquema básico de una extrusora}
-        %\caption{ \footnote{ \href{http://upload.wikimedia.org/wikipedia/commons/4/42/FDM_by_Zureks.png}{wikimedia} } }
         \label{fig:estado_extrusora}
 \end{figure}
 
@@ -91,127 +118,3 @@ Los distintos elementos que conforman la extrusora son los siguientes.
 \label{arte_control}
 \section{Comunicaciones industriales}
 \label{arte_comunicaciones}
-
-\subsection{Capas de comunicación}
-\label{comunic_capas}
-El modelo OSI establece en siete capas, cualquier proceso de transmisión entre equipos informáticos. Cada capa, tiene una tarea especifica en la que después de pasar por ella se va añadiendo una cabecera al paquete que posteriormente se enviará por el medio físico.
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.1\textwidth]{images/capas_osi.png}
-            \caption{Capas del modelo OSI.}
-            \label{fig:capas_osi}
-    \end{figure}
-De esta manera se estandariza el uso de cualquier protocolo de comunicaciones que se vaya a usar. Cabe destacar, que tanto en el caso del emsior, como el receptor se usa el mismo modelo, pero en un caso se ejecuta de forma ascendente (de la capa 1 a la 7) y en el otro de forma descendente (de la capa 7 a la 1).
-\subsection{Profibus}
-\label{comunic_profibus}
-Es un estandar de comunicaciones para buses de campo desarrollado por la empresa Siemens. Al igual que otros protocolos, como MODBUS, se puede esablecer el enlace físico entre los dispositivos de la red, mediante diferentes tecnologías:
-\begin{itemize}
-    \item TCP/IP sobre Ethernet.
-    \item Transmisión serie asíncrona(RS-232,RS-485,fibra óptica,etc)
-\end{itemize}
-Según la aplicación que se vaya a desarrollar, hay distintos protocolos de profibus que ofrecen ventajas específicas en cada caso.
-\begin{itemize}
-    \item \textbf{Profibus-DP (Descentralized Periphery):} Específico para comunicacion entre un sistema de control y entradas/salidas distribuidas por la fábrica(campo).
-    \item \textbf{Profibus-PA (Processs Automation):} Permite que sensores y actuadores sean conectados al bus. Suele estár orientado a un ámbido de seguridad.
-    \item \textbf{Profibus-FMS (Field Message Specification):} Permite la coordinacion de las distintas aplicaciones de comunicación que puede haber en la industría: Buses de ordenadores industriales, robots,...
-\end{itemize}
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.5\textwidth]{images/protocolo_profibus.png}
-            \caption{Protocolo de comunicaciones de profibus.}
-            \label{fig:protocolo_profibus}
-    \end{figure}
-Profibus establece al menos un maestro (normalmente un PLC) y varios esclavos (periferia descentralizada,sensores, actuadores,...) dentro del bus. De esta manera, el maestro manda mensajes a los esclavos los cuales, responderan. El mensaje o trama que se manda puede tener hasta 3 formatos:
-\begin{itemize}
-    \item trama de longitud fija sin datos.
-    \item trama de longitud fija con datos.
-    \item trama de longitud variable.
-\end{itemize}
-
-\subsection{MODBUS}
-\label{comunic_modbus}
-El MODBUS es un protocolo de comunicaciones que se situa en el nivel 7 del modelo de comunicaciones OSI (Visto en capítulo \ref{comunic_capas}). El cual facilita la comunicacion entre cliente/servidor conectados mediante distintos tipos de buses de comunicación commo pueden ser:
-
-\begin{itemize}
-    \item TCP/IP sobre Ethernet.
-    \item Transmisión serie asíncrona(RS-232,RS-485,fibra óptica,etc)
-\end{itemize}
-
-El protocolo define una unidad de dato simple (\textbf{PDU}), el cual es independiente del tipo de bus de comunicación usado. Y en función de la comunicación usada, la unidad de dato de aplicación (\textbf{ADU}) tendrá un tipo de información distinta (Ver imagen \ref{fig:paquete_modbus}).
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.5\textwidth]{images/trama_modbus.png}
-            \caption{Detalle de un paquete de MODBUS.}
-            \label{fig:paquete_modbus}
-    \end{figure}
-Cada parte del paquete incluye la siguiente información:
-\begin{itemize}
-    \item \textbf{Dirección de dispositivo:} Incluye la dirección del dispositivo sobre el que se va a ejecutar el código de función.
-    \item \textbf{Código de función:} Dentro de la trama ocupa un byte y puede contener cualquier valor desde 1 a 255 el cual indicará una función a ejecutar por parte del servidor o cliente (Ver tabla \ref{tab:funcion_modbus}).
-    \item \textbf{Dato:} Contiene la información que devuelve el cliente al servidor, el cual se usará para realizar la acción definida en el código de función. Este campo puede estar vacio o contener el número de elementos con los que se quiere trabajar.
-    \item \textbf{Comprobación de error:} En caso de ocurrir algún error relacionado con el código de función, se añadirá un código de error en este campo, que el servidor deberá de procesar para determinar qué acción ejecutar.
-\end{itemize}
-\begin{table}[!hbt]
-  \centering
-  \begin{tabular}{|c|c|c|}
-    \hline
-    Descripción & código decimal & código hexadecimal\\
-    \hline
-    Read Discrete Inputs & 02  & 02\\
-    \hline
-    Read Coils & 01  & 02\\
-    \hline
-    Write Single Coil & 05  & 05\\
-    \hline
-    Write Multiple Coils & 15  & 0F\\
-    \hline
-    Read Input Register & 04  & 04\\
-    \hline
-    Read Holding Registers & 03  & 03\\
-    \hline
-    Write single Register & 06  & 06\\
-    \hline
-    Write Multiple Registers & 16  & 10\\
-    \hline
-  \end{tabular}
-  \caption{Tabla obtenida del protocol de MODBUS.}
-  \label{tab:funcion_modbus}
-\end{table}
-A continuación se detalla un ejemplo de petición de un servidor hacía un cliente para leer tres registros análógicos. El paquete a mandar por el servidor será:\\
-\begin{center}
-    \textit{11 03 006B 0003 7687}
-\end{center}
-\begin{itemize}
-    \item \textbf{11} Dirección del esclavo (0x11=17)
-    \item \textbf{03} Código de función. (Ver tabla \ref{tab:funcion_modbus}).
-    \item \textbf{006B} Dirección en hexadecimal donde se encuentra el primer registro.
-    \item \textbf{0003} Número total de registros que se quieren leer. Del 40108 al 40110.
-    \item \textbf{7687} Código CRC para la comprobación de errores.
-\end{itemize}
-A lo que el esclavo responderá un paquete similar a este:\\
-\begin{center}
-    \textit{11 03 06 AE41 5652 4340 49AD}
-\end{center}
-\begin{itemize}
-    \item \textbf{11} Dirección del esclavo (0x11=17)
-    \item \textbf{03} Código de función. (Ver tabla \ref{tab:funcion_modbus}).
-    \item \textbf{06} Dirección en hexadecimal donde se encuentra el primer registro.
-    \item \textbf{AE41} Contenido del registro 40108
-    \item \textbf{5652} Contenido del registro 40109
-    \item \textbf{4340} Contenido del registro 40110
-    \item \textbf{49AD} Código CRC para la comprobación de errores.
-\end{itemize}
-
-\subsection{Device Net}
-\label{comunic_device}
-
-
-
-\subsection{AS-I}
-\label{comunic_asi}
-Es un bus de comunicaciones de campo para interconectar sensores y actuadores con el maestro de la red, normalmente un PLC. Por ello, se situa en la parte má baja de la piramide de comunicaciones, situandose directamente en campo.\\
-
-El maestro de AS-i se encarga de mirar uno a uno el estado de los sensores(polling). Una fuente de alimentación especial, se encarga de llevar la alimentación a cada uno de los sensores a la vez que la información de cada uno al maestro. De esta manera, con únicamente dos cables se establece la comunicación.\\
-
-
-

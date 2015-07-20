@@ -1,5 +1,5 @@
-\documentclass[12pt]{report}
-
+%\documentclass[12pt]{report}
+\documentclass[12pt, a4paper, oneside]{book}
 
 % General imports:
 \usepackage[utf8]{inputenc}
@@ -22,10 +22,12 @@
 
 % Other imports:
 \usepackage{indentfirst} % Indent first paragraph
+\usepackage[colorlinks=false,pdfborder={0 0 0}]{hyperref}
 %\usepackage[nottoc,numbib]{tocbibind} % Add bibliography to table of contents
-\usepackage{url}	% Cite URLs
+\usepackage{url}
+\hypersetup{urlcolor=black, colorlinks=false}
 \usepackage{color}	% Color text
-\usepackage{hyperref} % Create hyperlinks within the text
+
 
 % Formatting margins of the pages:
 \usepackage[top=1.6cm, bottom=2.29cm, left=1.6cm, right=1.47cm]{geometry}
@@ -151,4 +153,9 @@
 %\input{software}
 %\input{bibliografia}
 
+
+\label{Bibliography}
+\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{unsrt}
+\bibliography{references}
 \end{document}

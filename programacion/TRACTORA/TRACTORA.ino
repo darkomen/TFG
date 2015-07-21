@@ -5,7 +5,7 @@
 #include "TimerOne.h"
 
 //Modo debug para mostrar por pantalla información de la velocidad
-#define DEBUG
+//#define DEBUG
 
 //definiciones pines driver paso a paso
 #define PIN_STEP 46
@@ -21,6 +21,8 @@
 #define pi 3.14159265359  //PI
 #define radio 19.45      //Diámetro de la polea para poder calcular la velocidad lineal de tracción.
 
+long previus_millis;//variable con los millis() de la ejecución anterior.
+long interval = 250; //intervalo de ejecución del programa en millis
 int ticks=0; //Variable con el valor de ticks que debemos contabilizar.
 int tick_count=0; //Variable donde vamos acumulano las interrupciones del timer.
 float rpm_speed[velocidades]= {3,3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6}; //array con las velocidades en RPM 
@@ -47,25 +49,33 @@ void setup() {
 void loop() {
         //Convertimos el valor del potenciometro a un entero comprendido entre 0 y 10
         actual_speed=map(analogRead(PIN_POT),10,1000,0,velocidades);
-
-        //Almacenas los numeros de tick a contar para alcanzar la velocidad deseada.
-        ticks=tick_speed[actual_speed];
-        
-        //Mostramos los RPM y velocidad lineal a la que giramos sólo si estamos en modo DEBUG
-        #ifdef DEBUG 
-          Serial.print("Girando a: ");
-          if (actual_speed==0){
-            Serial.print("0");
-          }
-          else if (actual_speed!=0){
-            Serial.print(rpm_speed[actual_speed]);
-          }
-          Serial.print(" RPM");
-          Serial.print("\t");
-          Serial.print((rpm_speed[actual_speed]*pi*radio)/60);
-          Serial.println(" mm/s");
-        #endif
-        delay(250);
+        unsigned long current_millis=millis();
+        //Si el tiempo pasado es mayor que el intervalo realizamos la ejecución del programa.
+        if (current_millis - previus_millis > interval){
+            //Almacenamos el valor actual del timer
+            previus_millis = current_millis;
+            //Almacenas los numeros de tick a contar para alcanzar la velocidad deseada.
+            ticks=tick_speed[actual_speed];
+            
+            //Mostramos los RPM y velocidad lineal a la que giramos sólo si estamos en modo DEBUG
+            #ifdef DEBUG 
+              Serial.print("Girando a: ");
+              if (actual_speed==0){
+                Serial.print("0");
+                Serial.print(" RPM");
+                Serial.print("\t");
+                Serial.print((rpm_speed[actual_speed]*pi*radio)/60);
+                Serial.println(" mm/s");
+              }
+              else if (actual_speed!=0){
+                Serial.print(rpm_speed[actual_speed]);
+                Serial.print(" RPM");
+                Serial.print("\t");
+                Serial.print((rpm_speed[actual_speed]*pi*radio)/60);
+                Serial.println(" mm/s");
+              }
+            #endif
+         }
 }
 
 

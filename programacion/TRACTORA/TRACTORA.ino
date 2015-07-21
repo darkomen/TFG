@@ -5,7 +5,7 @@
 #include "TimerOne.h"
 
 //Modo debug para mostrar por pantalla información de la velocidad
-//#define DEBUG
+#define DEBUG
 
 //definiciones pines driver paso a paso
 #define PIN_STEP 46
@@ -17,7 +17,7 @@
 //Definiciones para el cálculo de las velocidades
 #define steps_vuelta 3200 //Número de pasos por vuelta = 360/(angulo_motor/microsteps_drivers)
 #define us_irq 10  //microsegundos de ejecución de la interrupción.
-#define velocidades 31  //Numero de velocidades a las que podemos ir
+#define velocidades 30  //Numero de velocidades a las que podemos ir
 #define pi 3.14159265359  //PI
 #define radio 19.45      //Diámetro de la polea para poder calcular la velocidad lineal de tracción.
 
@@ -25,7 +25,7 @@ long previus_millis;//variable con los millis() de la ejecución anterior.
 long interval = 250; //intervalo de ejecución del programa en millis
 int ticks=0; //Variable con el valor de ticks que debemos contabilizar.
 int tick_count=0; //Variable donde vamos acumulano las interrupciones del timer.
-float rpm_speed[velocidades]= {3,3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6}; //array con las velocidades en RPM 
+float rpm_speed[velocidades]= {3,3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9}; //array con las velocidades en RPM 
 int tick_speed[velocidades+1] = {-1,0,0,0,0,0,0,0,0,0,0};  //tabla con los ticks de retardo, velocidades en RPM
 int actual_speed=0;  //variable con el valor de tick que tenemos que contar. de 0 a 7
 
@@ -64,8 +64,7 @@ void loop() {
                 Serial.print("0");
                 Serial.print(" RPM");
                 Serial.print("\t");
-                Serial.print((rpm_speed[actual_speed]*pi*radio)/60);
-                Serial.println(" mm/s");
+                Serial.println("0 mm/s");
               }
               else if (actual_speed!=0){
                 Serial.print(rpm_speed[actual_speed]);

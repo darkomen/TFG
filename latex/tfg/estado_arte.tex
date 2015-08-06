@@ -23,11 +23,11 @@ En la imagen \ref{fig:impr_fdm} podemos ver en detalle el principio de funcionam
             \label{fig:impr_patente_sistema}
     \end{figure}
 
-Este sistema de producción de fabricación, tiene tres pasos definidos:
+Este sistema de fabricación, tiene tres pasos definidos:
 \begin{itemize}
     \item \textbf{Pre-procesado:} Un software especial lamina en capas y calcula las trayectorias necesarias para crear el objeto que queremos fabricar.
     \item \textbf{Producción:} La impresora 3D calienta el termoplástico hasta alcanzar un estado viscoso y maleable y lo va depositando en capas muy finas siguiendo las trayectorias anteriormente calculadas por el software. En los sitios en los que es necesario un soporte, la impresora pone material que posteriormente será quitado de la pieza final.
-    \item \textbf{Post-procesado:} Una vez la impresora termina, la pieza será usable. En caso de haber puesto material, el usuario deberá removerlo antes de poder dar la pieza por terminada.
+    \item \textbf{Post-procesado:} Una vez que la impresora termina, la pieza será usable. En caso de haber puesto material, el usuario deberá removerlo antes de poder dar la pieza por terminada.
 \end{itemize}
 
 Según explica stratasys en su págnia web \cite{FDMTechnology} La tecnología FFF tiene varios beneficios que la hacen idonea para fabricar:
@@ -37,10 +37,8 @@ Según explica stratasys en su págnia web \cite{FDMTechnology} La tecnología F
     \item Formas complejas que con otra tecnología serían costosas de fabricar, con FFF son mucho más practicas de realizar.
 \end{itemize}
 
+El motivo de su crecimiento ha sido gracias a la expiración de la patente de S. Scott Crump \cite{crump1992apparatus} que han surgido unos modelos \textit{Do It Yourself} (DIY), de tal manera que uno mismo es capaz de fabricarse una impresora con materiales facilmente disponibles, reduciendo así el precio de la máquina. También se ha generado una gran comunidad de usuarios en donde se comparte conocimientos y vivencias de los usuarios, haciendo más facil la iniciativa a que la gente construya sus propias impresoras. Las impresoras más extendidas son las que se basan en el modelado por deposición fundida (\textbf{FDM\textregistered} en inglés). 
 
-
-
-El motivo de su crecimiento ha sido gracias a que han surgido unos modelos \textit{Do It Yourself} (DIY), de tal manera que uno mismo es capaz de fabricarse una, reduciendo así el precio de la máquina. También se ha generado una gran comunidad de usuarios en donde se comparte conocimientos y vivencias de los usuarios, haciendo más facil la iniciativa a que la gente construya sus propias impresoras. Las impresoras más extendidas son las que se basan en el modelado por deposición fundida (\textbf{FDM\textregistered} en inglés). Aunque estas siglas están registradas por la empresa Stratasys Inc. y por ello dentro de la comunidad de usuarios, se usa el término equivalente fabricación con filamento fundido (\textbf{FFF}) para poder utilizarlo sin tener ninguna repercusión legal.     
 \subsection{Materiales usados en impresión 3D}
 \label{impreso_materiales}
 En la actualidad hay multitud de materiales que se pueden usar en las impresoras 3D. Siendo la mayoría de ellos polímeros termoplásticos, ya que si se les aplica una temperatura alta se vuelven deformables y al enfriarlos, pasando por un estado de transición vítrea, se endurecen.\\
@@ -59,7 +57,7 @@ Por ello, el método de fabricación del consumible es la extrusión, ya que es 
 
 \section{Extrusión de polímeros}
 \label{arte_extrusion}
-La extrusión de polímeros es un proceso industrial de fabricación, en el cual  se hace pasar por un troquel (también denominado dado) la matería prima previamente prensada y calentada. El proceso de prensado y calentamiento, se hace en una cámara, que contiene un tornillo sin fin el cual gira concentricamente y es alimentado por una tolva. Al hacer pasar el polímero por el troquel, se consigue un objeto con un perfil constante y una longitud variable, pudiendo llegar a ser de centímetros, o en algunos casos de metros.
+La extrusión de polímeros es un proceso industrial de fabricación, en el cual se hace pasar por un troquel (también denominado dado) la matería prima previamente prensada y calentada. El proceso de prensado y calentamiento, se hace en una cámara, que contiene un tornillo sin fin el cual gira concentricamente y es alimentado por una tolva. Al hacer pasar el polímero por el troquel, se consigue un objeto con un perfil constante y una longitud variable, pudiendo llegar a ser de centímetros, o en algunos casos de metros.
 
 \begin{figure}[H]
         \centering
@@ -74,10 +72,20 @@ La velocidad influye directamente en el caudal de producción de la máquina. Te
 
 La temperatura por contra, influye en la viscosidad del polímero, este parámetro repercute directamente en la resistencia al fundido. Lo cual es bastante importante, por que en el caso que nos ocupa, el  material obtenido será posteriormente fundido en una impresora 3D.\\
 
-Los distintos elementos que conforman la extrusora son los siguientes.
+En la imagens \ref{fig:estado_extrusora} podemos observar los distintos elementos que conforman la extrusora:
 \begin{itemize}
-    \item \textbf{Dosificador:} es el encargado de suministrar el polímero, normalmente en forma de granza, a la tolva garantizando un suministro constante.
-    \item \textbf{Tolva:} despósito en el que cae la granza proveniente del dosificador. Debe proveer un flujo constante al extrusor para evitar cortes en el objeto que se está construyendo. Su diseño es muy importante, y en función del tipo de material que esté suministrando deberá ser de una manera u otra, debido a que el material puede llegar a compactarse en el fondo y no pasar a la extrusora. Algunos modelos de tolva incluyen sistemas de vibración para ayudar a que el material caiga. En la mayoría de los casos y dependiendo del material con el que estemos trabajando, será conveniente que incluya un sistema de secado para eliminar la humedad, puesto que puede afectar a la hora de trabajar con el.
+    \item \textbf{Dosificador:} es el encargado de suministrar el polímero, normalmente en forma de granza, a la tolva garantizando un suministro constante. 
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/PLA-Pellets.jpg}
+        \caption{Pellets de PLA}
+        \label{fig:Pellets de PLA}
+    \end{figure}
+    \item \textbf{Tolva:} depósito en el que cae la granza proveniente del dosificador. Debe proveer un flujo constante al extrusor para evitar cortes en el objeto que se está construyendo.
+   
+
+
+    Su diseño es muy importante, y en función del tipo de material que esté suministrando deberá ser de una manera u otra, debido a que el material puede llegar a compactarse en el fondo y no pasar a la extrusora. Algunos modelos de tolva incluyen sistemas de vibración para ayudar a que el material caiga. En la mayoría de los casos y dependiendo del material con el que estemos trabajando, será conveniente que incluya un sistema de secado para eliminar la humedad, puesto que dependiendo de la matería prima puede afectar a la hora de trabajar con el. Por ejemplo, con el uso del PLA es obligatorio su secado antes de la producción.
     \item \textbf{Cilindro hidráulico:} Constituye el cuerpo principal de la extrusora y en su interior está el husillo. Es en este cilindro donde se encuentran las resistencias electricas que aportan la energía calorífica necesaria para fundir el material. La temperatura está registrada a lo largo de las distintas zonas del cilindro, para poder tener un control sobre la temperatura de fusión del material. El cilindro debe estar fabricado con materiales especiales de tal manera, que tenga una buena transferencia de calor y debe ser más duro que el materíal que se está extruyendo, para lograr una larga duración.
     \item \textbf{Husillo:} Es el elemento más importante de la extrusora y el que determina el grado de calidad con el que la pieza saldrá de la extrusora.\\
             \begin{figure}[H]
@@ -100,7 +108,7 @@ Los distintos elementos que conforman la extrusora son los siguientes.
             \end{figure}
     Como se aprecia en la figura \ref{fig:estado_husillo1} tenemos tres zonas claramente definidas:
     \begin{itemize}
-            \item \textbf{Alimentación:} Esta zona, es la encargada de transportar la granza de la tolva al interior del husillo. En la figura \ref{fig:estado_husillo1} podemos ver como los filetes están muy separados del centro del husillo, con el fin de transportar la mayor cantidad posible de material.
+            \item \textbf{Alimentación:} Esta zona, es la encargada de transportar la granza de la tolva al interior del husillo. En la figura podemos ver como los filetes están muy separados del centro del husillo, con el fin de transportar la mayor cantidad posible de material.
             \item \textbf{Compresión:} A medida que entramos en la zona de compresión, los filetes van disminuyendo y se acercan al husillo, con el fin de fundir y homogeneizar el material. Aquí se expulsa el posible aire residual que quede entre la granza.
             \item \textbf{Dosificación:} Conduce el material compactado hacia el dado de la extrusora. Esta zona debe garantizar que el material sale con una temperatura constante y homogeneo.
     \end{itemize}

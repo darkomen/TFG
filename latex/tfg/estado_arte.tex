@@ -23,62 +23,65 @@ La tecnología aditiva lleva muchos años usandose y sin embargo no ha sufrido m
 
 \section{Tecnologías de fabricación aditiva}
 
-Dentro de la fabricación aditiva, existen varios modelos de máquinas, en las que el principio de funcionamiento es el mismo, pero la forma de materializar la pieza final son distintas.
+Dentro de la fabricación aditiva, existen varios modelos de máquinas, en las que el principio de funcionamiento es el mismo, pero la forma de materializar la pieza final son distintas.\\
 
 Algunas de las tecnologías más usadas son las siguientes:
 
+\begin{longtable}{| >{\centering\arraybackslash}m{8cm} | >{\centering\arraybackslash}m{7cm}|}
+    
+\endfirsthead
+\endhead
+\multicolumn{2}{c}{Continua en la siguiente página}
+\endfoot
+\endlastfoot
+    \hline
+    \includegraphics[width=0.4\textwidth]{./images/SLA.png}
+    & \textbf{Estereolitografía (SLA)}
+     Considerada la primera técnica de fabricación aditiva.
+     Fue patentada en 1986 y fabricada por 3d Systems en 1987.
+     El prinipio de funcionamiento es la polimerización de una resina fotucable.
+     Puede alcanzar un espesor de capa de $100\mu m$.\\[60pt]
+    \hline
+    \includegraphics[width=0.4\textwidth]{./images/polyjet.png}
+    & \textbf{Polyjet}
+     De la empresa Israelí Objet.
+     Patentada a finales de los 90
+     Resina fotocurable de base acrilato.
+     Necesita soportes.\\[100pt]
+     \hline
+    \includegraphics[width=0.4\textwidth]{./images/sls.png}
+     & \textbf{Selective Lase Sintering (SLS)}
+     Patentada en 1979.
+     Procesado de polímeros, metales y cerámicos.
+     Puede alcanzar un espesor de capa de $100\mu m$.
+     Necesidad de recubrimiento en maetales y cerámicos para ser sinterizados.\\[80pt]
+     \hline
+    \centering\includegraphics[width=0.4\textwidth]{./images/3d_mit.png}
+    & \textbf{Three Dimensional Printing}
+     Patentada en el MIT.
+     Para mezclas de cerámicos.
+     Se usa en modelos y maquetas.\\[95pt]
+    \hline
+    \centering\includegraphics[width=0.3\textwidth]{./images/ebm.png}
+    & \textbf{Electron Beam Melting (EBM)}
+     Fabricada y comercializada por Arcam (1997).
+     Funde polvo metálico de varias aleaciones, incluyendo las de Titanio.
+     Alta velocidad de producción por la potencia del haz de electrones y la posibilidad de guiarlo cambiando el campo magnético a través del cual pasa el haz.\\[80pt]
+    \hline
+    \centering\includegraphics[width=0.4\textwidth]{./images/fdm.png}
+    & \textbf{Fused Deposition Modelling (FDM)}
+     Comercializada por Stratasys en 1991.
+     Extrusión de filamento (Polímeros).
+     Tecnológia más extendida
+     Necesita soportes.
+     Varios tipos de termoplásticos.\\[150pt]
+     \hline
 
-\begin{table}[H]
-\centering
-\begin{tabular}{| >{\centering\arraybackslash}m{8cm} | >{\centering\arraybackslash}m{7cm}|}
-    \hline
-    \multirow{5}{9cm}{\includegraphics[width=0.4\textwidth]{./images/SLA.png}}\\
-    & \textbf{Estereolitografía (SLA)}\\
-    & Considerada la primera técnica de fabricación aditiva.\\
-    & Fue patentada en 1986 y fabricada por 3d Systems en 1987.\\
-    & El prinipio de funcionamiento es la polimerización de una resina fotucable.\\
-    & Puede alcanzar un espesor de capa de $100\mu m$.\\
-    \hline
-    \multirow{5}{9cm}{\includegraphics[width=0.4\textwidth]{./images/polyjet.png}}\\
-    & \textbf{Polyjet}\\
-    & De la empresa Israelí Objet.\\
-    & Patentada a finales de los 90\\
-    & Resina fotocurable de base acrilato.\\
-    & Necesita soportes.\\
-    \hline
-    \multirow{5}{9cm}{\includegraphics[width=0.4\textwidth]{./images/sls.png}}\\
-    & \textbf{Selective Lase Sintering (SLS)}\\
-    & Patentada en 1979.\\
-    & Procesado de polímeros, metales y cerámicos.\\
-    & Puede alcanzar un espesor de capa de $100\mu m$.\\
-    & Necesidad de recubrimiento en maetales y cerámicos para ser sinterizados.\\
-    \hline
-    \multirow{4}{9cm}{\includegraphics[width=0.4\textwidth]{./images/3d_mit.png}}\\
-    & \textbf{Three Dimensional Printing}\\
-    & Patentada en el MIT.\\
-    & Para mezclas de cerámicos.\\
-    & Se usa en modelos y maquetas.\\
-    \hline
-    \multirow{4}{9cm}{\includegraphics[width=0.4\textwidth]{./images/ebm.png}}\\
-    & \textbf{Electron Beam Melting (EBM)}\\
-    & Fabricada y comercializada por Arcam (1997).\\
-    & Funde polvo metálico de varias aleaciones, incluyendo las de Titanio.\\
-    & Alta velocidad de producción por la potencia del haz de electrones y la posibilidad de guiarlo cambiando el campo magnético a través del cual pasa el haz.\\
-    \hline
-    \multirow{6}{9cm}{\includegraphics[width=0.4\textwidth]{./images/fdm.png}}\\
-    & \textbf{Fused Deposition Modelling (FDM)}\\
-    & Comercializada por Stratasys en 1991.\\
-    & Extrusión de filamento (Polímeros).\\
-    & Tecnológia más extendida\\
-    & Necesita soportes.\\
-    & Varios tipos de termoplásticos.\\
 
+     \caption{Distitnas tecnologias AM}
+     \label{tab:AM}
+\end{longtable}
 
-
-\end{tabular}
-\caption{Tecnologicas de fabricación aditiva. Fuente \cite{FabricacionAditiva}.}
-\label{tabla:autores}
-\end{table}
 
 Sin embargo la que más se ha popularizado en la sociedad es la de materíal extruido ya que es la tecnología más sencilla de realizar de manera doméstica. En el siguiente capitulo se detallará en profundidad su funcionamiento, ya que es la tecnología que va abordar este proyecto.
 
@@ -108,6 +111,14 @@ Este sistema de fabricación, tiene tres pasos definidos:
     \item \textbf{Post-procesado:} Una vez que la impresora termina, la pieza será usable. En caso de haber puesto material, el usuario deberá removerlo antes de poder dar la pieza por terminada.
 \end{itemize}
 
+El modelo en 3D que se quiera construir, primero deberá ser diseñado con un programa CAD (Computer Aided Design) el cual, será exportado en un fichero con formato STL ( StereoLithography). Un fichero STL es una representación triangular de una geometría en 3D. La superficie, es dividida en una serie de triangulos orientados denominadas caras. Cada cara, es definida por una normal y tres puntos\cite{stl}. Sin embargo, este fichero no puede ser interpretado por una máquina FFF ya que lo único que entiende son coordenadas. Por ello, el fichero STL deberá ser tratado por un programa laminador que divida el modelo 3D en distitnas capas (Ver imagen \ref{fig:detalle_capas}) y genere las trayectorias necesarias para realizar cada capa. Este programa, almacenará las trayectorias en un fichero GCODE, que sí se podrá mandar a la impresora.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/capas_fdm.png}
+            \caption{Detalle  de un extrusor realizando una pieza. Fuente  \cite{crump1992apparatus}}
+            \label{fig:detalle_capas}
+    \end{figure}
 Según explica stratasys en su págnia web \cite{FDMTechnology}, la tecnología FFF tiene varios beneficios que la hacen idonea para fabricar:
 \begin{itemize}
     \item La tecnología es limpia y facil de usar por el usuario.
@@ -115,7 +126,19 @@ Según explica stratasys en su págnia web \cite{FDMTechnology}, la tecnología 
     \item Formas complejas que con otra tecnología serían costosas de fabricar, con FFF son mucho más practicas de realizar.
 \end{itemize}
 
-El motivo de su crecimiento ha sido gracias a que en 2009 expiró de la patente de S. Scott Crump \cite{crump1992apparatus} y se ha dado la posibilidad de que surgan unos modelos \textit{Do It Yourself} (DIY), de tal manera que uno mismo es capaz de fabricarse una impresora con materiales facilmente disponibles, reduciendo así el precio de la máquina. También se ha generado una gran comunidad de usuarios en donde se comparte conocimientos y vivencias de los usuarios, haciendo más fácil la iniciativa a que la gente construya sus propias impresoras. 
+Según podemos leer en la patente S. Scott Crump \cite{crump1992apparatus} una impresora FDM es:
+
+\begin{quotation}
+\emph{
+Aparato que incorpora un cabezal móvil dispensador (provisto de un suministro de material que solidifica a una temperatura predeterminada) y una base, los cuales se mueven relativamente entre sí a lo largo de los ejes “X”, “Y” y “Z” siguiendo un patrón predeterminado para crear objetos tridimensionales mediante la deposición controlada de material descargado desde el cabezal móvil sobre la base. El aparato está preferiblemente controlado por ordenador en un proceso que emplea software de diseño y fabricación asistido por ordenador (CAD-CAM) para generar señales de control y accionar el movimiento controlado del cabezal y la base mientras el material se está depositando.}\\
+
+\emph{La creación de objetos tridimensionales es posible mediante la deposición repetida de  capas de material de solidificación hasta alcanzar la forma deseada. Son susceptibles de uso materiales que se adhieran a la capa anterior con una unión adecuada tras la solidificación; tales como: ceras autoendurecibles, resinas termoplásticas, metales fundidos, epoxis bicomponentes,espumas y vidrios. La base de cada capa se define por la capa anterior, y el grosor de capa se define y controla mediante la altura a la que la punta del cabezal móvil está situada sobre lacapa precedente}
+
+\end{quotation}
+
+\subsection{Reprap}
+El proyecto reprap lo inicia Adrian Bowyer y su equipo en 2006 desde la Universidad de Bath \cite{jones2011reprap}. Nace con la idea de facilitar toda la información necesaria para crear y distribuir libremente una máquina de prototipado rápido. 
+
 
 \subsection{Materiales usados en impresión 3D}
 \label{impreso_materiales}

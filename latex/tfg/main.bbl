@@ -1,10 +1,26 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{additive}
+Brent Stucker.
+\newblock Additive manufacturing technologies: Technology introduction and
+  busines implications.
+\newblock pages 1--11, August~7 2015.
+
+\bibitem{additivevssubtractive}
+Dan Mishek.
+\newblock How and when to choose between additive and subtractive prototyping].
+\newblock pages 1--2, August~7 2015.
 
 \bibitem{crump1992apparatus}
 S.S. Crump.
 \newblock Apparatus and method for creating three-dimensional objects.
 \newblock \url{https://www.google.com/patents/US5121329}, June~9 1992.
 \newblock US Patent 5,121,329.
+
+\bibitem{FabricacionAditiva}
+Dr. Guillermo~Reyes Pozo.
+\newblock Fabricación aditiva: Tecnologías.
+\newblock pages 7--14, August~7 2015.
 
 \bibitem{fundamentoFDM}
 Zureks.

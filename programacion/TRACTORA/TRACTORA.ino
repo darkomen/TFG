@@ -5,7 +5,7 @@
 #include "TimerOne.h"
 
 //Modo debug para mostrar por pantalla información de la velocidad
-#define DEBUG
+//#define DEBUG
 
 //definiciones pines driver paso a paso
 #define PIN_STEP 46
@@ -17,7 +17,7 @@
 //Definiciones para el cálculo de las velocidades
 #define steps_vuelta 3200 //Número de pasos por vuelta = 360/(angulo_motor/microsteps_drivers)
 #define us_irq 10  //microsegundos de ejecución de la interrupción.
-#define velocidades 30  //Numero de velocidades a las que podemos ir
+#define velocidades 20  //Numero de velocidades a las que podemos ir
 #define pi 3.14159265359  //PI
 #define radio 19.45      //Diámetro de la polea para poder calcular la velocidad lineal de tracción.
 
@@ -25,13 +25,15 @@ long previus_millis;//variable con los millis() de la ejecución anterior.
 long interval = 250; //intervalo de ejecución del programa en millis
 int ticks=0; //Variable con el valor de ticks que debemos contabilizar.
 int tick_count=0; //Variable donde vamos acumulano las interrupciones del timer.
-//float rpm_speed[velocidades]= {2.0, 2.1, 2.2, 2.3, 2.4, 2.5,3.6,3.7,3.8,3.9,4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9}; //array con las velocidades en RPM 
 //BUENA
-float rpm_speed[]= {2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9};//array con las velocidades en RPM
-//float rpm_speed[] ={ 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5};
-int tick_speed[velocidades+1] = {-1,0,0,0,0,0,0,0,0,0,0};  //tabla con los ticks de retardo, velocidades en RPM
-int actual_speed=0;  //variable con el valor de tick que tenemos que contar. de 0 a 7
+//float rpm_speed[]= {2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9};//array con las velocidades en RPM
+float rpm_speed[]= {1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4};//array con las velocidades en RPM
 
+
+//float rpm_speed[] ={  1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9};
+int tick_speed[velocidades+1] = {-1,0,0,0,0,0,0,0,0,0,0};  //tabla con los ticks de retardo, velocidades en RPM
+long actual_speed=0;  //variable con el valor de tick que tenemos que contar. de 0 a 7
+int i=0;              //Numero de muestras tomadas 
 void setup() {
         #ifdef DEBUG
         Serial.begin(9600);
@@ -50,13 +52,20 @@ void setup() {
 }
 
 void loop() {
-        //Convertimos el valor del potenciometro a un entero comprendido entre 0 y 10
-        actual_speed=map(analogRead(PIN_POT),10,1000,0,velocidades);
+        //Almacenamos el valor de la entrada analogica en una variable y contamos el núnero 
+        //de muestras que tomamo en el tiempo de espera de ejecución del ciclo.
+        actual_speed += map(analogRead(PIN_POT),10,1000,0,velocidades);
+        i++;
+           
+        //Serial.println("fin FOR");
         unsigned long current_millis=millis();
         //Si el tiempo pasado es mayor que el intervalo realizamos la ejecución del programa.
         if (current_millis - previus_millis > interval){
             //Almacenamos el valor actual del timer
             previus_millis = current_millis;
+            //Calculamos la media del valor del sensor medido.
+            actual_speed = (actual_speed/i);
+            Serial.println(actual_speed);
             //Almacenas los numeros de tick a contar para alcanzar la velocidad deseada.
             ticks=tick_speed[actual_speed];
             
@@ -77,6 +86,8 @@ void loop() {
                 Serial.println(" mm/s");
               }
             #endif
+            actual_speed=0;
+            i=0;
          }
 }
 

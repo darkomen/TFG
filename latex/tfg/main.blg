@@ -1,7 +1,50 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: references.bib
 Warning--empty journal in additive
 Warning--empty journal in additivevssubtractive
 Warning--empty journal in stl
+You've used 14 entries,
+            1791 wiz_defined-function locations,
+            521 strings with 5607 characters,
+and the built_in function-call counts, 2324 in all, are:
+= -- 200
+> -- 79
+< -- 3
++ -- 35
+- -- 21
+* -- 97
+:= -- 362
+add.period$ -- 43
+call.type$ -- 14
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 99
+empty$ -- 270
+format.name$ -- 21
+if$ -- 534
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 4
+newline$ -- 74
+num.names$ -- 14
+pop$ -- 77
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 55
+stack$ -- 0
+substring$ -- 62
+swap$ -- 24
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 23
+width$ -- 16
+write$ -- 145
 (There were 3 warnings)

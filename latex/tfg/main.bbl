@@ -17,11 +17,6 @@ S.S. Crump.
 \newblock \url{https://www.google.com/patents/US5121329}, June~9 1992.
 \newblock US Patent 5,121,329.
 
-\bibitem{FabricacionAditiva}
-Dr. Guillermo~Reyes Pozo.
-\newblock Fabricación aditiva: Tecnologías.
-\newblock pages 7--14, August~7 2015.
-
 \bibitem{fundamentoFDM}
 Zureks.
 \newblock Fundamento fdm.
@@ -39,6 +34,33 @@ Stratasys.
 \newblock
   \url{http://www.stratasys.com/3d-printers/technologies/fdm-technology},
   June~9 2015.
+
+\bibitem{jones2011reprap}
+Rhys Jones, Patrick Haufe, Edward Sells, Pejman Iravani, Vik Olliver, Chris
+  Palmer, and Adrian Bowyer.
+\newblock Reprap--the replicating rapid prototyper.
+\newblock {\em Robotica}, 29(01):177--191, 2011.
+
+\bibitem{prusai2}
+Josef Prusa.
+\newblock Imagen de una prusa i2.
+\newblock
+  \url{http://blog.reprap.org/2010/10/story-of-simpler-mendel-pla-bushings.html},
+  August~10 2015.
+
+\bibitem{juan1}
+Juan~Gonzalez Gomez.
+\newblock Conferencia de adrian bowyer en medialab.
+\newblock
+  \url{http://www.iearobotics.com/blog/2009/02/04/conferencia-sobre-el-proyecto-reprap-en-madrid/},
+  August~10 2015.
+
+\bibitem{juanR1}
+Juan~Gonzalez Gomez.
+\newblock Ficha técnica de r1. primera impresora de juan gonzalez gomez.
+\newblock
+  \url{http://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1},
+  August~10 2015.
 
 \bibitem{disenoextrusor}
 Gran Loco.

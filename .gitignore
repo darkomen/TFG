@@ -1,9 +1,13 @@
+# Ignoramos las carpetas que se crean en OS X
 .DS_Store
+# Ignoramos los ficheros auxiliares de LaTeX
 *.aux
 *.log
 *.fdb_latexmk
 *.out
 *.toc
 *.gz
+# Ignoramos los ficheros .gcode generados por cura.
 *.gcode
+# Ignoramos los ficheros temporales del Automation Builder de ABB
 *.~u

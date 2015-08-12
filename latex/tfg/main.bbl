@@ -35,6 +35,40 @@ Stratasys.
   \url{http://www.stratasys.com/3d-printers/technologies/fdm-technology},
   June~9 2015.
 
+\bibitem{tfg_antonio}
+Antonio Alberto~Relaño Pastor.
+\newblock Estudio comparativo de piezas de abs y pla procesadas mediante
+  modelado por deposición fundida.
+\newblock Universidad Carlos III de Madrid, August~11 2015.
+
+\bibitem{disenoextrusor}
+Gran Loco.
+\newblock Diseño genérico de un extrusor.
+\newblock
+  \url{http://upload.wikimedia.org/wikipedia/commons/e/ed/Disenio_de_un_extrusor.png},
+  June~9 2006.
+
+\bibitem{detallehusillo}
+Santiago Ferrándiz.
+\newblock Detalle de un husillo de extrusora.
+\newblock
+  \url{http://3.bp.blogspot.com/-Z0GzL5mmFW8/TbWU01H0D5I/AAAAAAAAAHE/aW1dNIs0Pl8/s1600/21.JPG},
+  June~9 2012.
+
+\bibitem{parametroshusillos}
+Santiago Ferrándiz.
+\newblock Parámetros de un husillo de extrusora.
+\newblock
+  \url{https://lh4.googleusercontent.com/-38dQ_PeujTE/TYCjbjVFSxI/AAAAAAAAAB8/Ogy3O1i_KCo/s1600/14.JPG},
+  June~9 2012.
+
+\bibitem{ejemplosextrusion}
+Mike1024.
+\newblock Distintos ejemplos de perfiles de extrusión.
+\newblock
+  \url{http://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Extruded_aluminium_section_x3.jpg/1920px-Extruded_aluminium_section_x3.jpg},
+  June~9 2007.
+
 \bibitem{jones2011reprap}
 Rhys Jones, Patrick Haufe, Edward Sells, Pejman Iravani, Vik Olliver, Chris
   Palmer, and Adrian Bowyer.
@@ -65,33 +99,5 @@ Juan~Gonzalez Gomez.
 \bibitem{bq}
 Página oficial de bq.
 \newblock \url{http://bq.com/es/}, August~11 2015.
-
-\bibitem{disenoextrusor}
-Gran Loco.
-\newblock Diseño genérico de un extrusor.
-\newblock
-  \url{http://upload.wikimedia.org/wikipedia/commons/e/ed/Disenio_de_un_extrusor.png},
-  June~9 2006.
-
-\bibitem{detallehusillo}
-Santiago Ferrándiz.
-\newblock Detalle de un husillo de extrusora.
-\newblock
-  \url{http://3.bp.blogspot.com/-Z0GzL5mmFW8/TbWU01H0D5I/AAAAAAAAAHE/aW1dNIs0Pl8/s1600/21.JPG},
-  June~9 2012.
-
-\bibitem{parametroshusillos}
-Santiago Ferrándiz.
-\newblock Parámetros de un husillo de extrusora.
-\newblock
-  \url{https://lh4.googleusercontent.com/-38dQ_PeujTE/TYCjbjVFSxI/AAAAAAAAAB8/Ogy3O1i_KCo/s1600/14.JPG},
-  June~9 2012.
-
-\bibitem{ejemplosextrusion}
-Mike1024.
-\newblock Distintos ejemplos de perfiles de extrusión.
-\newblock
-  \url{http://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Extruded_aluminium_section_x3.jpg/1920px-Extruded_aluminium_section_x3.jpg},
-  June~9 2007.
 
 \end{thebibliography}

@@ -1,3 +1,9 @@
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Tecnologicas de fabricaci\IeC {\'o}n aditiva. Fuente \cite {FabricacionAditiva}.\relax }}{7}{table.caption.6}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Distitnas tecnologias AM. Fuente \cite {FabricacionAditiva}}}{8}{table.1.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Dispositivos disponibles\relax }}{26}{table.caption.26}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Especificaciones PLC\relax }}{27}{table.caption.29}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Presupuestos de los tres distribuidores\relax }}{28}{table.caption.30}

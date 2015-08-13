@@ -1,5 +1,9 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: portada.aux
 The style file: unsrt.bst
-I found no \citation commands---while reading file main.aux
 Database file #1: references.bib
-(There was 1 error message)
+Warning--empty journal in additive
+Warning--empty journal in FabricacionAditiva
+Warning--empty journal in additivevssubtractive
+Warning--empty journal in stl
+(There were 4 warnings)

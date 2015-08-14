@@ -132,7 +132,7 @@ Almacenamiento externo                       & USB o SD               & 1       
 \section{Elección del PLC}
 \label{eleccion_PLC}
 
-Se va a buscar un automáta programable (PLC) que cumpla las especificacione de la tabla \ref{tab:espc_plc}, también se intentará buscar una marca que nos ofrezca las siguientes ventajas, no siendo estas imprescindibles, pero si ayudarán a la hora de decantarnos por un modelo u otro:
+Se va a buscar un automáta programable (PLC) que cumpla las especificacione de la tabla \ref{tab:espc_plc}, también se intentará buscar una marca que nos ofrezca las siguientes ventajas, no siendo estas imprescindibles, pero si ayudarán a la hora de elegir un modelo u otro:
 
 \begin{itemize}
 		\item{Licencia de desarrollo libre.}
@@ -163,13 +163,200 @@ Abb                & 506              \\ \hline
 \end{table}
 
 
-Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una primera aproximación, se eligio ya que ofrecian alternativas baratas a grandes empresas como Siemens y ABB, sin embargo en el caso que nos ocupa y como se puede ver en la tabla \ref{tab:presupuestos} el precio de ABB es muy competitivo. De hecho es la marca que se elije, debido a que el coste con la marca Unitronics no supone un gasto excesivo y la fiabilidad de los automátas y el software que provee es mejor. Además trae de serie un servidor web con el que podremos hacer una interfaz WEB en la que veremos el estado de la fábrica de forma remota. Por ello, el hardware que se decide adquirir es el siguiente:
+Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una primera aproximación, se eligio por que ofrecian alternativas baratas a grandes empresas como Siemens y ABB, sin embargo en el caso que nos ocupa y como se puede ver en la tabla \ref{tab:presupuestos} el precio de ABB es muy competitivo. De hecho es la marca que se elije, debido a que el coste con la marca Unitronics no supone un gasto excesivo y la fiabilidad de los automátas y el software que provee es mejor. Además trae de serie un servidor web con el que podremos hacer una interfaz WEB en la que veremos el estado de la fábrica de forma remota. Por ello, el hardware que se decide adquirir es el siguiente:
 
 \begin{itemize}
 	\item{PM564-RP-ETH CPU AC500-eCo,128kB,6DI/6DO-R/2AI/1AO, 24VDC. ETH y WEBSERVER. (Requiere: conectores 9+11 polos)}
-\item{AI562 Módulo S500-eCo, 2AI PT100/1000, Ni100/1000, Resist. 150/300 ( Requiere conector 11 polos)}
-\item{MC502 SD Memory Card 512 MB}
-\item{MC503 Adaptador para tarjeta SD de memoria AC500-eCo.}
-
+	\item{AI562 Módulo S500-eCo, 2AI PT100/1000, Ni100/1000, Resist. 150/300 ( Requiere conector 11 polos)}
+	\item{MC502 SD Memory Card 512 MB}
+	\item{MC503 Adaptador para tarjeta SD de memoria AC500-eCo.}
 \end{itemize}
+
+\section{NO SE COMO LLAMARLOOOO}
+\label{}
+
+Una vez realizado el pedido del PLC y disponibles los datasheet de los sensores, dede la fábrica de filamento nos informan que no desean continuar con el proyecto y que no nos facilitarán más información acerca del proceso de fabricación. Por ello, el sentido de este proyecto cambia, ya que no podremos tener acceso a los sensores ni ninguna instrumentación de la fábrica.\\
+
+Se decide entonces cambiar el enfoque del proyecto, desde BQ se tiene planes de investigación en lo referente a los polímeros usados en la impresión 3D para poder mejorar en el producto que ofrecen, y hay intención de adquirir dos extrusoras propias:
+
+\begin{itemize}
+
+		\item{Extrusora industrial.}
+		\item{Extrusora de laboratorio.}
+\end{itemize}
+
+Con cualquiera de estas dos extrusoras se podría implementar el sistema propuesto para este proyecto, sin embargo el principal problema son los tiempos de adquisición que no se tiene planeado comprarlas hasta el último trimestre de 2015, con lo que el plazo de entrega del presente proyecto se alargaría.\\
+
+Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente con el PLC y simuladores del protocolo MODBUS, pero no sería algo completo. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filestruder.\\
+
+	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150313_111634.jpg}
+            \caption{Maqueta de filastruder montada}
+            \label{fig:hardware_filastruder}
+    \end{figure}
+
+
+Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de kickstarter. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documento en el foro y se creó una comunidad de usuarios interesandos en los extrusores caseros.\\
+
+Algunas de las características de este extrusor son:
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{lc}
+\textbf{Par de detenimiento del motor}            & $12N.m$                           \\
+\textbf{Velocidad del motor}                      & $3 rpm$                           \\
+\textbf{Tiempo para extruir 1kg}                  & $24H$                             \\
+\textbf{Diámetro del husillo}                     & $15.875mm$                        \\
+\textbf{Longitud del husillo}					  & $255mm$           				  \\
+\textbf{Tolerancia declarada}					  & $\pm 0.05 mm$					  \\	
+
+\end{tabular}
+\caption{Características filastruder. Fuente\cite{tfg_diego}}
+\label{tab:caract_filas}
+\end{table}
+
+La filastruder que disponemos, trae un controlador PID que mediante una resistencia de potencia y un termopar tipo J, consigue regular la temperatura del dado de la extrusora. Así mismo, trae un motor de continua, con una etapa reductora, para poder mover el husillo y hacer avanzar los pellets de PLA por el cañon.\\
+
+La maqueta lleva parada alrededor de un año y no se sabe muy bien si su funcionamiento es el correcto, por ello, se monta con una fuente de alimentación y se comprueba si al menos es capaz de mover el husillo y calentar el carucho.\\
+
+	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150225_093400.jpg}
+            \caption{Maqueta de filastruder funcionando}
+            \label{fig:hardware_filastruder2}
+    \end{figure}
+    	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150225_124525.jpg}
+            \caption{Maqueta de filastruder funcionando}
+            \label{fig:hardware_filastruder3}
+    \end{figure}
+
+Después de vaciar y limpiar correctamente el cañon, comprobamos que el funcionamiento del filastruder puede sernos útil para al menos hacer un proyecto a escala reducida de lo que originariamente se pensó. Por tanto, los objetivos vistos en el capítulo \ref{cap:objetivos}, página \pageref{cap:objetivos},no cambian.\\
+
+En este punto, tenemos accesibles los materiales necesarios para la realización del proyecto,  así podremos avanzar en el proyecto sin necesidad de pedir permisos a terceras personas,sin embargo se añaden nuevas tareas al proyecto, como la puesta en marcha de nuestra propia extrusora, lo cual añadirá una dificultad extra y hará que la fecha de entrega final se proloongue.\\
+
+\section{Montaje Filastruder}
+\label{sec:filastruder}
+El control de temperatura del filastruder se realiza mediante un regulador PID modelo Sestos D1S. Conectandole el termopar tipo J y el cartucho calefactor, es capaz de regular la temperatura que deseemos del dado, el único problema es que no dispone de comunicaciones industriales, y sólo se puede introducir la temperatura deseada mediante el display que incorpora.
+   	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150814_123957.jpg}
+            \caption{Controlador PID de temperatura Sestos}
+            \label{fig:hardware_sestos}
+    \end{figure}
+
+Se decide entonces no usar el PID e integrarlo directamente en el PLC ya que, con el hardware que compramos tenemos dos entradas analógicas capaces de leer sensores de temperatura del tipo PT100. De este modo, podremos introducir dos zonas de calentamiento, una en el dado del cañon y otra en la entrada de los pellet para poder tener varios registros de temperaturas como se tenía en la idea principal , que se disponian hasta cinco sensores de temperatura.\\
+
+Se pasa a instalar sobre una plancha de madera la filastruder y todo el cableado futuro que se va a usar a lo largo del proyecto:
+
+   	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150313_114401.jpg}
+            \caption{Se ancla la extructura a la base}
+            \label{fig:fila_montaje1}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150324_175818.jpg}
+            \caption{Calefactor en la alimentación y cañon}
+            \label{fig:fila_montaje2}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150325_145634.jpg}
+            \caption{Sensor PT100 de temperatura}
+            \label{fig:fila_montaje3}
+    \end{figure}
+
+Una vez instalados los cartuchos y las sondas de tempertura en la filastruder, se pasa a aislar el cañon para que la disipación de calor al exterior no sea elevada y poder mantener una temperatura constante.
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/filaextruder/IMG_20150814_132929.jpg}
+            \caption{Filastruder montado}
+            \label{fig:fila_montaje4}
+    \end{figure}
+
+El siguiente paso es cablear todas las señales a un armario que instalaremos en la propia maqueta en el espacio reservado para ello, este armario estará conectado al armario del PLC para poder realizar el control de la maqueta:
+
+\begin{itemize}
+	\item Sondas de temperatura.
+	\item Reles para controlar las resistencias de potencia y el motor del husillo.
+\end{itemize}
+
+
+El circuito eléctrico a cablear está indicado en el Anexo \ref{ane:esquemas_electricos}.
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/maqueta/IMG_20150324_162200.jpg}
+            \caption{Presentación de los componentes en el lugar adecuado.}
+            \label{fig:maque_montaje5}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/maqueta/IMG_20150324_162705.jpg}
+            \caption{Atornillamos las canaletas y guias a la madera.}
+            \label{fig:maque_montaje6}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/maqueta/IMG_20150324_173716.jpg}
+            \caption{Cableamos los componentes según los esquemas.}
+            \label{fig:maque_montaje7}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/maqueta/IMG_20150331_125243.jpg}
+            \caption{Aspecto final cuadro eléctrico maqueta.}
+            \label{fig:maque_montaje8}
+    \end{figure}
+
+A continuación se va a realizar el montaje del armario eléctrico
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150311_162414.jpg}
+            \caption{Lámina, canaleta y guía donde irá el PLC.}
+            \label{fig:cuad_montaje1}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150311_164348.jpg}
+            \caption{Cortamos la guía y canaleta según las necesidades.}
+            \label{fig:cuad_montaje2}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150313_143943.jpg}
+            \caption{Comprobamos que entra dentro del armario.}
+            \label{fig:cuad_montaje3}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150313_182301.jpg}
+            \caption{Cableamos los dispositivos entre sí.}
+            \label{fig:cuad_montaje4}
+    \end{figure}
+       \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150331_113600.jpg}
+            \caption{Cableamos las entradas-salidas del PLC.}
+            \label{fig:cuad_montaje5}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150331_113607.jpg}
+            \caption{Regletero con acceso a los pines del PLC.}
+            \label{fig:cuad_montaje6}
+    \end{figure}
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/cuadro/IMG_20150331_114950.jpg}
+            \caption{Cuadro terminado.}
+            \label{fig:cuad_montaje7}
+    \end{figure}
+
+Hasta el momento, hemos conseguido:
 

@@ -1,28 +1,47 @@
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Aproximaci\IeC {\'o}n de una pieza con fabricaci\IeC {\'o}n aditiva. Fuente \cite {additive}\relax }}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Principio de la fabricaci\IeC {\'o}n con filamento fundido. Fuente \cite {fundamentoFDM}\relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Esquema de la patente de S. Scott Crump. Fuente \cite {crump1992apparatus}\relax }}{9}{figure.caption.7}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Detalle de un extrusor realizando una pieza. Fuente \cite {crump1992apparatus}\relax }}{10}{figure.caption.8}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Esquema b\IeC {\'a}sico de una extrusora. Fuente \cite {disenoextrusor}\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Pellets de PLA\relax }}{12}{figure.caption.10}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Caracter\IeC {\'\i }sticas de un husillo.\relax }}{13}{figure.caption.11}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Distintos ejemplos de extrusi\IeC {\'o}n. Fuente \cite {ejemplosextrusion}\relax }}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Darwin,primera impresora 3D del tipo Reprap\relax }}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Impresora Reprap Prusa Mendel I2. Fuente \cite {prusai2}\relax }}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Impresora Reprap Prusa Mendel I3\relax }}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Impresoras distribuidas por bq. Fuente \cite {bq}.\relax }}{17}{figure.caption.16}
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Distintos filamentos de BQ. Fuente \cite {bq}\relax }}{17}{figure.caption.17}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Aproximaci\IeC {\'o}n de una pieza con fabricaci\IeC {\'o}n aditiva. Fuente \cite {additive}\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Principio de la fabricaci\IeC {\'o}n con filamento fundido. Fuente \cite {fundamentoFDM}\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Esquema de la patente de S. Scott Crump. Fuente \cite {crump1992apparatus}\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Detalle de un extrusor realizando una pieza. Fuente \cite {crump1992apparatus}\relax }}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Esquema b\IeC {\'a}sico de una extrusora. Fuente \cite {disenoextrusor}\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Pellets de PLA\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Caracter\IeC {\'\i }sticas de un husillo.\relax }}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Distintos ejemplos de extrusi\IeC {\'o}n. Fuente \cite {ejemplosextrusion}\relax }}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Darwin,primera impresora 3D del tipo Reprap\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Impresora Reprap Prusa Mendel I2. Fuente \cite {prusai2}\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Impresora Reprap Prusa Mendel I3\relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Impresoras distribuidas por bq. Fuente \cite {bq}.\relax }}{18}{figure.caption.16}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Distintos filamentos de BQ. Fuente \cite {bq}\relax }}{18}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Ejemplo de ba\IeC {\~n}era usada en enfriamiento por inmersion\relax }}{19}{figure.caption.18}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Carrete con filamento bobinado\relax }}{20}{figure.caption.19}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Muestra de filamento con problemas en el di\IeC {\'a}metro\relax }}{20}{figure.caption.20}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ejemplo de ba\IeC {\~n}era usada en enfriamiento por inmersion\relax }}{20}{figure.caption.18}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Carrete con filamento bobinado\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Muestra de filamento con problemas en el di\IeC {\'a}metro\relax }}{21}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Variador Optidrive\relax }}{23}{figure.caption.21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sensor de di\IeC {\'a}metro y perifer\IeC {\'\i }a\relax }}{24}{figure.caption.22}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Perifer\IeC {\'\i }a distribuida\relax }}{24}{figure.caption.23}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pantalla HMI\relax }}{24}{figure.caption.24}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sensores de temperatura\relax }}{25}{figure.caption.25}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Programa que almacena las medidas tomadas en el sensor de di\IeC {\'a}metro\relax }}{26}{figure.caption.27}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Arquitectura propuesta\relax }}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Variador Optidrive\relax }}{24}{figure.caption.21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sensor de di\IeC {\'a}metro y perifer\IeC {\'\i }a\relax }}{25}{figure.caption.22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Perifer\IeC {\'\i }a distribuida\relax }}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pantalla HMI\relax }}{25}{figure.caption.24}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sensores de temperatura\relax }}{26}{figure.caption.25}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Programa que almacena las medidas tomadas en el sensor de di\IeC {\'a}metro\relax }}{27}{figure.caption.27}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Arquitectura propuesta\relax }}{28}{figure.caption.28}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Maqueta de filastruder montada\relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Maqueta de filastruder funcionando\relax }}{31}{figure.caption.33}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Maqueta de filastruder funcionando\relax }}{31}{figure.caption.34}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Controlador PID de temperatura Sestos\relax }}{32}{figure.caption.35}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Se ancla la extructura a la base\relax }}{32}{figure.caption.36}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Calefactor en la alimentaci\IeC {\'o}n y ca\IeC {\~n}on\relax }}{33}{figure.caption.37}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Sensor PT100 de temperatura\relax }}{33}{figure.caption.38}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Filastruder montado\relax }}{34}{figure.caption.39}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Presentaci\IeC {\'o}n de los componentes en el lugar adecuado.\relax }}{34}{figure.caption.40}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Atornillamos las canaletas y guias a la madera.\relax }}{35}{figure.caption.41}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Cableamos los componentes seg\IeC {\'u}n los esquemas.\relax }}{35}{figure.caption.42}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Aspecto final cuadro el\IeC {\'e}ctrico maqueta.\relax }}{35}{figure.caption.43}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces L\IeC {\'a}mina, canaleta y gu\IeC {\'\i }a donde ir\IeC {\'a} el PLC.\relax }}{36}{figure.caption.44}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Cortamos la gu\IeC {\'\i }a y canaleta seg\IeC {\'u}n las necesidades.\relax }}{36}{figure.caption.45}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Comprobamos que entra dentro del armario.\relax }}{37}{figure.caption.46}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Cableamos los dispositivos entre s\IeC {\'\i }.\relax }}{37}{figure.caption.47}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Cableamos las entradas-salidas del PLC.\relax }}{38}{figure.caption.48}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Regletero con acceso a los pines del PLC.\relax }}{38}{figure.caption.49}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Cuadro terminado.\relax }}{39}{figure.caption.50}

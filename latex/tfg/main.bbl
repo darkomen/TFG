@@ -48,6 +48,12 @@ Dr. Guillermo~Reyes Pozo.
 \newblock Fabricación aditiva: Tecnologías.
 \newblock pages 7--14, August~7 2015.
 
+\bibitem{tfg_diego}
+D.~Trapero.
+\newblock Disño, construcción y control de un extrusor de filamento para
+  impresoras 3d.
+\newblock page~37, August~14 2015.
+
 \bibitem{additivevssubtractive}
 Dan Mishek.
 \newblock How and when to choose between additive and subtractive prototyping].
@@ -69,7 +75,7 @@ Stratasys.
 Antonio Alberto~Relaño Pastor.
 \newblock Estudio comparativo de piezas de abs y pla procesadas mediante
   modelado por deposición fundida.
-\newblock Universidad Carlos III de Madrid, August~12 2015.
+\newblock pages 83--93, August~12 2015.
 
 \bibitem{detallehusillo}
 Santiago Ferrándiz.
@@ -104,5 +110,10 @@ Juan~Gonzalez Gomez.
 \newblock
   \url{http://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1},
   August~10 2015.
+
+\bibitem{filastruder}
+T.~Elmore.
+\newblock Filastruder developement thread.
+\newblock \url{http://www.soliforum.com/post/4783/#p4783}, August~14 2015.
 
 \end{thebibliography}

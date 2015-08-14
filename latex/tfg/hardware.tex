@@ -358,5 +358,86 @@ A continuación se va a realizar el montaje del armario eléctrico
             \label{fig:cuad_montaje7}
     \end{figure}
 
-Hasta el momento, hemos conseguido:
+Hasta el momento, tenemos todo el hardware del PLC disponible así como la extrusora para poder crear el filamento, nos faltaría por adquirir un sensor de diámetro para poder registrar todas las temperaturas y llegar a uno de los objetivos planteados que es sacar el modelo de la planta.\\
 
+Se buscan modelos industriales de sensores de diámetro como los que se usan en la fábrica de Huesca, sin embargo, su precio se sale del presupuesto establecido para el proyecto. Por ello, debemos buscar una alternativa barata y que sea funcional.\\
+
+Buscando por internet se encuentra un proyecto en la web thingiverse \cite{thing_filamento} de un sensor de diámetro DIY con licencia Creative Commons. En el que se incluye toda la documentación necesaria para realizar un sensor de diámetro analógico el cual es capaz de medir filamentos de hasta 3mm, lo cual entra dentro de nuestro margen de trabajo (filamento de 1.75mm).\\
+
+
+\section{Sensor de diámetro DIY}
+\label{sec:sensor}
+El sensor funciona de la siguiente manera. Dispone de un sensor CCD lineal de 1x128 pixels (ver imagen \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta iluminancía, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el díametro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_135533_.jpg}
+            \caption{Sensor CCD lineal.}
+            \label{fig:sens_CCD}
+    \end{figure}
+
+El usuario, vende los sensores a través de internet ya montados, programados y calibrados, lo cual nos interesa ya que nos ahorraría tiempo en la integración con el proyecto, sin embargo, al ir a hacer el pedido, no hay stock y el usuario no tiene planes de vender más. Pero como dijimos anteriormente, está toda la información accesible en internet para poder realizar por nosotros mismos uno, esta es una de las ventajas del Open Source, así pues, pusimos en marcha los pedidos con el BOM correspondiente.
+
+El trabajo necesario para poner en marcha el sensor es el siguiente:
+
+\begin{itemize}
+\item{Realizar el pedido en una tienda de electrónica}
+\item{Realizar PCBs del sensor}
+\item{Soldar componentes a la PCB}
+\item{Programar microcontroaldor}
+\item{Comprobar correcto funcionamiento.}
+\end{itemize}
+
+\subsection{Realizar el pedido en una tienda de electrónica}
+
+Se realiza el pedido a la empresa mouser, que es un distribuidor de componentes electrónicos, con el siguiente material.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cc}
+{\bf Descipción}                 & {\bf Cantidad} \\ \hline
+Condensador cerámico SMD $0.1 \mu F$ & 2              \\
+Condensador cerámico SMD $1 \mu F$   & 2              \\
+Condensador cerámico SMD $10 \mu F$  & 1              \\
+LED Trough hole Rojo             & 1              \\
+LED SMD Rojo                     & 1              \\
+Resistencia SMD 1/8 WAT 150ohms  & 1              \\
+Resistencia SMD 1/8 WAT 300ohms  & 1              \\
+Resistencia SMD 1/8 WAT 1Kohms   & 1              \\
+Pulsadores SMD                   & 1              \\
+8bit Microcontrolador Freescale  & 1              \\
+Sensor CCD 1x128 pixeles         & 1             
+\end{tabular}
+\caption{BOM sensor de diámetro}
+\label{tab:BOM}
+\end{table}
+
+\section{Realizar PCB del sensor}
+
+Para conseguir la PCB se usan los ficheros gerber disponibles en la web del proyecto \cite{thing_filamento}. Los ficheros gerber, contienen la información necesaria para la fabricación de la placa de circuito impreso.
+
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/gerber.png}
+            \caption{Fichero gerber de la pcb.}
+            \label{fig:sens_gerber}
+    \end{figure}
+
+
+
+ hemos conseguido los siguientes objetivos que definimos en el capítulo \ref{cap:objetivos}. Ver página \pageref{Listado_objetivos}.
+
+\begin{itemize}
+	\item Documentación de la instrumentación de la planta.
+	\item Definir la arquitectura para la comunicación del PLC y la instumentación
+	\item Definir requisitos del PLC a adquirir.
+	\item Realización del armario eléctrico para montar en la fábrica.
+\end{itemize}
+
+Y nos quedaría por completar:
+
+\begin{itemize}
+	\item Programación del PLC.
+	\item Estudio de los datos adquiridos y desarrollo del modelo teórico de la planta.
+	\item Comprobar qué regulador se amolda a nuestras necesidades.
+	\item Puesta en marcha del regulador en planta y comprobar resultados.
+\end{itemize}

@@ -4,7 +4,7 @@
 \section{Búsqueda de información}
 \label{busqueda_informacion}
 
-El primer paso es identificar el hardware del que disponemo en la fábrica con ayuda de las fotos tomadas:
+El primer paso es identificar el hardware del que disponemos en la fábrica con ayuda de las fotos tomadas:
     \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{images/huesca/IMG_20141216_174810.jpg}
@@ -66,7 +66,7 @@ Así mismo, disponemos de los datasheet y sabemos qué tipo de comunicación pod
 \section{Arquitectura planteada}
 \label{arquitectura}
 
-Antes de plantear la arquitectura, deberemos establecer el protocolo de comunicaciones y el medio físico por el que irán conectados entre sí. El protocolo establece las reglas necesarias para que dos dispositivos se comuniquen correctamente, haciendo un simil con la realidad, sería el idioma que usan dos personas para hablar. Si dos personas mantienen una conversación en un distinto lenguaje, no se entenderán. Y el medio físico, es cómo se hará la comunicación. Mirando las especificaciones de los componentes llegamos a la siguiente conclusión
+Antes de plantear la arquitectura, deberemos establecer el protocolo de comunicaciones y el medio físico por el que irán conectados entre sí. El protocolo establece las reglas necesarias para que dos dispositivos se comuniquen correctamente, haciendo un símil con la realidad, sería el idioma que usan dos personas para hablar. Si dos personas mantienen una conversación en un distinto lenguaje, no se entenderán. Y el medio físico, es cómo se hará la comunicación. Mirando las especificaciones de los componentes llegamos a la siguiente conclusión
 
 \begin{table}[H]
 
@@ -108,8 +108,6 @@ Por tanto, con esta información, podemos establecer la arquitectura del sistema
 
 Debemos buscar por tanto, un PLC que cumpla con las siguientes especificaciones:
 
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -132,7 +130,7 @@ Almacenamiento externo                       & USB o SD               & 1       
 \section{Elección del PLC}
 \label{eleccion_PLC}
 
-Se va a buscar un automáta programable (PLC) que cumpla las especificacione de la tabla \ref{tab:espc_plc}, también se intentará buscar una marca que nos ofrezca las siguientes ventajas, no siendo estas imprescindibles, pero si ayudarán a la hora de elegir un modelo u otro:
+Se va a buscar un autómata programable (PLC) que cumpla las especificaciones de la tabla \ref{tab:espc_plc}, también se intentará buscar una marca que nos ofrezca las siguientes ventajas, no siendo estas imprescindibles, pero si ayudarán a la hora de elegir un modelo u otro:
 
 \begin{itemize}
 		\item{Licencia de desarrollo libre.}
@@ -143,12 +141,12 @@ Se va a buscar un automáta programable (PLC) que cumpla las especificacione de 
 De este modo, conseguiremos reducir el coste total del proyecto. Partiendo de estos requisitos y buscando distintos proveedores por internet, las empresas que mejor se ajustan son:
 
 \begin{itemize}
-		\item{\textbf{UNITRONICS:} La compañía ofrece un PLC con pantalla HMI de bajo coste, que es idoneo para pequeños proyectos que no requieran demasiada capacidad. El principal problema es que no dispone de ningúna expansión para almacenar en tarjetas SD, ni se tiene conocimiendo de qu se pueda conectar a una bas de datos MYSQL de forma directa.}
-		\item{\textbf{WAGO:} Cumple todos los requisitos que necesitamo, sin embargo, es necesario pagar una licencia para poder usar el software disponible}
+		\item{\textbf{UNITRONICS:} La compañía ofrece un PLC con pantalla HMI de bajo coste, que es idóneo para pequeños proyectos que no requieran demasiada capacidad. El principal problema es que no dispone de ninguna expansión para almacenar en tarjetas SD, ni se tiene conocimiento de que se pueda conectar a una base de datos MYSQL de forma directa.}
+		\item{\textbf{WAGO:} Cumple todos los requisitos que necesitamos, sin embargo, es necesario pagar una licencia para poder usar el software disponible}
 		\item{\textbf{ABB:} El PLC de la gama eco trae de serie la mayoría de las cosas que necesitamos, además, si no se superan ciertas limitaciones, no es necesario pagar una licencia para poder usar el software de desarrollo.}
 \end{itemize}
 
-Se habla con cada uno de los distribuidores que ofrecen los productos en españa, pidiendo un presupuesto con el material necesario para suplir las necesidades del proyecto:
+Se habla con cada uno de los distribuidores que ofrecen los productos en España, pidiendo un presupuesto con el material necesario para suplir las necesidades del proyecto:
 
 \begin{table}[H]
 \centering
@@ -163,7 +161,7 @@ Abb                & 506              \\ \hline
 \end{table}
 
 
-Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una primera aproximación, se eligio por que ofrecian alternativas baratas a grandes empresas como Siemens y ABB, sin embargo en el caso que nos ocupa y como se puede ver en la tabla \ref{tab:presupuestos} el precio de ABB es muy competitivo. De hecho es la marca que se elije, debido a que el coste con la marca Unitronics no supone un gasto excesivo y la fiabilidad de los automátas y el software que provee es mejor. Además trae de serie un servidor web con el que podremos hacer una interfaz WEB en la que veremos el estado de la fábrica de forma remota. Por ello, el hardware que se decide adquirir es el siguiente:
+Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una primera aproximación, se eligió por que ofrecían alternativas baratas a grandes empresas como Siemens y ABB, sin embargo en el caso que nos ocupa y como se puede ver en la tabla \ref{tab:presupuestos} el precio de ABB es muy competitivo. De hecho es la marca que se elije, debido a que el coste con la marca Unitronics no supone un gasto excesivo y la fiabilidad de los autómatas y el software que provee es mejor. Además trae de serie un servidor web con el que podremos hacer una interfaz WEB en la que veremos el estado de la fábrica de forma remota. Por ello, el hardware que se decide adquirir es el siguiente:
 
 \begin{itemize}
 	\item{PM564-RP-ETH CPU AC500-eCo,128kB,6DI/6DO-R/2AI/1AO, 24VDC. ETH y WEBSERVER. (Requiere: conectores 9+11 polos)}
@@ -175,19 +173,18 @@ Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una prim
 \section{NO SE COMO LLAMARLOOOO}
 \label{}
 
-Una vez realizado el pedido del PLC y disponibles los datasheet de los sensores, dede la fábrica de filamento nos informan que no desean continuar con el proyecto y que no nos facilitarán más información acerca del proceso de fabricación. Por ello, el sentido de este proyecto cambia, ya que no podremos tener acceso a los sensores ni ninguna instrumentación de la fábrica.\\
+Una vez realizado el pedido del PLC y disponibles los datasheet de los sensores, desde la fábrica de filamento nos informan que no desean continuar con el proyecto y que no nos facilitarán más información acerca del proceso de fabricación. Por ello, el sentido de este proyecto cambia, ya que no podremos tener acceso a los sensores ni ninguna instrumentación de la fábrica.\\
 
 Se decide entonces cambiar el enfoque del proyecto, desde BQ se tiene planes de investigación en lo referente a los polímeros usados en la impresión 3D para poder mejorar en el producto que ofrecen, y hay intención de adquirir dos extrusoras propias:
 
 \begin{itemize}
-
 		\item{Extrusora industrial.}
 		\item{Extrusora de laboratorio.}
 \end{itemize}
 
 Con cualquiera de estas dos extrusoras se podría implementar el sistema propuesto para este proyecto, sin embargo el principal problema son los tiempos de adquisición que no se tiene planeado comprarlas hasta el último trimestre de 2015, con lo que el plazo de entrega del presente proyecto se alargaría.\\
 
-Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente con el PLC y simuladores del protocolo MODBUS, pero no sería algo completo. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filestruder.\\
+Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente con el PLC y simuladores del protocolo MODBUS, pero no sería algo completo. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filastruder.\\
 
 	\begin{figure}[H]
             \centering
@@ -197,7 +194,7 @@ Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente c
     \end{figure}
 
 
-Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de kickstarter. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documento en el foro y se creó una comunidad de usuarios interesandos en los extrusores caseros.\\
+Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de kickstarter. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documento en el foro y se creó una comunidad de usuarios interesados en los extrusores caseros.\\
 
 Algunas de las características de este extrusor son:
 
@@ -217,9 +214,9 @@ Algunas de las características de este extrusor son:
 \label{tab:caract_filas}
 \end{table}
 
-La filastruder que disponemos, trae un controlador PID que mediante una resistencia de potencia y un termopar tipo J, consigue regular la temperatura del dado de la extrusora. Así mismo, trae un motor de continua, con una etapa reductora, para poder mover el husillo y hacer avanzar los pellets de PLA por el cañon.\\
+La filastruder que disponemos, trae un controlador PID que mediante una resistencia de potencia y un termopar tipo J, consigue regular la temperatura del dado de la extrusora. Así mismo, trae un motor de continua, con una etapa reductora, para poder mover el husillo y hacer avanzar los pellets de PLA por el cañón.\\
 
-La maqueta lleva parada alrededor de un año y no se sabe muy bien si su funcionamiento es el correcto, por ello, se monta con una fuente de alimentación y se comprueba si al menos es capaz de mover el husillo y calentar el carucho.\\
+La maqueta lleva parada alrededor de un año y no se sabe muy bien si su funcionamiento es el correcto, por ello, se monta con una fuente de alimentación y se comprueba si al menos es capaz de mover el husillo y calentar el cartucho.\\
 
 	\begin{figure}[H]
             \centering
@@ -234,13 +231,13 @@ La maqueta lleva parada alrededor de un año y no se sabe muy bien si su funcion
             \label{fig:hardware_filastruder3}
     \end{figure}
 
-Después de vaciar y limpiar correctamente el cañon, comprobamos que el funcionamiento del filastruder puede sernos útil para al menos hacer un proyecto a escala reducida de lo que originariamente se pensó. Por tanto, los objetivos vistos en el capítulo \ref{cap:objetivos}, página \pageref{cap:objetivos},no cambian.\\
+Después de vaciar y limpiar correctamente el cañón, comprobamos que el funcionamiento del filastruder puede sernos útil para al menos hacer un proyecto a escala reducida de lo que originariamente se pensó. Por tanto, los objetivos vistos en el capítulo \ref{cap:objetivos}, página \pageref{cap:objetivos},no cambian.\\
 
-En este punto, tenemos accesibles los materiales necesarios para la realización del proyecto,  así podremos avanzar en el proyecto sin necesidad de pedir permisos a terceras personas,sin embargo se añaden nuevas tareas al proyecto, como la puesta en marcha de nuestra propia extrusora, lo cual añadirá una dificultad extra y hará que la fecha de entrega final se proloongue.\\
+En este punto, tenemos accesibles los materiales necesarios para la realización del proyecto,  así podremos avanzar en el proyecto sin necesidad de pedir permisos a terceras personas,sin embargo se añaden nuevas tareas al proyecto, como la puesta en marcha de nuestra propia extrusora, lo cual añadirá una dificultad extra y hará que la fecha de entrega final se prolongue.\\
 
 \section{Montaje Filastruder}
 \label{sec:filastruder}
-El control de temperatura del filastruder se realiza mediante un regulador PID modelo Sestos D1S. Conectandole el termopar tipo J y el cartucho calefactor, es capaz de regular la temperatura que deseemos del dado, el único problema es que no dispone de comunicaciones industriales, y sólo se puede introducir la temperatura deseada mediante el display que incorpora.
+El control de temperatura del filastruder se realiza mediante un regulador PID modelo Sestos D1S. Conectándole el termopar tipo J y el cartucho calefactor, es capaz de regular la temperatura que deseemos del dado, el único problema es que no dispone de comunicaciones industriales, y sólo se puede introducir la temperatura deseada mediante el display que incorpora.
    	\begin{figure}[H]
             \centering
             \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150814_123957.jpg}
@@ -248,7 +245,7 @@ El control de temperatura del filastruder se realiza mediante un regulador PID m
             \label{fig:hardware_sestos}
     \end{figure}
 
-Se decide entonces no usar el PID e integrarlo directamente en el PLC ya que, con el hardware que compramos tenemos dos entradas analógicas capaces de leer sensores de temperatura del tipo PT100. De este modo, podremos introducir dos zonas de calentamiento, una en el dado del cañon y otra en la entrada de los pellet para poder tener varios registros de temperaturas como se tenía en la idea principal , que se disponian hasta cinco sensores de temperatura.\\
+Se decide entonces no usar el PID e integrarlo directamente en el PLC ya que, con el hardware que compramos tenemos dos entradas analógicas capaces de leer sensores de temperatura del tipo PT100. De este modo, podremos introducir dos zonas de calentamiento, una en el dado del cañón y otra en la entrada de los pellet para poder tener varios registros de temperaturas como se tenía en la idea principal , que se disponían hasta cinco sensores de temperatura.\\
 
 Se pasa a instalar sobre una plancha de madera la filastruder y todo el cableado futuro que se va a usar a lo largo del proyecto:
 
@@ -271,7 +268,7 @@ Se pasa a instalar sobre una plancha de madera la filastruder y todo el cableado
             \label{fig:fila_montaje3}
     \end{figure}
 
-Una vez instalados los cartuchos y las sondas de tempertura en la filastruder, se pasa a aislar el cañon para que la disipación de calor al exterior no sea elevada y poder mantener una temperatura constante.
+Una vez instalados los cartuchos y las sondas de temperatura en la filastruder, se pasa a aislar el cañón para que la disipación de calor al exterior no sea elevada y poder mantener una temperatura constante.
     \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{images/filaextruder/IMG_20150814_132929.jpg}
@@ -367,7 +364,7 @@ Buscando por internet se encuentra un proyecto en la web thingiverse \cite{thing
 
 \section{Sensor de diámetro DIY}
 \label{sec:sensor}
-El sensor funciona de la siguiente manera. Dispone de un sensor CCD lineal de 1x128 pixels (ver imagen \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta iluminancía, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el díametro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+El sensor funciona de la siguiente manera. Dispone de un sensor CCD lineal de 1x128 pixels (ver imagen \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
    \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_135533_.jpg}
@@ -389,12 +386,12 @@ El trabajo necesario para poner en marcha el sensor es el siguiente:
 
 \subsection{Realizar el pedido en una tienda de electrónica}
 
-Se realiza el pedido a la empresa mouser, que es un distribuidor de componentes electrónicos, con el siguiente material.
+Se realiza el pedido a la empresa Mouser, que es un distribuidor de componentes electrónicos, con el siguiente material.
 
 \begin{table}[H]
 \centering
 \begin{tabular}{cc}
-{\bf Descipción}                 & {\bf Cantidad} \\ \hline
+{\bf Descripción}                 & {\bf Cantidad} \\ \hline
 Condensador cerámico SMD $0.1 \mu F$ & 2              \\
 Condensador cerámico SMD $1 \mu F$   & 2              \\
 Condensador cerámico SMD $10 \mu F$  & 1              \\
@@ -422,13 +419,66 @@ Para conseguir la PCB se usan los ficheros gerber disponibles en la web del proy
             \label{fig:sens_gerber}
     \end{figure}
 
+La única manera de realizar las PCB que disponemos es encargándola por internet \footnote{http://www.seeedstudio.com/depot/}. Enviamos los gerber y tras establecer las especificaciones de la PCB en unos días recibimos el pedido.
+
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_105219_.jpg}
+            \caption{PCB ya fabricada.}
+            \label{fig:sens_pcb}
+    \end{figure}
+
+El siguiente paso será soldar todos los componentes. En este caso, la mayoría de los componentes son SMD por ello necesitaremos el siguiente material, para que la soldadura sea más fácil.
+	\begin{itemize}
+		\item{Soldador.}
+		\item{Estaño fino.}
+		\item{Flux.}
+		\item{Pinzas de punta fina.}
+	\end{itemize}
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150417_160216.jpg}
+            \caption{Materiales necesarios para soldar}
+            \label{fig:sens_materiales}
+    \end{figure}
+El componente más complicado de soldar es el microcontrolador debido a sus pines, que tiene sus pines muy cercanos entre sí. Para evitar que el estaño cortocircuite dos pines, se esparcirá Flux por los pads de conexión facilitando así, el fundido del estaño.
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_111135.jpg}
+            \caption{Soldando el microcontrolador.}
+            \label{fig:sens_micro}
+    \end{figure}
+
+El resto de componentes SMD son fáciles de soldar y con ayuda de la pinza se irán soldando en orden.
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/sensor/IMG_20150414_135533.jpg}
+            \caption{Soldando componentes SMD.}
+            \label{fig:sens_SMD}
+    \end{figure}
+Los últimos componentes a soldar serán los Trough hole terminando así de soldar todos los componentes:
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150417_121941.jpg}
+            \caption{Placa con los componentes soldados.}
+            \label{fig:sens_SMD}
+    \end{figure}
+
+Por último, programaremos el microcontrolador con el firmware que nos bajamos y lo introduciremos en una carcasa de plástico que imprimimos con ayuda de una impresora 3D.
+   \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150417_134451.jpg}
+            \caption{Sensor midiendo un filamento de 1.75mm.}
+            \label{fig:sens_midiendo}
+    \end{figure}
+
 
 
  hemos conseguido los siguientes objetivos que definimos en el capítulo \ref{cap:objetivos}. Ver página \pageref{Listado_objetivos}.
 
 \begin{itemize}
 	\item Documentación de la instrumentación de la planta.
-	\item Definir la arquitectura para la comunicación del PLC y la instumentación
+	\item Definir la arquitectura para la comunicación del PLC y la instrumentación
 	\item Definir requisitos del PLC a adquirir.
 	\item Realización del armario eléctrico para montar en la fábrica.
 \end{itemize}

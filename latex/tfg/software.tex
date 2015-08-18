@@ -186,5 +186,45 @@ $$G_s = \frac{150 \cdot S^2 + 6082.6 \cdot S + 121.64}{S}$$
 
 Los sensores de diámetro están conectados a dos entradas analógicas de tensión del PLC. Será necesario unir la señal de masa (GND) del PLC con la del sensor, para que la referencia al nivel de tensión 0v sea la misma, posteriormente, la salida del sensor de diámetro, se conectará con la entrada analógica del PLC.\\
 
-El PLC convierte el valor de tensión comprendido entre un rango de 0-10V a un valor numérico, a través de un conversor analógico a digital de 10bits, es decir, para
+El PLC convierte el valor de tensión comprendido entre un rango de 0-10V a un valor numérico, a través de un conversor analógico a digital (ADC) de 10bits, es decir, tenemos una resolución de:
 
+$$ Resolucion=\frac{ V_{max} } {2^{10} } = \frac{10}{1024} = 9.76 mV$$
+
+Si acudimos a la ayuda que nos ofrece el programa de ABB, podemos observar los valores que asigna el ADC:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+{\bf Intervalo}                   & {\bf 0 ... 10V}                                                   & \multicolumn{1}{l|}{{\bf Valor digital}}                       \\ \hline
+Desbordamiento                    & \textgreater 11.7589                                              & 32767                                                         \\ \hline
+Valor de medición desmasiado alto & \begin{tabular}[c]{@{}c@{}}11.7589\\ .\\ .\\ 10.0004\end{tabular} & \begin{tabular}[c]{@{}c@{}}32511\\ .\\ .\\ 27649\end{tabular} \\ \hline
+Intervalo normal                  & \begin{tabular}[c]{@{}c@{}}10.000\\ .\\ .\\ 0.0004\end{tabular}   & \begin{tabular}[c]{@{}c@{}}27648\\ .\\ .\\ 1\end{tabular}     \\ \hline
+\end{tabular}
+\caption{Valores de conversión del ADC}
+\label{tab:reso_adc}
+\end{table}
+
+En nuestro caso, vamos a trabajar en el rango de intervalo normal, para poder saber el diámetro que nos está dando el sensor, deberemos leer la entrada analógica y convertir el valor décimal a un valor de tensión, es decir, convertir el valor digital a analogico, (DAC), para ello, cogemos los valores del intervalo normal de la tabla \ref{tab:reso_adc} y calcular la ecuación de la recta que lo caracteriza.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.75\textwidth]{images/PLC/dac.png}
+            \caption{Ecuación: $Y=3.6168 \cdot 10^{-4} \cdot X$}
+            \label{fig:plc_DAC}
+    \end{figure}
+
+Con este valor, y el calculado en \pageref{fig:sens_regre} somos capaces de leer el valor del diámetro, para ello, prograremos un bloque que llamaremos linealizacion, en la que tendrá los siguientes parámetros:
+
+\begin{itemize}
+    \item{\textbf{Entradas:}}
+        \begin{itemize}
+            \item{\textbf{IN:}Entrada analógica donde se encuentra físicamente el sensor}
+            \item{\textbf{AD:}Valor del DAC calculado anteriormente}
+            \item{\textbf{M y B:} Valores de la ecuación de la recta, que minimizan el error medido por el sensor}         
+        \end{itemize}
+    \item{\textbf{Salida:}}
+        \begin{itemize}
+            \item{\textbf{OUT:} Valor real de la magnitud medida por el sensor.}
+        \end{itemize}
+\end{itemize}

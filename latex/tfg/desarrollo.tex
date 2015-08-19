@@ -95,7 +95,7 @@ RS232, en el que un software almacena en una base de datos SQLITE (ver imagen \r
             \label{fig:hardware_sensor_diametro}
     \end{figure}
 
-La bobinadora, no usa ningún protocolo de comunicaciones, mediante señales de entrada salida, ese va realizando la comunicación.\\
+La bobinadora, no usa ningún protocolo de comunicaciones, mediante señales de entrada salida, se va realizando la comunicación.\\
 
 Por tanto, con esta información, podemos establecer la arquitectura del sistema.\\
 
@@ -106,7 +106,7 @@ Por tanto, con esta información, podemos establecer la arquitectura del sistema
             \label{fig:hardware_arquitectura}
     \end{figure}
 
-Debemos buscar por tanto, un autómata programable industrial (PLC) que cumpla con las siguientes especificaciones:
+Debemos buscar un autómata programable industrial (PLC) que cumpla con las siguientes especificaciones:
 
 \begin{table}[H]
 \centering
@@ -169,10 +169,10 @@ Debido al alto presupuesto que nos propuso Wago se descartó, ya que en una prim
 	\item{MC503 Adaptador para tarjeta SD de memoria AC500-eCo.}
 \end{itemize}
 
-\section{NO SE COMO LLAMARLOOOO}
+\section{SIN TITULO}
 \label{}
 
-Una vez realizado el pedido del PLC y disponibles los datasheet de los sensores, desde la fábrica de filamento nos informan que no desean continuar con el proyecto y que no nos facilitarán más información acerca del proceso de fabricación. Por ello, el sentido de este proyecto cambia, ya que no podremos tener acceso a los sensores ni ninguna instrumentación de la fábrica.\\
+Una vez realizado el pedido del PLC y disponibles los datasheet de los sensores, desde la fábrica de Huesca nos informan que no desean continuar con el proyecto y que no nos facilitarán más información acerca del proceso de fabricación. Por ello, el sentido de este proyecto cambia, ya que no podremos tener acceso a los sensores ni ninguna instrumentación de la fábrica.\\
 
 Desde BQ se tienen planes de investigación en lo referente a los polímeros usados en la impresión 3D para poder mejorar en el producto que ofrecen, y hay intención de adquirir dos extrusoras propias:
 
@@ -183,7 +183,7 @@ Desde BQ se tienen planes de investigación en lo referente a los polímeros usa
 
 Con cualquiera de estas dos extrusoras se podría implementar el sistema propuesto para este proyecto, sin embargo el principal problema son los tiempos de adquisición que no se tiene planeado comprarlas hasta el último trimestre de 2015, con lo que el plazo de entrega del presente proyecto se alargaría.\\
 
-Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente con el PLC y simuladores del protocolo MODBUS, pero no sería algo completo. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filastruder.\\
+Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente con el PLC y simuladores software del protocolo MODBUS, pero no sería algo completo. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filastruder.\\
 
 	\begin{figure}[H]
             \centering
@@ -192,7 +192,7 @@ Podría realizarse el proyecto sin tener ninguno de los materiales, unicamente c
             \label{fig:hardware_filastruder}
     \end{figure}
 
-Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de kickstarter. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documento en el foro y se creó una comunidad de usuarios interesados en los extrusores caseros.\\
+Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de crowfonding en kickstarter\footnote{http://www.kickstarter.com}. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documento en el foro y se creó una comunidad de usuarios interesados en los extrusores caseros.\\
 
 Algunas de las características de este extrusor son:
 
@@ -212,7 +212,7 @@ Algunas de las características de este extrusor son:
 \label{tab:caract_filas}
 \end{table}
 
-La filastruder que disponemos, trae un controlador PID que mediante una resistencia de potencia y un termopar tipo J, consigue regular la temperatura del dado de la extrusora. Así mismo, trae un motor de continua, con una etapa reductora, para poder mover el husillo y hacer avanzar los pellets de PLA por el cañón.\\
+La filastruder que disponemos, trae un controlador PID que mediante una resistencia de potencia y un termopar tipo J, consigue regular la temperatura del dado de la extrusora. Así mismo, trae un motor de corriente continua, con una etapa reductora, para poder mover el husillo y hacer avanzar los pellets de PLA por el cañón.\\
 
 La maqueta lleva parada alrededor de un año y no se sabe muy bien si su funcionamiento es el correcto, por ello, se monta con una fuente de alimentación y se comprueba si al menos es capaz de mover el husillo y calentar el cartucho.\\
 
@@ -309,6 +309,132 @@ El circuito eléctrico a cablear está indicado en el Anexo \ref{ane:esquemas_el
             \caption{Aspecto final cuadro eléctrico maqueta.}
             \label{fig:maque_montaje8}
     \end{figure}
+
+
+
+    \section{Montaje filawinder}
+Para poder almacenar el filamento que vamos extruyendo mediante el  Filastruder (Ver capítulo \fullref{sec:filastruder}) hemos escogido un kit DIY, llamado Filawinder\cite{filawinder}. 
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/filawinder/IMG_20150313_103643.jpg}
+            \caption{Montaje de Filawinder.}
+            \label{fig:winder_winder}
+    \end{figure}
+
+Filawinder es un kit DIY que se ofrece como expansión a la extrusora  filaextruder. Hemos elegido este en concreto debido a su similitud con una bobinadora de filamento real haciendo así, que la maqueta que vamos a montar sea lo más cercana a la realidad. Otra ventaja es su facilidad de montaje y la amplia documentación disponible en internet.\\
+
+Filawinder es un sistema de almacenamiento de bobinado automatizado. Consiste en un motor en el que va anclado la bobina para almacenar el filamento. La velocidad de giro del motor, está controlada por unos sensores de posición que detectan la tensión del filamento, y en función de ello la velocidad del motor es regulada. Estos sensores resistivos de luz (LDR), funcionan mediante la proyección de la sombra del filamento en ellos para que su resistencia varíe. El filamento, al pasar entre medias del haz y los LDR, irá proyectando la sombra y podremos detectar la tensión del filamento. Logrando así mejorar el almacenamiento del filamento producido.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/filawinder/Sensor-filamento.jpg}
+            \caption{Sensor de filamento.}
+            \label{fig:winder_sensor}
+    \end{figure}
+
+También dispone de una guía automática que va moviendo el filamento a lo largo de la bobina, para evitar nudos en su bobinado. Esta guía va teniendo en cuenta el número de vueltas que va realizando la bobina, para ir desplazando el filamento a lo largo del eje transversal de la bobina.\\
+
+Filawinder se distribuye en formato DIY por lo que se venden las piezas sueltas y es necesario que el usuario final realice el montaje. (Ver imagen \ref{fig:winder_material})
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/materiales-filawinder.png}
+            \caption{Materiales de filawinder.}
+            \label{fig:winder_material}
+    \end{figure}
+
+Además de las piezas que se nos suministra, también será necesario tener acceso a una impresora 3D para imprimir unas piezas necesarias para completar el montaje.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/piezas-impresas.png}
+            \caption{Piezas impresas para filawinder.}
+            \label{fig:winder_piezas}
+    \end{figure}
+
+ Una vez que ya tenemos todas las piezas disponibles, podremos empezar con el montaje.\\
+
+Alojamos el motor en la pieza destinada a ello. Con ayuda de dos tornillos M3X10 sujetamos el motor a la pieza para evitar que se mueva, pero no hacemos mucha fuerza, ya que la posición final se realizará más adelante.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/montaje1.png}
+            \caption{Introducimos el motor en el hueco.}
+            \label{fig:winder_piezas}
+    \end{figure}
+
+    Introducimos una tuerca en el alojamiento del engranaje pequeño como se ve en la imagen \ref{fig:winder_engranaje}, para poder apretar el engranaje al vástago del motor con el tornillo de M3x10 (Ver imagen \ref{fig:winder_apriet})
+    \begin{figure}[h]
+          \centering
+        \begin{subfigure}[b]{0.35\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/filawinder/montaje2.png}
+                \caption{Tuerca en alojamiento de engranaje}
+                \label{fig:winder_engranaje}
+        \end{subfigure}
+        ~
+        \begin{subfigure}[b]{0.35\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/filawinder/montaje3.png}
+                \caption{Apriete de engranaje al vástago.}
+                \label{fig:winder_apriete}
+        \end{subfigure}
+        \caption{Montaje del engraneje en eje del motor.}
+        \label{fig:winder_montaje_engranaje}
+\end{figure}
+
+Situamos la placa electrónica en la parte inferior de la pieza con ayuda de cuatro tornillos M3x12 y cuatro tuercas de M3.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/montaje4.png}
+            \caption{Instalación de la placa electrónica.}
+            \label{fig:winder_arduino}
+    \end{figure}
+
+Roscamos una tuerca M8 e introducimos una arandela de M8 en la varilla roscada de M8, pasamos la varilla roscada a través del agujero debajo del motor, e introducimos otra arandela y otra tuerca de M8 para apretar el conjunto.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/montaje5.png}
+            \caption{Eje de giro para la bobina.}
+            \label{fig:winder_soporte}
+    \end{figure}
+
+Alojamos la pieza con el motor, la varilla y la electrónica, en el lateral de la base principal, sujetamos ambas piezas con ayuda de una tuerca y un tornillo de M3x25.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/filawinder/montaje6.png}
+            \caption{Unión de lateral con base principal.}
+            \label{fig:winder_soporte_base}
+    \end{figure}
+
+
+Una vez montada la estructura principal, sérá necesario cablear todos los componentes entre sí. 
+
+    \begin{figure}[H]
+          \centering
+        \begin{subfigure}[b]{0.35\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/filawinder/IMG_20150311_123035.jpg}
+                \caption{Botonera de control filawinder}
+                \label{fig:winder_botonera}
+        \end{subfigure}
+        ~
+        \begin{subfigure}[b]{0.35\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/filawinder/IMG_20150311_131828.jpg}
+                \caption{Placa controladra cableada.}
+                \label{fig:winder_arduino}
+        \end{subfigure}
+        \caption{Montaje electrico de la placa de control.}
+        \label{fig:winder_montaje_electrio}
+\end{figure}
+
+Con esto concluimos el montaje del filawinder, el cual usaremos a la hora de producir filamento.
+
+
 \section{Montaje armario PLC}
 A continuación, se va a realizar el montaje del armario eléctrico del PLC, en este armario, irá el siguiente material:
 
@@ -364,13 +490,14 @@ A continuación, se va a realizar el montaje del armario eléctrico del PLC, en 
 
 Hasta el momento, tenemos todo el hardware del PLC disponible así como la extrusora para poder crear el filamento, nos faltaría por adquirir un sensor de diámetro para poder registrar todas las temperaturas y llegar a uno de los objetivos planteados que es sacar el modelo de la planta.\\
 
+\section{Sensor de diámetro}
+\label{sec:sensor}
+
 Se buscan modelos industriales de sensores de diámetro como los que se usan en la fábrica de Huesca, sin embargo, su precio se sale del presupuesto establecido para el proyecto. Por ello, debemos buscar una alternativa barata y que sea funcional.\\
 
 Buscando por internet se encuentra un proyecto en la web thingiverse \cite{thing_filamento} de un sensor de diámetro DIY con licencia Creative Commons. En el que se incluye toda la documentación necesaria para realizar un sensor de diámetro analógico el cual es capaz de medir filamentos de hasta 3mm, lo cual entra dentro de nuestro margen de trabajo (filamento de 1.75mm).\\
 
 
-\section{Sensor de diámetro DIY}
-\label{sec:sensor}
 El sensor funciona de la siguiente manera. Dispone de un sensor CCD lineal de 1x128 pixels (ver imagen \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
    \begin{figure}[H]
             \centering
@@ -446,7 +573,7 @@ El siguiente paso será soldar todos los componentes. En este caso, la mayoría 
             \label{fig:sens_materiales}
     \end{figure}
 
-El componente más complicado de soldar es el microcontrolador ya que tiene sus pines muy cercanos entre sí. Para evitar que el estaño cortocircuite dos pines, se esparcirá Flux que es un líquido que ayuda a la hora de soldar, limpiando la superficie y haciendo que sea más fácil de fundir el estaño.\\
+El componente más complicado de soldar es el microcontrolador ya que tiene sus pines muy cercanos entre sí. Para evitar que el estaño cortocircuite dos pines, se esparcirá Flux que es un líquido que ayuda a la hora de soldar, limpiando la superficie y haciendo que  el estaño sea más fácil de fundir.\\
    \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_111135.jpg}

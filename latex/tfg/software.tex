@@ -18,21 +18,7 @@ Las acciones que debe realizar el PLC son las siguientes:
 	\item{Visualizar en una página web el estado de la producción.}
 \end{itemize}
 
-Para realizar el software que gestione el PLC, se usará una máquina de estados, en la que pasando por diversas fases, se irán ejecutando las acciones de control. Deberemos entrar en modo producción mediante la activación de una variable, con la que si estamos en producción, pasaremos por los distintos estados, mientras no estemos en producción, las salidas digitales y valores de consigna de los PID, estarán reseteados a cero como medida de seguridad. Una vez que entremos en producción, el primer paso será inicializar el programa, generaremos el nombre del fichero donde almacenaremos los datos. Se elije un nombre en el que se usa año, mes, día y minuto para identificar la producción, es decir, tendría un formato \textit{YYMMDDmm.CSV}.\\
-
-El formato elegido para almacenar la información es el de valores separados por coma (CSV). El motivo por el cual se elije este formato es debido a su estandarización y que almacena los datos de forma tabular en texto plano. Gracias a esto, podremos abrir el fichero CSV con cualquier editor de texto y otros programas de hojas de cálculo, para el posterior análisis de los datos, que es uno de los objetivos del proyecto. Por lo tanto, el formato CSV es el idóneo para poder trabajar en el futuro con los datos almacenados.\\
-
-En esta inicialización, también se genera la cabecera del fichero CSV , que es la primera fila del fichero, en donde indicará la información que contiene cada columna. La información almacenada en el fichero CSV será la siguiente:
-
-\begin{itemize}
-	\item{\textbf{Time Stamp: }Es una secuencia de caracteres en las que se indican hora y fecha de un evento ocurrido. Se almacena con el  formato YY-MM-DD HH:MM:SS. Con esta información podremos tener una trazabilidad del filamento almacenado y en caso de producirse un error, ver el momento concreto del mismo.}
-	\item{\textbf{Temperaturas: }Valores con las temperaturas del dado y el husillo en la zona de alimentación. De esta manera se comprueba que la temperatura no sufre algún cambio drástico durante el proceso, que puede ser causante de un problema en la calidad final del filamento (X e Y).}
-	\item{\textbf{Diámetros: }Se almacenan los diámetros medidos por el sensor. En este caso se van a poner dos sensores de diámetro para hacer una medición en los dos ejes del filamento.}
-	\item{\textbf{Información varia: }Se puede almacenar cualquier información que nosotros deseemos en un futuro.}
-\end{itemize}
-
-Los siguientes pasos dentro de la máquina de estados, será generar el fichero CSV y en caso de que no se produzca ningún error,	 se almacenará la cabecera en el fichero CSV, para pasar a la producción como tal.\\
-Se controlará la temperatura del dado, se registrarán los valores de diámetros y temperaturas y se irán almacenando en el fichero CSV. El control del motor del husillo se hará de forma manual desde la visualización online.\\
+Para realizar el software que gestione el PLC, se usará una máquina de estados, en la que pasando por diversas fases, se irán ejecutando las acciones de control. Deberemos entrar en modo producción mediante la activación de una variable, con la que si estamos en producción, pasaremos por los distintos estados, mientras no estemos en producción, las salidas digitales y valores de consigna de los PID, estarán reseteados a cero como medida de seguridad. Una vez que entremos en producción, el primer paso será inicializar el programa, generaremos el nombre del fichero donde almacenaremos los datos. Los siguientes pasos dentro de la máquina de estados, será generar el fichero CSV y en caso de que no se produzca ningún error, se almacenará la cabecera en el fichero CSV, para pasar a la producción como tal.nSe controlará la temperatura del dado, se registrarán los valores de diámetros y temperaturas y se irán almacenando en el fichero CSV. El control del motor del husillo se hará de forma manual desde la visualización online.\\
 
 Una vez que se tiene una idea de cómo va a ser el programa, se desarrolla un diagrama con la máquina de estados.
 
@@ -43,14 +29,10 @@ Una vez que se tiene una idea de cómo va a ser el programa, se desarrolla un di
             \label{fig:plc_estados}
     \end{figure}
 
-
 \subsection{Controlar temperatura extrusor}
 \label{sec:plc_PID}
 
-Para controlar la temperatura del extrusor se va a implementar un regulador PID. Los reguladores del tipo PID, añaden tres acciones de regulación,... BLA BLA BLA BLA BLA BLA\cite{PID}\\
-
-
-Para poder implementar correctamente un regulador PID, será necesario conocer la planta del sistema que queremos regular. En nuestro caso es el sistema de calentamiento del dado, por ello, deberemos modelar primeramente el sistema con el que estamos trabajando.
+Para controlar la temperatura del extrusor se va a implementar un regulador PID. Para poder implementar correctamente un regulador PID, será necesario conocer la planta del sistema que queremos regular. En nuestro caso es el sistema de calentamiento del dado, por ello, deberemos modelar primeramente el sistema con el que estamos trabajando.
     \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\textwidth]{images/PLC/sistema.png}
@@ -209,7 +191,7 @@ En nuestro caso, vamos a trabajar en el rango de intervalo normal, para poder sa
 
     \begin{figure}[H]
             \centering
-            \includegraphics[width=0.75\textwidth]{images/PLC/dac.png}
+            \includegraphics[width=0.75\textwidth]{images/PLC/image.png}
             \caption{Ecuación: $Y=3.6168 \cdot 10^{-4} \cdot X$}
             \label{fig:plc_DAC}
     \end{figure}
@@ -228,3 +210,77 @@ Con este valor, y el calculado en \pageref{fig:sens_regre} somos capaces de leer
             \item{\textbf{OUT:} Valor real de la magnitud medida por el sensor.}
         \end{itemize}
 \end{itemize}
+
+\subsection{Almacenar información registrada}
+\label{sec:plc_SD}
+
+Se elije un nombre de fichero en el que se usa año, mes, día y minuto para identificar la producción, es decir, tendría un formato \textit{YYMMDDmm.CSV}. El formato elegido para almacenar la información es el de valores separados por coma (CSV). El motivo por el cual se elije este formato es debido a su estandarización y que almacena los datos de forma tabular en texto plano. Gracias a esto, podremos abrir el fichero CSV con cualquier editor de texto y otros programas de hojas de cálculo, para el posterior análisis de los datos, que es uno de los objetivos del proyecto. Por lo tanto, el formato CSV es el idóneo para poder trabajar en el futuro con los datos almacenados.\\
+
+En el progama del PLC se genera una cabecera del fichero CSV, que es la primera fila del fichero, en donde indicará la información que contiene cada columna. La información almacenada en el fichero CSV será la siguiente:
+
+\begin{itemize}
+    \item{\textbf{Time Stamp: }Es una secuencia de caracteres en las que se indican hora y fecha de un evento ocurrido. Se almacena con el  formato YY-MM-DD HH:MM:SS. Con esta información podremos tener una trazabilidad del filamento almacenado y en caso de producirse un error, ver el momento concreto del mismo.}
+    \item{\textbf{Temperaturas: }Valores con las temperaturas del dado y el husillo en la zona de alimentación. De esta manera se comprueba que la temperatura no sufre algún cambio drástico durante el proceso, que puede ser causante de un problema en la calidad final del filamento.}
+    \item{\textbf{Diámetros: }Se almacenan los diámetros medidos por el sensor. En este caso se van a poner dos sensores de diámetro para hacer una medición en los dos ejes del filamento.}
+    \item{\textbf{Información varia: }Se puede almacenar cualquier información que nosotros deseemos en un futuro (X e Y).}
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccccc}
+{\bf time}         & {\bf Tmp Husillo} & {\bf Tmp Nozzle} & {\bf Diametro X} & {\bf Diametro Y} \\ \hline
+2015-8-13 11:11:1  & 67.5              & 150.4            & 1.711542         & 1.494436         \\
+2015-8-13 11:11:2  & 67.5              & 150.4            & 1.826241         & 1.517422         \\
+2015-8-13 11:11:4  & 67.5              & 150.5            & 1.918            & 1.528915         \\
+2015-8-13 11:11:5  & 67.4              & 150.5            & 1.94094          & 1.551901         \\
+2015-8-13 11:11:7  & 67.4              & 150.5            & 1.918            & 1.563394         \\
+2015-8-13 11:11:9  & 67.4              & 150.6            & 1.92947          & 1.58638          \\
+2015-8-13 11:11:10 & 67.4              & 150.6            & 1.97535          & 1.712803         \\
+2015-8-13 11:11:12 & 67.4              & 150.6            & 2.021229         & 1.896692        \\
+        -          &    -              & -                & -                & -
+\end{tabular}
+\caption{Muestra de un fichero CSV con datos de producción}
+\label{tab:plc_csv}
+\end{table}
+
+La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor FTP con el que podremos transferir ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, así accederemos a la SD de forma remota, sin tener que sacar la SD del zócalo. Para ello, se usa el servidor FTP que nos facilita la herramienta de ABB\\
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/PLC/servicios_plc.jpg}
+            \caption{Distintos servicios que dispone el PLC}
+            \label{fig:plc_servicios}
+    \end{figure}
+
+En el ordenador, necesitaremos un cliente FTP para conectarnos a la IP del PLC que se encuentra en nuestra misma red y descargaremos el fichero csv para su posterior estudio.
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.95\textwidth]{images/PLC/cliente_ftp.png}
+            \caption{Cliente FTP en ordenador}
+            \label{fig:plc_cliente_ftp}
+    \end{figure}
+
+\subsection{Visualización web de la producción}
+\label{sec:plc_scada}
+
+Para poder visualizar el estado de la producción, se va a usar una herramienta que incorpora de serie el programa de Abb al igual que el servidor FTP que vimos anteriormente. Esta herramienta, provee un servidor de páginas WEB (Ver imagen \ref{fig:plc_servicios}) en la que podremos ver el estado de variables del programa y podremos añadir gráficos, que simulen físicamente la planta. Desde esta visualización web podremos:
+
+\begin{itemize}
+    \item {Ver temperaturas de Husillo y Dado.}
+    \item {Iniciar y parar producción.}
+    \item {Controlar marcha del motor del husillo.}
+    \item {Ver ruta del fichero en el que se almacenará la información.}
+\end{itemize}
+
+
+    \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.95\textwidth]{images/PLC/visu_online.png}
+            \caption{Visualización online del sistema.}
+            \label{fig:plc_visu_web}
+    \end{figure}
+
+Se ha intentado recrear lo máximo posible con la realidad la maqueta del filastruder para que su uso sea lo más sencillo posible.
+
+

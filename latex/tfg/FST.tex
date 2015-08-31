@@ -1,0 +1,72 @@
+\section{Filastruder-sensor diámetro-Tractora}
+\label{sec:FSB}
+
+En una de las pruebas de extrusión de filamento, se va estirando a mano según va saliendo de la filastruder y se comprueba que, traccionando del hilo a una distancia cercana de la boquilla y una vez enfriado, se puede llegar a regular el diámetro final. Por ello, se trata de investigar en esta linea, diseñar un sistema capaz de traccionar el filamento a medida que va saliendo de la boquilla.
+
+	\begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/producciones/Diagram2.png}
+            \caption{Esquema de producción}
+            \label{fig:esquemap_FST}
+    \end{figure}
+
+Con el conocimiento adquirido al diseñar la peletizadora (ver capítulo \fullref{sec:peletizadora}) se diseña una unidad tractora que irá colocada después de la filastruder, la cual, deberá ir traccionando del filamento independientemente del diámetro del mismo. Así mismo, deberemos ser capaces de regular la velocidad de una forma más precisa que como lo hicimos con la peletizadora. El material del que dispondremos será el siguiente.
+
+\begin{itemize}
+	\item{\textbf{Arduino Mega:} Microcontrolador encargado de mover un motor y regular su velocidad.}
+	\item{\textbf{RAMPS:} Placa auxiliar colocada encima del arduino Mega, la cual dispone de un driver A4988 para controlar varios motores paso a paso.}
+	\item{\textbf{Motor paso a paso:} Dispositivo electromagnético, que transforma una serie de impuslos eléctricos en desplazamientos angulares.}
+\end{itemize}
+
+Se vuelve a elegir un motor paso a paso como unidad de tracción, debido a las mismas razones por las que se eligió en la peletizadora.\\
+
+El principio de funcionamiento de un motor paso a paso es sencillo. En el interior del mismo se dispone de dos bobinas giradas 90º entre sí \cite{pasoapaso} las cuales, en función de una secuencia de excitación, generarán campos magnéticos que hará que el rotor del mismo giré un determinado ángulo. Para la realización de la tractora, se usará una ténica denominada de micropasos con la que conseguimos que nuestro motor de 1.8º de giro pueda alcanzazr grados de 0.225º. Para poder controlar el motor con está técnica y conseguir una velocidad de rotación constante, será necesario que el microcontrolador genera una señal cuadrada, en la que dependiendo de la frecuencia de esta señal, el motor girará a una velocidad distinta. El nivel alto de esta señal cuadrada, se la denominará paso. Por cada paso que reciba el motor, girará $1.8º$ dividido el número de micropasos configurados en el driver:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccc}
+{\bf MS1} & {\bf MS2} & {\bf MS3} & {\bf Resolución de micropaso}  \\
+L         & L         & L         & Paso completo (1)              \\
+H         & L         & L         & Medio paso (1/2)               \\
+L         & H         & L         & Un cuarto de paso (1/4)        \\
+H         & H         & L         & Un octavo de paso (1/8)        \\
+H         & H         & H         & Un dieciseisavo de paso (1/16)
+\end{tabular}
+\caption{Resolución del driver en función del micropaso elegido}
+\label{tab:res_drive}
+\end{table}
+
+Para el caso que nos ocupa, elegiremos la configuración de un dieciseisavo de resolución,es decir:
+
+$$ \text{Pasos por vuelta} = \frac{360º}{1.8º \cdot \frac{1}{16}} = 3200 pasos  $$
+
+Por tanto, si quisieramos girar el motor a una velocidad de $1RPM$ tendríamos que da un total de:
+
+$$\frac{1 RPM \cdot 3200 pasos}{60 S} = 53 pasos/s$$
+
+O lo que es lo mismo, un paso cada $18.86 mS$. Esta separación temporal, va inversamente relacionada con la velocidad de giro deseada, cuanta más velocidad de giro queramos, menor será el tiempo entre pasos. Para poder generar el tren de pulsos, se usará una interrupción del mirocontrolador, que se ejecutará cada $10\mu s$ e irá incrementando un contador, el cual, al llegar a un valor máximo determinado por la velocidad de giro, efectuará un escalón. El valor máximo del contador viene dado por la fórmula:
+
+$$ Valor_{Max} = \frac{\text{Separación temporal de ticks}}{\text{Tiempo de interrupción}}$$
+
+En nuestro caso, para girar el motor a una velocidad de 1RPM con una interrupción de $10\mu s$ deberíamos contar el siguiente número:
+
+$$Valor_{Max} = \frac{18.75 mS}{10\mu s} = 1875$$
+
+Por especificación del filastruder, determinamos que la velocidad de tracción deberá ir entre el rango de 1RPM y 3RPM, por tanto, con ayuda de una hoja de cálculo de excel, determinamos los valores máximosa a contar en función de la velocidad de giro.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccc}
+\multicolumn{1}{l}{{\bf RPM}} & \multicolumn{1}{l}{{\bf TICKS/S}} & \multicolumn{1}{l}{{\bf Separacion ticks (s)}} & \multicolumn{1}{l}{{\bf Ticks a contar por ISR}} \\
+0 & -1 & -1 & -1 \\
+1 & 53 & 0,01875 & 1875 \\
+2 & 107 & 0,009375 & 938 \\
+3 & 160 & 0,00625 & 625
+\end{tabular}
+\caption{Valores para controla la velocidad de giro del motor paso a paso}
+\label{tab:valores_paso_paso}
+\end{table}
+
+Por tanto, cuando el contador llegue a los valores máximos establecidos, se generará un pulso, haciendo que el motor avance los grados determinados. A su vez, la velocidad de giro, vendrá dada por el PLC el cual, en función de un tensión de 0 a 5 V hará que el motor giré a una velocidad distinta.
+
+Una vez establecida la arquitectura del software, se pasa a diseñar las piezas necesarias para crear la unidad tractora. Como la vez anterior, usaremos la herramienta Inventor.

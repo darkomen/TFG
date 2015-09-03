@@ -39,7 +39,7 @@ H         & H         & H         & Un dieciseisavo de paso (1/16)
 
 Para el caso que nos ocupa, elegiremos la configuración de un dieciseisavo de resolución,es decir:
 
-$$ \text{Pasos por vuelta} = \frac{360º}{1.8º \cdot \frac{1}{16}} = 3200 pasos  $$
+$$ \text{Pasos por vuelta} = \frac{360º}{1.8º \cdot \frac{1}{16} } = 3200 \text{pasos}  $$
 
 Por tanto, si quisieramos girar el motor a una velocidad de $1RPM$ tendríamos que da un total de:
 
@@ -123,9 +123,102 @@ Por último, para comprobar que el funcionamiento de la tractora es el esperado,
 
 Por tanto, podemos pasar a instalar la tractora en la maqueta.
 
-	\begin{figure}[H]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/tractora/IMG_20150709_130326.jpg}
+    \caption{Montaje final filastruder-tractora-sensor}
+    \label{fig:montaje_final}
+\end{figure}
+
+\subsection{Resultados}
+
+Usando pellets reciclados, se pasa a hacer una producción de filamento, para comprobar que el diseño de la tractora es el correcto. El ensayo que se va a realizar consiste en:
+
+\begin{itemize}
+    \item{Establecer una temperatura de 135ºC en el extrusor.}
+    \item{Llenar la tolva que incluye de serie la extrusora con 42gr de pellets reciclados.}
+    \item{Extruir filamento registrando los datos para su posterior análisis.}
+    \item{Cambiar la velocidad de tracción para comprobar la relación final en el diámetro. Se establecera una velocidad de 1RPM y 3RPM}
+\end{itemize}
+
+Se está alrededor de seis minutos extruyendo filamento, sin embargo, debido a un exceso en el diámetro del filamento, hace que este no entre por el sensor de diámetro y sea necesario parar, sin embargo podemos estudiar los datos obtenidos.
+Tras el ensayo, los resultados obtenidos son los siguientes:
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+               & Diámetro X \\ \hline
+    Medidas    & 203        \\
+    Media (mm) & 1.59       \\
+    Desviación estandar & 0.25\\
+    Min (mm)   & 1.08       \\
+    Max (mm)   & 2.19      
+    \end{tabular}
+    \caption{Datos obtenidos en el ensayo del día 20 de Julio}
+    \label{tab:20007105-dat}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/20072015/graficas.png}
+    \caption{Gráfica con los datos de la producción}
+    \label{fig:2007105-graf}
+\end{figure}
+
+En la gráfica anterior vemos los datos obtenidos del diámetro del eje X. Se ve claramente, que hay una variación muy pronunciada al tener una velocidad de tracción constante, esto es un problema en el diseño de la filastruder ya que, a una velocidad de tracción constante, el diámetro debería serlo también. Durante el ensayo, se ha notado física y acústicamente que la extrusión no es constante, por ello, pensamos que el funcionamiento de la filastruder, que a simple vista parecía correcto, no puede llegar a proporcionarnos los resultados que necesitamos. Se instala un encoder mediante un imán, un sensor de efecto hall y un arduino a la filastruder, para cercionarnos de que la velocidad es constante.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/producciones/20072015/IMG_20150721_110502.jpg}
+    \caption{Encoder instalado en la filastruder.}
+    \label{fig:2007105-enc}
+\end{figure}
+
+Se extruye una cantidad de filamento sin medir el diámetro, tan sólo registrando la velocidad con la que gira el husillo y los datos proporcionados son los siguientes:
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/20072015/RPM_tract.png}
+    \caption{Velocidad de la extrusora.}
+    \label{fig:2007105-grafenc}
+\end{figure}
+
+Vemos claramente, que la velocidad de giro no es constante, variando entre 1 y 2 RPM. El motor que hace girar el husillo está conectado directamente a 12V y no se tienen ningún control sobre él. Además mecánicamente, el motor está conectado al husillo mediante una caja reductora, la cual no podemos cambiar. Para no alargar la duración del proyecto e intentar avanzar en el control se van a tomar las siguientes medidas:
+
+\begin{itemize}
+    \item{Usar una mezcla de granza de PLA natural (70\%) con pellets reciclados de filamento (30\%) (ver imagen \ref{fig:2007105-mezc}). Se usará granza de PLA natural, el cual tiene una forma más redondeada que los pellets reciclados, haciendo más fácil el avance dentro del cañón. Se usa una mezcla con los pellets reciclados, ya que el sensor de diámetro que usamos, no funciona con filamento transparente, por ello, debemos tintar el filamento}
+    \item{Antes de hacer una producción de filamento, la granza de PLA que se vaya a usar, se va a secar en un horno a una temperatura de 80ºC durante, al menos, tres horas antes de la producción. Esto es debido a que si el PLA tiene un alto porcentaje de humedad, hará que la extrusión del material no sea el adecuado, afectando directamente en el acabado final.}
+    \item{Se va a diseñar una tolva de alimentación mayore, para que la capacidad de granza aumente, y se ejerza mayor presión a la entrada del extrusor, para que de ese modo, la alimentación de la granza se lo más constante posible.}
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/20072015/mezcla.jpg}
+    \caption{Mezcla de granza con pellets reciclados.}
+    \label{fig:2007105-mezc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/producciones/20072015/IMG_20150721_121831.jpg}
+        \caption{Tolva impresa}
+        \label{fig:tolva-impresa}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.5\textwidth}
             \centering
-            \includegraphics[width=0.6\textwidth]{images/producciones/tractora/IMG_20150709_130326.jpg}
-            \caption{Montaje final filastruder-tractora-sensor}
-            \label{fig:montaje_final}
-    \end{figure}
+        \includegraphics[width=\linewidth]{images/producciones/20072015/IMG_20150721_121904.jpg}
+        \caption{Tolva montada}
+        \label{fig:tolva-impresa}
+    \end{subfigure}
+    \caption{Diseño y montaje de la tolva.}
+    \label{fig:tolv_montaj}
+\end{figure}
+
+Una vez 

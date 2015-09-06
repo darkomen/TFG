@@ -10,12 +10,12 @@ La fabricación aditiva es una colección de procesos que unen materiales para c
 
 Una de las ventajas de la fabricación aditiva es su rapidez \cite{additivevssubtractive}, dependiendo de la complejidad de la pieza puede suponer un par de horas de fabricación, frente a una jornada completa de trabajo con las máquinas de mecanizado. Por ello, también se conocen a este tipo de máquinas, como máquinas de prototipado rápido.\\
 
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.6\textwidth]{images/aproximacion_am.png}
-            \caption{Aproximación de una pieza con fabricación aditiva. Fuente \cite{additive}}
-            \label{fig:approach_am}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/aproximacion_am.png}
+    \caption{Aproximación de una pieza con fabricación aditiva. Fuente \cite{additive}}
+    \label{fig:approach_am}
+\end{figure}
 
 Antiguamente, cuando sólo las grandes empresas disponían de ordenadores y se quería hacer algún tipo de cálculo numérico o tratamiento de información, era necesario ir a los centros de cálculos con los datos requeridos, para que, después de días o incluso semanas, obtener nuestros resultados y en el mejor de los casos, haber realizado correctamente el ensayo y no tener que volver a repetirlos, si los resultados no eran los deseados, se debería volver a repetir la operación. Con la fabricación de las piezas pasa algo similar. En el caso de que quisiéramos diseñar alguna pieza para cubrir nuestras necesidades, debíamos acudir a empresas que dispusieran de las máquinas necesarias para tratar los materiales, y pasado cierto tiempo, tendríamos la pieza en nuestras manos. Una vez en nuestro poder, deberíamos comprobar que la pieza cumple con nuestras especificaciones y ver que no nos equivocáramos a la hora de tomar alguna medida y saber las tolerancias de la máquina. Gracias a la tecnología aditiva, el tiempo se ha acortado, y como veremos más adelante, a día de hoy, no es necesario acudir a ninguna empresa para poder realizar nuestras propias piezas.\\
 
@@ -87,23 +87,24 @@ Sin embargo la tecnología mas divulgada en la sociedad es la de material extrui
 \section{Fabricación de modelado por deposición fundido}
 La fabricación de modelado por deposición fundido (\textbf{FDM\textregistered} en inglés) es la tecnología aditiva que más se ha popularizado en los últimos años. Aunque estas siglas están registradas por la empresa Stratasys Inc. ya que su co-fundador,  \textbf{S. Scott Crump} fue quien desarrollo está tecnología, y poseedor de la patente en la que se detalla su funcionamiento \cite{crump1992apparatus}. Por ello, se usa el término equivalente, fabricación con filamento fundido (\textbf{FFF}).\\  
     
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.4\textwidth]{images/FDM_by_Zureks.png}
-            \caption{Principio de la fabricación con filamento fundido. Fuente \cite{fundamentoFDM}}
-            \label{fig:impr_fdm}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/FDM_by_Zureks.png}
+    \caption{Principio de la fabricación con filamento fundido. Fuente \cite{fundamentoFDM}}
+    \label{fig:impr_fdm}
+\end{figure}
 
 En la imagen \ref{fig:impr_fdm} podemos ver en detalle el principio de funcionamiento de este tipo de impresoras. La máquina dispone de un elemento fusor (1), que está por encima de la temperatura de transición vítrea del polímero, haciendo que entre en un estado viscoso y maleable. El fusor deposita el polímero (2) en distintos niveles sobre una superficie plana (3) a la vez que se desplaza en los tres ejes cartesianos (X,Y,Z), de este modo, la pieza es creada con el filamento que solidifica al salir del fusor.\\
 
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.6\textwidth]{images/estado.arte/US5340433-2.png}
-            \caption{Esquema de la patente de S. Scott Crump. Fuente  \cite{crump1992apparatus}}
-            \label{fig:impr_patente_sistema}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/estado.arte/US5340433-2.png}
+    \caption{Esquema de la patente de S. Scott Crump. Fuente  \cite{crump1992apparatus}}
+    \label{fig:impr_patente_sistema}
+\end{figure}
 
 Este sistema de fabricación, tiene tres pasos definidos:
+
 \begin{itemize}
     \item \textbf{Pre-procesado:} Un software especial lamina en capas y calcula las trayectorias necesarias para crear el objeto que queremos fabricar.
     \item \textbf{Producción:} La impresora 3D calienta el termoplástico hasta alcanzar un estado viscoso y maleable y lo va depositando en capas muy finas siguiendo las trayectorias anteriormente calculadas por el software. En los sitios en los que es necesario un soporte, la impresora pone material que posteriormente será quitado de la pieza final.
@@ -112,13 +113,15 @@ Este sistema de fabricación, tiene tres pasos definidos:
 
 El modelo en 3D que se quiera construir, primero deberá ser diseñado con un programa CAD (Computer Aided Design) el cual, será exportado en un fichero con formato STL ( StereoLithography). Un fichero STL es una representación triangular de una geometría en 3D. La superficie, es dividida en una serie de triángulos orientados denominadas caras. Cada cara, es definida por una normal y tres puntos\cite{stl}. Sin embargo, este fichero no puede ser interpretado por una máquina FFF ya que lo único que entiende son coordenadas. Por ello, el fichero STL deberá ser tratado por un programa laminador que divida el modelo 3D en distintas capas (Ver imagen \ref{fig:detalle_capas}) y genere las trayectorias necesarias para realizar cada capa. Este programa, almacenará las trayectorias en un fichero GCODE, que sí se podrá mandar a la impresora.
 
-    \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.4\textwidth]{images/capas_fdm.png}
-            \caption{Detalle  de un extrusor realizando una pieza. Fuente  \cite{crump1992apparatus}}
-            \label{fig:detalle_capas}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/capas_fdm.png}
+    \caption{Detalle  de un extrusor realizando una pieza. Fuente  \cite{crump1992apparatus}}
+    \label{fig:detalle_capas}
+\end{figure}
+
 Según explica Stratasys en su página web \cite{FDMTechnology}, la tecnología FFF tiene varios beneficios que la hacen idónea para fabricar:
+
 \begin{itemize}
     \item La tecnología es limpia y fácil de usar por el usuario.
     \item Los termoplásticos usados son estables mecánicamente y con el medio ambiente.
@@ -128,10 +131,10 @@ Según explica Stratasys en su página web \cite{FDMTechnology}, la tecnología 
 Según podemos leer en la patente S. Scott Crump \cite{crump1992apparatus} una impresora FDM es:
 
 \begin{quotation}
-\emph{
-Aparato que incorpora un cabezal móvil dispensador (provisto de un suministro de material que solidifica a una temperatura predeterminada) y una base, los cuales se mueven relativamente entre sí a lo largo de los ejes “X”, “Y” y “Z” siguiendo un patrón predeterminado para crear objetos tridimensionales mediante la deposición controlada de material descargado desde el cabezal móvil sobre la base. El aparato está preferiblemente controlado por ordenador en un proceso que emplea software de diseño y fabricación asistido por ordenador (CAD-CAM) para generar señales de control y accionar el movimiento controlado del cabezal y la base mientras el material se está depositando.}\\
+    \emph{
+    Aparato que incorpora un cabezal móvil dispensador (provisto de un suministro de material que solidifica a una temperatura predeterminada) y una base, los cuales se mueven relativamente entre sí a lo largo de los ejes “X”, “Y” y “Z” siguiendo un patrón predeterminado para crear objetos tridimensionales mediante la deposición controlada de material descargado desde el cabezal móvil sobre la base. El aparato está preferiblemente controlado por ordenador en un proceso que emplea software de diseño y fabricación asistido por ordenador (CAD-CAM) para generar señales de control y accionar el movimiento controlado del cabezal y la base mientras el material se está depositando.}\\
 
-\emph{La creación de objetos tridimensionales es posible mediante la deposición repetida de  capas de material de solidificación hasta alcanzar la forma deseada. Son susceptibles de uso materiales que se adhieran a la capa anterior con una unión adecuada tras la solidificación; tales como: ceras autoendurecibles, resinas termoplásticas, metales fundidos, epoxis bicomponentes,espumas y vidrios. La base de cada capa se define por la capa anterior, y el grosor de capa se define y controla mediante la altura a la que la punta del cabezal móvil está situada sobre la capa precedente}
+    \emph{La creación de objetos tridimensionales es posible mediante la deposición repetida de  capas de material de solidificación hasta alcanzar la forma deseada. Son susceptibles de uso materiales que se adhieran a la capa anterior con una unión adecuada tras la solidificación; tales como: ceras autoendurecibles, resinas termoplásticas, metales fundidos, epoxis bicomponentes,espumas y vidrios. La base de cada capa se define por la capa anterior, y el grosor de capa se define y controla mediante la altura a la que la punta del cabezal móvil está situada sobre la capa precedente}
 
 \end{quotation}
 
@@ -156,10 +159,10 @@ Por ello, el método de fabricación del consumible es la extrusión, ya que es 
 La extrusión de polímeros es un proceso industrial de fabricación, en el cual se hace pasar por un troquel (también denominado dado) la materia prima previamente prensada y calentada. El proceso de prensado y calentamiento, se hace en una cámara, que contiene un tornillo sin fin el cual gira y es alimentado por una tolva. Al hacer pasar el polímero por el troquel, se consigue un objeto con un perfil constante y una longitud variable, pudiendo llegar a ser de centímetros, o en algunos casos de metros.
 
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\textwidth]{images/extrusor.png}
-        \caption{Esquema básico de una extrusora. Fuente \cite{disenoextrusor}}
-        \label{fig:estado_extrusora}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/extrusor.png}
+    \caption{Esquema básico de una extrusora. Fuente \cite{disenoextrusor}}
+    \label{fig:estado_extrusora}
 \end{figure}
 
 Las principales variables de control que influyen en el acabado del producto final, son la velocidad de extrusión y la temperatura del cilindro hidráulico afectando estos en la calidad final del producto.\\
@@ -182,47 +185,52 @@ En la imagen \ref{fig:estado_extrusora} podemos observar los distintos elementos
     Su diseño es muy importante, y en función del tipo de material que esté suministrando deberá ser de una manera u otra, debido a que el material puede llegar a compactarse en el fondo y no pasar a la extrusora. Algunos modelos de tolva incluyen sistemas de vibración para ayudar a que el material caiga. En la mayoría de los casos y dependiendo del material con el que estemos trabajando, será conveniente que incluya un sistema de secado para eliminar la humedad, puesto que dependiendo de la materia prima puede afectar a la hora de trabajar con el. Por ejemplo, con el uso del PLA es obligatorio su secado antes de la producción.
     \item \textbf{Cilindro hidráulico:} Constituye el cuerpo principal de la extrusora y en su interior está el husillo. Es en este cilindro donde se encuentran las resistencias electricas que aportan la energía calorífica necesaria para fundir el material. La temperatura está registrada a lo largo de las distintas zonas del cilindro, para poder tener un control sobre la temperatura de fusión del material. El cilindro debe estar fabricado con materiales especiales de tal manera, que tenga una buena transferencia de calor y debe ser más duro que el material que se está extruyendo, para lograr una larga duración.
     \item \textbf{Husillo:} Es el elemento más importante de la extrusora y el que determina el grado de calidad con el que la pieza saldrá de la extrusora.\\
-            \begin{figure}[H]
-                      \centering
-                        \begin{subfigure}[b]{0.3\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{images/husillo.jpg}
-                            \caption{Forma de un husillo. Fuente \cite{detallehusillo}}
-                            \label{fig:estado_husillo1}
-                        \end{subfigure}
-                        ~
-                        \begin{subfigure}[b]{0.3\textwidth}
-                                \centering
-                            \includegraphics[width=\textwidth]{images/husillo2.jpg}
-                            \caption{Parámetros de un husillo. Fuente  \cite{parametroshusillos}}
-                            \label{fig:estado_husillo2}
-                        \end{subfigure}
-                        \caption{Características de un husillo.}
-                        \label{fig:estado_husillo}
-            \end{figure}
-    Como se aprecia en la figura \ref{fig:estado_husillo1} tenemos tres zonas claramente definidas:\\
-    \begin{itemize}
-            \item \textbf{Alimentación:} Esta zona, es la encargada de transportar la granza de la tolva al interior del husillo. En la figura podemos ver como los filetes están muy separados del centro del husillo, con el fin de transportar la mayor cantidad posible de material.
-            \item \textbf{Compresión:} A medida que entramos en la zona de compresión, los filetes van disminuyendo y se acercan al husillo, con el fin de fundir y homogeneizar el material. Aquí se expulsa el posible aire residual que quede entre la granza.
-            \item \textbf{Dosificación:} Conduce el material compactado hacia el dado de la extrusora. Esta zona debe garantizar que el material sale con una temperatura constante y homogéneo.
-    \end{itemize}
-    \item \textbf{Dado:} En función del dado que se coloque al final de la extrusora, se conseguirá un perfil distinto, en el caso que nos ocupa, el dado tiene un círculo para conseguir la forma de cilindro que deseamos.
-    \begin{figure}[H]
+        \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\textwidth]{images/Extruded_aluminium_section.jpg}
-            \caption{Distintos ejemplos de extrusión. Fuente \cite{ejemplosextrusion}}
-            \label{fig:estado_ejemplos}
-    \end{figure}
+            \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{images/husillo.jpg}
+                \caption{Forma de un husillo. Fuente \cite{detallehusillo}}
+                \label{fig:estado_husillo1}
+            \end{subfigure}
+            ~
+            \begin{subfigure}[b]{0.3\textwidth}
+                    \centering
+                \includegraphics[width=\textwidth]{images/husillo2.jpg}
+                \caption{Parámetros de un husillo. Fuente  \cite{parametroshusillos}}
+                \label{fig:estado_husillo2}
+            \end{subfigure}
+            \caption{Características de un husillo.}
+            \label{fig:estado_husillo}
+        \end{figure}
+
+    Como se aprecia en la figura \ref{fig:estado_husillo1} tenemos tres zonas claramente definidas:\\
+
+        \begin{itemize}
+                \item \textbf{Alimentación:} Esta zona, es la encargada de transportar la granza de la tolva al interior del husillo. En la figura podemos ver como los filetes están muy separados del centro del husillo, con el fin de transportar la mayor cantidad posible de material.
+                \item \textbf{Compresión:} A medida que entramos en la zona de compresión, los filetes van disminuyendo y se acercan al husillo, con el fin de fundir y homogeneizar el material. Aquí se expulsa el posible aire residual que quede entre la granza.
+                \item \textbf{Dosificación:} Conduce el material compactado hacia el dado de la extrusora. Esta zona debe garantizar que el material sale con una temperatura constante y homogéneo.
+        \end{itemize}
+
+    \item \textbf{Dado:} En función del dado que se coloque al final de la extrusora, se conseguirá un perfil distinto, en el caso que nos ocupa, el dado tiene un círculo para conseguir la forma de cilindro que deseamos.
+
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\textwidth]{images/Extruded_aluminium_section.jpg}
+                \caption{Distintos ejemplos de extrusión. Fuente \cite{ejemplosextrusion}}
+                \label{fig:estado_ejemplos}
+        \end{figure}
+
 \end{itemize}
 Hasta ahora, hemos visto como funciona la fabricación aditiva, y los componentes más importantes que lo forman. También la evolución a lo largo de los años de las máquinas que trabajan con esta fabricación. Ahora, vamos a ver como ha sido posible que a día de hoy, podamos tener impresoras 3D a un precio mucho más bajo y competitivo que una impresora profesional.\\
 \subsection{Reprap}
 El proyecto Reprap lo inicia Adrian Bowyer y su equipo en 2006 desde la Universidad de Bath \cite{jones2011reprap}. Nace con la idea de facilitar toda la información necesaria para crear y distribuir libremente una máquina de prototipado rápido. 
 
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.6\textwidth]{images/darwin.jpg}
-        \caption{Darwin,primera impresora 3D del tipo Reprap}
-        \label{fig:estado_darwin}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/darwin.jpg}
+    \caption{Darwin,primera impresora 3D del tipo Reprap}
+    \label{fig:estado_darwin}
 \end{figure}
 
 Toda impresora Reprap, es un robot que usa fabricación con filamento fundido para hacer componentes de ingeniería y otros productos desde una variedad de polímeros termoplástico. Reprap es diseñado para  que una máquina pueda ser capaz de imprimir un número importante de las piezas que posé. El resto de piezas, serán piezas fáciles de conseguir en cualquier parte del mundo. De esta manera, se define el término \'autoreplicante\'. Toda máquina hecha dentro del proyecto Reprap será libre y open-source así, cualquiera podrá hacerse el número de máquinas que desee, ya sea desde su propia máquina Reprap, como de cualquier otra máquina.\\
@@ -241,19 +249,19 @@ en la segunda impresora del proyecto Reprap, la mendel. Como se mencionó anteri
 \end{itemize}
 
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/prusa_i2.jpg}
-        \caption{Impresora Reprap Prusa Mendel I2. Fuente \cite{prusai2}}
-        \label{fig:estado_i2}
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/prusa_i2.jpg}
+    \caption{Impresora Reprap Prusa Mendel I2. Fuente \cite{prusai2}}
+    \label{fig:estado_i2}
 \end{figure}
 
 Tras varios años de mejoras e iteracciones en el diseño, Josef liberó en 2012 la prusa I3. La cual introducía un nuevo diseño en la estructura, pasando de usar varillas roscadas a un marco de aluminio que sostenía todo el peso de la impresora, dándole estabilidad y robustez. Para muchas personas, fue un paso atrás en la idea originaría del proyecto Reprap ya que se intentaba conseguir que la impresora fuera capaz de imprimir al menos el 90\% de sus piezas.
 
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{images/prusa_i3.png}
-        \caption{Impresora Reprap Prusa Mendel I3}
-        \label{fig:estado_i3}
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/prusa_i3.png}
+    \caption{Impresora Reprap Prusa Mendel I3}
+    \label{fig:estado_i3}
 \end{figure}
 
 Pero la facilidad de montaje y que el coste por incluir un marco no incrementaba demasiado el precio final, ha hecho posible que la prusa I3 sea a día de hoy la impresora Reprap más extendida.
@@ -262,12 +270,8 @@ Pero la facilidad de montaje y que el coste por incluir un marco no incrementaba
 En Febrero de 2009, Adrian Bowyer impartió una conferencia en Madrid, en el MediaLab Prado, a esa conferencia, asístió Juan Gonzalez Gomez, este era el comienzo de Repra en España. Como el propio Juan dice en su web\cite{juan1}:
 
 \begin{quotation}
-\emph{
-"He estado siguiendo el proyecto reprap desde hace varios años, pero sólo era una mera
-curiosidad. Ahora que lo he visto de cerca y he comprobado cómo son las piezas que se
-pueden fabricar de forma casera, estoy impactado. Estuve durante toda la charla con ese 
-presentimiento de que estábamos al comienzo de algo grande. Es la semilla de un futuro
-completamente revolucionario”}
+    \emph{
+    "He estado siguiendo el proyecto reprap desde hace varios años, pero sólo era una mera curiosidad. Ahora que lo he visto de cerca y he comprobado cómo son las piezas que se pueden fabricar de forma casera, estoy impactado. Estuve durante toda la charla con ese presentimiento de que estábamos al comienzo de algo grande. Es la semilla de un futuro completamente revolucionario”}
 \end{quotation}
 
 Desde ese momento, Juan empezó a investigar sobre las impresoras 3D, comprando su propia impresora 3D\cite{juanR1} y empezando a imprimir los primeros Printbot: Robots impresos en 3D, facilitando así el prototipado rápido. Debido a que la impresora que tenía no era muy fiable, pensó en la posibilidad de hacerse su propia impresora Reprap.\\
@@ -279,23 +283,23 @@ Juan comenzó a trabajar en la construcción de su primera impresora que fue doc
 En 2013, Juan Gonzalez y Alberto Valero entraron a trabajar en el departamento de innovación y robótica de BQ para realizar impresoras 3D. A día de hoy, BQ comercializa dos modelos de impresoras 3D: Witbox una impresora 3D ya hecha, pero que es 100\% libre, toda la documentación de como está fabricada están disponibles en su web; y  la prusa Hephestos, una impresora derivada de la Prusa I3 en formato DIY, para que el usuario final sea quien realice el montaje.\\
 
 \begin{figure}[H]
-                      \centering
-                        \begin{subfigure}[b]{0.3\textwidth}
-                            \centering
-                            \includegraphics[width=\linewidth]{images/Witbox.jpg}
-                            \caption{Witbox}
-                            \label{fig:estado_witbox}
-                        \end{subfigure}
-                        ~
-                        \begin{subfigure}[b]{0.3\textwidth}
-                                \centering
-                            \includegraphics[width=\linewidth]{images/190px-HEPHESTOS.png}
-                            \caption{Hephestos}
-                            \label{fig:estado_hephestos}
-                        \end{subfigure}
-                        \caption{Impresoras distribuidas por bq. Fuente \cite{bq}.}
-                        \label{fig:estado_impresoras_bq}
-            \end{figure}
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Witbox.jpg}
+        \caption{Witbox}
+        \label{fig:estado_witbox}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.3\textwidth}
+            \centering
+        \includegraphics[width=\linewidth]{images/190px-HEPHESTOS.png}
+        \caption{Hephestos}
+        \label{fig:estado_hephestos}
+    \end{subfigure}
+    \caption{Impresoras distribuidas por bq. Fuente \cite{bq}.}
+    \label{fig:estado_impresoras_bq}
+\end{figure}
 
 A día de hoy, BQ también distribuye su propio filamento el cual tiene las siguientes características:\\
 \begin{itemize}
@@ -304,11 +308,12 @@ A día de hoy, BQ también distribuye su propio filamento el cual tiene las sigu
     \item \textbf{Temperaturas de extrusión} 195-220 ºC.
     \item \textbf{Peso:} 1Kg.
 \end{itemize}
+
 \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\textwidth]{images/filamento_bq.png}
-        \caption{Distintos filamentos de BQ. Fuente \cite{bq}}
-        \label{fig:estado_filamento}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/filamento_bq.png}
+    \caption{Distintos filamentos de BQ. Fuente \cite{bq}}
+    \label{fig:estado_filamento}
 \end{figure}
 La fabricación es subcontratada a otra empresa, la cual se encarga de realizar la extrusión del filamento, su bobinado y empaquetado final. Aunque a día de hoy el filamento de BQ es de gran calidad, el proceso de fabricación está en constante mejora y desde BQ se trabaja para que la calidad del filamento y sobre todo el índice de producción del mismo, sea alto.\\
 

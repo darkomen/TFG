@@ -31,9 +31,8 @@ Una vez realiado el programa, se van a realizar varios ensayos con distintos par
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
-	\item{Hora de inicio: 14:27}
-	\item{Hora final : 15:08}
-	\item{Filamento extruido: 537cm}
+	\item{Duración de experimento: 38 min}
+	\item{Filamento extruido: 537 cm}
 	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
 	\item{Mezcla secada en horno 4 horas antes del ensayo.}
 	\item{$T: 150ºC$}
@@ -66,14 +65,14 @@ Con el gráfico de cajas, podemos ver que la distribución de los datos no es de
     \centering
     \includegraphics[width=0.99\textwidth]{images/producciones/11082015/output_9_1.png}
     \caption{Datos graficados del ensayo 1 con regulador experto}
-    \label{fig:reg_graf}
+    \label{fig:reg_graf1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/producciones/11082015/output_10_1.png}
     \caption{Diagrama de cajas del ensayo 1 con regulador experto}
-    \label{fig:reg_cajas}
+    \label{fig:reg_cajas1}
 \end{figure}
 
 Como segunda aproximación que vamos a realizar será la de hacer mayores incrementos al subir la velocidad en los tramos que el diámetro se encuentre entre $1.80 mm$ y $1.75 mm$ haremos incrementos de velocidad mayor.
@@ -83,9 +82,10 @@ Como segunda aproximación que vamos a realizar será la de hacer mayores increm
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
-	\item{Hora de inicio: 11:05}
-	\item{Hora final : 11:35}
+	\item{Duración de experimento: 30 min}
 	\item{Filamento extruido: 435cm}
+	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
+	\item{Mezcla secada en horno 4 horas antes del ensayo.}
 	\item{$T: 150ºC$}
 	\item{$V_{min} tractora: 1.5 mm/s$}
 	\item{$V_{max} tractora: 3.4 mm/s$}
@@ -107,7 +107,7 @@ Los resultados obtenidos son los siguientes:
 		Máximo (mm)         & 2.45      
 	\end{tabular}
 	\caption{Datos obtenidos en el ensayo 2}
-	\label{tab:resl_ens1}
+	\label{tab:resl_ens2}
 \end{table}
 
 Con los cambios realizados, los datos ahora son algo más estables, y hemos conseguido aumentar la media del filamento a $1.74 mm$ estando dentro del margen de producción, sin embargo, los límites superior e inferior no son los adecuados, alejándose demasiado de lo deseado. Sin embargo en este caso, una gran parte del filamento podría llegar a ser re-aprovechado para imprimir.
@@ -133,9 +133,10 @@ Como tercera aproximación, vamos a modificar los incrementos de velocidades en 
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
-	\item{Hora de inicio: 12:00}
-	\item{Hora final : 12:30}
+	\item{Duración de experimento: 30min}
 	\item{Filamento extruido: 425cm}
+	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
+	\item{Mezcla secada en horno 4 horas antes del ensayo.}
 	\item{$T: 150ºC$}
 	\item{$V_{min} tractora: 1.5 mm/s$}
 	\item{$V_{max} tractora: 3.4 mm/s$}
@@ -156,12 +157,11 @@ Los resultados obtenidos son los siguientes:
 		Mínimo (mm)         & 0.98       \\
 		Máximo (mm)         & 2.60      
 	\end{tabular}
-	\caption{Datos obtenidos en el ensayo 2}
-	\label{tab:resl_ens1}
+	\caption{Datos obtenidos en el ensayo 3}
+	\label{tab:resl_ens3}
 \end{table}
 
 Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir la desviación estandar, sin embargo, la media del filamento y de la velocidad de tracción ha disminuido también. Por lo tanto, los cambios realizados no han sido satisfactorio
-
 
 \begin{figure}[H]
     \centering
@@ -177,6 +177,208 @@ Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir 
     \label{fig:reg_cajas3}
 \end{figure}
 
-Como cuarta  aproximación, vamos a  modificar los incrementos en los que el diámetro se encuentra entre $1.70 mm$ y $1.80 mm$, en sentido de subida.En el sentido de bajada se mantendrá con incrementos de +1.\\
+Como cuarta  aproximación, vamos a  modificar los incrementos en los que el diámetro se encuentra entre $1.70 mm$ y $1.80 mm$, en sentido de subida. En el sentido de bajada se mantendrá con incrementos de +1.\\
 
 Se ha detectado también que el eje de giro de la tractora está algo suelto. Se va a apretar para el siguiente ensayo.\\
+
+\subsection{Ensayo 4}
+
+Los datos con los que se realizaron el experimento fueron:
+
+\begin{itemize}
+	\item{Duración de experimento: 30min}
+	\item{Filamento extruido: 447cm}
+	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
+	\item{Mezcla secada en horno 4 horas antes del ensayo.}
+	\item{$T: 150ºC$}
+	\item{$V_{min} tractora: 1.5 mm/s$}
+	\item{$V_{max} tractora: 3.4 mm/s$}
+	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas.}
+\end{itemize}
+
+ Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se volverá a tener una incremento de velocidad de +1.\\
+
+Los resultados obtenidos son los siguientes:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{cc}
+		                    & Diámetro X \\ \hline
+		Medidas             & 1125      \\
+		Media (mm)          & 1.71       \\
+		Desviación estandar & 0.23       \\
+		Mínimo (mm)         & 1.01       \\
+		Máximo (mm)         & 2.30      
+	\end{tabular}
+	\caption{Datos obtenidos en el ensayo 4}
+	\label{tab:resl_ens4}
+\end{table}
+
+Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir la desviación estandar, sin embargo, la media del filamento y de la velocidad de tracción ha disminuido también. Por lo tanto, los cambios realizados no han sido satisfactorio
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/13082015/output_9_e1.png}
+    \caption{Datos graficados del ensayo 4 con regulador experto}
+    \label{fig:reg_graf4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/13082015/output_10_e1.png}
+    \caption{Diagrama de cajas del ensayo 4 con regulador experto}
+    \label{fig:reg_cajas4}
+\end{figure}
+
+Como quinta  aproximación, vamos a  modificar los rangos de velocidades de la tractora. Vamos a pasar a unas velocidades de $1.5RPM$ a $5.3RPM$ \\
+
+\subsection{Ensayo 5}
+
+Los datos con los que se realizaron el experimento fueron:
+
+\begin{itemize}
+	\item{Duración de experimento: 20min}
+	\item{Filamento extruido: 314cm}
+	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
+	\item{Mezcla secada en horno 4 horas antes del ensayo.}
+	\item{$T: 150ºC$}
+	\item{$V_{min} tractora: 1.5 mm/s$}
+	\item{$V_{max} tractora: 5.3 mm/s$}
+	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas.}
+\end{itemize}
+
+Este experimento sólo dura 20min, debido a que durante la realización del mismo, se percibe que no aporta ninguna mejora, añadiendo más inestabilidad a la medidas.\\
+
+Los resultados obtenidos son los siguientes:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{cc}
+		                    & Diámetro X \\ \hline
+		Medidas             & 750      \\
+		Media (mm)          & 1.43       \\
+		Desviación estandar & 0.36       \\
+		Mínimo (mm)         & 0.00       \\
+		Máximo (mm)         & 2.31      
+	\end{tabular}
+	\caption{Datos obtenidos en el ensayo 5}
+	\label{tab:resl_ens5}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/13082015/output_9_e2.png}
+    \caption{Datos graficados del ensayo 5 con regulador experto}
+    \label{fig:reg_graf5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/13082015/output_10_e2.png}
+    \caption{Diagrama de cajas del ensayo 5 con regulador experto}
+    \label{fig:reg_cajas5}
+\end{figure}
+
+Aumentando la velocidad se ha conseguido que disminuya el valor máximo, sin embargo ha disminuido el valor mínimo. Para la siguiente iteracción, se va a volver a las velocidades de $1.5RPM$ - $3.4RPM$ y se van a añadir más reglas con unos incrementos de velocidades menores, para evitar saturar la velocidad de traccción tanto a nivel alto como nivel bajo.
+
+\subsection{Ensayo 6}
+
+Los datos con los que se realizaron el experimento fueron:
+
+\begin{itemize}
+	\item{Duración de experimento: 30min}
+	\item{Filamento extruido: 453cm}
+	\item{Granza de PLA mezcla: 70\% granza, 30\% pellets.}
+	\item{Mezcla secada en horno 4 horas antes del ensayo.}
+	\item{$T: 150ºC$}
+	\item{$V_{min} tractora: 1.5 mm/s$}
+	\item{$V_{max} tractora: 3.4 mm/s$}
+	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas.}
+\end{itemize}
+
+ Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se tendrá una incremento de velocidad de +1.\\
+
+Los resultados obtenidos son los siguientes:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{cc}
+		                    & Diámetro X \\ \hline
+		Medidas             & 1087      \\
+		Media (mm)          & 1.71       \\
+		Desviación estandar & 0.26       \\
+		Mínimo (mm)         & 1.05       \\
+		Máximo (mm)         & 2.44      
+	\end{tabular}
+	\caption{Datos obtenidos en el ensayo 6}
+	\label{tab:resl_ens6}
+\end{table}
+
+Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir la desviación estandar, sin embargo, la media del filamento y de la velocidad de tracción ha disminuido también. Por lo tanto, los cambios realizados no han sido satisfactorio
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/13082015/output_9_e3.png}
+    \caption{Datos graficados del ensayo 6 con regulador experto}
+    \label{fig:reg_graf6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/13082015/output_10_e3.png}
+    \caption{Diagrama de cajas del ensayo 6 con regulador experto}
+    \label{fig:reg_cajas6}
+\end{figure}
+
+\subsection{Conclusiones}
+
+Después de realizar los seis experimentos, estos son los resultados en cada uno de ellos.\\
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+		                    &Lazo Abierto     & Ensayo 1 & Ensayo 2 & Ensayo 3 & Ensayo 4 & Ensayo 5 & Ensayo 6 \\ \hline
+		Medidas             &     203         & 1526     & 1114     & 1124     & 1125     & 750      & 1087     \\
+		Media (mm)          &	1.59		 & 1.72     & 1.74     & 1.66     & 1.71     & 1.43     & 1.71     \\
+		Desviación estandar &	0.25		 & 0.29     & 0.26     & 0.24     & 0.23     & 0.36     & 0.26     \\
+		min(mm)             &	1.08		 & 1.20     & 1.02     & 0.98     & 1.01     & 0        & 1.05     \\
+		max(mm)             &	2.19		 & 2.56     & 2.45     & 2.60     & 2.30     & 2.31     & 2.44    
+	\end{tabular}
+	\caption{Tabla comparativa de los resultados obtenidos}
+	\label{tab:compara_results}
+\end{table}
+
+
+Como podemos comprobar, hemos conseguido tener un diámetro, cuyo valor medio está dentro de los márgenes de teolerancia, sin embargo, los valores máximos y mínimos no cumplen los requisitos. Esto es debido a que el filamento no sale de manera constante de la extrusora y por ello, el control del mismo, se hace más complicado si cabe. Sin embaego, hemos podido comprobar como el regulador que hemos implementado aplica una cierta mejora respecto al extrusor en lazo abierto.\\
+
+Tomando como los datos obtenidos en el ensayo 4, como unos válidos para producción, vamos a pasar a compararlos con los datos obtenidos de dos fabricantes distintos de filamento, para ver posibles similitudes entre ellos.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ccccccc}
+		                    & BQ & FormFutura & Filastruder \\ \hline
+		Medidas             & 291     &291    & 291      \\
+		Media (mm)          & 1.75     & 1.70     & 1.74      \\
+		Desviación estandar & 0.01     & 0.05     & 0.21      \\
+		min(mm)             & 1.67     & 1.64     & 1.01      \\
+		max(mm)             & 1.77     & 1.71     & 2.14     
+	\end{tabular}
+	\caption{Tabla comparativa de los resultados obtenidos}
+	\label{tab:compara_results}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{images/producciones/conclusiones/output_8_1.png}
+    \caption{Comparativa filamentos distintos fabricantes}
+    \label{fig:concl_graf5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/producciones/conclusiones/output_9_1.png}
+    \caption{Diagrama de cajas con diámetros de distintos fabricantes}
+    \label{fig:concl_cajas5}
+\end{figure}
+
+Como podemos observar en los datos, el diámetro de los filamentos que proporcionan empresas como bq y formfutura, tienen unos valores mucho más estables que los nuestros. Lo cual es normal debido a la maquinaría y condiciones de trabajo que se han realizado en los experimentos. No obstante, teniendo en cuenta el material con el que se han realizado todos los ensayos podemos afirmar que el regulador implementado supone una mejorar en el diámetro final del filamento.

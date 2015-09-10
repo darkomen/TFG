@@ -1,42 +1,71 @@
-\chapter{Introducción}
-\label{introduccion}
+\chapter{Introducción y objetivos}
+\label{cap:introduccion}
 
-En la actualidad se disponen de dos líneas de extrusión encargadas de la producción del filamento de PLA (Poliácido láctico) que vende y distribuye la empresa bq. Este filamento, es usado en la actualidad como consumible para las impresoras 3D.\\
+En la actualidad, la empresa BQ se ha especializado en fabricar y distribuir impresoras 3D junto con sus consumibles. En 2013, se creó un departamento de Innovación y Desarrollo, encabezado por Juan Gonzalez y Alberto Valero. En ese comienzo se distribuye material relacionado con las impresoras 3D para que cualquier persona pueda hacerse una impresora 3D. Este material no es fabricado por BQ directamente, se hace la tarea distribuidor.\\
 
-Cada línea de extrusión, está formada por los siguientes elementos:
-
-\begin{itemize}
-    \item \textbf{Extrusora:} Es la encargada de convertir la matería prima, que es introducida en forma de granza, a un hilo continuo denominado filamento. La granza son pequeños cilindros de PLA que son convertidos en filamento al salir de la extrusora.( Ver imagen \ref{fig:Pellets_PLA})\\
-    En la instalación sobre la que vamos a implementar el desarrollo contenido en este proyecto, la forma final es cilíndrica. Aunque existen multitud de modelos de boquilla para extruir el material con disintas formas. (Ver imagen \ref{fig:estado_ejemplos})
-    \item \textbf{Enfriaminento por inmersión:} 
-    A la salida de la extrusora se coloca una bañera de enfriamiento que, como su propio nombre indica, se encarga de enfriar el material de forma gradual
-    Se usa una 'bañera' llena de agua con una temperatura controlada para lograr el enfriamiento del filamento según salga de la extrusora.
-    Es un método habitual en este tipo de tecnología de fabricación debido a las altas velocidades de producción que podemos llegar a adquirir.
-        \begin{figure}[H]
-        	\centering
-        	\includegraphics[width=0.6\textwidth]{images/enfriamiento.png}
-        	\caption{Ejemplo de bañera usada en enfriamiento por inmersion}
-        	\label{fig:intro_bañera}
-    	\end{figure}
-    \item \textbf{Unidad tractora:} mediante la que se hace avanzar el filamento desde la salida de la extrusora hasta la entrada de la bobinadora. Siendo responsable del adelgazamiento del filamento, que aún se encuentra templado en la bañera de refrigeración.
-    \item \textbf{Unidad de almacenamiento:} al tratarse de un proceso continuo es necesario un sistema que actue como buffer de filamento mientras se realiza el cambio de carrete en la bobinadora.
-    \item \textbf{Bobinadora:} Es la encargada de enrollar el filamento en bobinas para su posterior distribución. Estás bobinas también son las usadas normalmente en la impresión 3D, aunque existe algún intento de estandarización al respecto, cada fabricante tiene su carrete. Y no todos son compatibles entre si. En esta parte de la instalación, es donde se tiene un control del diámetro final que adquiere el filamento, ya que es la última parte antes de su almacenaje.
-        \begin{figure}[H]
-        	\centering
-        	\includegraphics[width=0.4\textwidth]{images/carretes.png}
-        	\caption{Carrete con filamento bobinado}
-        	\label{fig:intro_carrete}
-    	\end{figure}
-\end{itemize}
-
-En la línea de fabricación existente la unidad tractora, la de almacenamiento y la bobinadora están integradas en una única máquina. En la actualidad el sistema es completamente funcional. Aunque los parámentros de entrada de cada uno de sus componentes (extrusora, bañera y bobinadora) se operan en lazo abierto y de forma manual. No es un producto adquirido de una vez. Por ello, no se dispone de comunicación directa, por ejemplo, entre la bobinadora y la velocidad de extrusión, en consecuencia, si hay algún tipo de error debe ser el operario encargado de la supervisión en parar todo el proceso y volver a arrancar.\\
-
-La extrusión del filamento, es un proceso en el que influyen muchas variables como pueden ser la temperatura de la granza en el interior de la extrusora y la velocidad de extrusión. Estos problemas derivan en el producto final en que no se consigue un diámetro omogeno, en nuestro caso 1.75mm, como se puede comprobar en la imagen \ref{fig:muestra_filamento}.
+A medida que BQ adquiere experiencia en el mercado, empieza a crear una línea de investigación para desarrollar sus propias impresoras 3D, como es el caso de la impresora Witbox y la impresora Prusa Hephestos (ver figura \ref{fig:impresoras_bq}). En este casos BQ tiene un papel importante a lo largo del desarrollo del producto, desde la elección de las características finales del mismo, así como el aspecto final del packaging, es decir, BQ pasa de tener un papel de distribuidor a ser la parte principal del desarrollo del producto.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{images/atasco_rojo.jpg}
-    \caption{Muestra de filamento con problemas en el diámetro}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Witbox.jpg}
+        \label{fig:estado_witbox}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/190px-HEPHESTOS.png}
+        \label{fig:estado_hephestos}
+    \end{subfigure}
+    \caption[Impresoras fabricadas por BQ.]{Impresoras fabricadas por BQ. Podemos ver las dos impresoras que desarrolla BQ, a la izquierda, Witbox impresora que ya se vende montada. A la derecha, Prusa Hephestos, se vende en formato kit para que el usuario final la monte (DIY). Fuente \cite{bq}.}
+    \label{fig:impresoras_bq}
+\end{figure}
+
+A la vez que se venden las impresoras 3D, BQ también vende el principal consumible para que las impresoras 3D puedan funcionar, plástico en forma de filamento. Este plástico se distribuye en unas bobinas (ver figura \ref{fig:estado_filamento}), en las que está almacenado un hilo continuo de plástico con un diámetro específico, en este caso, $1.75mm$, así mismo, cada filamento tiene un color distinto. Este consumible, es creado por otras empresas y BQ simplemente distribuye. Una vez que BQ tiene un puesto en el mercado de las impresoras 3D, decide entonces crear su propio filamento y tener más controlado la calidad del filamento que vende.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/filamento_bq.png}
+    \caption[Distintos filamentos de BQ.]{Distintos filamentos de BQ. Fuente \cite{bq}}
+    \label{fig:estado_filamento}
+\end{figure}
+
+Sin embargo, la fabricación del filamento es más complicada que la construcción de las impresoras 3D. Se necesitan máquinas capaces de fundir plástico y darle la forma de filamento, estás máquinas son las extrusoras, de las cuales BQ no dispone ninguna y no se tiene previsión de que al comprar una se pueda llegar a amortizar su compra. Por ello, se decide sub-contratar el proceso de fabricación a una empresa experta en la extrusión de plásticos.\\
+
+En la provincia de Huesca, se encuentra la empresa PESL, la cual es especialista en extrusión de perfilería de plástico. BQ y PESL empiezan a trabajar en la fabricación de un filamento que cumpla las características necesarias para las impresoras 3D. En una primera aproximación estas características son, el material y el diámetro final. Después de pruebas de fabricación del filamento por parte de ambas empresas, BQ empieza a vender filamento propio.\\
+
+Aparte de vender el filamento que fabrica PESL, BQ también lo usa para su uso en sus instalaciones y desarrollo de proyectos, se empieza a detectar entonces un problema, no todas las bobinas del mismo lote de fabricación tienen la misma calidad, llegando a darse el caso que en una misma bobina, no todo el filamento es igual. Los problemas detectados tienen que ver con el aspecto visual del filamento, la mezcla de color no es homogénea, y hace que las piezas impresas tenga un degradado. Así mismo, y mucho más importante, el diámetro del filamento no es constante (ver figura \ref{fig:muestra_filamento}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/atasco_rojo.jpg}
+    \caption[Muestra de filamento con problemas en el diámetro]{Muestra de filamento con problemas en el diámetro. Podemos observar cómo en un tramo de filamento, el diámetro no es constante.}
     \label{fig:muestra_filamento}
 \end{figure}
+
+El problema que se tiene en el color, es algo secundario, ya que puede considerarse visual y no afecta a ninguno de los componentes de la impresora. No pasa lo mismo con el problema del diámetro, ya que la manera en la que se descubre, es que las impresoras dejan de imprimir pasado un tiempo, puesto que si el diámetro nominal del filamento sale de un determinado rango de valores, tanto por exceso como por déficit, se producen atascos en la impresora. Estos atascos, en el mejor de los casos, sólo supone la limpieza del extrusor de la impresora y se puede volver a utilizar, pero en ocasiones el atasco puede deja inservible el extrusor y es necesario reemplazarlo.\\
+
+No tardan en llegar las primera reclamaciones de clientes finales, en las que su impresora deja de imprimir de forma temporal o incluso que el uso del filamento de BQ daña las impresoras 3D de los clientes, suponiendo un gasto extra para BQ, ya que ofrece una garantía por su producto y para PESL, que no todo el filamento que fabrica reporta beneficios. Es por ello que se pone en aviso a PESL y se toman decisiones para mejorar este problema.\\
+
+A pesar de que PESL es especialista en extrusión de perfilería de plástico, es la primera vez que se dedican a la extrusión de filamento. Aunque de forma teórica no hay ninguna diferencia, si lo hay en el uso final que se va a dar al plástico. En el caso de un perfil extruido, su uso será rematar obras, recubrimiento aislante y tuberías. El uso final que se le va a dar al filamento de plástico va a suponer un refundido del material, proceso en el cual, influye la manera en cómo se fabricó. Igualmente el material con el que se trabaja, no es el mismo y requiere de otras condiciones de fabricación que las que se pensaba en una primera aproximación.\\ 
+
+Se incorpora a la línea de fabricación un elemento mecánico, por el cual pasa el filamento, y si este supera un diámetro se parte y se deja de producir. También se empieza a registrar el diámetro del filamento y las temperaturas de fabricación en un ordenador para intentar tener un mejor control de la trazabilidad de las bobinas, y así acotar el problema que haya en la fabricación.\\
+
+Las reclamaciones de los clientes siguen llegando a BQ y PESL y con ellas, las pérdidas para ambos. Gracias a que cada bobina contiene un código QR en el que se incluye el número de lote de fabricación, se solicitan los registros del lote de fabricación a PESL para intentar ver posibles causas. Sin embargo, el tiempo desde que se piden hasta que son dados, es demasiado amplio. Una vez que se tiene el registro, se comprueba que faltan datos de temperaturas, puesto que estos valores son introducidos a mano ya que no están conectados con el ordenador que registra la información del diámetro. Y el muestreo de los datos no es siempre constante, por lo que hay tramos de la bobina que no se tienen.\\
+
+Desde BQ se decide entonces tomar una solución para tener todos los registros de una manera cómoda y fiable. Se piensa en desarrollar un sistema automático en el cual estén conectados todos los elementos que componen la línea de extrusión y así poder acceder a los datos de: Fecha de fabricación, diámetro final del filamento, temperaturas de todo el proceso y velocidad de extrusión. Así mismo, esta información será almacenada en una base de datos, la cual se podrá acceder de manera remota. De esta manera, se quita carga de trabajo a PESL para que se dediquen a fabricar filamento, y desde BQ se puedan analizar los datos para ver causas de fallo.\\
+
+A continuación, se detallan los objetivos a conseguir en el proyecto:
+
+\begin{itemize}
+    \item Realizar un sistema capaz de leer la información más importante en la fabricación del filamento
+    \item Instalar en una extrusora de filamento industrial.
+    \item Estudio de los datos adquiridos y desarrollo del modelo teórico de la planta.
+    \item Comprobar qué regulador se amolda a nuestras necesidades.
+    \item Puesta en marcha del regulador en planta y comprobar resultados.
+\end{itemize}
+\label{Listado_objetivos}
+
+
 

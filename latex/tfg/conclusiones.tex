@@ -1,2 +1,52 @@
-\section{Conclusiones y trabajos futuros}
-\label{sec:conclus}
+\chapter{Conclusiones y trabajos futuros}
+\label{cap:conclus}
+
+En este capítulo, se discutirá el trabajo realizado durante el proyecto, así como el trabajo que queda por realizar desde la división de automatización y materiales a medio-largo plazo.
+
+\section{Cumplimiento de los objetivos}
+
+Al finalizar el proyecto, nos encontramos con un sistema capaz de obtener los datos más importantes que caracterizan la calidad de un filamento. Con estos datos podremos trabajar a posterior y tener una trazabilidad del filamento completa en caso de que se reciba alguna reclamación por parte de los clientes.\\
+
+Uno de los objetivos que se marca al comienzo del proyecto es que el sistema se instale en una extrusora industrial para comprobar la validadez del mismo. Sin embargo, por problemas burocráticos y de proveedores, a la hora de implementar el sistema no se tiene acceso a ninguna.\\ 
+
+No obstante, se decide utilizar una extrusora casera para implementar el sistema. A pesar de que el funcionamiento no es el adecuado para obtener filamento de calidad, es totalmente válido para comprobar la eficacia del sistema de adquisición de datos.
+
+\section{Contribuciones}
+
+Durante la realización del proyecto, en la división de automatización y materiales, se ha usado el sistema de adquisición de datos para realizar un estudio de la degradación del PLA con el paso del tiempo. Después de recibir varias reclamaciones de los clientes se está investigando sobre cómo puede afectar el correcto almacenamiento de una bobina de PLA en el diámetro del mismo. Para ello, el estudio consta de las siguientes partes:
+
+\begin{itemize}
+	\item{Medir el diámetro de una longitud determinada de una bobina recién sacada de su embalaje}
+	\item{Someter al filamento a diversas pruebas. Las cuales consiste en almacenar el filamento en unas condiciones de temperatura extremas, tanto en un congelador para enfriar, así como en un horno a una temperatura alta.}
+	\item{Volver a medir el diámetro y estudiar los cambios}
+\end{itemize}
+
+Gracias a esto, se están empezando a caracterizar estos problemas y obtener una solución rápida al cliente en caso de que los síntomas sean parecidos.\\
+
+Así mismo, y algo que era un trabajo a realizar en el futuro en el departamento, se ha diseñado un sistema capaz de reciclar las bobinas de filamento que no eran útiles para un uso final en impresoras 3D y cómo hemos visto, el material reciclado obtenido es completamente válido para volver a realizar filamento.
+
+\section{Mejoras y trabajos futuros}
+
+En contra de lo que se pueda pensar, el proyecto de adquisición de datos no termina con la defensa de esta memoria. Desde BQ se va a seguir mejorando e incluyendo nuevas características que harán más versatil el sistema. Se pasan a continuación a detallar las líneas de trabajo en este proyecto:
+
+\begin{itemize}
+	\item{Incorporar el sistema en una extrusora de laboratorio: desde la división de automatización y materiales se adquirió una extrusora de laboratorio, sin embargo por problemas con los distribuidores, el tiempo de entrega es posterior a la defensa de esta memoria, por ello no se ha podido incluir en la misma. En el moento en que se reciba, el paso inmediato será incorporar el sistema de adquisción de datos a dicha extrusora.}
+	\item{En los planes a largo plazo de BQ, se encuentra la adquisición de una extrusora de filamento industrial propia, por lo que en el momento que se disponga, este sistema también será incluido para almacenar los datos.}
+\end{itemize}
+
+Derivado a estos trabajos, se requieren las siguientes mejoras en las que se va a empezar a trabajar lo antes posible:
+
+\begin{itemize}
+	\item{Almacenamiento de la información en una base datos MYSQL. En lugar de almacenar la información en una tarjeta SD, se plantea almacenar toda la información en un servidor para poder realizar informes en tiempo real de la producción.}
+	\item{Incorporar una impresora para generar pegatinas con códigos QR. De tal manera, si el sistema determina que el filamento extruido no cumple unos requisitos mínimos, automaticamente al ver la pegatina, se sepa si esa bobina pasa el control de calidad.}
+	\item{Conectar varias líneas de extrusión al mismo sistema e independizar los datos adquiridos, para de ese modo centralizar el control.}
+	\item{Realizar un sistema de supervisión superior al SCADA en el que se tenga acceso del estado de la fábrica en la que se encuentre una extrusora. Y en caso de que haya más sistemas automáticos, controlados por ejemplo con robots industriales se pueda acceder a la información de todos ellos.}
+
+\end{itemize}
+
+\section{Valoración final.}
+
+El resultado final del proyecto ha sido satisfactorio, presenteando un sistema versatil y capaz de solucionar el problema que se plantea al inicio. A raiz de la elaboración del proyecto, se han solucionado otros problemas derivados del mismo como hemos visto en la sección anterior.\\
+
+El punto negativo al entregar el proyecto, ha sido el no poder instalar el sistema en una extrusora de filamento industrial, sin embargo a corto plazo el sistema será implementado en las propias extrusoras de filamento que compre BQ, es decir, es un proyecto que va a tener continuidad en el tiempo.
+

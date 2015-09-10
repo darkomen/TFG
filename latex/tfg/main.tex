@@ -6,9 +6,13 @@
 %\usepackage[utf8x]{inputenc} 
 \usepackage[T1]{fontenc}	% For using icelandic Thorn character
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}		% Mathematic fonts (such Real numbers set)
 \usepackage{graphicx}
 \usepackage[spanish,es-tabla]{babel} 
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{siunitx}
 
 % Imports for images
 \usepackage{caption}
@@ -78,20 +82,20 @@
 
 % Define commands for setting the language to be used in listings
 \newcommand{\Cpp}{ \lstset{frame=single,
-  		language=C++,
-  		aboveskip=3mm,
-  		belowskip=3mm,
-  		showstringspaces=false,
-  		columns=flexible,
-  		basicstyle={\small\ttfamily},
-  		numbers=none,
-  		numberstyle=\tiny\color{gray},
-  		keywordstyle=\color{blue},
-  		commentstyle=\color{dkgreen},
-  		stringstyle=\color{mauve},
-  		breaklines=true,
-  		breakatwhitespace=true
-  		tabsize=3
+			language=C++,
+			aboveskip=3mm,
+			belowskip=3mm,
+			showstringspaces=false,
+			columns=flexible,
+			basicstyle={\small\ttfamily},
+			numbers=none,
+			numberstyle=\tiny\color{gray},
+			keywordstyle=\color{blue},
+			commentstyle=\color{dkgreen},
+			stringstyle=\color{mauve},
+			breaklines=true,
+			breakatwhitespace=true
+			tabsize=3
 	}}
 
 
@@ -106,6 +110,7 @@
 
 %Full reference of label
 \newcommand{\fullref}[1]{\ref{#1} de la página \pageref{#1}}
+
 % This is used for adding appendices:	
 \usepackage[toc,page]{appendix}
 
@@ -124,50 +129,72 @@
 % Include PDF files
 \usepackage{pdfpages}
 
+% Evitar lineas viudas y huerfanas
+% http://ocw.um.es/gat/contenidos/ldaniel/ipu_docs/latex/tema6.html
+\clubpenalty=10000
+\widowpenalty=10000
+\renewcommand{\appendixname}{Apéndices}
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
 %%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{portada}
-\pagestyle{plain}
+	%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\include{portada}
+	\pagestyle{plain}
 
-%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tableofcontents
-\newpage
+	%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\tableofcontents
+	\newpage
 
-% Figures
-\listoffigures
-% Tables
-\listoftables
-\newpage
+	%%%%%% Índice de figuras y tablas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Adding some header text on top of the page:
-\fancyhead[L]{\nouppercase{\leftmark}}
-\fancyhead[RO]{\nouppercase{\rightmark}}
-\fancyhead[R]{}
-\fancyhead[LO]{}
-\pagestyle{fancy}
+	\listoffigures   % Figures
+	\listoftables    % Tables
+	\newpage
 
-% Secciones del documento
-%\input{introduccion}
-%\input{objetivo}
-%\input{estado_arte}
-%\input{desarrollo}
-%\input{software}
-%\input{peletizadora}
-%\input{FSB}
-%\input{FST}
-\input{regulador}
-\input{conclusiones}
-%\includepdf[pages=-]{gantt.pdf}
 
-%\input{bibliografia}
+	% Adding some header text on top of the page:
+	\fancyhead[L]{\nouppercase{\leftmark}}
+	\fancyhead[RO]{\nouppercase{\rightmark}}
+	\fancyhead[R]{}
+	\fancyhead[LO]{}
+	\pagestyle{fancy}
 
-\newpage{}
-\label{Bibliography}
-\lhead{\emph{Bibliografia}}  % Change the left side page header to "Bibliography"
-\bibliographystyle{unsrt}
-\bibliography{references}
+	%%%%%% Secciones del documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\input{introduccion}
+	\input{conceptos}
+	\input{estado_arte}
+	\input{descripccion}
+	\input{resultados}
+	\input{regulador}
+	\input{conclusiones}
+
+	%%%%%% Apéndices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{appendix}
+		\clearpage % o \cleardoublepage
+		\addappheadtotoc
+		\appendixpage
+		\input{gant}
+		\input{PLC}
+		\input{esquemas}
+		\input{filastruder}
+		\input{peletizadora}
+		\input{tractora}
+		\input{sensor}
+		\input{filawinder}
+		\input{resultados_regulador}
+	\end{appendix}
+
+
+	%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage{}
+	\label{Bibliography}
+	\lhead{\emph{Bibliografia}}  % Change the left side page header to "Bibliography"
+	\bibliographystyle{unsrt}
+	\bibliography{references}
 
 \end{document}

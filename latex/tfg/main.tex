@@ -142,18 +142,22 @@
 	%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\include{portada}
 	\pagestyle{plain}
-
+    ~
+	\newpage
+	\input{agradecimientos}
+	~
+	\newpage
+	\input{resumen}
+	~
 	%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\tableofcontents
 	\newpage
 
 	%%%%%% Índice de figuras y tablas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 	\listoffigures   % Figures
 	\listoftables    % Tables
 	\newpage
-
 
 	% Adding some header text on top of the page:
 	\fancyhead[L]{\nouppercase{\leftmark}}
@@ -163,7 +167,6 @@
 	\pagestyle{fancy}
 
 	%%%%%% Secciones del documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 	\input{introduccion}
 	\input{conceptos}
 	\input{estado_arte}

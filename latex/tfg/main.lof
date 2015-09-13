@@ -8,122 +8,120 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Esquema de la patente de S. Scott Crump.}}{17}{figure.caption.9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Principio de la fabricaci\IeC {\'o}n con filamento fundido}}{18}{figure.caption.10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Detalle de un extrusor realizando una pieza.}}{19}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema b\IeC {\'a}sico de una extrusora.}}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema b\IeC {\'a}sico de una extrusora.}}{20}{figure.caption.12}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Pellets de PLA}}{21}{figure.caption.13}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Caracter\IeC {\'\i }sticas de un husillo.}}{22}{figure.caption.14}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Distintos ejemplos de extrusi\IeC {\'o}n.}}{22}{figure.caption.15}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Darwin,primera impresora 3D del tipo Reprap}}{23}{figure.caption.16}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Evoluci\IeC {\'o}n de las impresoras dise\IeC {\~n}adas por Josef Prusa.}}{24}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Extrusora de laboratorio Linear 25}}{26}{figure.caption.18}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Extrusora de laboratorio Stand-alone extruder KE 19}}{27}{figure.caption.19}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Extrusora de laboratorio EMS-35}}{27}{figure.caption.20}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Extrusora DIY Lyman extruder}}{28}{figure.caption.21}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Soluci\IeC {\'o}n SCADA de la empresa SmartControls.}}{26}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Repositorio online del proyecto.}}{31}{figure.caption.22}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Ejemplo de iPython Notebook usado en el proyecto.}}{32}{figure.caption.23}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Ejemplo de pieza dise\IeC {\~n}ada con Autodesk Inventor.}}{33}{figure.caption.24}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pieza dise\IeC {\~n}ada abierta en cura.}}{33}{figure.caption.25}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Maqueta de filastruder montada}}{35}{figure.caption.27}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Resultado del an\IeC {\'a}lisis con DSC de filamento reciclado.}}{37}{figure.caption.29}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagrama de estados PLC.}}{38}{figure.caption.32}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Sistema con un regulador PID.}}{39}{figure.caption.33}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Respuesta del sistema en lazo abierto}}{39}{figure.caption.34}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ajuste de la recta.}}{40}{figure.caption.35}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Respuesta del sistema con PID iteracci\IeC {\'o}n 1.}}{41}{figure.caption.36}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 2}}{42}{figure.caption.37}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 3}}{42}{figure.caption.38}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 4}}{43}{figure.caption.39}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Ecuaci\IeC {\'o}n caracter\IeC {\'\i }stica del ADC.}}{44}{figure.caption.41}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Distintos servicios que dispone el PLC}}{45}{figure.caption.43}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Cliente FTP.}}{46}{figure.caption.44}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Visualizaci\IeC {\'o}n online del sistema.}}{47}{figure.caption.45}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Repositorio online del proyecto.}}{29}{figure.caption.19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ejemplo de iPython Notebook usado en el proyecto.}}{30}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ejemplo de pieza dise\IeC {\~n}ada con Autodesk Inventor.}}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pieza dise\IeC {\~n}ada abierta en cura.}}{31}{figure.caption.22}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Maqueta de filastruder montada}}{33}{figure.caption.24}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Resultado del an\IeC {\'a}lisis con DSC de filamento reciclado.}}{34}{figure.caption.26}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagrama de estados PLC.}}{36}{figure.caption.29}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Sistema con un regulador PID.}}{36}{figure.caption.30}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Respuesta del sistema en lazo abierto}}{37}{figure.caption.31}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ajuste de la recta.}}{37}{figure.caption.32}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Respuesta del sistema con PID iteracci\IeC {\'o}n 1.}}{38}{figure.caption.33}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 2}}{39}{figure.caption.34}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 3}}{39}{figure.caption.35}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Respuesta del sistema con PID. Iteracci\IeC {\'o}n 4}}{40}{figure.caption.36}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Ecuaci\IeC {\'o}n caracter\IeC {\'\i }stica del ADC.}}{41}{figure.caption.38}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Distintos servicios que dispone el PLC}}{42}{figure.caption.40}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Cliente FTP.}}{43}{figure.caption.41}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Visualizaci\IeC {\'o}n online del sistema.}}{44}{figure.caption.42}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema de producci\IeC {\'o}n Filastruder-sensor de di\IeC {\'a}metro-bobinadora.}}{48}{figure.caption.46}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Cambio de tama\IeC {\~n}o debido a la relajaci\IeC {\'o}n del material.}}{49}{figure.caption.47}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Cambio de tama\IeC {\~n}o debido a la contraccion del material.}}{49}{figure.caption.48}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Representaci\IeC {\'o}n de las medidas de los ejes X e Y.\relax }}{50}{figure.caption.50}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de cajas de las medidas de los ejes X e Y.\relax }}{50}{figure.caption.51}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema de producci\IeC {\'o}n filastruder-sensor de di\IeC {\'a}metro-tractora.\relax }}{51}{figure.caption.52}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Montaje final filastruder-tractora-sensor\relax }}{51}{figure.caption.53}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Gr\IeC {\'a}fica con los datos de la producci\IeC {\'o}n\relax }}{52}{figure.caption.55}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Encoder instalado en la filastruder.\relax }}{53}{figure.caption.56}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Velocidad de la extrusora.\relax }}{53}{figure.caption.57}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Mezcla de granza con pellets reciclados.\relax }}{54}{figure.caption.58}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Dise\IeC {\~n}o y montaje de una tolva de mayor capacidad.}}{54}{figure.caption.59}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Diagrama de cajas \relax }}{55}{figure.caption.61}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Mezcla incorrecta de la filastruder.}}{56}{figure.caption.62}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Reglas a utilizar en el sistema experto.}}{56}{figure.caption.63}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparativa filamentos distintos fabricantes\relax }}{57}{figure.caption.65}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Diagrama de cajas con di\IeC {\'a}metros de distintos fabricantes\relax }}{58}{figure.caption.66}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema de producci\IeC {\'o}n Filastruder-sensor de di\IeC {\'a}metro-bobinadora.}}{45}{figure.caption.43}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Cambio de tama\IeC {\~n}o debido a la relajaci\IeC {\'o}n del material.}}{46}{figure.caption.44}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cambio de tama\IeC {\~n}o debido a la contraccion del material.}}{46}{figure.caption.45}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Representaci\IeC {\'o}n de las medidas de los ejes X e Y.\relax }}{47}{figure.caption.47}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de cajas de las medidas de los ejes X e Y.\relax }}{47}{figure.caption.48}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema de producci\IeC {\'o}n filastruder-sensor de di\IeC {\'a}metro-tractora.\relax }}{48}{figure.caption.49}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Montaje final filastruder-tractora-sensor\relax }}{48}{figure.caption.50}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Gr\IeC {\'a}fica con los datos de la producci\IeC {\'o}n\relax }}{49}{figure.caption.52}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Encoder instalado en la filastruder.\relax }}{50}{figure.caption.53}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Velocidad de la extrusora.\relax }}{50}{figure.caption.54}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Mezcla de granza con pellets reciclados.\relax }}{51}{figure.caption.55}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Dise\IeC {\~n}o y montaje de una tolva de mayor capacidad.}}{51}{figure.caption.56}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Diagrama de cajas \relax }}{52}{figure.caption.58}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Mezcla incorrecta de la filastruder.}}{53}{figure.caption.59}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Reglas a utilizar en el sistema experto.}}{53}{figure.caption.60}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparativa filamentos distintos fabricantes\relax }}{54}{figure.caption.62}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Diagrama de cajas con di\IeC {\'a}metros de distintos fabricantes\relax }}{54}{figure.caption.63}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces L\IeC {\'a}mina, canaleta y gu\IeC {\'\i }a donde ir\IeC {\'a} el PLC.\relax }}{68}{figure.caption.69}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Se corta la gu\IeC {\'\i }a y canaleta seg\IeC {\'u}n las necesidades.\relax }}{69}{figure.caption.70}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Comprobamos que entra dentro del armario.\relax }}{69}{figure.caption.71}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Se cablean los dispositivos entre s\IeC {\'\i }.\relax }}{70}{figure.caption.72}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces se cablean las entradas-salidas del PLC.\relax }}{70}{figure.caption.73}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Regletero con acceso a los pines del PLC.\relax }}{71}{figure.caption.74}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Cuadro terminado.\relax }}{71}{figure.caption.75}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces L\IeC {\'a}mina, canaleta y gu\IeC {\'\i }a donde ir\IeC {\'a} el PLC.\relax }}{69}{figure.caption.66}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Se corta la gu\IeC {\'\i }a y canaleta seg\IeC {\'u}n las necesidades.\relax }}{70}{figure.caption.67}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Comprobamos que entra dentro del armario.\relax }}{70}{figure.caption.68}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Se cablean los dispositivos entre s\IeC {\'\i }.\relax }}{71}{figure.caption.69}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces se cablean las entradas-salidas del PLC.\relax }}{71}{figure.caption.70}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Regletero con acceso a los pines del PLC.\relax }}{72}{figure.caption.71}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Cuadro terminado.\relax }}{72}{figure.caption.72}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Controlador PID de temperatura Sestos\relax }}{73}{figure.caption.76}
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Se ancla la extructura a la base\relax }}{74}{figure.caption.77}
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Calefactor en la alimentaci\IeC {\'o}n y ca\IeC {\~n}on\relax }}{74}{figure.caption.78}
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Sensor PT100 de temperatura\relax }}{75}{figure.caption.79}
-\contentsline {figure}{\numberline {D.5}{\ignorespaces Filastruder montado\relax }}{75}{figure.caption.80}
-\contentsline {figure}{\numberline {D.6}{\ignorespaces Presentaci\IeC {\'o}n de los componentes en el lugar adecuado.\relax }}{76}{figure.caption.81}
-\contentsline {figure}{\numberline {D.7}{\ignorespaces Atornillamos las canaletas y guias a la madera.\relax }}{76}{figure.caption.82}
-\contentsline {figure}{\numberline {D.8}{\ignorespaces Cableamos los componentes seg\IeC {\'u}n los esquemas.\relax }}{76}{figure.caption.83}
-\contentsline {figure}{\numberline {D.9}{\ignorespaces Aspecto final cuadro el\IeC {\'e}ctrico maqueta.\relax }}{77}{figure.caption.84}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Controlador PID de temperatura Sestos\relax }}{74}{figure.caption.73}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces Se ancla la extructura a la base\relax }}{75}{figure.caption.74}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Calefactor en la alimentaci\IeC {\'o}n y ca\IeC {\~n}on\relax }}{75}{figure.caption.75}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Sensor PT100 de temperatura\relax }}{76}{figure.caption.76}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Filastruder montado\relax }}{76}{figure.caption.77}
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Presentaci\IeC {\'o}n de los componentes en el lugar adecuado.\relax }}{77}{figure.caption.78}
+\contentsline {figure}{\numberline {E.7}{\ignorespaces Atornillamos las canaletas y guias a la madera.\relax }}{77}{figure.caption.79}
+\contentsline {figure}{\numberline {E.8}{\ignorespaces Cableamos los componentes seg\IeC {\'u}n los esquemas.\relax }}{77}{figure.caption.80}
+\contentsline {figure}{\numberline {E.9}{\ignorespaces Aspecto final cuadro el\IeC {\'e}ctrico maqueta.\relax }}{78}{figure.caption.81}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Proceso para conseguir pellets\relax }}{78}{figure.caption.85}
-\contentsline {figure}{\numberline {E.2}{\ignorespaces Proceso funcionamiento peletizadora\relax }}{78}{figure.caption.86}
-\contentsline {figure}{\numberline {E.3}{\ignorespaces Dise\IeC {\~n}o de la unidad tractora\relax }}{79}{figure.caption.87}
-\contentsline {figure}{\numberline {E.4}{\ignorespaces Dise\IeC {\~n}o de gu\IeC {\'\i }a de filamento\relax }}{80}{figure.caption.88}
-\contentsline {figure}{\numberline {E.5}{\ignorespaces Conjunto tractora completo\relax }}{80}{figure.caption.89}
-\contentsline {figure}{\numberline {E.6}{\ignorespaces Dise\IeC {\~n}o de las aspas\relax }}{81}{figure.caption.90}
-\contentsline {figure}{\numberline {E.7}{\ignorespaces Mecanismo de corte\relax }}{81}{figure.caption.91}
-\contentsline {figure}{\numberline {E.8}{\ignorespaces Mecanismo impreso con servo para generar oscilaci\IeC {\'o}n\relax }}{82}{figure.caption.92}
-\contentsline {figure}{\numberline {E.9}{\ignorespaces Estructura con aspas encerradas.\relax }}{82}{figure.caption.93}
-\contentsline {figure}{\numberline {E.10}{\ignorespaces Pellets de filamento reciclado.\relax }}{82}{figure.caption.94}
+\contentsline {figure}{\numberline {F.1}{\ignorespaces Proceso para conseguir pellets\relax }}{79}{figure.caption.82}
+\contentsline {figure}{\numberline {F.2}{\ignorespaces Proceso funcionamiento peletizadora\relax }}{79}{figure.caption.83}
+\contentsline {figure}{\numberline {F.3}{\ignorespaces Dise\IeC {\~n}o de la unidad tractora\relax }}{80}{figure.caption.84}
+\contentsline {figure}{\numberline {F.4}{\ignorespaces Dise\IeC {\~n}o de gu\IeC {\'\i }a de filamento\relax }}{80}{figure.caption.85}
+\contentsline {figure}{\numberline {F.5}{\ignorespaces Conjunto tractora completo\relax }}{81}{figure.caption.86}
+\contentsline {figure}{\numberline {F.6}{\ignorespaces Dise\IeC {\~n}o de las aspas\relax }}{81}{figure.caption.87}
+\contentsline {figure}{\numberline {F.7}{\ignorespaces Mecanismo de corte\relax }}{82}{figure.caption.88}
+\contentsline {figure}{\numberline {F.8}{\ignorespaces Mecanismo impreso con servo para generar oscilaci\IeC {\'o}n\relax }}{82}{figure.caption.89}
+\contentsline {figure}{\numberline {F.9}{\ignorespaces Estructura con aspas encerradas.\relax }}{82}{figure.caption.90}
+\contentsline {figure}{\numberline {F.10}{\ignorespaces Pellets de filamento reciclado.\relax }}{83}{figure.caption.91}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {F.1}{\ignorespaces Dise\IeC {\~n}o del eje de giro de la tractora\relax }}{85}{figure.caption.97}
-\contentsline {figure}{\numberline {F.2}{\ignorespaces Dise\IeC {\~n}o de la tractora\relax }}{85}{figure.caption.98}
-\contentsline {figure}{\numberline {F.3}{\ignorespaces Pieza de la tractora.\relax }}{86}{figure.caption.99}
-\contentsline {figure}{\numberline {F.4}{\ignorespaces Tractora con filamento\relax }}{86}{figure.caption.100}
+\contentsline {figure}{\numberline {G.1}{\ignorespaces Dise\IeC {\~n}o del eje de giro de la tractora\relax }}{85}{figure.caption.94}
+\contentsline {figure}{\numberline {G.2}{\ignorespaces Dise\IeC {\~n}o de la tractora\relax }}{86}{figure.caption.95}
+\contentsline {figure}{\numberline {G.3}{\ignorespaces Pieza de la tractora.\relax }}{87}{figure.caption.96}
+\contentsline {figure}{\numberline {G.4}{\ignorespaces Tractora con filamento\relax }}{87}{figure.caption.97}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {G.1}{\ignorespaces Sensor CCD lineal.}}{87}{figure.caption.101}
-\contentsline {figure}{\numberline {G.2}{\ignorespaces Fichero gerber de la pcb.\relax }}{88}{figure.caption.103}
-\contentsline {figure}{\numberline {G.3}{\ignorespaces PCB ya fabricada.\relax }}{88}{figure.caption.104}
-\contentsline {figure}{\numberline {G.4}{\ignorespaces Materiales necesarios para soldar\relax }}{89}{figure.caption.105}
-\contentsline {figure}{\numberline {G.5}{\ignorespaces Soldando el microcontrolador.\relax }}{89}{figure.caption.106}
-\contentsline {figure}{\numberline {G.6}{\ignorespaces Soldando componentes SMD.\relax }}{89}{figure.caption.107}
-\contentsline {figure}{\numberline {G.7}{\ignorespaces Placa con los componentes soldados.\relax }}{90}{figure.caption.108}
-\contentsline {figure}{\numberline {G.8}{\ignorespaces Sensor midiendo un filamento de 1.75mm.\relax }}{90}{figure.caption.109}
-\contentsline {figure}{\numberline {G.9}{\ignorespaces Gr\IeC {\'a}fica con regresi\IeC {\'o}n lineal.}}{91}{figure.caption.111}
+\contentsline {figure}{\numberline {H.1}{\ignorespaces Sensor CCD lineal.}}{88}{figure.caption.98}
+\contentsline {figure}{\numberline {H.2}{\ignorespaces Fichero gerber de la pcb.\relax }}{89}{figure.caption.100}
+\contentsline {figure}{\numberline {H.3}{\ignorespaces PCB ya fabricada.\relax }}{89}{figure.caption.101}
+\contentsline {figure}{\numberline {H.4}{\ignorespaces Materiales necesarios para soldar\relax }}{90}{figure.caption.102}
+\contentsline {figure}{\numberline {H.5}{\ignorespaces Soldando el microcontrolador.\relax }}{90}{figure.caption.103}
+\contentsline {figure}{\numberline {H.6}{\ignorespaces Soldando componentes SMD.\relax }}{90}{figure.caption.104}
+\contentsline {figure}{\numberline {H.7}{\ignorespaces Placa con los componentes soldados.\relax }}{91}{figure.caption.105}
+\contentsline {figure}{\numberline {H.8}{\ignorespaces Sensor midiendo un filamento de 1.75mm.\relax }}{91}{figure.caption.106}
+\contentsline {figure}{\numberline {H.9}{\ignorespaces Gr\IeC {\'a}fica con regresi\IeC {\'o}n lineal.}}{92}{figure.caption.108}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {H.1}{\ignorespaces Montaje de Filawinder.\relax }}{92}{figure.caption.112}
-\contentsline {figure}{\numberline {H.2}{\ignorespaces Sensor de filamento.\relax }}{93}{figure.caption.113}
-\contentsline {figure}{\numberline {H.3}{\ignorespaces Materiales de filawinder.\relax }}{93}{figure.caption.114}
-\contentsline {figure}{\numberline {H.4}{\ignorespaces Piezas impresas para filawinder.\relax }}{94}{figure.caption.115}
-\contentsline {figure}{\numberline {H.5}{\ignorespaces Introducimos el motor en el hueco.\relax }}{94}{figure.caption.116}
-\contentsline {figure}{\numberline {H.6}{\ignorespaces Montaje del engraneje en eje del motor.\relax }}{95}{figure.caption.117}
-\contentsline {figure}{\numberline {H.7}{\ignorespaces Instalaci\IeC {\'o}n de la placa electr\IeC {\'o}nica.\relax }}{95}{figure.caption.118}
-\contentsline {figure}{\numberline {H.8}{\ignorespaces Eje de giro para la bobina.\relax }}{96}{figure.caption.119}
-\contentsline {figure}{\numberline {H.9}{\ignorespaces Uni\IeC {\'o}n de lateral con base principal.\relax }}{96}{figure.caption.120}
-\contentsline {figure}{\numberline {H.10}{\ignorespaces Montaje electrico de la placa de control.\relax }}{97}{figure.caption.121}
+\contentsline {figure}{\numberline {I.1}{\ignorespaces Montaje de Filawinder.\relax }}{93}{figure.caption.109}
+\contentsline {figure}{\numberline {I.2}{\ignorespaces Sensor de filamento.\relax }}{94}{figure.caption.110}
+\contentsline {figure}{\numberline {I.3}{\ignorespaces Materiales de filawinder.\relax }}{94}{figure.caption.111}
+\contentsline {figure}{\numberline {I.4}{\ignorespaces Piezas impresas para filawinder.\relax }}{95}{figure.caption.112}
+\contentsline {figure}{\numberline {I.5}{\ignorespaces Introducimos el motor en el hueco.\relax }}{95}{figure.caption.113}
+\contentsline {figure}{\numberline {I.6}{\ignorespaces Montaje del engraneje en eje del motor.\relax }}{96}{figure.caption.114}
+\contentsline {figure}{\numberline {I.7}{\ignorespaces Instalaci\IeC {\'o}n de la placa electr\IeC {\'o}nica.\relax }}{96}{figure.caption.115}
+\contentsline {figure}{\numberline {I.8}{\ignorespaces Eje de giro para la bobina.\relax }}{97}{figure.caption.116}
+\contentsline {figure}{\numberline {I.9}{\ignorespaces Uni\IeC {\'o}n de lateral con base principal.\relax }}{97}{figure.caption.117}
+\contentsline {figure}{\numberline {I.10}{\ignorespaces Montaje electrico de la placa de control.\relax }}{98}{figure.caption.118}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {I.1}{\ignorespaces Datos graficados del ensayo 1 con regulador experto\relax }}{99}{figure.caption.123}
-\contentsline {figure}{\numberline {I.2}{\ignorespaces Diagrama de cajas del ensayo 1 con regulador experto\relax }}{99}{figure.caption.124}
-\contentsline {figure}{\numberline {I.3}{\ignorespaces Datos graficados del ensayo 2 con regulador experto\relax }}{101}{figure.caption.126}
-\contentsline {figure}{\numberline {I.4}{\ignorespaces Diagrama de cajas del ensayo 2 con regulador experto\relax }}{101}{figure.caption.127}
-\contentsline {figure}{\numberline {I.5}{\ignorespaces Datos graficados del ensayo 3 con regulador experto\relax }}{103}{figure.caption.129}
-\contentsline {figure}{\numberline {I.6}{\ignorespaces Diagrama de cajas del ensayo 3 con regulador experto\relax }}{103}{figure.caption.130}
-\contentsline {figure}{\numberline {I.7}{\ignorespaces Datos graficados del ensayo 4 con regulador experto\relax }}{105}{figure.caption.132}
-\contentsline {figure}{\numberline {I.8}{\ignorespaces Diagrama de cajas del ensayo 4 con regulador experto\relax }}{105}{figure.caption.133}
-\contentsline {figure}{\numberline {I.9}{\ignorespaces Datos graficados del ensayo 5 con regulador experto\relax }}{106}{figure.caption.135}
-\contentsline {figure}{\numberline {I.10}{\ignorespaces Diagrama de cajas del ensayo 5 con regulador experto\relax }}{107}{figure.caption.136}
-\contentsline {figure}{\numberline {I.11}{\ignorespaces Datos graficados del ensayo 6 con regulador experto\relax }}{108}{figure.caption.138}
-\contentsline {figure}{\numberline {I.12}{\ignorespaces Diagrama de cajas del ensayo 6 con regulador experto\relax }}{109}{figure.caption.139}
+\contentsline {figure}{\numberline {J.1}{\ignorespaces Datos graficados del ensayo 1 con regulador experto\relax }}{100}{figure.caption.120}
+\contentsline {figure}{\numberline {J.2}{\ignorespaces Diagrama de cajas del ensayo 1 con regulador experto\relax }}{100}{figure.caption.121}
+\contentsline {figure}{\numberline {J.3}{\ignorespaces Datos graficados del ensayo 2 con regulador experto\relax }}{102}{figure.caption.123}
+\contentsline {figure}{\numberline {J.4}{\ignorespaces Diagrama de cajas del ensayo 2 con regulador experto\relax }}{102}{figure.caption.124}
+\contentsline {figure}{\numberline {J.5}{\ignorespaces Datos graficados del ensayo 3 con regulador experto\relax }}{103}{figure.caption.126}
+\contentsline {figure}{\numberline {J.6}{\ignorespaces Diagrama de cajas del ensayo 3 con regulador experto\relax }}{104}{figure.caption.127}
+\contentsline {figure}{\numberline {J.7}{\ignorespaces Datos graficados del ensayo 4 con regulador experto\relax }}{105}{figure.caption.129}
+\contentsline {figure}{\numberline {J.8}{\ignorespaces Diagrama de cajas del ensayo 4 con regulador experto\relax }}{106}{figure.caption.130}
+\contentsline {figure}{\numberline {J.9}{\ignorespaces Datos graficados del ensayo 5 con regulador experto\relax }}{107}{figure.caption.132}
+\contentsline {figure}{\numberline {J.10}{\ignorespaces Diagrama de cajas del ensayo 5 con regulador experto\relax }}{107}{figure.caption.133}
+\contentsline {figure}{\numberline {J.11}{\ignorespaces Datos graficados del ensayo 6 con regulador experto\relax }}{109}{figure.caption.135}
+\contentsline {figure}{\numberline {J.12}{\ignorespaces Diagrama de cajas del ensayo 6 con regulador experto\relax }}{109}{figure.caption.136}

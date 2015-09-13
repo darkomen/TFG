@@ -1,49 +1,39 @@
 
 \chapter{Estado del arte}
 \label{cap:estado}
+A la hora de tener una supervisión sobre la información producida a lo largo de un proceso productivo y poder tratarla a posteriorí, se usan sistemas software capaces de recopilar la información requerida en tiempo real del sistema y almacenarla para poder acceder a ella en un futuro.\\
 
-En este capítulo introduciremos el estado del arte en el mundo de la extrusión de filamentos. Más en concreto, veremos las varieades que hay en cuanto a la elección de una extrusora y el sistema de adquisició de datos que incorpora. Vamos a ver distintas empresas líderes en el mercado y las soluciones que ofrecen
+Gracias a la informatización de la industria, estos sistemas están muy integrados dentro del proceso productivo puesto que, además de recopilar la información, se puede tener control directo en la producción. Y una de las ventajas derivadas de la informatización, es que para tener el control del proceso, no es necesario encontrarse en el mismo lugar del mismo, gracias a internet, se puede acceder desde cualquier parte del mundo y con cualquier dispositivo.\\
 
-\section{Rondol}
+En este capítulo introduciremos el estado del arte en el mundo de la supervisión de procesos industriales. Concretamente la evolución de los distintos sistemas para controlar de forma remota dichos procesos.\\
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/rondol.png}
-    \caption[Extrusora de laboratorio Linear 25]{Extrusora de laboratorio Linear 25. Fuente \cite{rondol}}
-    \label{fig:rondol}.
-\end{figure}
-
-
-\section{Brabender}
+La palabra SCADA se usa para abreviar el término en inglés Supervisory Control And Data Adquisition o lo que es lo mismo, control supervisado y adquisición de datos. Un sistema SCADA puede ser utilizado en cualquer tipo de proceso en el cual se genere una cierta información que deba ser tratada por alguna persona, y se encuentre en un lugar remoto de la localización del proceso. En la figura \ref{fig:smart_Controls} podemos observar un ejemplo de sistema SCADA orientado a la extrusión.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/brabender.jpg}
-    \caption[Extrusora de laboratorio Stand-alone extruder KE 19]{Extrusora de laboratorio Stand-alone extruder KE 19. Fuente \cite{brabender}.}
-    \label{fig:brabender}
+    \includegraphics[width=0.6\textwidth]{images/triplex-extruder.jpg}
+    \caption[Solución SCADA de la empresa SmartControls.]{Solución SCADA de la empresa SmartControls.En la figura podemos apreciar como desde el sistema SCADA podemos acceder a todas las variables que intervienen en el sistema. Fuente \cite{smartcontrols}}
+    \label{fig:smart_Controls}
 \end{figure}
 
-\section{Everplast}
+En lo referente a este tipo de aplicaciones, se han realizado importantísimos avances a escala mundial y empresas como: Siemens, Wonderware, ABB o Rockwell Automation, ofrencen soluciones para implementar un sistema SCADA, y a día de hoy, prácticamente las soluciones son compatibles unas con otras.\\
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/everplast.jpg}
-    \caption[Extrusora de laboratorio EMS-35]{Extrusora de laboratorioEMS-35. Fuente \cite{everplast}}
-    \label{fig:everplast}
-\end{figure}
+Las distintas funciones que debe proveer un sistema SCADA son:
 
+\begin{itemize}
+    \item{Adquisición en tiempo real de los datos de intereses.}
+    \item{Posibilidad de realizar gráficas de los datos adquiridos.}
+    \item{Análisis de los datos obtenidos.}
+    \item{Control sobre los distintos instrumentos del sistema.}
+    \item{Acceso remoto al proceso productivo.}
+\end{itemize}
 
-\section{Extrusor Lyman}
+Debido a la versatilidad de un sistema SCADA, son pocas las empresas que se dedican a una rama en concreto, se suele trabajar bajo pedido, y se diseñan sistemas SCADAS especificos para cada caso, sin embargo empresas como Castool ofrecen soluciones sistemas SCADA capaces de controlar totalmente el proceso productivo de la extrusión, Visual Optimizer \cite{castool}.\\
 
-En la actualidad, existen proyectos libres de extrusora de filamento que incorporan sistemas de control capaces de controlar los valores de la producción, como son el diámetro del filamento, temperaturas de trabajo y velocidades de extrusión y tracción \cite{lyman}. Ya que usan un microcontrolador para gestionar todo el proceso.\\
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/lyman.jpg}
-    \caption[Extrusora DIY Lyman extruder]{Extrusora DIY Lyman extruder. Fuente \cite{lyman}}
-    \label{fig:lyman}
-\end{figure}
+Castool ofrece un sistema de extrusión completo, suministrando tanto la maquinaría, software como personal cualificado para el uso de la máquina. Sin embargo esta solución solo sería útil en el caso que se adquiriera una línea de extrusión completa, en la mayoría de los casos no es lo habitual, puesto que siempre se suelen tener elementos de la linea de distintos fabricantes.\\
 
 
-Sin embargo, a pesar de que se podría incorporar, ninguno de ellos incorpora la capacidad de almacenar un registro con toda la información relevante de la producción. Ni tampoco un acceso remoto desde cualquier lugar del mundo. Por ello, el sistema que se propone realizar en este proyecto mejora las caracteríticas de estos sistemas.
+
+
+
+

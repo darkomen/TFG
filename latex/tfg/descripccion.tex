@@ -1,4 +1,4 @@
-\chapter{Descripcción física de la solución}
+\chapter{Desarrollo de la solución propuesta}
 \label{cap:descrip}
 
 Como se ha introducido a lo largo del capítulo \ref{cap:introduccion}, para el correcto funcionamiento de la línea es necesario un operador que controle y supervise el funcionamiento de la misma, realice la carga de granza en la extrusora y la carga y descarga de los carretes en la bobinadora. Debido a ello se generan errores en la producción que sólo son visibles una vez que el producto ha sido almacenado y sometido a las convenientes pruebas de calidad, almacenando asi un producto que no es de la calidad necesaria para comercializarlo.\\
@@ -33,7 +33,7 @@ Los plazos asignadaos a cada una de las distintas fases que componen el proyecto
 \subsection{GitHub}
 GitHub es una plataforma de desarrollo colaborativo en el que se pueden alojar proyectos utilizando la herramienta de control de versiones Git. El código almacenado en esta plataforma es de dominio público, sin embargo también existe la posibilidad de crear repositorios privados creándonos una cuenta de pago.\\
 
-Para la realización del proyecto se ha creado un repositorio online \cite{githubTFG} en el que se han ido subiendo todos los ficheros que se han ido utilizando para la realización del mismo (ver figura \ref{fig:github}).
+Para la realización del proyecto se ha creado un repositorio online \cite{githubTFG} en el que se han ido subiendo todos los ficheros que se han ido utilizando para la realización del mismo (ver Figura \ref{fig:github}).
 
 \begin{figure}[H]
     \centering
@@ -43,12 +43,12 @@ Para la realización del proyecto se ha creado un repositorio online \cite{githu
 \end{figure}
 
 \subsection{IPython Notebook}
-IPython Notebook añade funcionalidades extra a Python, como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Podemos ver un ejemplo en la figura \ref{fig:ipython}
+IPython Notebook añade funcionalidades extra a Python, como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Podemos ver un ejemplo en la Figura \ref{fig:ipython}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/ipython.png}
-    \caption[Ejemplo de iPython Notebook usado en el proyecto.]{Ejemplo de iPython Notebook usado en el proyecto. En la figura vemos, como se puede combinar texto plano, ejecución de código Python y mostrar gráficas}
+    \caption[Ejemplo de iPython Notebook usado en el proyecto.]{Ejemplo de iPython Notebook usado en el proyecto. En la Figura vemos, como se puede combinar texto plano, ejecución de código Python y mostrar gráficas}
     \label{fig:ipython}
 \end{figure}
 
@@ -63,17 +63,17 @@ Durante la ejecución del proyecto, ha sido necesario realizar piezas específic
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.25\textwidth]{images/peletizadora/guia.png}
-    \caption[Ejemplo de pieza diseñada con Autodesk Inventor.]{Ejemplo de pieza diseñada con Autodesk Inventor. En la figura vemos una pieza específica diseñada para el proyecto.}
+    \caption[Ejemplo de pieza diseñada con Autodesk Inventor.]{Ejemplo de pieza diseñada con Autodesk Inventor. En la Figura vemos una pieza específica diseñada para el proyecto.}
     \label{fig:pieza}
 \end{figure}
 
 \subsection{Software de impresión 3D}
-Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y un software capaz de laminar el fichero STL en G-code para que la impresión de la pieza sea correcta. En este software es donde se configuran los parámetros de fabricación final de la pieza.
+Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y un software capaz de laminar el fichero STL en G-code para que la impresión de la pieza sea correcta. En este software es donde se conFiguran los parámetros de fabricación final de la pieza.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/cura.png}
-    \caption[Pieza diseñada abierta en cura.]{Pieza diseñada abierta en cura. Podemos ver como en el laminador se pueden configurar los distintos parámetros de fabricación de la pieza.}
+    \caption[Pieza diseñada abierta en cura.]{Pieza diseñada abierta en cura. Podemos ver como en el laminador se pueden conFigurar los distintos parámetros de fabricación de la pieza.}
     \label{fig:cura}
 \end{figure}
 
@@ -82,7 +82,7 @@ Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y 
 
 Se quiere desarrollar un sistema capaz de leer información de varios sensores y dado el caso activar elementos de control, todos ellos situados en un entorno industrial como es una fábrica de extrusión de polímeros. Por ello, el sistema elegido debe ser lo más robusto posible y tener capacidades de expansión por módulos para que, según la línea en la que se instale, se pueda acceder a una gran variedad de sensores.\\ 
 
-Así mismo, el sistema debe tener la posibilidad de almacenar información en una memoria externa, ya sea, alojada dentro del mismo sistema o en un sistema externo, como puede ser un servidor de bases de datos. También, debe poder estar conectado a una red ethernet con acceso a internet, para poder acceder de forma remota desde fuera de la fábrica.\\ 
+Así mismo, el sistema debe tener la posibilidad de almacenar información en una memoria externa, ya sea, alojada dentro del mismo sistema o en un sistema externo, como puede ser un servidor de bases de datos. También, debe poder estar conectado a una red ethernet con acceso a Internet, para poder acceder de forma remota desde fuera de la fábrica.\\ 
 
 Debido a todas estas características, se decide usar como unidad central del sistema, un autómata programable industrial (PLC) que en una primera aproximación parece ser lo más adecuado. También se intenta buscar un PLC que nos ofrezca las siguientes ventajas, no siendo estas imprescindibles, pero si ayudarán a la hora de elegir un modelo u otro:
 
@@ -92,7 +92,7 @@ Debido a todas estas características, se decide usar como unidad central del si
 		\item{Capacidad de expansión de las características por medio de módulos.}
 \end{itemize}
 
-De este modo, conseguimos reducir el coste total del proyecto. Partiendo de estos requisitos y buscando distintos proveedores por internet, las empresas que mejor se ajustan son:
+De este modo, conseguimos reducir el coste total del proyecto. Partiendo de estos requisitos y buscando distintos proveedores por Internet, las empresas que mejor se ajustan son:
 
 \begin{itemize}
 		\item{\textbf{UNITRONICS:} La compañía ofrece un PLC con pantalla HMI de bajo coste, que es idóneo para pequeños proyectos que no requieran demasiada capacidad. El principal problema es que no dispone de ninguna expansión para almacenar en tarjetas SD, ni se tiene conocimiento de que se pueda conectar a una base de datos MYSQL de forma directa.}
@@ -161,7 +161,7 @@ Las medidas de DSC se hicieron en un calorímetro TA Instruments Q20 con sistema
 
 Se empleó el calor de fusión del PLA $100\%$ cristalino, 93 J/g. Los errores en la determinación de las temperaturas, en el cálculo de la entalpía y en el de la cristalinidad se estimaron en $\delta1 ^o C$, $\pm4 J/g$ y $\pm0.04$ respectivamente. El peso de las muestras osciló entre 6 y10 mg, y las temperaturas de transición, Tm y Tc se tomaron en el punto máximo de la curva endoterma o exoterma. La Tg se tomó a la temperatura en la que se alcanza la mitad de la diferencia de calor específico existente entre el estado amorfo vítreo y el amorfo elastómero, es decir $T_{g} = 0.5 \pm C_{p}$.\\
 
-Se incluye a continuación los resultados obtenidos en el experimento. En la figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con la cristanilidad del polímero, el cual difiere de uno a otro, por que las condiciones de fabricación no son las mismas.\\
+Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con la cristanilidad del polímero, el cual difiere de uno a otro, por que las condiciones de fabricación no son las mismas.\\
 
 \begin{figure}[H]
     \centering
@@ -215,7 +215,7 @@ Las acciones que debe realizar el PLC son las siguientes:
 
 Para desarrollar el software que gestione el PLC, se usa una máquina de estados en la que pasando por diversos estados, se irán ejecutando las acciones de control. Debemos entrar en modo producción mediante la activación de una variable. Si estamos en producción, pasaremos por los distintos estados y mientras no estemos en producción, las salidas digitales y valores de consigna de los PID son reseteados a cero como medida de seguridad. Una vez que entremos en producción, el primer paso es inicializar el programa, generamos el nombre del fichero donde almacenamos los datos. Después se genera el fichero CSV y en caso de que no se produzca ningún error, se almacena la cabecera en el fichero CSV, para pasar a la producción como tal. Se controlará la temperatura del dado, se registrarán los valores de diámetros y temperaturas y se irán almacenando en el fichero CSV. El control del motor del husillo se hace de forma manual desde la visualización online.\\
 
-La máquina de estados se muestra en la figura \ref{fig:plc_estados}
+La máquina de estados se muestra en la Figura \ref{fig:plc_estados}
 
 \begin{figure}[H]
     \centering
@@ -227,7 +227,7 @@ La máquina de estados se muestra en la figura \ref{fig:plc_estados}
 \subsection{Controlar la temperatura del extrusor}
 \label{sec:plc_PID}
 
-Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID\\
+Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la Figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID\\
 
 \begin{figure}[H]
     \centering
@@ -306,7 +306,7 @@ Una vez que tenemos las ganancias de nuestro regulador PID, volvemos a realizar 
     \label{fig:plc_PID1}
 \end{figure}
 
-Como podemos observar en la figura \ref{fig:plc_PID1} tenemos una sobreoscilación sobre el setpoint elevada:
+Como podemos observar en la Figura \ref{fig:plc_PID1} tenemos una sobreoscilación sobre el setpoint elevada:
 
 $$M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{87.20-80}{80} \cdot 100 = 9\%$$ 
 
@@ -388,7 +388,7 @@ En la ayuda que ofrece el programa de ABB, se observan los valores que asigna el
     \label{tab:reso_adc}
 \end{table}
 
-Se va a trabajar con el rango de intervalo normal. Para poder saber el diámetro que está dando el sensor, se debe leer la entrada analógica y convertir el valor décimal a un valor de tensión, es decir, convertir el valor digital a analogico (DAC), para ello, con los valores del intervalo normal de la tabla \ref{tab:reso_adc} se calcula la ecuación de la recta que lo caracteriza que en este caso es: $Y=3.6168 \cdot 10^{-4} \cdot X$ (ver figura \ref{fig:plc_DAC})
+Se va a trabajar con el rango de intervalo normal. Para poder saber el diámetro que está dando el sensor, se debe leer la entrada analógica y convertir el valor décimal a un valor de tensión, es decir, convertir el valor digital a analogico (DAC), para ello, con los valores del intervalo normal de la tabla \ref{tab:reso_adc} se calcula la ecuación de la recta que lo caracteriza que en este caso es: $Y=3.6168 \cdot 10^{-4} \cdot X$ (ver Figura \ref{fig:plc_DAC})
 
 \begin{figure}[H]
     \centering
@@ -433,7 +433,7 @@ En la tabla \ref{tab:plc_csv} se ve un ejemplo de los datos almacenados en un fi
     \label{tab:plc_csv}
 \end{table}
 
-La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor de transferencia de ficheros (servidor FTP) con el que se transfieren ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, se accede a la SD de forma remota, sin tener que sacar la SD del PLC. Para ello,como se muestra en la figura \ref{fig:plc_servicios}, se usa el servidor FTP que facilita la herramienta de ABB\\
+La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor de transferencia de ficheros (servidor FTP) con el que se transfieren ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, se accede a la SD de forma remota, sin tener que sacar la SD del PLC. Para ello,como se muestra en la Figura \ref{fig:plc_servicios}, se usa el servidor FTP que facilita la herramienta de ABB\\
 
 \begin{figure}[H]
     \centering
@@ -442,7 +442,7 @@ La información se almacena en la tarjeta SD interna del PLC y para poder accede
     \label{fig:plc_servicios}
 \end{figure}
 
-En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC que se encuentra en la misma red y se descarga el fichero csv para su posterior estudio (ver figura \ref{fig:plc_cliente_ftp}).
+En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC que se encuentra en la misma red y se descarga el fichero csv para su posterior estudio (ver Figura \ref{fig:plc_cliente_ftp}).
 
 \begin{figure}[H]
     \centering
@@ -454,7 +454,7 @@ En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC
 \subsection{Visualización web de la producción}
 \label{sec:plc_scada}
 
-Para poder visualizar el estado de la producción, se usa una herramienta que incorpora de serie el programa de Abb al igual que el servidor FTP que se vió anteriormente. Esta herramienta, provee un servidor de páginas WEB (ver figura \ref{fig:plc_servicios}) en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
+Para poder visualizar el estado de la producción, se usa una herramienta que incorpora de serie el programa de Abb al igual que el servidor FTP que se vió anteriormente. Esta herramienta, provee un servidor de páginas WEB (ver Figura \ref{fig:plc_servicios}) en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
 
 \begin{itemize}
     \item {Ver temperaturas de Husillo y Dado.}

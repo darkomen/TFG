@@ -1,4 +1,4 @@
-\chapter{Resultados}
+\chapter{Validación del sistema}
 \label{cap:resultados}
 
 Como se ha mostrado hasta ahora, se tiene un sistema capaz de registrar la información de una serie de sensores y crear un fichero con esa información. Cuando se incia el planteamiento de este proyecto, el paso final del mismo es implementar el sistema en una linea de extrusión industrial sin embargo, por problemas burocráticos, a la hora de implementar el funcionamiento del mismo, no se tiene acceso a ninguna. \\
@@ -9,7 +9,7 @@ Para poder demostrar que el sistema es útil, se decide hacer una maqueta de una
 \section{Filastruder-sensor diámetro-bobinadora}
 \label{sec:FSB}
 
-Como primera aproximación e intentando asemejar el esquema de producción que tienen en la fábrica de Huesca se va a seguir el esquema mostrado en la figura \ref{fig:esquemap_FSB}:
+Como primera aproximación e intentando asemejar el esquema de producción que tienen en la fábrica de Huesca se va a seguir el esquema mostrado en la Figura \ref{fig:esquemap_FSB}:
 
 \begin{figure}[H]
     \centering
@@ -167,7 +167,7 @@ Se extruye una cantidad de filamento sin medir el diámetro, tan sólo registran
 Se ve claramente, que la velocidad de giro no es constante, variando entre 1 y 2 RPM. El motor que hace girar el husillo está conectado directamente a 12V y no se tienen ningún control sobre él. Además mecánicamente, el motor está conectado al husillo mediante una caja reductora, la cual no podemos cambiar. Para no alargar la duración del proyecto e intentar avanzar en el control se van a tomar las siguientes medidas:
 
 \begin{itemize}
-    \item{Usar una mezcla de granza de PLA natural (70\%) con pellets reciclados de filamento (30\%) (ver figura \ref{fig:2007105-mezc}). Se usará granza de PLA natural, el cual tiene una forma más redondeada que los pellets reciclados, haciendo más fácil el avance dentro del cañón. Se usa una mezcla con los pellets reciclados, ya que el sensor de diámetro que usamos, no funciona con filamento transparente, por ello, debemos tintar el filamento}
+    \item{Usar una mezcla de granza de PLA natural (70\%) con pellets reciclados de filamento (30\%) (ver Figura \ref{fig:2007105-mezc}). Se usará granza de PLA natural, el cual tiene una forma más redondeada que los pellets reciclados, haciendo más fácil el avance dentro del cañón. Se usa una mezcla con los pellets reciclados, ya que el sensor de diámetro que usamos, no funciona con filamento transparente, por ello, debemos tintar el filamento}
 	    \begin{figure}[H]
 		    \centering
 		    \includegraphics[width=0.6\textwidth]{images/producciones/20072015/IMG_20150903_155859.jpg}
@@ -175,7 +175,7 @@ Se ve claramente, que la velocidad de giro no es constante, variando entre 1 y 2
 		    \label{fig:2007105-mezc}
 		\end{figure}
     \item{Antes de hacer una producción de filamento, la granza de PLA que se vaya a usar, se va a secar en un horno a una temperatura de 80ºC durante, al menos, tres horas antes de la producción. Esto es debido a que si el PLA tiene un alto porcentaje de humedad, hará que la extrusión del material no sea el adecuado, afectando directamente en el acabado final.}
-    \item{Se va a diseñar una tolva de alimentación mayor, para que la capacidad de granza aumente, y se ejerza mayor presión a la entrada del extrusor, para que de ese modo, la alimentación de la granza se lo más constante posible. El tamaño de almacenamiento máximo ha pasado de 42gr a 150gr (ver figura \ref{fig:tolv_montaj}).}
+    \item{Se va a diseñar una tolva de alimentación mayor, para que la capacidad de granza aumente, y se ejerza mayor presión a la entrada del extrusor, para que de ese modo, la alimentación de la granza se lo más constante posible. El tamaño de almacenamiento máximo ha pasado de 42gr a 150gr (ver Figura \ref{fig:tolv_montaj}).}
 \end{itemize}
 
 \begin{figure}[H]

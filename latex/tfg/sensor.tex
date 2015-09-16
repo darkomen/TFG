@@ -1,11 +1,11 @@
-\chapter{Sensor de diámetro}
+\chapter{Montaje del sensor de diámetro}
 \label{ane:sensor}
 
-El sensor funciona de la siguiente manera. Dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+El sensor funciona de la siguiente manera. Dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver Figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_135533_.jpg}
-    \caption[Sensor CCD lineal.]{En la figura apreciamos el sensor CCD que es capaz de captar luces que inciden sobre él}
+    \caption[Sensor CCD lineal.]{En la Figura apreciamos el sensor CCD que es capaz de captar luces que inciden sobre él}
     \label{fig:sens_CCD}
 \end{figure}
 
@@ -40,7 +40,7 @@ Para conseguir la PCB se usan los ficheros gerber disponibles en la web del proy
     \label{fig:sens_gerber}
 \end{figure}
 
-La única manera de realizar las PCB que disponemos es encargándola por internet \footnote{http://www.seeedstudio.com/depot/}. Enviamos los gerber y tras establecer las especificaciones de la PCB en unos días recibimos el pedido.\\
+La única manera de realizar las PCB que disponemos es encargándola por Internet \footnote{http://www.seeedstudio.com/depot/}. Enviamos los gerber y tras establecer las especificaciones de la PCB en unos días recibimos el pedido.\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_105219_.jpg}

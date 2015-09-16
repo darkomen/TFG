@@ -52,7 +52,7 @@
 \renewcommand{\author}{Santiago López Pina}
 \renewcommand{\title}{SCADA Y MODELADO PARCIAL DE SISTEMA DE EXTRUSIÓN DE FILAMENTO}
 \newcommand{\department}{Departamento de Sistemas y Automática}
-\newcommand{\teacher}{Victor Gonzalez Pacheco}
+\newcommand{\teacher}{Víctor González Pacheco}
 
 %% All this is used for inserting C++ code on some parts of the thesis
 \usepackage{listings}
@@ -140,24 +140,22 @@
 \begin{document}
 
 	%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{portada}
-	\pagestyle{plain}
-    ~
-	\newpage
-	\input{agradecimientos}
-	~
-	\newpage
-	\input{resumen}
-	~
-	%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\tableofcontents
-	\newpage
-
-	%%%%%% Índice de figuras y tablas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	\listoffigures   % Figures
-	\listoftables    % Tables
-	\newpage
+	%\include{portada}
+	%\pagestyle{plain}
+    %~
+	%\newpage
+	%\input{agradecimientos}
+	%~
+	%\newpage
+	%\input{resumen}
+	%~
+	%%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\tableofcontents
+	%\newpage
+	%%%%%%% Índice de Figuras y tablas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\listoffigures   % Figures
+	%\listoftables    % Tables
+	%\newpage
 
 	% Adding some header text on top of the page:
 	\fancyhead[L]{\nouppercase{\leftmark}}
@@ -167,38 +165,36 @@
 	\pagestyle{fancy}
 
 	%%%%%% Secciones del documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\input{introduccion}
-	\input{conceptos}
+	%\input{introduccion}
+	%\input{conceptos}
 	\input{estado_arte}
-	\input{descripccion}
-	\input{resultados}
-	\input{regulador}
-	\input{conclusiones}
-
-	%%%%%% Apéndices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	\begin{appendix}
-		\clearpage % o \cleardoublepage
-		\addappheadtotoc
-		\appendixpage
-		\input{presupuesto}
-		\input{gant}
-		\input{PLC}
-		\input{esquemas}
-		\input{filastruder}
-		\input{peletizadora}
-		\input{tractora}
-		\input{sensor}
-		\input{filawinder}
-		\input{resultados_regulador}
-	\end{appendix}
+	%\input{descripccion}
+	%\input{resultados}
+	%\input{regulador}
+	%\input{conclusiones}
+	%%%%%%% Apéndices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\begin{appendix}
+	%	\clearpage % o \cleardoublepage
+	%	\addappheadtotoc
+	%	\appendixpage
+	%	\input{presupuesto}
+	%	\input{gant}
+	%	\input{PLC}
+	%	\input{esquemas}
+	%	\input{filastruder}
+	%	\input{peletizadora}
+	%	\input{tractora}
+	%	\input{sensor}
+	%	\input{filawinder}
+	%	\input{resultados_regulador}
+	%\end{appendix}
 
 
-	%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\newpage{}
-	\label{Bibliography}
-	\lhead{\emph{Bibliografia}}  % Change the left side page header to "Bibliography"
-	\bibliographystyle{unsrt}
-	\bibliography{references}
+	%%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\newpage{}
+	%\label{Bibliography}
+	%\lhead{\emph{Bibliografia}}  % Change the left side page header to "Bibliography"
+	%\bibliographystyle{unsrt}
+	%\bibliography{references}
 
 \end{document}

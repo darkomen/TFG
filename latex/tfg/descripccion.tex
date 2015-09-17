@@ -1,9 +1,18 @@
 \chapter{Desarrollo de la solución propuesta}
 \label{cap:descrip}
 
-Como se ha introducido a lo largo del capítulo \ref{cap:introduccion}, para el correcto funcionamiento de la línea es necesario un operador que controle y supervise el funcionamiento de la misma, realice la carga de granza en la extrusora y la carga y descarga de los carretes en la bobinadora. Debido a ello se generan errores en la producción que sólo son visibles una vez que el producto ha sido almacenado y sometido a las convenientes pruebas de calidad, almacenando asi un producto que no es de la calidad necesaria para comercializarlo.\\
+Una línea de extrusión completa está compuesta por distintos componentes. En la Figura \ref{fig:esquema_extrusora} vemos los elementos que lo conforman, así mismo, vemos que en cada uno de ellos, hay diferentes valores que influyen en la calidad final del filamento.\\
 
-Para minimizar el error humano, se propone la implementación de un sistema de aquisición y procesamiento de datos (SCADA) que permita el análisis durante y después de la producción de los diferentes parámetros del sistema. Estos son el diámetro final del filamento, las temperaturas a lo largo de la extrusora y las velocidades de extrusión. De esta manera podemos ver los aspectos que influyen en el diámetro y que el propio sistema sea capaz de corregirlo en tiempo real durante la producción. El sistema que se desarrolle, deberá ser lo más ampliable que se pueda, de esa manera, será útil en casi cualquier línea de extrusión sin importar la instrumentación que se disponga.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/esquema_extrusion.png}
+    \caption[Esquema de los elementos que conforman una extrusora.]{Esquema de los elementos que conforman una línea de extrusión completa. Vemos el flujo de avance del filamento según sale de la extrusora y pasa por los distintos elementos. En cada uno, se registran distintos valores.}
+    \label{fig:esquema_extrusora}
+\end{figure}
+
+En una línea de extrusión convencional, se tiene acceso visual a los parámetros indicados, sin embargo no queda registrado en ningún lugar de cuales han sido . Hasta que la extrusión de filamento no se ha extendido, no era necesario tener en detalle estos valores, ya que eran pocos los parámetros que afectaban a la calidad del perfil extruido. Sin embargo, en la extrusión de filamento, son muchos los valores que pueden afectar a la calidad del producto final.\\
+
+Por estos motivos y poder tener una gestión de calidad del producto fabricado, se decide desarrollar un sistema de adquisición de datos para que se pueda hacer una trazabilidad completa de los parámetros de fabricación.\\
 
 \section{Planificación}
 \label{sec:planificacion}
@@ -14,45 +23,29 @@ La primera fase en la que se desarrollará el sistema de adquisición de datos c
 
 \begin{itemize}
     \item Recopilación y análisis de la documentación de todos los dispositivos de interés para el proyecto de la línea de extrusión.
-    \item Defición de los requisitos respecto a comunicaciones necesarias entre los dispositivos de la línea y el sistema de adquisición.
+    \item Definición de los requisitos respecto a comunicaciones necesarias entre los dispositivos de la línea y el sistema de adquisición.
     \item Determinar los requisitos del autómata progamable industrial (PLC) a utilizar.
     \item Programación del PLC. Puesto que será el encargado de llevar el control de la planta, deberemos programar la adquisición de datos para establecer el control sobre la linea.
 \end{itemize}
 
-En esta fase se pondrá en marcha todo el sistema en la planta, instalando el PLC y cableando toda la red de comunicaciones y sensores que disponemos. Así mismo se almacenarán datos de los seis sensores de temperatura que dispone la planta (cinco de ellos en extrusora y uno en bañera de enfriamiento) y el sensor de diámetro. Con los datos adquiridos se modelará parcialmente la planta para intentar hacer un control en lazo cerrado entre la unión tractora de filamento y el sensor de diámetro del mismo. Durante esta fase se diseñará un sistema, para poder visualizar los datos adquiridos de forma remota.\\
+En esta fase se pondrá en marcha todo el sistema en la planta, instalando el PLC y cableando toda la red de comunicaciones y sensores que disponemos. Así mismo se almacenarán datos de los sensores de temperatura que dispone la planta y el sensor de diámetro. Con los datos adquiridos se modelará parcialmente la planta para intentar hacer un control en lazo cerrado entre la unión tractora de filamento y el sensor de diámetro del mismo. Durante esta fase se diseñará un sistema, para poder visualizar los datos adquiridos de forma remota.\\
 
-La segunda fase del proyecto consistirá en la implementación en planta de los distintos reguladores diseñados y probados en la fase anterior. Como primera aproximación la salida a controlar será el diámetro del filamento y la entrada la velocidad de tracción, ya que es la variable que influye directamente en el diámetro a conseguir. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, fuzzy, etc. para posteriormente estudiar los beneficios e inconvenientes de cada uno de ellos.\\
+De forma general, una linea de extrusión controla el filamento actuando sobre dos velocidades, la de extrusión o la de tracción. La tractora es la encargada de tirar del filamento según salga de la extrusora. Lo habitual es variar la velocidad de la tractora en función del diámetro que se tenga pero también se suele variar la velocidad de extrusión, sin embargo esto puede afectar a la calidad del filamento, puesto que no todo el material estará el mismo tiempo en la extrusora pudiendo generar una degradación en los pellets.\\
 
-Para el completo desarrollo de esta segunda fase, y poder demostrar el correcto funcionamiento en la línea, necesitaremos la aprobación de la empresa pels que explota la línea de extrusión. Aunque se tratará de un sistema modular que será fácil de integrar en otras líneas de producción parecidas. Siendo el sistema totalmente compatible y escalable para futuras lineas de extrusión que se adquieran.\\
+Para poder investigar acerca de qué método de control es mejor se realizará un estudio de diferentes sistemas de control para regular el diámetro final del filamento. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, fuzzy, etc. para posteriormente estudiar los beneficios e inconvenientes de cada uno de ellos.\\
 
 Los plazos asignadaos a cada una de las distintas fases que componen el proyecto, se puede ver en el Anexo \ref{ane:gant}
 
 \section{Herramientas empleadas}
 \label{sec:herramientas}
 
+Para el desarrollo de las distintas partes del proyecto, ha sido necesario utilizar varios programas informáticos que nos han ayudado en la consecución de los objetivos del mismo. A continuación, se introducen brevemente, los programas usados más importantes.
+
 \subsection{GitHub}
 GitHub es una plataforma de desarrollo colaborativo en el que se pueden alojar proyectos utilizando la herramienta de control de versiones Git. El código almacenado en esta plataforma es de dominio público, sin embargo también existe la posibilidad de crear repositorios privados creándonos una cuenta de pago.\\
 
 Para la realización del proyecto se ha creado un repositorio online \cite{githubTFG} en el que se han ido subiendo todos los ficheros que se han ido utilizando para la realización del mismo (ver Figura \ref{fig:github}).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{images/github.png}
-    \caption[Repositorio online del proyecto.]{Repositorio  en el que todos los ficheros usados para la realización del mismo están disponibles online}
-    \label{fig:github}
-\end{figure}
-
-\subsection{IPython Notebook}
-IPython Notebook añade funcionalidades extra a Python, como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Podemos ver un ejemplo en la Figura \ref{fig:ipython}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/ipython.png}
-    \caption[Ejemplo de iPython Notebook usado en el proyecto.]{Ejemplo de iPython Notebook usado en el proyecto. En la Figura vemos, como se puede combinar texto plano, ejecución de código Python y mostrar gráficas}
-    \label{fig:ipython}
-\end{figure}
-
-Esta herramienta se ha utilizado en el proyecto para poder calcular el modelo matemático de un sistema e implementar un regulador PID, así mismo, se han analizado los datos adquiridos durante una producción de filamento y comprobar los resultados del sistema diseñado. Los cuadernos realizados están disponibles para su consulta y descarga en el repositorio que se ha creado para el proyecto \cite{githubTFG}.
 
 \subsection{GNU Octave}
 GNU Octave es un programa libre para realizar cálculos numéricos. Ofrece un interprete de comandos, donde se van escribiendo los comandos que queramos realizar. También permite mostrar gráficas con una serie de datos numércios. Se le considera el equivalente a Matlab \cite{octave}. Esta herramienta se ha utilizado en el proyecto para calcular el modelo matemático de un sistema, para la posterior implementación de un regulador PID.
@@ -67,7 +60,7 @@ Durante la ejecución del proyecto, ha sido necesario realizar piezas específic
     \label{fig:pieza}
 \end{figure}
 
-\subsection{Software de impresión 3D}
+\subsection{Cura 15.02.1}
 Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y un software capaz de laminar el fichero STL en G-code para que la impresión de la pieza sea correcta. En este software es donde se conFiguran los parámetros de fabricación final de la pieza.
 
 \begin{figure}[H]
@@ -77,8 +70,20 @@ Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y 
     \label{fig:cura}
 \end{figure}
 
+\subsection{IPython}
+IPython\cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade mejoras como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece una interfaz tipo notebook lo cual añade la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Estos notebooks son interactivos y permiten observar como se han realiado los cálculos y análsis. Podemos ver un ejemplo en la Figura \ref{fig:ipython}
 
-\section{Elección de los componentes.}
+\begin{figure}[hd!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/ipython.png}
+    \caption[Ejemplo de iPython Notebook usado en el proyecto.]{Ejemplo de iPython Notebook usado en el proyecto. En la Figura vemos, como se puede combinar texto plano, ejecución de código Python y mostrar gráficas.}
+    \label{fig:ipython}
+\end{figure}
+
+Esta herramienta se ha utilizado en el proyecto para poder calcular el modelo matemático de un sistema e implementar un regulador PID, así mismo, se han analizado los datos adquiridos durante una producción de filamento y comprobar los resultados del sistema diseñado. Los cuadernos realizados están disponibles para su consulta y descarga en el repositorio que se ha creado para el proyecto \cite{githubTFG}.
+
+
+\section{Elección de los componentes}
 
 Se quiere desarrollar un sistema capaz de leer información de varios sensores y dado el caso activar elementos de control, todos ellos situados en un entorno industrial como es una fábrica de extrusión de polímeros. Por ello, el sistema elegido debe ser lo más robusto posible y tener capacidades de expansión por módulos para que, según la línea en la que se instale, se pueda acceder a una gran variedad de sensores.\\ 
 
@@ -100,27 +105,11 @@ De este modo, conseguimos reducir el coste total del proyecto. Partiendo de esto
 		\item{\textbf{ABB:} El PLC de la gama eco trae de serie la mayoría de las cosas que necesitamos, además, si no se superan ciertas limitaciones, no es necesario pagar una licencia para poder usar el software de desarrollo.}
 \end{itemize}
 
-Se habla con cada uno de los distribuidores que ofrecen los productos en España, pidiendo un presupuesto con el material necesario para suplir las necesidades del proyecto como vemos en la tabla \ref{tab:presupuestos}
+El PLC que se adquiere es de la marca ABB debido a la gran relación calidad precio que ofrece. Una vez adquirido el PLC lo siguiente será realizar el montaje del armario donde irá colocado en la fábrica. En el anexo \ref{ane:plc} se detalla el proceso de construcción que se ha llevado acabo.\\
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{cc}
-		{\bf Distribuidor} & {\bf Precio (\euro{})} \\ \hline
-		Unitronics         & 390              \\
-		Wago               & 1374             \\
-		Abb                & 506              \\
-	\end{tabular}
-	\caption[Presupuesto de los tres distribuidores]{Presupuestos de los tres distribuidores. Se ve la gran diferencia de precios entre los distintos distribuidores.}
-	\label{tab:presupuestos}
-\end{table}
+Para poder demostrar que el sistema a desarrollar es válido para resolver el problema planteado, se mantienen conversaciones con los responsables de PESL para poner en común cuales son los dispositivos que disponen en la fábrica, sin embargo, debido a planificaciones de producción que tienen PESL solo se disponen de dos líneas de extrusión, resulta imposible destinar una línea de fabricación para poner en marcha nuestro sistema.\\
 
-Debido al alto presupuesto que propone Wago se descarta ya que el precio de ABB es muy competitivo. De hecho es la marca que se elije, puesto que en comparación el coste con la marca Unitronics no supone un gasto excesivo y la fiabilidad de los autómatas y el software que provee ABB es mejor.\\
-
-Una vez adquirido el PLC lo siguiente será realizar el montaje del armario donde irá colocado en la fábrica. En el anexo \ref{ane:plc} se detalla el proceso de construcción que se ha llevado acabo.\\
-
-Se mantienen conversaciones con los responsables de PESL para poner en común cuales son los dispositivos que disponen en la fábrica, sin embargo, se muestran reticentes al proyecto y no nos dan acceso a su extrusora para poder realizar el proyecto.\\
-
-A pesar de ello, no supone un problema para la realización del proyecto, ya que puede realizarse sin tener ninguno de los materiales, unicamente con el PLC y simuladores software podríamos realizarlo, pero no podríamos demostrar que nuestro sistema es útil. En el departamento de robótica e innovación de BQ se dispone de un KIT DIY de una extrusora de filamento, filastruder.\\
+Debido a ello, se decide adquirir una extrusora de laboratorio y poder implementar el sistema en ella desde su instalación por parte del distribuidor. Sin embargo, los plazos de entrega estipulados, se alejan de la fecha de presentación del presente proyecto y por ese motivo se decide usar una extrusora casera que se tiene en el departamento de robótica e innovación de BQ (ver Figura \ref{fig:hardware_filastruder}).\\
 
     \begin{figure}[H]
             \centering
@@ -129,7 +118,7 @@ A pesar de ello, no supone un problema para la realización del proyecto, ya que
             \label{fig:hardware_filastruder}
     \end{figure}
 
-Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de crowfunding en kickstarter\footnote{https://www.kickstarter.com/projects/833191773/filastruder-a-robust-inexpensive-filament-extruder?lang=es}. Es un extrusor de baja capacidad y de bajo coste, liberado como Open Source. Todo el proceso de construcción del extrusor se documentó en el foro y se creó una comunidad de usuarios interesados en los extrusores caseros.\\
+Filastruder se presenta como proyecto en Noviembre de 2012 \cite{filastruder} y consiguió recaudar $212.278 \$$ en una campaña de crowfunding en kickstarter\footnote{https://www.kickstarter.com/projects/833191773/filastruder-a-robust-inexpensive-filament-extruder?lang=es}. Es un extrusor de baja capacidad y de bajo coste debido a que el usuario es el que realiza el proceso de montaje, liberado como Open Source (DIY). Todo el proceso de construcción del extrusor se documentó en el foro y se creó una comunidad de usuarios interesados en los extrusores caseros.\\
 
 Algunas de las características de este extrusor son:
 
@@ -142,68 +131,67 @@ Algunas de las características de este extrusor son:
         \textbf{Tiempo para extruir 1kg}                  & $24H$                             \\
         \textbf{Diámetro del husillo}                     & $15.875mm$                        \\
         \textbf{Longitud del husillo}                     & $255mm$                           \\
-        \textbf{Tolerancia declarada}                     & $\pm 0.05 mm$                     \\    
+        \textbf{Tolerancia declarada}                     & $\pm 0.05 mm$                     \\   
 
     \end{tabular}
     \caption[Características filastruder.]{Características filastruder. Fuente\cite{tfg_diego}}
     \label{tab:caract_filas}
 \end{table}
 
-Debido a que la maqueta ha estado almacenada durante años sin usar, el funcionamientor no es el adecuado para crear filamento en condiciones, sin embargo, es completamente útil para la realización del proyecto. Ya que con dos sensores de temperatura, dos cartuchos calefactores y un sensor de diámetro, podremos simular una extrusora industrial, de esta manera también, demostramos que el sistema es totalmente escalable y con cambios en el software podremos adquirir datos de cualquier extrusora. En el anexo \ref{ane:filastruder} se detalla el proceso llevado a cabo para montar la filastruder. \\
+Pese a que el funcionamiento no es el adecuado para crear un filamento de calidad, si es completamente útil para la realización del proyecto. Ya que con dos sensores de temperatura, dos cartuchos calefactores y un sensor de diámetro, podremos simular una extrusora industrial, de esta manera también, demostramos que el sistema es totalmente escalable y con cambios en el software podremos adquirir datos de cualquier extrusora. En el Anexo \ref{ane:filastruder} se detalla el proceso llevado a cabo para montar la filastruder.\\
 
-Se decide usar un sensor de diámetro opensource del cual, toda la información necesaria para su construcción está accesible via online \cite{thing_filamento}. En el anexo \ref{ane:sensor} se detalla el proceso llevado a cabo para su construcción.\\
+Se decide usar un sensor de diámetro opensource del cual, toda la información necesaria para su construcción está accesible via online \cite{thing_filamento}. En el Anexo \ref{ane:sensor} se detalla el proceso llevado a cabo para su construcción.\\
 
-A la hora de obtener matería prima para poder extruir filamento, se decide construir una peletizadora para poder reciclar filamento que no cumple las condiciones para ser usado en una impresora 3D (ver anexo \ref{ane:peletizadora}). Antes de extruir el filamento, se comprueba si los pellets reciclados son aptos para la extrusión.\\
+A la hora de obtener matería prima para poder extruir filamento, se decide construir una peletizadora (ver Anexo \ref{ane:peletizadora}), maquina capaz de reciclar filamento que no cumple las condiciones para ser usado en una impresora 3D, de esta manera, podríamos abaratar costes, evitando tener que usar pellets de PLA para un filamento que no sabemos si va a ser utilizable. Antes de extruir el filamento, se comprueba si los pellets reciclados son aptos para la extrusión.\\
 
-Se realizan ensayos por calorimetría diferencial de barrido (DSC). El DSC es una técnica que permite el estudio de las transiciones de fase en los materiales polímeros\cite{DSC1} lo que es de suma importancia a la hora de establecer sus condiciones de procesado y aplicaciones tecnológicas, ya que el tipo de fases y transiciones entre ellas determinan su comportamiento físico macroscópico.\\
+Por ello, se realizan ensayos por calorimetría diferencial de barrido (DSC). El DSC es una técnica que permite el estudio de las transiciones de fase en los materiales polímeros \cite{DSC1} lo que es de suma importancia a la hora de establecer sus condiciones de procesado y aplicaciones tecnológicas, ya que el tipo de fases y transiciones entre ellas determinan su comportamiento físico macroscópico.\\
 
-Las medidas de DSC se hicieron en un calorímetro TA Instruments Q20 con sistema de enfriamiento y bajo atmósfera de nitrógeno. El aparato se calibró con Indio como sustancia de referencia ($Tm = 156.6 ^o C$, $\delta H = 28.45 J/g$). En el ensayo se sometió al polímero a una fusión a $20 ^o C/min$, seguida de una cristalización y una segunda fusión, a la velocidad de $5 ^o C/min$.\\
+Javier Arranz Andrés, compañero del departamento, realiza un ensayo mediante DSC. Las medidas se hicieron en un calorímetro TA Instruments Q20 con sistema de enfriamiento y bajo atmósfera de nitrógeno. El aparato se calibró con Indio como sustancia de referencia ($Tm = 156.6 ^o C$, $\delta H = 28.45 J/g$). En el ensayo se sometió al polímero a una fusión a $20 ^o C/min$, seguida de una cristalización y una segunda fusión, a la velocidad de $5 ^o C/min$.\\
 
-Se empleó el calor de fusión del PLA $100\%$ cristalino, 93 J/g. Los errores en la determinación de las temperaturas, en el cálculo de la entalpía y en el de la cristalinidad se estimaron en $\delta1 ^o C$, $\pm4 J/g$ y $\pm0.04$ respectivamente. El peso de las muestras osciló entre 6 y10 mg, y las temperaturas de transición, Tm y Tc se tomaron en el punto máximo de la curva endoterma o exoterma. La Tg se tomó a la temperatura en la que se alcanza la mitad de la diferencia de calor específico existente entre el estado amorfo vítreo y el amorfo elastómero, es decir $T_{g} = 0.5 \pm C_{p}$.\\
+Se empleó el calor de fusión del PLA $100\%$ cristalino, 93 J/g \cite{DSC}. Los errores en la determinación de las temperaturas, en el cálculo de la entalpía y en el de la cristalinidad se estimaron en $\delta1 ^o C$, $\pm4 J/g$ y $\pm0.04$ respectivamente. El peso de las muestras osciló entre 6 y10 mg, y las temperaturas de transición, Tm y Tc se tomaron en el punto máximo de la curva endoterma o exoterma. La Tg se tomó a la temperatura en la que se alcanza la mitad de la diferencia de calor específico existente entre el estado amorfo vítreo y el amorfo elastómero, es decir $T_{g} = 0.5 \pm C_{p}$.\\
 
-Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con la cristanilidad del polímero, el cual difiere de uno a otro, por que las condiciones de fabricación no son las mismas.\\
+Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con el grado de cristalinidad del polímero, el cual difiere de uno a otro, sin embargo la diferencia está dentro del margen de error experimental. Esta diferencia puede ser un indicador de inicio de degradación, debido a que las cadenas del polímero son más pequeñas y dificultan el movimiento en sus partes extremas dificultando la cristalinidad.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/dsc.png}
-    \caption[Resultado del análisis con DSC de filamento reciclado.]{Resultado del análisis con DSC de filamento reciclado.En la imagen, vemos el filamento original (color negro) comparado coon el filamento reciclado (color rojo). Podemos llegar a la conclusión de que el filamento reciclado es apto para reutilizar.}
+    \includegraphics[width=0.9\textwidth]{images/dsc2.png}
+    \caption[Resultado del análisis con DSC de filamento reciclado.]{Resultado del análisis con DSC de filamento reciclado. Vemos el filamento original (color negro) comparado con el filamento reciclado (color rojo). Podemos llegar a la conclusión de que el filamento reciclado es apto para reutilizar.}
     \label{fig:analisis_dsc}
 \end{figure}
 
-En las tablas \ref{tab:dsc1} y \ref{tab:dsc2} podemos ver los datos obtenidos:
+En las Tablas \ref{tab:dsc1} y \ref{tab:dsc2} podemos ver los datos obtenidos:
 
 \begin{table}[H]
     \centering
     \begin{tabular}{llllll}
         \multicolumn{6}{c}{Glass Transition}                                                        \\
                             & Onset (ºC) & Midpoint (ºC) & End (ºC) & Height W/g & Delta Cp (J/gºC) \\ \hline
-        FIlamento Inicial   & 60.78      & 55.63         & 50.52    & 0.04215    & 0.5057           \\
-        Filamento reciclado & 60.26      & 55.27         & 50.29    & 0.04268    & 0.5121          
+        FIlamento Inicial   & 61.0      & 56.0         & 50.5    & 0.04    & 0.5           \\
+        Filamento reciclado & 60.5     & 55.5         & 50.5    & 0.04    & 0.5         
     \end{tabular}
     \caption[Datos del DSC con la transición vítrea del filamento.]{Datos del DSC con la transición vítrea del filamento. En los resultados podemos observar, cómo apenas se produce una degradación en las propiedades térmicas del material reciclado, siendo los valores, muy similares de una muestra a otra}
     \label{tab:dsc1}
 \end{table} 
 
-
 \begin{table}[H]
     \centering
-    \begin{tabular}{lllllll}
-        \multicolumn{7}{c}{Peak Integration}                                                                                 \\
-                            & Start (ºC) & Onset (ºC) & Midpoint (ºC) & Stop (ºC) & Area J/g & Special Area (\% crystalized) \\ \hline
-        Filamento Inicial   & 109.99     & 104.55     & 92.62         & 69.98     & 2.570    & 2.743                         \\
-        Filamento reciclado & 109.99     & 103.42     & 90.82         & 69.98     & 1.527    & 1.630                        
+    \begin{tabular}{lllll}
+        \multicolumn{5}{c}{Peak Integration}                                                                                 \\
+                             & Midpoint (ºC) & Stop (ºC) & Area J/g   &  \% crystalized \\ \hline
+        Filamento Inicial    & 93.0         & 70.0     & 2   &  3                         \\
+        Filamento reciclado  & 91.0        & 70.0     & 1    & 2                        
     \end{tabular}
-    \caption[Datos del DSC con la cristanilidad del filamento]{El único dato que difiere de un filamento a otro, es el porcentaje de cristanilidad, y puede ser debido a que ambos filamentos no están fabricado con la misma máquina}
+    \caption[Datos del DSC con la cristanilidad del filamento]{El único dato que difiere de un filamento a otro, es el porcentaje de cristanilidad, sin embargo la diferencia entre ambas medidas está dentro del error experimental.}
     \label{tab:dsc2}
 \end{table}
 
-A falta de realizar un ensayo de propiedades mecánicas de ambos filamentos, podemos dar como válido el pellet reciclado con la peletizadora para su uso en la extrusión del mismo.
+A falta de realizar un ensayo de propiedades mecánicas de ambos filamentos y con el ensayo realizado, podemos dar como válido el pellet reciclado con la peletizadora para su uso en la extrusión del mismo.
 
 \section{Programación del PLC.}
 
-Llegados a este punto, disponemos de todo el material necesario para la realización de una pequeña extrusora de filamento y la adquisición de sus datos más característicos en la producción. El siguiente paso es realizar la programación del PLC.\\
+Disponemos de todo el material necesario para la realización de una pequeña extrusora de filamento y la adquisición de sus datos más característicos en la producción. El siguiente paso es desarrollar la programación del PLC para realizar las tareas de control y adquisición de datos.
 
-Las acciones que debe realizar el PLC son las siguientes:
+Los requisitos que debe tener el sistema se enumeran a continuación y se detallan en las secciones posteriores:
 
 \begin{itemize}
     \item{Controlar la temperatura del extrusor.}
@@ -213,7 +201,7 @@ Las acciones que debe realizar el PLC son las siguientes:
     \item{Visualizar en una página web el estado de la producción.}
 \end{itemize}
 
-Para desarrollar el software que gestione el PLC, se usa una máquina de estados en la que pasando por diversos estados, se irán ejecutando las acciones de control. Debemos entrar en modo producción mediante la activación de una variable. Si estamos en producción, pasaremos por los distintos estados y mientras no estemos en producción, las salidas digitales y valores de consigna de los PID son reseteados a cero como medida de seguridad. Una vez que entremos en producción, el primer paso es inicializar el programa, generamos el nombre del fichero donde almacenamos los datos. Después se genera el fichero CSV y en caso de que no se produzca ningún error, se almacena la cabecera en el fichero CSV, para pasar a la producción como tal. Se controlará la temperatura del dado, se registrarán los valores de diámetros y temperaturas y se irán almacenando en el fichero CSV. El control del motor del husillo se hace de forma manual desde la visualización online.\\
+Para desarrollar el software que gestione el PLC, se usa una máquina de estados en la que pasando por diversos estados, se irán ejecutando las acciones de control. Debemos entrar en modo producción mediante la activación de una variable. Si estamos en producción, pasaremos por los distintos estados y mientras no estemos en producción, las salidas digitales y valores de consigna de los PID son reseteados a cero como medida de seguridad. Una vez que entremos en producción, el primer paso es inicializar el programa, generamos el nombre del fichero donde almacenamos los datos. Después se genera el fichero CSV y en caso de que no se produzca ningún error, se almacena la cabecera en el fichero CSV, para pasar a la producción como tal. Se controlará la temperatura del dado, se registrarán los valores de diámetros y temperaturas y se irán almacenando en el fichero CSV.\\
 
 La máquina de estados se muestra en la Figura \ref{fig:plc_estados}
 
@@ -224,10 +212,10 @@ La máquina de estados se muestra en la Figura \ref{fig:plc_estados}
     \label{fig:plc_estados}
 \end{figure}
 
-\subsection{Controlar la temperatura del extrusor}
+\subsection{Control de la temperatura del extrusor}
 \label{sec:plc_PID}
 
-Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la Figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID\\
+Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la Figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID:\\
 
 \begin{figure}[H]
     \centering
@@ -239,141 +227,74 @@ Se implementa un regulador PID para regular la temperatura del extrusor. Es nece
 Con ayuda del programa que se desarrolla en el PLC haremos las siguientes tareas:
 
 \begin{itemize}
-    \item{Registrar temperaturas del dado.}
+    \item{Almacenar los datos de la temperatura en el dado.}
     \item{Encender de forma controlada la resistencia de calentamiento.}
-    \item{Analizar los datos obtenidos.}
 \end{itemize}
 
-Analizamos como se comporta el sistema en lazo abierto, sin ningún tipo de control. Partiendo de una temperatura ambiente, se registran los valores de las temperaturas para a continuación encender la resistencia de calentamiento y ver cómo la temperatura va aumentando a medida que pasa el tiempo. Una vez que la temperatura sobrepase un valor que nosotros establezcamos, pararemos el experimento.\\
+Una vez realizadas, analizaremos los datos guardados, para ver como se comporta el sistema en lazo abierto, sin ningún tipo de control. Partiendo de una temperatura ambiente, se registran los valores de las temperaturas para a continuación encender la resistencia de calentamiento y ver cómo la temperatura va aumentando a medida que pasa el tiempo. Una vez que la temperatura sobrepase un valor que nosotros establezcamos, pararemos el experimento.\\
 
-Con ayuda del lenguaje de programación Python y varias herramientas de análisis de datos como son: IPython, Scipy, Pandas y Numpy, analizamos los datos obtenidos. Las gráficas presentadas a continuación, así como los cálculos están realizadas con estas herramientas.
+Mediante un script programado con Python y varias herramientas de análisis de datos como: IPython, Scipy, Pandas y Numpy, analizamos los datos obtenidos, para ver cómo se comporta nuestro sistema. Las graficas en la Figura \ref{fig:plc_lazo_abierto} muestra la respuesta en el tiempo de nuestro sistema de calentamiento, sin ningún tipo de control.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{images/PLC/modelado/modelado_9_1.png}
+    \includegraphics[width=0.99\textwidth]{images/PLC/modelado/modelado_9_1.png}
     \caption[Respuesta del sistema en lazo abierto]{Respuesta del sistema en lazo abierto. Observamos como a medida que avanza el tiempo, también lo hace la temperatura de manera exponencial.}
     \label{fig:plc_lazo_abierto}
 \end{figure}
 
-Calcularemos cual es la ecuación que mejor se ajuste a nuestros datos y tendremos el polinomio que caracteriza nuestro sistema.
+Para poder controlar de forma óptima el sistema, es necesario calcular la ecuación matemática que mejor se ajuste a nuestros datos y con ella el polinomio que caracteriza nuestro sistema. Ña Figura \ref{fig:plc_lazo_abierto2} muestra una curva ajustada
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/PLC/modelado/modelado_13_1.png}
+    \includegraphics[width=0.8\textwidth]{images/PLC/modelado/modelado_13_1.png}
     \caption[Ajuste de la recta.]{Ajuste de la recta. Calculamos el polinomio que mejor se adapte a nuestros datos.}
     \label{fig:plc_lazo_abierto2}
 \end{figure}
-$$P_x=  25.9459 -1.5733 \cdot 10^{-4} \cdot X - 8.18174 \cdot 10^{-9} \cdot X^2$$
 
-Si calculamos la transformada de laplace del sistema, obtenemos la planta de nuestro sistema, con la cual podremos implementar el regulador PID:
+\begin{equation}
+P_x=  25.9459 -1.5733 \cdot 10^{-4} \cdot X - 8.18174 \cdot 10^{-9} \cdot X^2
+\end{equation}
 
-$$G_s = \frac{25.95 \cdot S^2 - 0.00015733 \cdot S + 1.63635 \cdot 10^{-8}}{S^3}$$
+Si calculamos la transformada de Laplace del sistema, obtenemos la planta de nuestro sistema, con la cual podremos implementar el regulador PID:
 
-Aplicando el método de sintonizacion de Ziegler-Nichols basado en la curva reacción calcularemos el PID para poder regular correctamente el sistema.Este método consiste en estudiar el sistema en lazo abierto con escalón unitario, calculamos parámetros como la máxima pendiente de la curva y el retardo, y establecemos con ellos las ganancias del controlador PID\cite{PID}. Nos da de manera rápida unos valores de $K_p$, $K_i$ y $K_d$ orientativos, para que podamos ajustar correctamente el controlador. Con ayuda de la herramienta Open Source Octave, calculamos los valores de ganancia que serán los que apliquemos a nuestro regulador.
+\begin{equation}
+G_s = \frac{25.95 \cdot S^2 - 0.00015733 \cdot S + 1.63635 \cdot 10^{-8}}{S^3}
+\end{equation}
 
-\Cpp
-\begin{lstlisting}
-pkg load control
-%los datos en la funcion tf() debe ser el numerador y denominador de nuestro sistema.
-H=tf([25.95 0.000157333 1.63635E-8],[1 0 0 0]);
-step(H);
-dt=0.150;
-t=0:dt:65;
-y=step(H,t);
-dy=diff(y)/dt;
-[m,p]=max(dy);
-yi=y(p);
-ti=t(p);
-L=ti-yi/m
-Tao=(y(end)-yi)/m+ti-L
-Kp=1.2*Tao/L
-Ti=2*L;
-Td=0.5*L;
-Ki=Kp/ti;
-Kd=Kp*Td;
-\end{lstlisting}
+\noindent {Aplicando el método de sintonizacion de Ziegler-Nichols \cite{zn} basado en la curva de respuesta, calcularemos el PID para poder regular correctamente el sistema. Este método consiste en estudiar el sistema en lazo abierto con escalón unitario, calculamos parámetros como la máxima pendiente de la curva y el retardo, y establecemos con ellos las ganancias del controlador PID \cite{PID}. Este método no facilita de manera rápida unos valores de $K_p$, $K_i$ y $K_d$ orientativos, para que podamos ajustar correctamente el controlador.} \\
 
-En esta primera iteración, los datos obtenidos son los siguientes: $K_p = 6082.6$ $K_i=93.868 K_d=38.9262$. Con lo que nuestro regulador tiene la siguiente ecuación característica:
-
-$$G_s = \frac{38.9262 \cdot S^2 + 6082.6 \cdot S + 93.868}{S}$$
-
-Una vez que tenemos las ganancias de nuestro regulador PID, volvemos a realizar el experimento de calentar la resistencia hasta un valor de temperatura deseado, en este caso 80ºC y vemos cual es la respuesta de nuestro sistema:
+La Figura \ref{fig:plc_PID4} muestra la respuesta al sistema una vez que se ha implementado un regulador PID para controlar la temperatura.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{images/PLC/modelado/modelado_26_1.png}
-    \caption[Respuesta del sistema con PID iteracción 1.]{Respuesta del sistema con PID. Primera aproximación para obtener unos valores del regulador adecuados.}
-    \label{fig:plc_PID1}
-\end{figure}
-
-Como podemos observar en la Figura \ref{fig:plc_PID1} tenemos una sobreoscilación sobre el setpoint elevada:
-
-$$M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{87.20-80}{80} \cdot 100 = 9\%$$ 
-
-Siendo el error en régimen  permanente de 3.70.\\
-
-Una vez introducido el controlador, la temperatura tiende a estabilizarse, sin embargo tiene mucha sobreoscilación. Por ello aumentaremos los valores de $K_i$ y $K_d$, siendo los valores de esta segunda iteracción los siguientes:
-$K_p = 6082.6$ ,$K_i=103.25$ y $K_d=51.425$\\
-
-Realizando una segunda iteracción en el cálculo de nuestro regulador obtenemos lo siguiente:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/PLC/modelado/modelado_30_1.png}
-    \caption[Respuesta del sistema con PID. Iteracción 2]{Respuesta del sistema con PID. Segunda aproximación para obtener unos valores del regulador adecuados.}
-    \label{fig:plc_PID2}
-\end{figure}
-
-Esta vez los resultados obtenidos son:
-$$M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{86.70-80}{80} \cdot 100 = 8.38\%$$ 
-
-Siendo el error en régimen permanente de 3.50.\\
-
-En esta segunda iteracción hemos logrado bajar la sobreoscilación inicial, pero tenemos mayor error en regimen permanente. Por ello volvemos a aumentar los valores de $K_i$ y $K_d$ siendo los valores de esta tercera iteracción los siguientes: $K_p = 6082.6$, $K_i=121.64$ y $K_d=60$\\
-
-Realizando una tercera iteracción en el cálculo de nuestro regulador obtenemos lo siguiente:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/PLC/modelado/modelado_34_1.png}
-    \caption[Respuesta del sistema con PID. Iteracción 3]{Respuesta del sistema con PID. Tercera aproximación para obtener unos valores del regulador adecuados.}
-    \label{fig:plc_PID3}
-\end{figure}
-
-Los resultados obtenidos son:
-$$M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{163-160}{160} \cdot 100 = 1.88\%$$ 
-
-Siendo el error en régimen permanente de 1.30\\
-
-En este caso, se puso un setpoint de 160ºC. Como vemos, la sobreoscilación inicial ha disminuido en comparación con la anterior iteracción y el error en regimen permanente es menor. Para intentar minimar el error, aumentaremos únicamente el valor de $K_i$. Siendo los valores de esta cuarta iteracción del regulador los siguientes: $K_p = 6082.6$, $K_i=121.64$ y $K_d=150$\\
-
-Realizando una cuarta iteracción en el cálculo de nuestro regulador obtenemos lo siguiente:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/PLC/modelado/modelado_38_1.png}
-    \caption[Respuesta del sistema con PID. Iteracción 4]{Respuesta del sistema con PID. Cuarta aproximación para obtener unos valores del regulador adecuados. 4}
+    \includegraphics[width=0.99\textwidth]{images/PLC/modelado/modelado_38_1.png}
+    \caption[Respuesta del sistema con PID.]{Respuesta del sistema con PID. En la gráfica se aprecia como la temperatura oscila sobre un valor.}
     \label{fig:plc_PID4}
 \end{figure}
 
-Esta vez los resultados son algo mejores:
-$$M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{163-160}{160} \cdot 100 = 1.88\%$$ 
+La sobreoscilación que presenta el sistema la calculamos mediante:
 
-Siendo el error en régimen permanente de 1.10\\
+\begin{equation}
+M_{p}=\frac{T_{max}-Setpoint}{Setpoint} \cdot 100 = \frac{163-160}{160} \cdot 100 = 1.88\%
+\end{equation}
 
 Por lo tanto, el regulador que cumple con las especificaciones deseadas tiene la siguiente ecuación característica:
-$$G_s = \frac{150 \cdot S^2 + 6082.6 \cdot S + 121.64}{S}$$
+\begin{equation}
+G_s = \frac{150 \cdot S^2 + 6082.6 \cdot S + 121.64}{S}
+\end{equation}
 
-\subsection{Leer la información del sensor de diámetro}
+
+\subsection{Lectura de datos del sensor de diámetro}
 \label{sec:plc_diametro}
 
-Los sensores de diámetro están conectados a dos entradas analógicas de tensión del PLC. Será necesario unir la señal de masa (GND) del PLC con la del sensor, para que la referencia al nivel de tensión 0v sea la misma, posteriormente, la salida del sensor de diámetro, se conectará con la entrada analógica del PLC.\\
+Los sensores de diámetro están conectados a dos entradas analógicas de tensión del PLC. Será necesario unir la señal de masa (GND) del PLC con la del sensor, para que la referencia al nivel de tensión $0 V$ sea la misma, posteriormente, la salida del sensor de diámetro, se conectará con la entrada analógica del PLC.\\
 
 El PLC convierte el valor de tensión comprendido entre un rango de 0-10V a un valor numérico, a través de un conversor analógico a digital (ADC) de 10bits, es decir, tenemos una resolución de:
+\begin{equation}
+    \text{Resolución}=\frac{ V_{max} } {2^{10} } = \frac{10}{1024} = 9.76 mV
+\end{equation}
 
-$$ \text{Resolución}=\frac{ V_{max} } {2^{10} } = \frac{10}{1024} = 9.76 mV$$
-
-En la ayuda que ofrece el programa de ABB, se observan los valores que asigna el ADC:
+En la Tabla \ref{tab:reso_adc}, se observan los valores que asigna el ADC:
 
 \begin{table}[H]
     \centering
@@ -388,18 +309,23 @@ En la ayuda que ofrece el programa de ABB, se observan los valores que asigna el
     \label{tab:reso_adc}
 \end{table}
 
-Se va a trabajar con el rango de intervalo normal. Para poder saber el diámetro que está dando el sensor, se debe leer la entrada analógica y convertir el valor décimal a un valor de tensión, es decir, convertir el valor digital a analogico (DAC), para ello, con los valores del intervalo normal de la tabla \ref{tab:reso_adc} se calcula la ecuación de la recta que lo caracteriza que en este caso es: $Y=3.6168 \cdot 10^{-4} \cdot X$ (ver Figura \ref{fig:plc_DAC})
+Se va a trabajar con el rango de intervalo normal. Para poder saber el diámetro que está midiendo el sensor, se debe leer la entrada analógica y convertir el valor décimal a un valor de tensión, es decir, convertir el valor digital a analogico (DAC), para ello, con los valores del intervalo normal se calcula la ecuación de la recta que lo caracteriza que en este caso es (ver Figura \ref{fig:plc_DAC})
+
+\begin{equation}
+Y = 3.6168 \cdot 10^{-4} \cdot X
+\label{ec:recta_ADC}
+\end{equation}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/PLC/image.png}
-    \caption[Ecuación característica del ADC.]{Ecuación característica del ADC. Con esta ecuación, podemos convertir el valor de tensión a un valor de diámetro.} 
+    \caption[Recta característica del ADC.]{Recta característica del ADC. Con su ecuación característica, podemos convertir el valor de tensión a un valor de diámetro.} 
     \label{fig:plc_DAC}
 \end{figure}
 
-Con este valor se puede tener acceso al valor del diámetro que tiene el filamento. El siguiente paso entonces, será realizar el almacenamiento de los datos de la producción en un fichero para su posterior análisis.
+Con la Ecuación \ref{ec:recta_ADC}, se puede tener acceso al valor del diámetro que tiene el filamento. El siguiente paso entonces, será realizar el almacenamiento de los datos de la producción en un fichero para su posterior análisis.
 
-\subsection{Almacenar la información registrada}
+\subsection{Almacenar la información registrada en un medio físico}
 \label{sec:plc_SD}
 
 Se elije un nombre de fichero en el que se usa año, mes, día y minuto para identificar la producción, es decir, tiene un formato \textit{YYMMDDmm.CSV}. El formato elegido para almacenar la información es el de valores separados por coma (CSV). El motivo por el cual se elije este formato es debido a su estandarización y que almacena los datos de forma tabular en texto plano. Gracias a esto, se puede abrir el fichero CSV con cualquier editor de texto y otros programas de hojas de cálculo, para el posterior análisis de los datos, que es uno de los objetivos del proyecto. Por lo tanto, el formato CSV es el idóneo para poder trabajar en el futuro con los datos almacenados.\\
@@ -433,34 +359,19 @@ En la tabla \ref{tab:plc_csv} se ve un ejemplo de los datos almacenados en un fi
     \label{tab:plc_csv}
 \end{table}
 
-La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor de transferencia de ficheros (servidor FTP) con el que se transfieren ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, se accede a la SD de forma remota, sin tener que sacar la SD del PLC. Para ello,como se muestra en la Figura \ref{fig:plc_servicios}, se usa el servidor FTP que facilita la herramienta de ABB\\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/PLC/servicios_plc.jpg}
-    \caption[Distintos servicios que dispone el PLC]{Distintos servicios que dispone el PLC. Se pueden instalar distintos servicios de red al PLC: Http, FTP y NTP:}
-    \label{fig:plc_servicios}
-\end{figure}
-
-En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC que se encuentra en la misma red y se descarga el fichero csv para su posterior estudio (ver Figura \ref{fig:plc_cliente_ftp}).
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{images/PLC/cliente_ftp.png}
-    \caption[Cliente FTP.]{Cliente FTP. Con ayuda de este software, nos podremos conectar a servidores FTP para acceder a los ficheros que hay en el mismo.}
-    \label{fig:plc_cliente_ftp}
-\end{figure}
-
-\subsection{Visualización web de la producción}
+\subsection{Acceso remoto a los datos de producción}
 \label{sec:plc_scada}
 
-Para poder visualizar el estado de la producción, se usa una herramienta que incorpora de serie el programa de Abb al igual que el servidor FTP que se vió anteriormente. Esta herramienta, provee un servidor de páginas WEB (ver Figura \ref{fig:plc_servicios}) en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
+La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor de transferencia de ficheros (servidor FTP) con el que se transfieren ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, se accede a la SD de forma remota, sin tener que sacar la SD del PLC. Para ello se usa el servidor FTP que facilita la herramienta de ABB. En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC que se encuentra en la misma red y se descarga el fichero csv para su posterior estudio.\\
+
+
+Para poder visualizar el estado de la producción, se usa una herramienta que incorpora de serie el programa de Abb. Esta herramienta, provee un servidor de páginas WEB en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
 
 \begin{itemize}
-    \item {Ver temperaturas de Husillo y Dado.}
+    \item {Visualización en tiempo real temperaturas de Husillo y Dado.}
     \item {Iniciar y parar producción.}
     \item {Controlar marcha del motor del husillo.}
-    \item {Ver ruta del fichero en el que se almacenará la información.}
+    \item {Visualizar la ruta del fichero en el que se almacenará la información.}
 \end{itemize}
 
 \begin{figure}[H]

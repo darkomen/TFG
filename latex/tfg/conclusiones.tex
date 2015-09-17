@@ -1,17 +1,21 @@
 \chapter{Conclusiones y trabajos futuros}
 \label{cap:conclus}
 
-En este capítulo, se discutirá el trabajo realizado durante el proyecto, así como el trabajo que queda por realizar desde la división de automatización y materiales a medio-largo plazo.
+En este capítulo, se discutirá el trabajo realizado durante el proyecto, así como el trabajo que queda por realizar desde la división de automatización y materiales de BQa medio-largo plazo.
 
 \section{Cumplimiento de los objetivos}
 
-Al finalizar el proyecto, nos encontramos con un sistema capaz de obtener los datos más importantes que caracterizan la calidad de un filamento. Con estos datos podremos trabajar a posterior y tener una trazabilidad del filamento completa en caso de que se reciba alguna reclamación por parte de los clientes.\\
+Al finalizar el proyecto, nos encontramos con un sistema capaz de obtener los datos más importantes que caracterizan la calidad de un filamento. Con estos datos podremos trabajar a posteriori y tener una trazabilidad del filamento completa en caso de que se reciba alguna reclamación por parte de los clientes.\\
 
-Uno de los objetivos que se marca al comienzo del proyecto es que el sistema se instale en una extrusora industrial para comprobar la validadez del mismo. Sin embargo, por problemas burocráticos y de proveedores, a la hora de implementar el sistema no se tiene acceso a ninguna.\\ 
+En el momento de plantear la idea de este proyecto, BQ tiene acceso a tres líneas de extrusión de filamento,  pudiendo instalar el sistema en una de ellas. Sin embargo en el momento de realizar la puesta en marcha, no se pude ceder esa línea debido a temas de planificación en la producción de filamento.\\
 
-No obstante, se decide utilizar una extrusora casera para implementar el sistema. A pesar de que el funcionamiento no es el adecuado para obtener filamento de calidad, es totalmente válido para comprobar la eficacia del sistema de adquisición de datos.
+Para solucionar esto se adquiere una extrusora de laboratorio en la cual también es válido el sistema de adquisición de datos, pero hay retrasos en la entrega y no hacen posible disponer de ella antes de la entrega de este proyecto.\\
 
-\section{Contribuciones}
+En el departamento de Innovación y Robótica, se tiene una maqueta de una extrusora casera la cual es totalmente válida para demostrar el funcionamiento de nuestro sistema. A pesar de que la extrusora produce plástico de poca calidad, es válida para comprobar nuestro sistema de control de calidad.\\
+
+Por tanto, al terminarl el proyecto, podemos afirmar que se han acometido todas las fases del proceso de fabricación del PLA. Al tener la extrusora casera, se han fabricado las herramientas necesarias para generar pellets de filamento reciclado (peletizadora) y poder comprobar su correcto uso a la hora de extruirlo.
+
+\section{Líneas de trabajo abiertas en BQ a raiz de este TFG}
 
 Durante la realización del proyecto, en la división de automatización y materiales, se ha usado el sistema de adquisición de datos para realizar un estudio de la degradación del PLA con el paso del tiempo. Después de recibir varias reclamaciones de los clientes se está investigando sobre cómo puede afectar el correcto almacenamiento de una bobina de PLA en el diámetro del mismo. Para ello, el estudio consta de las siguientes partes:
 
@@ -23,30 +27,23 @@ Durante la realización del proyecto, en la división de automatización y mater
 
 Gracias a esto, se están empezando a caracterizar estos problemas y obtener una solución rápida al cliente en caso de que los síntomas sean parecidos.\\
 
-Así mismo, y algo que era un trabajo a realizar en el futuro en el departamento, se ha diseñado un sistema capaz de reciclar las bobinas de filamento que no eran útiles para un uso final en impresoras 3D y cómo hemos visto, el material reciclado obtenido es completamente válido para volver a realizar filamento.
+Así mismo, y algo que era un trabajo a realizar en el futuro en el departamento, se ha diseñado un sistema capaz de reciclar las bobinas de filamento que no eran útiles para un uso final en impresoras 3D y cómo hemos visto, el material reciclado obtenido es completamente válido para volver a realizar filamento.\\
 
-\section{Mejoras y trabajos futuros}
+Este proyecto de adquisición de datos no termina con la defensa de esta memoria. Desde BQ se va a seguir mejorando e incluyendo nuevas características que harán más versatil el sistema. Se pasan a continuación a detallar las líneas de trabajo en este proyecto:
 
-En contra de lo que se pueda pensar, el proyecto de adquisición de datos no termina con la defensa de esta memoria. Desde BQ se va a seguir mejorando e incluyendo nuevas características que harán más versatil el sistema. Se pasan a continuación a detallar las líneas de trabajo en este proyecto:
 
-\begin{itemize}
-	\item{Incorporar el sistema en una extrusora de laboratorio: desde la división de automatización y materiales se adquirió una extrusora de laboratorio, sin embargo por problemas con los distribuidores, el tiempo de entrega es posterior a la defensa de esta memoria, por ello no se ha podido incluir en la misma. En el moento en que se reciba, el paso inmediato será incorporar el sistema de adquisción de datos a dicha extrusora.}
-	\item{En los planes a largo plazo de BQ, se encuentra la adquisición de una extrusora de filamento industrial propia, por lo que en el momento que se disponga, este sistema también será incluido para almacenar los datos.}
-\end{itemize}
-
+\section{Mejoras}
 Derivado a estos trabajos, se requieren las siguientes mejoras en las que se va a empezar a trabajar lo antes posible:
 
 \begin{itemize}
 	\item{Almacenamiento de la información en una base datos MYSQL. En lugar de almacenar la información en una tarjeta SD, se plantea almacenar toda la información en un servidor para poder realizar informes en tiempo real de la producción.}
 	\item{Incorporar una impresora para generar pegatinas con códigos QR. De tal manera, si el sistema determina que el filamento extruido no cumple unos requisitos mínimos, automaticamente al ver la pegatina, se sepa si esa bobina pasa el control de calidad.}
-	\item{Conectar varias líneas de extrusión al mismo sistema e independizar los datos adquiridos, para de ese modo centralizar el control.}
-	\item{Realizar un sistema de supervisión superior al SCADA en el que se tenga acceso del estado de la fábrica en la que se encuentre una extrusora. Y en caso de que haya más sistemas automáticos, controlados por ejemplo con robots industriales se pueda acceder a la información de todos ellos.}
+	\item{En el año 2016 se tiene previsión de adquirir varias lineas de extrusión por tanto y gracias a que nuestro sistema es escalable en prestacións, se puede realizar un sistema de supervisión superior en el que se tenga acceso del estado de la fábrica en la que se encuentre cada línea de extrusión y su información. En este caso, la información ya no se almacenaria en el sistema local, si no que haría falta un sistema de tratamiento de datos online.}
 
 \end{itemize}
 
 \section{Valoración final.}
 
-El resultado final del proyecto ha sido satisfactorio, presenteando un sistema versatil y capaz de solucionar el problema que se plantea al inicio. A raiz de la elaboración del proyecto, se han solucionado otros problemas derivados del mismo como hemos visto en la sección anterior.\\
+El resultado final del proyecto ha sido satisfactorio, presenteando un sistema versatil y capaz de solucionar el problema que se plantea al inicio. A raiz de la elaboración del proyecto, han surgido nuevos problemas los cuales se han afrontado como pequeños proyectos necesarios para la consecución del objetivo principal.\\
 
-El punto negativo al entregar el proyecto, ha sido el no poder instalar el sistema en una extrusora de filamento industrial, sin embargo a corto plazo el sistema será implementado en las propias extrusoras de filamento que compre BQ, es decir, es un proyecto que va a tener continuidad en el tiempo.
-
+La realización de este trabajo final de grado ha llevado consigo el aporte de nuevos conocimientos en diversas materias como son: ingeniería mecánica, ingeniería de materiales, análisis de datos, trabajo en grupo y gestión de proyectos.

@@ -28,10 +28,32 @@ Las distintas funciones que debe proveer un sistema SCADA son:
 
 Debido a la versatilidad de un sistema SCADA, son pocas las empresas que se dedican a una rama en concreto, se suele trabajar bajo pedido, y se diseñan sistemas SCADAS especificos para cada caso, sin embargo empresas como Castool ofrecen soluciones sistemas SCADA capaces de controlar totalmente el proceso productivo de la extrusión, Visual Optimizer \cite{castool}.\\
 
-Castool ofrece un sistema de extrusión completo, suministrando tanto la maquinaría, software como personal cualificado para el uso de la máquina. Sin embargo esta solución solo sería útil en el caso que se adquiriera una línea de extrusión completa, en la mayoría de los casos no es lo habitual, puesto que siempre se suelen tener elementos de la linea de distintos fabricantes.\\
+Castool ofrece un sistema de extrusión completo, suministrando tanto la maquinaría, software como personal cualificado para el uso de la línea de extrusión. Sin embargo esta solución solo sería útil en el caso que se adquiriera una línea de extrusión completa, en la mayoría de los casos no es lo habitual, puesto que siempre se suelen tener elementos de la linea de distintos fabricantes.\\
 
+Son varios los fabricantes consolidados que proporcionan líneas de extrusión completas: Rondol, Everplast, Brabender, Labtech, entre otras; sin embargo buscando las soluciones SCADA que ellos proponen, no se ha encontrado en catálogo ninguna información al respecto.\\
 
+En la Figura \ref{fig:extr_lyman} se muestra el extrusor Lyman, actualmente la solución mas aceptada en el ámbito de las extrusoras caseras.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/lyman.jpg}
+    \caption[Extrusor casero Lyman.]{Extrusor casero Lyman. Solución para fabricar una línea de extrusión completa de forma casera. Fuente \cite{lyman}.}
+    \label{fig:extr_lyman}
+\end{figure}
 
+Esta solución provee un sistema completo de extrusión para que el usuario pueda fabricar su propio filamento de forma artesanal, incluyendo:
 
+\begin{itemize}
+    \item{Tolva para alimentar con pellets la extrusora.}
+    \item{Extrusora de filamento.}
+    \item{Sensor de diámetro final del filamento..}
+    \item{Unidad tractora para ir desplazando el filamento extruido.}
+    \item{Bobinadora automática para almacenar el filamento extruido.}
+\end{itemize}
+
+A pesar de que el control del extrusor Lyman es totalmente automático y sería fácil realizar un sistema de adquisición de datos, no se tiene constancia de que lo haya.\\
+
+Debido a que la fabricación del filamento es un proceso novedoso, todos los sistemas que se han encontrado son relativos al control del flujo de material a través de la extrusora, ninguno incluye un sistema de gestión de calidad del filamento que se produce. Los sistemas actuales tampoco son lo suficientemente versatiles como para poder trabajar en cualquier línea de extrusión sin importar el fabricante de los distintos componentes que lo formen. Así mismo, todas las líneas de extrusión encontradas, incoroporan sistemas de visualización en tiempo real de los parámetros de producción sin posibilidad, de su registro en un medio físico para su posterior análisis de control de calidad.\\
+
+El sistema que se propone en este trabajo final de grado suple esta necesidad, ya que se diseña desde un principio sin saber cual es el fabricante de la línea de extrusión final en el que se implementará. Así mismo, aunque el diseño incial del sistema es para controlar una única línea de extrusión, es totalmente escalabe para controlar varias líneas de extrusión al mismo tiempo.\\
 

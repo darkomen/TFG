@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: references.bib
+I was expecting a `,' or a `}'---line 404 of file references.bib
+ :   
+ :   year      = 2015,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty journal in additive
 Warning--empty journal in additivevssubtractive
 Warning--empty journal in stl
@@ -9,7 +14,8 @@ Warning--empty journal in tfg_diego
 Name 2 in "V. A. Bershtein and V. M. Egorov," has a comma at the end for entry DSC1
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in DSC1
+Warning--there's a month but no year in DSC
+Warning--empty journal in zn
 Warning--empty journal in PID
 Warning--empty journal in tecno_polimeros
-Warning--empty journal in pasoapaso
-(There was 1 error message)
+(There were 2 error messages)

@@ -52,19 +52,17 @@ Gran Loco.
   \url{http://upload.wikimedia.org/wikipedia/commons/e/ed/Disenio_de_un_extrusor.png},
   June~9 2006.
 
+\bibitem{ejemplosextrusion}
+Roechling plastics.
+\newblock Distintos ejemplos de perfiles de extrusión.
+\newblock \url{http://www.roechling-plastics.es/}, June~9 2007.
+
 \bibitem{parametroshusillos}
 Santiago Ferrándiz.
 \newblock Parámetros de un husillo de extrusora.
 \newblock
   \url{https://lh4.googleusercontent.com/-38dQ_PeujTE/TYCjbjVFSxI/AAAAAAAAAB8/Ogy3O1i_KCo/s1600/14.JPG},
   June~9 2012.
-
-\bibitem{ejemplosextrusion}
-Mike1024.
-\newblock Distintos ejemplos de perfiles de extrusión.
-\newblock
-  \url{http://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Extruded_aluminium_section_x3.jpg/1920px-Extruded_aluminium_section_x3.jpg},
-  June~9 2007.
 
 \bibitem{jones2011reprap}
 Rhys Jones, Patrick Haufe, Edward Sells, Pejman Iravani, Vik Olliver, Chris
@@ -98,19 +96,28 @@ CASTOOL.
 \newblock \url{http://www.castool.com/es/product/visual-optimizer},
   September~11 2015.
 
+\bibitem{lyman}
+Página en thingiverse con información del proyecto de lyman extruder.
+\newblock \url{http://www.thingiverse.com/thing:380987}, September~9 2015.
+
 \bibitem{githubTFG}
 Santiago~López Pina.
 \newblock Repositorio online del proyecto.
 \newblock \url{https://github.com/darkomen/TFG}, September~9 2015.
 
-\bibitem{ipython}
-Wes McKinney.
-\newblock {\em Python for Data Analysi}.
-\newblock O' Relly, 2 edition, 2012.
-
 \bibitem{octave}
 Página oficial de gnu octave.
 \newblock \url{http://www.gnu.org/software/octave/}, September~9 2015.
+
+\bibitem{PER-GRA:2007}
+Fernando P\'erez and Brian~E. Granger.
+\newblock {IP}ython: a system for interactive scientific computing.
+\newblock {\em Computing in Science and Engineering}, 9(3):21--29, May 2007.
+
+\bibitem{ipython}
+Wes McKinney.
+\newblock {\em Python for Data Analysis}.
+\newblock O' Relly, 2 edition, 2012.
 
 \bibitem{filastruder}
 T.~Elmore.
@@ -133,6 +140,17 @@ V.~A. Bershtein and V.~M. Egorov.
 \newblock “differential scanning calorimetry of polymers”.
 \newblock pages 1--6, August~31 2015.
 
+\bibitem{DSC}
+E.~W. Fischer, H.~J. Sterzel, and G.~Wegner.
+\newblock Investigation of the structure of solution grown crystals of lactide
+  copolymers by means of chemical reactions.
+\newblock {\em Kolloid Z Z Polym 1973}, September.
+
+\bibitem{zn}
+Finn Haugen.
+\newblock Ziegler-nichols' closed-loop method.
+\newblock pages 2--4, September 2015.
+
 \bibitem{PID}
 Virginia Mazzone.
 \newblock Controladores pid.
@@ -142,16 +160,5 @@ Virginia Mazzone.
 Maribel Beltrán and Antonio Marcilla.
 \newblock Temario de la asignatura tecnología de polímeros.
 \newblock pages 137--139, August~27 2015.
-
-\bibitem{pasoapaso}
-Sergio Berti, Javier Roitman, and Claudio Verrastro.
-\newblock Controlador de motores paso a paso mediante técnica de micropasos
-  por modulación de ancho de pulso.
-\newblock pages 1--6, August~31 2015.
-
-\bibitem{filawinder}
-T.~Elmore.
-\newblock Filawinder.
-\newblock \url{http://www.filastruder.com/products/filawinder}, August~19 2015.
 
 \end{thebibliography}

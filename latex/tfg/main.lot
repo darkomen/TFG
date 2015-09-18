@@ -3,18 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Presupuesto de los tres distribuidores}}{32}{table.caption.23}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Caracter\IeC {\'\i }sticas filastruder.}}{33}{table.caption.25}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Datos del DSC con la transici\IeC {\'o}n v\IeC {\'\i }trea del filamento.}}{35}{table.caption.27}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Datos del DSC con la cristanilidad del filamento}}{35}{table.caption.28}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Valores de conversi\IeC {\'o}n del ADC.}}{41}{table.caption.37}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Muestra de un fichero CSV con datos de producci\IeC {\'o}n.}}{42}{table.caption.39}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Caracter\IeC {\'\i }sticas filastruder.}}{33}{table.caption.25}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Datos del DSC con la transici\IeC {\'o}n v\IeC {\'\i }trea del filamento.}}{34}{table.caption.27}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Datos del DSC con la cristanilidad del filamento}}{34}{table.caption.28}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Valores de conversi\IeC {\'o}n del ADC.}}{39}{table.caption.34}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Muestra de un fichero CSV con datos de producci\IeC {\'o}n.}}{40}{table.caption.36}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Resultados obtenidos en la producci\IeC {\'o}n\relax }}{46}{table.caption.46}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Datos obtenidos en el ensayo del d\IeC {\'\i }a 20 de Julio\relax }}{49}{table.caption.51}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Datos del ensayo con distintas tolvas\relax }}{52}{table.caption.57}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Tabla comparativa de los resultados obtenidos\relax }}{54}{table.caption.61}
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Resultados obtenidos con un sistema sin tractora.}}{44}{table.caption.41}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Resultados obtenidos en un sistema con tractora.\relax }}{46}{table.caption.46}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Datos del ensayo con distintas tolvas\relax }}{50}{table.caption.52}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Tabla comparativa de los resultados obtenidos\relax }}{52}{table.caption.56}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -22,17 +20,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {G.1}{\ignorespaces Resoluci\IeC {\'o}n del driver en funci\IeC {\'o}n del micropaso elegido\relax }}{86}{table.caption.92}
-\contentsline {table}{\numberline {G.2}{\ignorespaces Valores para controla la velocidad de giro del motor paso a paso\relax }}{87}{table.caption.93}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {H.1}{\ignorespaces BOM sensor de di\IeC {\'a}metro\relax }}{90}{table.caption.99}
-\contentsline {table}{\numberline {H.2}{\ignorespaces Mediciones con el sensor.\relax }}{94}{table.caption.107}
+\contentsline {table}{\numberline {G.1}{\ignorespaces Resoluci\IeC {\'o}n del driver en funci\IeC {\'o}n del micropaso elegido\relax }}{78}{table.caption.85}
+\contentsline {table}{\numberline {G.2}{\ignorespaces Valores para controla la velocidad de giro del motor paso a paso\relax }}{79}{table.caption.86}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {H.1}{\ignorespaces Mediciones con el sensor.\relax }}{85}{table.caption.97}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {J.1}{\ignorespaces Datos obtenidos en el ensayo 1\relax }}{101}{table.caption.119}
-\contentsline {table}{\numberline {J.2}{\ignorespaces Datos obtenidos en el ensayo 2\relax }}{103}{table.caption.122}
-\contentsline {table}{\numberline {J.3}{\ignorespaces Datos obtenidos en el ensayo 3\relax }}{105}{table.caption.125}
-\contentsline {table}{\numberline {J.4}{\ignorespaces Datos obtenidos en el ensayo 4\relax }}{107}{table.caption.128}
-\contentsline {table}{\numberline {J.5}{\ignorespaces Datos obtenidos en el ensayo 5\relax }}{108}{table.caption.131}
-\contentsline {table}{\numberline {J.6}{\ignorespaces Datos obtenidos en el ensayo 6\relax }}{110}{table.caption.134}
-\contentsline {table}{\numberline {J.7}{\ignorespaces Tabla comparativa de los resultados obtenidos.}}{112}{table.caption.137}
+\contentsline {table}{\numberline {J.1}{\ignorespaces Datos obtenidos en el ensayo 1\relax }}{92}{table.caption.109}
+\contentsline {table}{\numberline {J.2}{\ignorespaces Datos obtenidos en el ensayo 2\relax }}{94}{table.caption.112}
+\contentsline {table}{\numberline {J.3}{\ignorespaces Datos obtenidos en el ensayo 3\relax }}{96}{table.caption.115}
+\contentsline {table}{\numberline {J.4}{\ignorespaces Datos obtenidos en el ensayo 4\relax }}{98}{table.caption.118}
+\contentsline {table}{\numberline {J.5}{\ignorespaces Datos obtenidos en el ensayo 5\relax }}{100}{table.caption.121}
+\contentsline {table}{\numberline {J.6}{\ignorespaces Datos obtenidos en el ensayo 6\relax }}{102}{table.caption.124}
+\contentsline {table}{\numberline {J.7}{\ignorespaces Tabla comparativa de los resultados obtenidos.}}{104}{table.caption.127}

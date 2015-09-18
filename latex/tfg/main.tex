@@ -13,6 +13,7 @@
 \usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{siunitx}
+\usepackage[toc,page]{appendix}
 
 % Imports for images
 \usepackage{caption}
@@ -50,7 +51,7 @@
 
 % Definitions of important data
 \renewcommand{\author}{Santiago López Pina}
-\renewcommand{\title}{SCADA Y MODELADO PARCIAL DE SISTEMA DE EXTRUSIÓN DE FILAMENTO}
+\renewcommand{\title}{SISTEMA DE ADQUISICÍÓN DE DATOS Y MODELADO PARCIAL DE SISTEMA DE EXTRUSIÓN DE FILAMENTO}
 \newcommand{\department}{Departamento de Sistemas y Automática}
 \newcommand{\teacher}{Víctor González Pacheco}
 
@@ -139,32 +140,35 @@
 %%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-	%%%% FRONTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%\include{portada}
-	%\pagestyle{plain}
-    %~
-	%\newpage
-	%\input{agradecimientos}
-	%~
-	%\newpage
-	%\input{resumen}
-	%~
-	%%%%%%%Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%% FRONTPAGE 
+	%%%%%%%%%%%%%%%%%
+	\include{portada}
+	\pagestyle{plain}
+    ~
+	\newpage
+	\input{agradecimientos}
+	~
+	\newpage
+	\input{resumen}
+	~
+	%%%%%%%Table of contents 
+	%%%%%%%%%%%%%%%%%%%%%%%%
 	\tableofcontents
 	\newpage
-	%%%%%%% Índice de Figuras y tablas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%\listoffigures   % Figures
-	%\listoftables    % Tables
-	%\newpage
-
-	% Adding some header text on top of the page:
+	%%%%%%% Índice de Figuras y tablas
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\listoffigures   % Figures
+	\listoftables    % Tables
+	\newpage
+	%%%%%%% Adding some header text on top of the page
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fancyhead[L]{\nouppercase{\leftmark}}
 	\fancyhead[RO]{\nouppercase{\rightmark}}
 	\fancyhead[R]{}
 	\fancyhead[LO]{}
 	\pagestyle{fancy}
-
-	%%%%% Secciones del documento%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%% Secciones del documento
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\input{introduccion}
 	\input{conceptos}
 	\input{estado_arte}
@@ -172,28 +176,26 @@
 	\input{resultados}
 	\input{regulador}
 	\input{conclusiones}
-	%%%%%%% Apéndices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%\begin{appendix}
-	%	\clearpage % o \cleardoublepage
-	%	\addappheadtotoc
-	%	\appendixpage
-	%	\input{presupuesto}
-	%	\input{gant}
-	%	\input{PLC}
-	%	\input{esquemas}
-	%	\input{filastruder}
-	%	\input{peletizadora}
-	%	\input{tractora}
-	%	\input{sensor}
-	%	\input{filawinder}
-	%	\input{resultados_regulador}
-	%\end{appendix}
-
-
-	%%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%% Apéndices
+	%%%%%%%%%%%%%%%%%
+	\begin{appendix}
+		\appendixpage
+		\input{presupuesto}
+		\input{gant}
+		\input{PLC}
+		\input{esquemas}
+		\input{filastruder}
+		\input{peletizadora}
+		\input{tractora}
+		\input{sensor}
+		\input{filawinder}
+		\input{resultados_regulador}
+	\end{appendix}
+	%%%%%%% Bibliografía
+	%%%%%%%%%%%%%%%%%%%%
 	\newpage{}
 	\label{Bibliography}
-	\lhead{\emph{Bibliografia}}  % Change the left side page header to "Bibliography"
+	\lhead{\emph{Bibliografia}}
 	\bibliographystyle{unsrt}
 	\bibliography{references}
 

@@ -1,4 +1,5 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: portada.aux
 The style file: unsrt.bst
 Database file #1: references.bib
 I was expecting a `,' or a `}'---line 404 of file references.bib
@@ -18,4 +19,5 @@ Warning--there's a month but no year in DSC
 Warning--empty journal in zn
 Warning--empty journal in PID
 Warning--empty journal in tecno_polimeros
+Warning--empty journal in pasoapaso
 (There were 2 error messages)

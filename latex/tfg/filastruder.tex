@@ -1,17 +1,7 @@
 \chapter{Montaje Filastruder}
 \label{ane:filastruder}
 
-El control de temperatura del filastruder se realiza mediante un regulador PID modelo Sestos D1S. Conectándole el termopar tipo J y el cartucho calefactor, es capaz de regular la temperatura que deseemos del dado, el único problema es que no dispone de comunicaciones industriales, y sólo se puede introducir la temperatura deseada mediante el display que incorpora.
-   	\begin{figure}[H]
-            \centering
-            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150814_123957.jpg}
-            \caption{Controlador PID de temperatura Sestos}
-            \label{fig:hardware_sestos}
-    \end{figure}
-
-Se decide entonces no usar el PID e integrar el control de temperatura en el PLC ya que, con el hardware que compramos tenemos dos entradas analógicas capaces de leer sensores de temperatura del tipo PT100. De este modo, podremos introducir dos zonas de calentamiento, una en el dado del cañón y otra en la entrada de los pellet para poder tener varios registros de temperaturas como se tenía en la idea principal, que se disponían hasta cinco sensores de temperatura.\\
-
-Se pasa a instalar sobre una plancha de madera la filastruder y todo el cableado futuro que se va a usar a lo largo del proyecto:\\
+La filastruder va a ir instalada sobre una plancha de madera en la que también se cablean los elementos usados en el proyecto:\\
 
    	\begin{figure}[H]
             \centering

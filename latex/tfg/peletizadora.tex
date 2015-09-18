@@ -2,16 +2,7 @@
 \chapter{Diseño y montaje de una peletizadora}
 \label{ane:peletizadora}
 
-Algo que no se tuvo en cuenta al establecer los objetivos del proyecto, fue el tener disponibilidad de pellets de PLA, ya que en ese momento, los pellets no los proporcionarían PESL para poder hacer las pruebas de la puesta en marcha. Por ello, se investiga en la posibilidad de reciclar bobinas defectuosas que no son útiles para imprimir en una impresora 3D ocasionando averias y en la actualidad son mermas que se tiene en la producción de la fábrica de Huesca PESL.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/peletizadora/Diagram.png}
-    \caption{Proceso para conseguir pellets}
-    \label{fig:peletizadora_diagram}
-\end{figure}
-
-Una vez que la filastruder está operativa, se peletizan a mano unos metros de filamento negro y comprobamos que al menos somos capaces de extruir los pellets reciclados. Se continua con la línea de investigación del reciclado de bobina as al comprobar la viabilidad del proceso. Sin embargo, cada bobina de filamento de 1Kg de peso son 350M por lo que peletizar una bobina a mano, conllevaría mucho tiempo y trabajo, por lo que se descarta la opción y se pasa a diseñar una máquina capaz de peletizar bobinas de forma automática. La máquina que diseñemos debe ser capaz de realizar el siguiente proceso:
+Para poder automatizar el proceso de reciclado de una bobina completa de filamento, la máquina diseñada debe tener el diagrama de funcionamiento que se muestra en la Figura \ref{fig:peletizadora_diagram2}
 
 \begin{figure}[H]
     \centering
@@ -27,9 +18,9 @@ Por tanto, debe tener al menos dos partes diferenciadas:
 	\item{\textbf{Cuchillas de corte:} Mecanismo capaz de ejercer la fuerza necesaria para cortar el filamento.}
 \end{itemize}
 
-Para controlar toda la máquina se decide usar una placa arduino Mega que se tiene disponible en el departamento, con la que seremos capaz de controlarlo. Para la fabricación de la máquina, se usarán impresoras 3D, con lo que el prototipado será más rápido, ya que se tiene acceso a ellas dentro del departamento. Con las herramientas disponibles se inicia el diseño de la máquina.\\
+Para controlar toda la máquina se decide usar una placa arduino Mega que se tiene disponible en el departamento. Para la fabricación de la máquina, se usarán impresoras 3D, con lo que el prototipado será más rápido, ya que se tiene acceso a ellas dentro del departamento. Con las herramientas disponibles se inicia el diseño de la máquina.\\
 
-Para la unidad tractora, se deciden usar dos motores paso a paso con un eje de giro recubierto de una goma, que cogerá el filamento y lo arrastrará. Usando la herramienta Inventor, se hace un primer diseño de la posible solución.
+La unidad tractora estará compuesta dos motores paso a paso con un eje de giro recubierto de una goma, que conducirá el filamento hasta la unidad de corte. En la Figura \ref{fig:peletizadora_tractora} vemos el primer prototipo de la unidad.
 
 \begin{figure}[H]
     \centering
@@ -38,7 +29,7 @@ Para la unidad tractora, se deciden usar dos motores paso a paso con un eje de g
     \label{fig:peletizadora_tractora}
 \end{figure}
 
-Los ejes, deberán ir recubiertos de goma de neopreno, para que puedan arrastrar del filamento. Se eligen motores paso a paso, debido a:
+Los ejes deberán ir recubiertos de goma de neopreno, para que puedan arrastrar del filamento. Se eligen motores paso a paso, debido a:
 
 \begin{itemize}
 	\item{Fáciles de programar.}
@@ -46,7 +37,7 @@ Los ejes, deberán ir recubiertos de goma de neopreno, para que puedan arrastrar
 	\item{Gran fuerza neta en el eje.}
 \end{itemize}
 
-Aunque el mecanismo es capaz de tirar del filamento bobinado, es necesario que se le guíe para que el corte sea siempre en la misma posición, por tanto, se diseña una guía para que la salida del filamento sea siempre por el mismo sitio, a la pieza impresa, se le pondrá una plancha de metal para que al realizar el corte, el filamento se apoye sobre ella y se ejerza más fuerza a cizalla. Además, deberá tener forma de embudo, para que la entrada del filamento sea lo más amplia posible y el final sea un único cilindro de un tamaño similar al del diámetro de filamento:
+Aunque el mecanismo es capaz de tirar del filamento bobinado, es necesario que se le guíe para que el corte sea siempre en la misma posición, por tanto se diseña una guía para que la salida del filamento sea siempre por el mismo sitio. A la guía se le añadirá una plancha de metal para que al realizar el corte, el filamento se apoye sobre ella y se ejerza más fuerza a cizalla. Además, deberá tener forma de embudo, para que la entrada del filamento sea lo más amplia posible y el final sea un único cilindro de un tamaño similar al del diámetro de filamento (ver Figura\ref{fig:peletizadora_guia}).
 
 \begin{figure}[H]
     \centering
@@ -55,7 +46,7 @@ Aunque el mecanismo es capaz de tirar del filamento bobinado, es necesario que s
     \label{fig:peletizadora_guia}
 \end{figure}
 
-El diseño final de la unidad tractora se ve a continuación:
+El diseño final de la unidad tractora se ve muestra en la Figura \ref{fig:peletizadora_conjunto}.
 
 \begin{figure}[H]
     \centering
@@ -64,9 +55,9 @@ El diseño final de la unidad tractora se ve a continuación:
     \label{fig:peletizadora_conjunto}
 \end{figure}
 
-Con este conjunto, garantizamos que el desbobinado del filamento sea correcto, aparte, seremos capaces de regular la velocidad de tracción de forma controlada. El siguiente paso a realizar será el diseño de las cuchillas de corte.\\
+Con este conjunto garantizamos que el desbobinado del filamento sea correcto, ademas de poder regular la velocidad de tracción de forma controlada. El siguiente paso a realizar será el diseño de las cuchillas de corte.\\
 
-Como unidad motriz de las cuchillas de corte, se elige un taladro con fuerza ajustable, en la boca del mismo, se acoplará un eje con las cuchillas. Como primera idea, se piensa en un diseño con un molino a cuatro ejes, donde en cada uno de ellos irá una cuchilla, de esta manera, por cada giro se podrán realizar cuatro cortes.
+Como unidad motriz de las cuchillas de corte, se elige un taladro con fuerza ajustable, en la boca del mismo se acoplará un eje con las cuchillas. Como primera idea se piensa en un diseño con un molino a cuatro ejes(ver Figura \ref{fig:peletizadora_aspas}), donde en cada uno de ellos se instalará una cuchilla, de esta manera por cada giro se podrán realizar cuatro cortes.
 
 \begin{figure}[H]
     \centering
@@ -75,7 +66,7 @@ Como unidad motriz de las cuchillas de corte, se elige un taladro con fuerza aju
     \label{fig:peletizadora_aspas}
 \end{figure}
 
-El conjunto de las aspas, irán instaladas sobre dos pilares, que harán de eje de giro al taladro, a su vez, se instalará una rampa de salida, para que los pellets vayan cayendo por ella, por último, para tapar todas las cuchillas y añadir seguridad al mecanismo, se incorpora una tapa que hará que las cuchillas no sean accesibles.
+El conjunto de las aspas irá colocado sobre dos pilares, que harán de eje de giro al taladro, a su vez, se instalará una rampa de salida para que los pellets vayan cayendo por ella, por último, para tapar todas las cuchillas y añadir seguridad al mecanismo, se incorpora una tapa que hará que las cuchillas no sean accesibles.
 
 \begin{figure}[H]
     \centering
@@ -84,7 +75,7 @@ El conjunto de las aspas, irán instaladas sobre dos pilares, que harán de eje 
     \label{fig:peletizadora_corte}
 \end{figure}
 
-Una vez impresas todas las piezas y realizado el montaje se realizan pruebas del mecanismo, se detecta que el filamento es capaz de desgastar la goma del eje de los motores, por ello, se incorpora a la entrada de la tracción un servo que hace que el filamento oscile, haciendo que el desgaste de la goma sea menor.
+Una vez impresas todas las piezas y realizado el montaje se realizan pruebas del prototipo, se detecta que el filamento es capaz de desgastar la goma del eje de los motores, por ello, se incorpora a la entrada de la tracción un servo que hace que el filamento oscile, haciendo que el desgaste de la goma sea menor.
 
 \begin{figure}[H]
     \centering
@@ -100,7 +91,7 @@ Una vez impresas todas las piezas y realizado el montaje se realizan pruebas del
     \label{fig:peletizadora_mecanismo2}
 \end{figure}
 
-Una vez el diseño se da por bueno, somos capaces de peletizar una bobina de 1 Kg en 30 minutos con una longitud del pellet de 0.5 mm. Por tanto, el problema de conseguir pellets para extruir lo hemos solucionado. Más adelante, se realizará un ensayo de calorimetría de barrido diferencial (DSC) con la que analizaremos térmicamente el filamento extruido en la filastruder, y comprobaremos la degradación que ha sufrido el polímero.
+Una vez se valida el prototipo, somos capaces de peletizar una bobina de $1 Kg$ en 30 minutos con una longitud del pellet de $0.5 mm$ (ver Figura \ref{fig:peletizadora_pellets_reciclados}). Por tanto, el problema de conseguir pellets para extruir ha sido  solucionado. Más adelante, se realizará un ensayo de calorimetría de barrido diferencial (DSC) con la que analizaremos térmicamente el filamento extruido, y comprobaremos la degradación que ha sufrido el polímero.
     
 \begin{figure}[H]
     \centering

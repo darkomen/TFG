@@ -1,7 +1,8 @@
 \chapter{Montaje del sensor de diámetro}
 \label{ane:sensor}
 
-El sensor funciona de la siguiente manera. Dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver Figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia, el filamento, al pasar por encima del sensor, proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera, un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor, una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v), teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+El sensor dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver Figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia.Al pasar el filamento por encima del sensor proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor. Una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v) teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_135533_.jpg}
@@ -9,46 +10,7 @@ El sensor funciona de la siguiente manera. Dispone de un dispositivo de carga ac
     \label{fig:sens_CCD}
 \end{figure}
 
-Se realiza el pedido a la empresa Mouser, que es un distribuidor de componentes electrónicos, con el siguiente material.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{cc}
-        {\bf Descripción}                 & {\bf Cantidad} \\ \hline
-        Condensador cerámico SMD $0.1 \mu F$ & 2              \\
-        Condensador cerámico SMD $1 \mu F$   & 2              \\
-        Condensador cerámico SMD $10 \mu F$  & 1              \\
-        LED Trough hole Rojo             & 1              \\
-        LED SMD Rojo                     & 1              \\
-        Resistencia SMD 1/8 WAT 150ohms  & 1              \\
-        Resistencia SMD 1/8 WAT 300ohms  & 1              \\
-        Resistencia SMD 1/8 WAT 1Kohms   & 1              \\
-        Pulsadores SMD                   & 1              \\
-        8bit Microcontrolador Freescale  & 1              \\
-        Sensor CCD 1x128 pixeles         & 1             
-    \end{tabular}
-    \caption{BOM sensor de diámetro}
-    \label{tab:BOM}
-\end{table}
-
-Para conseguir la PCB se usan los ficheros gerber disponibles en la web del proyecto \cite{thing_filamento}. Los ficheros gerber, contienen la información necesaria para la fabricación de la placa de circuito impreso.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/sensor/gerber.png}
-    \caption{Fichero gerber de la pcb.}
-    \label{fig:sens_gerber}
-\end{figure}
-
-La única manera de realizar las PCB que disponemos es encargándola por Internet \footnote{http://www.seeedstudio.com/depot/}. Enviamos los gerber y tras establecer las especificaciones de la PCB en unos días recibimos el pedido.\\
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_105219_.jpg}
-    \caption{PCB ya fabricada.}
-    \label{fig:sens_pcb}
-\end{figure}
-
-El siguiente paso será soldar todos los componentes. En este caso, la mayoría de los componentes son de montaje superficial (SMD) por ello necesitaremos el siguiente material, para que la soldadura sea más fácil.
+Es necesario soldar los componentes que en este caso son de montaje superficial (SMD) por ello necesitaremos el siguiente material, para que la soldadura sea más fácil.
 
 \begin{itemize}
 	\item{Soldador.}
@@ -124,4 +86,7 @@ Como comprobamos en la tabla \ref{tab:medici_senso} se comete un error en cada m
 \end{figure}
 
 La ecuación de la recta que minimiza el error en la medición es:
-$$y= 0.991*x +0.015$$
+
+\begin{equation}
+y= 0.991*x +0.015
+\end{equation}

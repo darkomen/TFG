@@ -2,7 +2,7 @@
 \label{ane:resultados_regu}
 \section{Ensayo 1}
 
-Los datos con los que se realizaron el experimento fueron:
+\subsection{Condiciones del ensayo}
 
 \begin{itemize}
 	\item{Duración de experimento: 38 min}
@@ -15,13 +15,14 @@ Los datos con los que se realizaron el experimento fueron:
 	\item{Los incrementos de velocidades en las reglas del sistema experto son las mismas.}
 \end{itemize}
 
-Los resultados obtenidos son los siguientes:
+\subsection{Resultados}
+Cómo vemos en la Tabla \ref{tab:resl_ens1} la media del filamento conseguido es de $1.72 mm$, sin embargo, los valores límites de $1.65 mm$ y $1.85 mm$ han sido superados, por lo que el filamento que se ha extruido, no valdría en su totalidad para imprimir. Si representamos los datos obtenidos en una gráfica, podemos observar como hay una influencia del regulador. Las variaciones que hay en el diámetro, son no son tan pronunciadas como en el caso del funcionamiento en lazo abierto. \\
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{cc}
 		                    & Diámetro X \\ \hline
-		Medidas             & 1526       \\
+		Muestras            & 1526       \\
 		Media (mm)          & 1.72       \\
 		Desviación estandar & 0.29       \\
 		Mínimo (mm)         & 1.20       \\
@@ -31,7 +32,6 @@ Los resultados obtenidos son los siguientes:
 	\label{tab:resl_ens1}
 \end{table}
 
-Cómo vemos en la Tabla \ref{tab:resl_ens1} la media del filamento conseguido es de $1.72 mm$, sin embargo, los valores límites de $1.65 mm$ y $1.85 mm$ han sido superados, por lo que el filamento que se ha extruido, no valdría en su totalidad para imprimir. Si representamos los datos obtenidos en una gráfica, podemos observar como hay una influencia del regulador. Las variaciones que hay en el diámetro, son no son tan pronunciadas como en el caso del funcionamiento en lazo abierto. \\
 
 Con el gráfico de cajas, podemos ver que la distribución de los datos no es del todo homogena, teniendo una gran cantidad de los datos por encima de la media, sobre $1.96 mm$.
 
@@ -53,7 +53,7 @@ Como segunda aproximación que vamos a realizar será la de hacer mayores increm
 
 \section{Ensayo 2}
 
-Los datos con los que se realizaron el experimento fueron:
+\subsection{Condiciones del ensayo}
 
 \begin{itemize}
 	\item{Duración de experimento: 30 min}
@@ -67,14 +67,14 @@ Los datos con los que se realizaron el experimento fueron:
 \end{itemize}
 
 En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y tenga una tendencia de crecimiento. Se hará que en este caso, la velocidad se incremente más.\\
-
+\subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{cc}
 		                    & Diámetro X \\ \hline
-		Medidas             & 1114      \\
+		Muestas             & 1114      \\
 		Media (mm)          & 1.74       \\
 		Desviación estandar & 0.26       \\
 		Mínimo (mm)         & 1.02       \\
@@ -104,7 +104,7 @@ Como tercera aproximación, vamos a modificar los incrementos de velocidades en 
 
 \section{Ensayo 3}
 
-Los datos con los que se realizaron el experimento fueron:
+\subsection{Condiciones del ensayo}
 
 \begin{itemize}
 	\item{Duración de experimento: 30min}
@@ -118,7 +118,7 @@ Los datos con los que se realizaron el experimento fueron:
 \end{itemize}
 
 En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y sea cual sea la tendencia. Se hará que en este caso, la velocidad se incremente más.\\
-
+\subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
 \begin{table}[H]
@@ -156,7 +156,8 @@ Como cuarta  aproximación, vamos a  modificar los incrementos en los que el di�
 Se ha detectado también que el eje de giro de la tractora está algo suelto. Se va a apretar para el siguiente ensayo.\\
 
 \section{Ensayo 4}
-
+\label{lab:4} 
+\subsection{Condiciones del ensayo}
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
@@ -171,7 +172,7 @@ Los datos con los que se realizaron el experimento fueron:
 \end{itemize}
 
  Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se volverá a tener una incremento de velocidad de +1.\\
-
+\subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
 \begin{table}[H]
@@ -207,7 +208,7 @@ Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir 
 Como quinta  aproximación, vamos a  modificar los rangos de velocidades de la tractora. Vamos a pasar a unas velocidades de $1.5RPM$ a $5.3RPM$ \\
 
 \section{Ensayo 5}
-
+\subsection{Condiciones del ensayo}
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
@@ -223,7 +224,7 @@ Los datos con los que se realizaron el experimento fueron:
 
 Este experimento sólo dura 20min, debido a que durante la realización del mismo, se percibe que no aporta ninguna mejora, añadiendo más inestabilidad a la medidas.\\
 
-Los resultados obtenidos son los siguientes:
+\subsection{Resultados}
 
 \begin{table}[H]
 	\centering
@@ -256,8 +257,8 @@ Los resultados obtenidos son los siguientes:
 Aumentando la velocidad se ha conseguido que disminuya el valor máximo, sin embargo ha disminuido el valor mínimo. Para la siguiente iteracción, se va a volver a las velocidades de $1.5RPM$ - $3.4RPM$ y se van a añadir más reglas con unos incrementos de velocidades menores, para evitar saturar la velocidad de traccción tanto a nivel alto como nivel bajo.
 
 \section{Ensayo 6}
+\subsection{Condiciones del ensayo}
 
-Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
 	\item{Duración de experimento: 30min}
@@ -271,7 +272,7 @@ Los datos con los que se realizaron el experimento fueron:
 \end{itemize}
 
  Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se tendrá una incremento de velocidad de +1.\\
-
+\subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
 \begin{table}[H]

@@ -9,7 +9,7 @@ El material del que dispondremos será el siguiente.
 	\item{\textbf{Motor paso a paso:} Dispositivo electromagnético, que transforma una serie de impuslos eléctricos en desplazamientos angulares.}
 \end{itemize}
 
-En el interior de un motor paso a paso se dispone de dos bobinas giradas $90^oc$ entre sí \cite{pasoapaso} las cuales, en función de una secuencia de excitación, generarán campos magnéticos que hará que el rotor del mismo giré un determinado ángulo. Para la realización de la tractora se usará una ténica denominada de micropasos con la que conseguimos que nuestro motor de $1.8^o$ de giro pueda alcanzazr grados de $0.225^o$. Para poder controlar el motor con está técnica y conseguir una velocidad de rotación constante, será necesario que el microcontrolador genera una señal cuadrada, en la que dependiendo de la frecuencia de esta señal, el motor girará a una velocidad distinta. El nivel alto de esta señal cuadrada, se la denominará paso. Por cada paso que reciba el motor girará $1.8^o $ dividido el número de micropasos configurados en el driver. En la Tabla \ref{tab:res_drive} muestra las distitnas configuraciones de un driver.
+En el interior de un motor paso a paso se dispone de dos bobinas giradas $90^oc$ entre sí \cite{pasoapaso} las cuales, en función de una secuencia de excitación, generarán campos magnéticos que hará que el rotor del mismo giré un determinado ángulo. Para la realización de la tractora se usará una ténica denominada de micropasos con la que conseguimos que nuestro motor de $1.8^o$ de giro pueda alcanzar grados de $0.225^o$. Para poder controlar el motor con está técnica y conseguir una velocidad de rotación constante, será necesario que el microcontrolador genera una señal cuadrada, en la que dependiendo de la frecuencia de esta señal, el motor girará a una velocidad distinta. El nivel alto de esta señal cuadrada, se la denominará paso. Por cada paso que reciba el motor girará $1.8^o $ dividido el número de micropasos configurados en el driver. En la Tabla \ref{tab:res_drive} muestra las distitnas configuraciones de un driver.
 
 \begin{table}[H]
     \centering
@@ -105,9 +105,9 @@ Una vez diseñadas las piezas, se pasan a imprimir en una impresora 3D
 
 Por último, para comprobar que el funcionamiento de la tractora es el esperado, se hace pasar una bobina de filamento através de la tractora, y comprobamos que podemos variar la velocidad de tracción y el agarre del filamento es el adecuado.
 
-	\begin{figure}[H]
-            \centering
-            \includegraphics[width=0.5\textwidth]{images/producciones/tractora/final.png}
-            \caption{Tractora con filamento}
-            \label{fig:tractora_fila}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/producciones/tractora/final.png}
+    \caption{Tractora con filamento}
+    \label{fig:tractora_fila}
+\end{figure}

@@ -36,7 +36,8 @@
 \usepackage{float} % para usar [H]
 
 % Formatting margins of the pages:
-\usepackage[top=1.6cm, bottom=2.29cm, left=1.6cm, right=1.47cm]{geometry}
+%\usepackage[top=1.6cm, bottom=2.29cm, left=3cm, right=1.47cm]{geometry}
+\usepackage[top=1.6cm, bottom=2.30cm, left=3cm, right=2.2cm]{geometry}
 
 % Import for headersfig:estado_extrusora
 \usepackage{fancyhdr}
@@ -129,11 +130,13 @@
 
 % Include PDF files
 \usepackage{pdfpages}
-
+% Include epigraph
+\usepackage{epigraph}
 % Evitar lineas viudas y huerfanas
 % http://ocw.um.es/gat/contenidos/ldaniel/ipu_docs/latex/tema6.html
 \clubpenalty=10000
 \widowpenalty=10000
+
 \renewcommand{\appendixname}{Apéndices}
 \renewcommand{\appendixtocname}{Apéndices}
 \renewcommand{\appendixpagename}{Apéndices}
@@ -143,9 +146,14 @@
 	%%%%%%% FRONTPAGE 
 	%%%%%%%%%%%%%%%%%
 	\include{portada}
-	\pagestyle{plain}
-    ~
+	\thispagestyle{empty}
+	~
 	\newpage
+	\thispagestyle{empty}
+	\input{frase}
+	~
+	\newpage
+	\thispagestyle{empty}
 	\input{agradecimientos}
 	~
 	\newpage
@@ -198,5 +206,5 @@
 	\lhead{\emph{Bibliografia}}
 	\bibliographystyle{unsrt}
 	\bibliography{references}
-
+%
 \end{document}

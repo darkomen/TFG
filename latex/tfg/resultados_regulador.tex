@@ -16,7 +16,7 @@
 \end{itemize}
 
 \subsection{Resultados}
-Cómo vemos en la Tabla \ref{tab:resl_ens1} la media del filamento conseguido es de $1.72 mm$, sin embargo, los valores límites de $1.65 mm$ y $1.85 mm$ han sido superados, por lo que el filamento que se ha extruido, no valdría en su totalidad para imprimir. Si representamos los datos obtenidos en una gráfica, podemos observar como hay una influencia del regulador. Las variaciones que hay en el diámetro, son no son tan pronunciadas como en el caso del funcionamiento en lazo abierto. \\
+Cómo vemos en la Tabla \ref{tab:resl_ens1} la media del filamento conseguido es de $1.72 mm$, sin embargo, los valores límites de $1.65 mm$ y $1.85 mm$ han sido superados, por lo que el filamento que se ha extruido, no valdría en su totalidad para imprimir. Si representamos los datos obtenidos en una gráfica, podemos observar como hay una influencia del regulador. Las variaciones que hay en el diámetro, son no son tan pronunciadas como en el caso del funcionamiento en lazo abierto.
 
 \begin{table}[H]
 	\centering
@@ -66,7 +66,8 @@ Como segunda aproximación que vamos a realizar será la de hacer mayores increm
 	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas:}
 \end{itemize}
 
-En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y tenga una tendencia de crecimiento. Se hará que en este caso, la velocidad se incremente más.\\
+En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y tenga una tendencia de crecimiento. Se hará que en este caso, la velocidad se incremente más.
+
 \subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
@@ -117,7 +118,8 @@ Como tercera aproximación, vamos a modificar los incrementos de velocidades en 
 	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas:}
 \end{itemize}
 
-En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y sea cual sea la tendencia. Se hará que en este caso, la velocidad se incremente más.\\
+En este ensayo, se va a cambiar el incremento de velocidad, cuando el filamento esté entre una diámetro de $1.75 mm$ y $1.80 mm$ y sea cual sea la tendencia. Se hará que en este caso, la velocidad se incremente más.
+
 \subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
@@ -153,11 +155,12 @@ Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir 
 
 Como cuarta  aproximación, vamos a  modificar los incrementos en los que el diámetro se encuentra entre $1.70 mm$ y $1.80 mm$, en sentido de subida. En el sentido de bajada se mantendrá con incrementos de +1.\\
 
-Se ha detectado también que el eje de giro de la tractora está algo suelto. Se va a apretar para el siguiente ensayo.\\
+Se ha detectado también que el eje de giro de la tractora está algo suelto. Se va a apretar para el siguiente ensayo.
 
 \section{Ensayo 4}
 \label{lab:4} 
 \subsection{Condiciones del ensayo}
+
 Los datos con los que se realizaron el experimento fueron:
 
 \begin{itemize}
@@ -171,7 +174,8 @@ Los datos con los que se realizaron el experimento fueron:
 	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas.}
 \end{itemize}
 
- Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se volverá a tener una incremento de velocidad de +1.\\
+ Los tramos entre $1.70 mm$ y $1.80mm$ en los que haya una tendencia a aumentar, se incrementará la velocidad, sin embargo cuando se tenga una tendencia a disminuir, se volverá a tener una incremento de velocidad de +1.
+
 \subsection{Resultados}
 Los resultados obtenidos son los siguientes:
 
@@ -205,7 +209,7 @@ Con esta tercera aproximación se ha conseguido estabilizar los datos y reducir 
     \label{fig:reg_cajas4}
 \end{figure}
 
-Como quinta  aproximación, vamos a  modificar los rangos de velocidades de la tractora. Vamos a pasar a unas velocidades de $1.5RPM$ a $5.3RPM$ \\
+Como quinta  aproximación, vamos a  modificar los rangos de velocidades de la tractora. Vamos a pasar a unas velocidades de $1.5RPM$ a $5.3RPM$.
 
 \section{Ensayo 5}
 \subsection{Condiciones del ensayo}
@@ -222,7 +226,7 @@ Los datos con los que se realizaron el experimento fueron:
 	\item{Los incrementos de velocidades en las reglas del sistema experto son distintas.}
 \end{itemize}
 
-Este experimento sólo dura 20min, debido a que durante la realización del mismo, se percibe que no aporta ninguna mejora, añadiendo más inestabilidad a la medidas.\\
+Este experimento sólo dura 20min, debido a que durante la realización del mismo, se percibe que no aporta ninguna mejora, añadiendo más inestabilidad a la medidas.
 
 \subsection{Resultados}
 
@@ -323,4 +327,4 @@ Después de realizar los seis experimentos, la tabla \ref{tab:_results} muestra 
 	\label{tab:_results}
 \end{table}
 
-Como podemos comprobar, hemos conseguido tener un diámetro, cuyo valor medio está dentro de los márgenes de teolerancia, sin embargo, los valores máximos y mínimos no cumplen los requisitos. Esto es debido a que el filamento no sale de manera constante de la extrusora y por ello, el control del mismo, se hace más complicado si cabe. Sin embaego, hemos podido comprobar como el regulador que hemos implementado aplica una cierta mejora respecto al extrusor en lazo abierto.\\
+Como podemos comprobar, hemos conseguido tener un diámetro, cuyo valor medio está dentro de los márgenes de teolerancia, sin embargo, los valores máximos y mínimos no cumplen los requisitos. Esto es debido a que el filamento no sale de manera constante de la extrusora y por ello, el control del mismo, se hace más complicado si cabe. Sin embaego, hemos podido comprobar como el regulador que hemos implementado aplica una cierta mejora respecto al extrusor en lazo abierto.

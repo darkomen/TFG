@@ -1,7 +1,7 @@
 \chapter{Desarrollo de la solución propuesta}
 \label{cap:descrip}
 
-Una línea de extrusión completa está compuesta por distintos componentes. En la Figura \ref{fig:esquema_extrusora} vemos los elementos que lo conforman, así mismo, vemos que en cada uno de ellos, hay diferentes valores que influyen en la calidad final del filamento.\\
+Una línea de extrusión completa está compuesta por distintos componentes. En la Figura \ref{fig:esquema_extrusora} vemos los elementos que lo conforman, así mismo, vemos que en cada uno de ellos, hay diferentes valores que influyen en la calidad final del filamento.
 
 \begin{figure}[H]
     \centering
@@ -71,7 +71,7 @@ Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y 
 \end{figure}
 
 \subsection{IPython}
-IPython\cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade mejoras como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece una interfaz tipo notebook lo cual añade la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Estos notebooks son interactivos y permiten observar como se han realiado los cálculos y análsis. Podemos ver un ejemplo en la Figura \ref{fig:ipython}
+IPython \cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade mejoras como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece una interfaz tipo notebook lo cual añade la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Estos notebooks son interactivos y permiten observar cómo se han realiado los cálculos y análisis. Podemos ver un ejemplo en la Figura \ref{fig:ipython}.
 
 \begin{figure}[!ht]
     \centering
@@ -82,7 +82,10 @@ IPython\cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade mej
 
 Esta herramienta se ha utilizado en el proyecto para poder calcular el modelo matemático de un sistema e implementar un regulador PID, así mismo, se han analizado los datos adquiridos durante una producción de filamento y comprobar los resultados del sistema diseñado. Los cuadernos realizados están disponibles para su consulta y descarga en el repositorio que se ha creado para el proyecto \cite{githubTFG}.
 
+\subsection{Automation Builder ABB}
+Es el entorno de desarrollo para automátas programables de ABB. Desde él se pueden configurar las opciones usadas en el automáta programable así como los módulos de expansión usados. Incorpora CodeSys, un editor de código para desarrollar el programa de control en diferentes lenguajes de programación, además de gestionar las librerias software que necesitemos en el proyecto.\\
 
+Desde este herramienta, podremos incorporar distintos servicios de RED al PLC, como pueden ser un servidor de páginas web (HTTP) y un servidor de transferencia de ficheros (FTP).
 \section{Elección de los componentes}
 
 Se quiere desarrollar un sistema capaz de leer información de varios sensores y dado el caso activar elementos de control, todos ellos situados en un entorno industrial como es una fábrica de extrusión de polímeros. Por ello, el sistema elegido debe ser lo más robusto posible y tener capacidades de expansión por módulos para que, según la línea en la que se instale, se pueda acceder a una gran variedad de sensores.\\ 
@@ -109,7 +112,7 @@ El PLC que se adquiere es de la marca ABB debido a la gran relación calidad pre
 
 Para poder demostrar que el sistema a desarrollar es válido para resolver el problema planteado, se mantienen conversaciones con los responsables de PESL para poner en común cuales son los dispositivos que disponen en la fábrica, sin embargo, debido a planificaciones de producción que tienen PESL solo se disponen de dos líneas de extrusión, resulta imposible destinar una línea de fabricación para poner en marcha nuestro sistema.\\
 
-Debido a ello, se decide adquirir una extrusora de laboratorio y poder implementar el sistema en ella desde su instalación por parte del distribuidor. Sin embargo, los plazos de entrega estipulados, se alejan de la fecha de presentación del presente proyecto y por ese motivo se decide usar una extrusora casera que se tiene en el departamento de robótica e innovación de BQ (ver Figura \ref{fig:hardware_filastruder}).\\
+Debido a ello, se decide adquirir una extrusora de laboratorio y poder implementar el sistema en ella desde su instalación por parte del distribuidor. Sin embargo, los plazos de entrega estipulados, se alejan de la fecha de presentación del presente proyecto y por ese motivo se decide usar una extrusora casera que se tiene en el departamento de robótica e innovación de BQ (ver Figura \ref{fig:hardware_filastruder}).
 
     \begin{figure}[H]
             \centering
@@ -150,7 +153,7 @@ Javier Arranz Andrés, compañero del departamento, realiza un ensayo mediante D
 
 Se empleó el calor de fusión del PLA $100\%$ cristalino, 93 J/g \cite{DSC}. Los errores en la determinación de las temperaturas, en el cálculo de la entalpía y en el de la cristalinidad se estimaron en $\delta1 ^o C$, $\pm4 J/g$ y $\pm0.04$ respectivamente. El peso de las muestras osciló entre 6 y10 mg, y las temperaturas de transición, Tm y Tc se tomaron en el punto máximo de la curva endoterma o exoterma. La Tg se tomó a la temperatura en la que se alcanza la mitad de la diferencia de calor específico existente entre el estado amorfo vítreo y el amorfo elastómero, es decir $T_{g} = 0.5 \pm C_{p}$.\\
 
-Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con el grado de cristalinidad del polímero, el cual difiere de uno a otro, sin embargo la diferencia está dentro del margen de error experimental. Esta diferencia puede ser un indicador de inicio de degradación, debido a que las cadenas del polímero son más pequeñas y dificultan el movimiento en sus partes extremas dificultando la cristalinidad.\\
+Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con el grado de cristalinidad del polímero, el cual difiere de uno a otro, sin embargo la diferencia está dentro del margen de error experimental. Esta diferencia puede ser un indicador de inicio de degradación, debido a que las cadenas del polímero son más pequeñas y dificultan el movimiento en sus partes extremas dificultando la cristalinidad.
 
 \begin{figure}[H]
     \centering
@@ -215,7 +218,7 @@ La máquina de estados se muestra en la Figura \ref{fig:plc_estados}
 \subsection{Control de la temperatura del extrusor}
 \label{sec:plc_PID}
 
-Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la Figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID:\\
+Se implementa un regulador PID para regular la temperatura del extrusor. Es necesario conocer la planta del sistema que queremos regular para implementar de forma correcta el PID. En nuestro caso el sistema a controlar es el calentamiento del dado, por ello, debemos modelar primeramente el sistema. En la Figura \ref{fig:plc_sistema} podemos ver un esquema de un sistema con un regulador PID:
 
 \begin{figure}[H]
     \centering
@@ -290,6 +293,7 @@ G_s = \frac{150 \cdot S^2 + 6082.6 \cdot S + 121.64}{S}
 Los sensores de diámetro están conectados a dos entradas analógicas de tensión del PLC. Será necesario unir la señal de masa (GND) del PLC con la del sensor, para que la referencia al nivel de tensión $0 V$ sea la misma, posteriormente, la salida del sensor de diámetro, se conectará con la entrada analógica del PLC.\\
 
 El PLC convierte el valor de tensión comprendido entre un rango de 0-10V a un valor numérico, a través de un conversor analógico a digital (ADC) de 10bits, es decir, tenemos una resolución de:
+
 \begin{equation}
     \text{Resolución}=\frac{ V_{max} } {2^{10} } = \frac{10}{1024} = 9.76 mV
 \end{equation}
@@ -344,15 +348,15 @@ En la tabla \ref{tab:plc_csv} se ve un ejemplo de los datos almacenados en un fi
 \begin{table}[H]
     \centering
     \begin{tabular}{ccccc}
-        {\bf time}         & {\bf Tmp Husillo} & {\bf Tmp Nozzle} & {\bf Diámetro X} & {\bf Diámetro Y} \\ \hline
-        2015-8-13 11:11:1  & 67.5              & 150.4            & 1.71         & 1.49         \\
-        2015-8-13 11:11:2  & 67.5              & 150.4            & 1.82         & 1.51         \\
-        2015-8-13 11:11:4  & 67.5              & 150.5            & 1.91         & 1.52         \\
-        2015-8-13 11:11:5  & 67.4              & 150.5            & 1.94         & 1.55         \\
-        2015-8-13 11:11:7  & 67.4              & 150.5            & 1.91         & 1.56         \\
-        2015-8-13 11:11:9  & 67.4              & 150.6            & 1.92         & 1.58         \\
-        2015-8-13 11:11:10 & 67.4              & 150.6            & 1.97         & 1.71         \\
-        2015-8-13 11:11:12 & 67.4              & 150.6            & 2.02         & 1.89        \\
+        {\bf Tiempo}         & {\bf Tmp Husillo} & {\bf Tmp Nozzle} & {\bf Diámetro X} & {\bf Diámetro Y} \\ \hline
+        2015-8-13 11:11:01  & 67.5              & 150.4            & 1.71         & 1.49         \\
+        2015-8-13 11:11:02  & 67.5              & 150.4            & 1.82         & 1.51         \\
+        2015-8-13 11:11:04  & 67.5              & 150.5            & 1.91         & 1.52         \\
+        2015-8-13 11:11:05  & 67.4              & 150.5            & 1.94         & 1.55         \\
+        2015-8-13 11:11:07  & 67.4              & 150.5            & 1.91         & 1.56         \\
+        2015-8-13 11:11:09  & 67.4              & 150.6            & 1.92         & 1.58         \\
+        2015-8-13 11:11:10 & 67.4              & 150.6             & 1.97          & 1.71         \\
+        2015-8-13 11:11:12 & 67.4              & 150.6             & 2.02          & 1.89        \\
                 -          &    -              & -                & -                & -
     \end{tabular}
     \caption[Muestra de un fichero CSV con datos de producción.]{Muestra de un fichero CSV con datos de producción. Están registrados los datos más importantes de la producción como son. Time Stamp, Temperaturas y Diámetros.}
@@ -362,10 +366,9 @@ En la tabla \ref{tab:plc_csv} se ve un ejemplo de los datos almacenados en un fi
 \subsection{Acceso remoto a los datos de producción}
 \label{sec:plc_scada}
 
-La información se almacena en la tarjeta SD interna del PLC y para poder acceder a ella, se usa un servidor de transferencia de ficheros (servidor FTP) con el que se transfieren ficheros desde el PLC al ordenador mediante una conexión de red, de esta manera, se accede a la SD de forma remota, sin tener que sacar la SD del PLC. Para ello se usa el servidor FTP que facilita la herramienta de ABB. En el ordenador, con ayuda de un software cliente FTP se accede aa la IP del PLC que se encuentra en la misma red y se descarga el fichero csv para su posterior estudio.\\
+La información se almacena en la tarjeta SD interna del PLC a la cual se puede acceder se usa un servidor de transferencia de ficheros (servidor FTP), de esta manera se accede a la SD de forma remota, sin tener que extraer la tarjeta del PLC. En el ordenador, con ayuda de un software cliente FTP se accede a la IP del PLC que se encuentra en la misma red y se descarga el fichero CSV para su posterior estudio.\\
 
-
-Para poder visualizar el estado de la producción, se usa una herramienta que incorpora de serie el programa de Abb. Esta herramienta, provee un servidor de páginas WEB en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
+La producción se puede visualizar de forma remota empleando un servidor de páginas WEB en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
 
 \begin{itemize}
     \item {Visualización en tiempo real temperaturas de Husillo y Dado.}

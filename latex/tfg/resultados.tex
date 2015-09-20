@@ -1,11 +1,11 @@
 \chapter{Experimientos realizados}
 \label{cap:resultados}
 
-Como se ha mostrado hasta ahora, hemos desarrollado un sistema capaz de registrar la información de una serie de sensores y crear un fichero con esa información. Cuando se incia el planteamiento de este proyecto, el paso final del mismo es implementar el sistema en una linea de extrusión industrial sin embargo a la hora de implementar el funcionamiento del mismo, la empresa PELS no puede ceder una de sus líneas de extrusión para la puesta en marcha del sistema debido a la planificación de produción; se adquiere una extrusora de laboratorio pero los plazos de entregan se alargan y no se tiene acceso a ella a la hora de validar el sistema.\\
+Como se ha mostrado hasta ahora, hemos desarrollado un sistema capaz de registrar la información de una serie de sensores y crear un fichero con esa información. Cuando se incia el planteamiento de este proyecto, el paso final del mismo es implementar el sistema en una linea de extrusión industrial sin embargo a la hora de implementar el funcionamiento del mismo, la empresa PELS no puede ceder una de sus líneas de extrusión para la puesta en marcha del sistema debido a la planificación de la producción; se adquiere una extrusora de laboratorio pero los plazos de entregan se alargan y no se tiene acceso a ella a la hora de validar el sistema.\\
 
-Por estos motivos, se decide hacer uso de una maqueta de extrusora de filamento para poder comprobar cómo con el sistema diseñado podemos realizar un estudio avanzado de los problemas que tenemos a la hora de fabricar filamento. De esta manera, podremos validar nuestro sistema y adquirir la experiencia necesaria para cuando el sistema se implemente en una línea de extrusión industrial. \\
+Por estos motivos se decide hacer uso de una maqueta de extrusora de filamento para poder comprobar como con el sistema diseñado podemos realizar un estudio avanzado de los problemas que tenemos a la hora de fabricar filamento. De esta manera, podremos validar nuestro sistema y adquirir la experiencia necesaria para cuando el sistema se implemente en una línea de extrusión industrial. \\
 
-A continuación, vamos a ver distintos ensayos que se han realizado con el sistema. El objetivo de estos ensayos es demostrar que nuestro sistema es válido para registrar la información que le indiquemos y su posterior análisis. Así mismo, se abre una investigación sobre la influencia de distintos tipos de regulador sobre el tamaño del diámetro final (lazo de control), a pesar de que no es el objetivo principal del proyecto, si es un objetivo secundario que ha surgido con la realización del mismo.\\
+A continuación vamos a ver distintos ensayos que se han realizado con el sistema. El objetivo de estos ensayos es demostrar que nuestro sistema es válido para registrar la información que le indiquemos y su posterior análisis. También se abre una investigación sobre la influencia de distintos tipos de regulador sobre el tamaño del diámetro final (lazo de control), a pesar de que no es el objetivo principal del proyecto si es un objetivo secundario que ha surgido con la realización del mismo.
 
 \section{Validación del sistema sin tractora}
 \label{sec:FSB}
@@ -22,8 +22,8 @@ Como primera aproximación e intentando asemejar el esquema de producción vista
 La boquilla de la filastruder es de 3mm. De esta manera se tiene margen suficiente para regular el filamento aplicando una fuerza de tracción según sale de la extrusora y se va enfriando. A la hora de trabajar con una técnica de conformado como es ésta, es muy importante que la velocidad de salida sea lo más constante posible y también hay que tener en cuenta que se producen cambios en el material tanto de tamaño como de forma según sale de la extrusora \cite{tecno_polimeros}. Tres de estos cambios que afectan al material son: 
 
 \begin{itemize}
-	\item {\textbf{Tensionado}: Habitualmente, el material es recogido por sistemas de almacenamiento consistentes en rodillos que aplican una tensión. Esto hace que el tamaño del material varíe en función de esa tensión. Nos ayudaremos de esta característica para intentar regular el diámetro final del filamento. El tamaño del diámetro tendrá una relación inversamente proporcional a la velocidad.}
-	\item {\textbf{Relajación}: Dentro de la extrusora, el material soprta esfuerzos normales y  al salir por la boqquilla se relaja. Esta relajación será mayor, en función del gradiente de temperatura que haya entre la boquila y el ambiente. La Figura \ref{fig:prod_relajacion} muestra un ejemplo de la deformación sufrida por el material.
+	\item {\textbf{Tensionado}: El material es recogido por sistemas de almacenamiento consistentes en rodillos que aplican una tensión. Esto hace que el tamaño del material varíe en función de esa tensión. Nos ayudaremos de esta característica para intentar regular el diámetro final del filamento. El tamaño del diámetro tendrá una relación inversamente proporcional a la velocidad.}
+	\item {\textbf{Relajación}: Dentro de la extrusora el material soporta esfuerzos normales y al salir por la boquilla se relaja. Esta relajación será mayor, en función del gradiente de temperatura que haya entre la boquila y el ambiente. La Figura \ref{fig:prod_relajacion} muestra un ejemplo de la deformación sufrida por el material.
 		\begin{figure}[H]
 	        \centering
 	        \includegraphics[width=0.2\textwidth]{images/producciones/relajacion.png}
@@ -148,7 +148,7 @@ Tras el ensayo, los resultados obtenidos son los siguientes:
     \label{tab:20007105-dat}
 \end{table}
 
-En la Figura \ref{fig:2007105-graf} vemos los datos obtenidos del diámetro del eje X. Se puede observar, que hay una variación muy pronunciada al tener una velocidad de tracción constante, esto es un problema en el diseño de la filastruder ya que, a una velocidad de tracción constante, el diámetro debería serlo también.
+En la Figura \ref{fig:2007105-graf} vemos los datos obtenidos del diámetro del eje X. Se puede observar que hay una variación muy pronunciada al tener una velocidad de tracción constante, esto es un problema en el diseño de la filastruder ya que, a una velocidad de tracción constante, el diámetro debería serlo también.
 
 \begin{figure}[H]
     \centering
@@ -183,7 +183,7 @@ Para solventar estos problemas, se van a tomar las siguientes medidas:
     \item{Usar una mezcla de granza de PLA natural (70\%) con pellets reciclados de filamento (30\%) (ver Figura \ref{fig:2007105-mezc}). Se usará granza de PLA natural, el cual tiene una forma más redondeada que los pellets reciclados, haciendo más fácil el avance dentro del cañón. Se usa una mezcla con los pellets reciclados, ya que el sensor de diámetro que usamos, no funciona con filamento transparente, por ello, debemos tintar el filamento}
 	    \begin{figure}[H]
 		    \centering
-		    \includegraphics[width=0.6\textwidth]{images/producciones/20072015/IMG_20150903_155859.jpg}
+		    \includegraphics[width=0.4\textwidth]{images/producciones/20072015/IMG_20150903_155859.jpg}
 		    \caption{Mezcla de granza con pellets reciclados.}
 		    \label{fig:2007105-mezc}
 		\end{figure}

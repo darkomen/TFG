@@ -1,7 +1,7 @@
 \chapter{Montaje del sensor de diámetro}
 \label{ane:sensor}
 
-El sensor dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver Figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia.Al pasar el filamento por encima del sensor proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor. Una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v) teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$\\
+El sensor dispone de un dispositivo de carga acoplada (sensor CCD) de 1x128 pixels (ver Figura \ref{fig:sens_CCD}), el cual es iluminado de forma constante por un LED de alta luminancia.Al pasar el filamento por encima del sensor proyecta una sombra sobre él, haciendo que los pixeles tenga distinta luminosidad, de esa manera un microcontrolador es capaz de calcular el diámetro del elemento que está por encima del sensor. Una vez calculado el diámetro, usando un conversor DAC, escribe en una salida analógica un valor de tensión  (comprendido entre 0-3v) teniendo ua relación directa mm-V, es decir, para un diámetro de $1.75 mm$, obtendremos a la salida $1.75 V$.
 
 \begin{figure}[H]
     \centering
@@ -26,7 +26,8 @@ Es necesario soldar los componentes que en este caso son de montaje superficial 
     \label{fig:sens_materiales}
 \end{figure}
 
-El componente más complicado de soldar es el microcontrolador ya que tiene sus pines muy cercanos entre sí. Para evitar que el estaño cortocircuite dos pines, se esparcirá Flux que es un líquido que ayuda a la hora de soldar, limpiando la superficie y haciendo que  el estaño sea más fácil de fundir.\\
+El componente más complicado de soldar es el microcontrolador ya que tiene sus pines muy cercanos entre sí. Para evitar que el estaño cortocircuite dos pines, se esparcirá Flux que es un líquido que ayuda a la hora de soldar, limpiando la superficie y haciendo que  el estaño sea más fácil de fundir.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150414_111135.jpg}
@@ -35,13 +36,14 @@ El componente más complicado de soldar es el microcontrolador ya que tiene sus 
 \end{figure}
 
 El resto de componentes SMD son fáciles de soldar y con ayuda de la pinza se irán soldando en orden.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{images/sensor/IMG_20150414_135533.jpg}
     \caption{Soldando componentes SMD.}
     \label{fig:sens_SMD}
 \end{figure}
-Los últimos componentes a soldar serán los que atraviesen la placa de circuito impreso con sus pines (Trough hole) terminando así de soldar todos los componentes:\\
+Los últimos componentes a soldar serán los que atraviesen la placa de circuito impreso con sus pines (Trough hole) terminando así de soldar todos los componentes:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sensor/IMG_20150417_121941.jpg}
@@ -57,7 +59,7 @@ Por último, programaremos el microcontrolador con el firmware que nos bajamos e
     \label{fig:sens_midiendo}
 \end{figure}
 
-Al realizar varias medidas, se comprueba que se comete un ligero error en la medida, y eso es debido a que a la hora de calibrar no disponemos de un varilla con la misma medida con la que el usuario realizó la programación. Después de realizar unas mediciones con el sensor de unas dimensiones conocidas, estos son los valores obtenidos.\\
+Al realizar varias medidas, se comprueba que se comete un ligero error en la medida, y eso es debido a que a la hora de calibrar no disponemos de un varilla con la misma medida con la que el usuario realizó la programación. Después de realizar unas mediciones con el sensor de unas dimensiones conocidas, estos son los valores obtenidos.
 
 \begin{table}[H]
     \centering

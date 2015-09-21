@@ -5,12 +5,12 @@ Una línea de extrusión completa está compuesta por distintos componentes. En 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{images/esquema_extrusion.png}
-    \caption[Esquema de los elementos que conforman una extrusora.]{Esquema de los elementos que conforman una línea de extrusión completa. Vemos el flujo de avance del filamento según sale de la extrusora y pasa por los distintos elementos. En cada uno, se registran distintos valores.}
+    \includegraphics[width=0.99\textwidth]{images/esquema_extrusion.png}
+    \caption[Esquema de los elementos que conforman una extrusora.]{Esquema de los elementos que conforman una línea de extrusión completa. Vemos el flujo de avance del filamento según sale de la extrusora y pasa por los distintos elementos. Según el sistema de control se leera el diámetro del filamento antes o después del pulmón, para actuar sobre el motor de la extrusora o de la tractora.}
     \label{fig:esquema_extrusora}
 \end{figure}
 
-En una línea de extrusión convencional, se tiene acceso visual a los parámetros indicados, sin embargo no queda registrado en ningún lugar de cuales han sido . Hasta que la extrusión de filamento no se ha extendido, no era necesario tener en detalle estos valores, ya que eran pocos los parámetros que afectaban a la calidad del perfil extruido. Sin embargo, en la extrusión de filamento, son muchos los valores que pueden afectar a la calidad del producto final.\\
+En una línea de extrusión convencional, se tiene acceso visual a los parámetros indicados, sin embargo no queda registrado en ningún lugar de cuales han sido. Hasta que la extrusión de filamento no se ha extendido, no era necesario tener en detalle estos valores, ya que eran pocos los parámetros que afectaban a la calidad del perfil extruido. Sin embargo, en la extrusión de filamento, son muchos los valores que pueden afectar a la calidad del producto final.\\
 
 Por estos motivos y poder tener una gestión de calidad del producto fabricado, se decide desarrollar un sistema de adquisición de datos para que se pueda hacer una trazabilidad completa de los parámetros de fabricación.\\
 
@@ -32,7 +32,7 @@ En esta fase se pondrá en marcha todo el sistema en la planta, instalando el PL
 
 De forma general, una linea de extrusión controla el filamento actuando sobre dos velocidades, la de extrusión o la de tracción. La tractora es la encargada de tirar del filamento según salga de la extrusora. Lo habitual es variar la velocidad de la tractora en función del diámetro que se tenga pero también se suele variar la velocidad de extrusión, sin embargo esto puede afectar a la calidad del filamento, puesto que no todo el material estará el mismo tiempo en la extrusora pudiendo generar una degradación en los pellets.\\
 
-Para poder investigar acerca de qué método de control es mejor se realizará un estudio de diferentes sistemas de control para regular el diámetro final del filamento. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, fuzzy, etc. para posteriormente estudiar los beneficios e inconvenientes de cada uno de ellos.\\
+Para poder investigar acerca de qué método de control es mejor se realizará un estudio de diferentes sistemas de control para regular el diámetro final del filamento. Se estudiarán los beneficios de usar distintos tipos de controladores como pueden ser PID, control borroso, etc. para posteriormente estudiar los beneficios e inconvenientes de cada uno de ellos.\\
 
 Los plazos asignadaos a cada una de las distintas fases que componen el proyecto, se puede ver en el Anexo \ref{ane:gant}
 
@@ -40,17 +40,12 @@ Los plazos asignadaos a cada una de las distintas fases que componen el proyecto
 \label{sec:herramientas}
 
 Para el desarrollo de las distintas partes del proyecto, ha sido necesario utilizar varios programas informáticos que nos han ayudado en la consecución de los objetivos del mismo. A continuación, se introducen brevemente, los programas usados más importantes.
+\begin{itemize}
+\item{GitHub: es una plataforma de desarrollo colaborativo en el que se pueden alojar proyectos utilizando la herramienta de control de versiones Git. El código almacenado en esta plataforma es de dominio público, sin embargo también existe la posibilidad de crear repositorios privados creándonos una cuenta de pago. Para la realización del proyecto se ha creado un repositorio online \cite{githubTFG} en el que se han ido subiendo todos los ficheros que se han ido utilizando para la realización del mismo.}
 
-\subsection{GitHub}
-GitHub es una plataforma de desarrollo colaborativo en el que se pueden alojar proyectos utilizando la herramienta de control de versiones Git. El código almacenado en esta plataforma es de dominio público, sin embargo también existe la posibilidad de crear repositorios privados creándonos una cuenta de pago.\\
+\item{GNU Octave:  programa libre para realizar cálculos numéricos. Ofrece un interprete de comandos, donde se van escribiendo los comandos que queramos realizar. También permite mostrar gráficas con una serie de datos numércios. Se le considera el equivalente a Matlab \cite{octave}. Esta herramienta se ha utilizado en el proyecto para calcular el modelo matemático de un sistema, para la posterior implementación de un regulador PID.}
 
-Para la realización del proyecto se ha creado un repositorio online \cite{githubTFG} en el que se han ido subiendo todos los ficheros que se han ido utilizando para la realización del mismo.
-
-
-\subsection{GNU Octave}
-GNU Octave es un programa libre para realizar cálculos numéricos. Ofrece un interprete de comandos, donde se van escribiendo los comandos que queramos realizar. También permite mostrar gráficas con una serie de datos numércios. Se le considera el equivalente a Matlab \cite{octave}. Esta herramienta se ha utilizado en el proyecto para calcular el modelo matemático de un sistema, para la posterior implementación de un regulador PID.
-
-\subsection{Autodesk Inventor}
+\item{Autodesk Inventor: 
 Durante la ejecución del proyecto, ha sido necesario realizar piezas específicas a nuestras necesidades. Para ello se han usado impresoras 3D y diseñado las propias piezas que en cada momento han sido necesarias. El diseño de las mismas ha sido realizado en la herramienta Autodesk Inventor. Esta herramienta ofrece un paquete de modelado de sólidos en 3D profesional que compite con otros programas de diseño asistido por ordenador, como pueden ser Catia, Pro/ENGINEER y Solid Edge entre otros.
 
 \begin{figure}[H]
@@ -59,8 +54,8 @@ Durante la ejecución del proyecto, ha sido necesario realizar piezas específic
     \caption[Ejemplo de pieza diseñada con Autodesk Inventor.]{Ejemplo de pieza diseñada con Autodesk Inventor. En la Figura vemos una pieza específica diseñada para el proyecto.}
     \label{fig:pieza}
 \end{figure}
-
-\subsection{Cura 15.02.1}
+}
+\item{Cura 15.02.1: 
 Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y un software capaz de laminar el fichero STL en G-code para que la impresión de la pieza sea correcta. En este software es donde se conFiguran los parámetros de fabricación final de la pieza.
 
 \begin{figure}[H]
@@ -68,10 +63,10 @@ Para la fabricación de las piezas diseñadas, se han usado impresoras Witbox y 
     \includegraphics[width=0.7\textwidth]{images/cura.png}
     \caption[Pieza diseñada abierta en cura.]{Pieza diseñada abierta en cura. Podemos ver como en el laminador se pueden conFigurar los distintos parámetros de fabricación de la pieza.}
     \label{fig:cura}
-\end{figure}
+\end{figure}}
 
-\subsection{IPython}
-IPython \cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade mejoras como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas. Además ofrece una interfaz tipo notebook lo cual añade la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Estos notebooks son interactivos y permiten observar cómo se han realiado los cálculos y análisis. Podemos ver un ejemplo en la Figura \ref{fig:ipython}.
+\item{
+IPython: es una consola de Python mejorada, la cual añade mejoras como puede ser resaltado de líneas, coloreado de sintaxis, autocompletado entre otras ventajas \cite{PER-GRA:2007}. Además ofrece una interfaz tipo notebook lo cual añade la posibilidad de combinar ejecución de código python, mostrar texto matemático, gráficas y contenido múltimedia \cite{ipython}. Estos notebooks son interactivos y permiten observar cómo se han realiado los cálculos y análisis. Podemos ver un ejemplo en la Figura \ref{fig:ipython}.
 
 \begin{figure}[!ht]
     \centering
@@ -80,12 +75,13 @@ IPython \cite{PER-GRA:2007} es una consola de Python mejorada, la cual añade me
     \label{fig:ipython}
 \end{figure}
 
-Esta herramienta se ha utilizado en el proyecto para poder calcular el modelo matemático de un sistema e implementar un regulador PID, así mismo, se han analizado los datos adquiridos durante una producción de filamento y comprobar los resultados del sistema diseñado. Los cuadernos realizados están disponibles para su consulta y descarga en el repositorio que se ha creado para el proyecto \cite{githubTFG}.
+Esta herramienta se ha utilizado en el proyecto para poder calcular el modelo matemático de un sistema e implementar un regulador PID, así mismo, se han analizado los datos adquiridos durante una producción de filamento y comprobar los resultados del sistema diseñado. Los cuadernos realizados están disponibles para su consulta y descarga en el repositorio que se ha creado para el proyecto \cite{githubTFG}.}
 
-\subsection{Automation Builder ABB}
+\item{Automation Builder ABB: 
 Es el entorno de desarrollo para automátas programables de ABB. Desde él se pueden configurar las opciones usadas en el automáta programable así como los módulos de expansión usados. Incorpora CodeSys, un editor de código para desarrollar el programa de control en diferentes lenguajes de programación, además de gestionar las librerias software que necesitemos en el proyecto.\\
 
-Desde este herramienta, podremos incorporar distintos servicios de RED al PLC, como pueden ser un servidor de páginas web (HTTP) y un servidor de transferencia de ficheros (FTP).
+Desde este herramienta, podremos incorporar distintos servicios de RED al PLC, como pueden ser un servidor de páginas web (HTTP) y un servidor de transferencia de ficheros (FTP).}
+\end{itemize}
 \section{Elección de los componentes}
 
 Se quiere desarrollar un sistema capaz de leer información de varios sensores y dado el caso activar elementos de control, todos ellos situados en un entorno industrial como es una fábrica de extrusión de polímeros. Por ello, el sistema elegido debe ser lo más robusto posible y tener capacidades de expansión por módulos para que, según la línea en la que se instale, se pueda acceder a una gran variedad de sensores.\\ 
@@ -149,11 +145,11 @@ A la hora de obtener matería prima para poder extruir filamento, se decide cons
 
 Por ello, se realizan ensayos por calorimetría diferencial de barrido (DSC). El DSC es una técnica que permite el estudio de las transiciones de fase en los materiales polímeros \cite{DSC1} lo que es de suma importancia a la hora de establecer sus condiciones de procesado y aplicaciones tecnológicas, ya que el tipo de fases y transiciones entre ellas determinan su comportamiento físico macroscópico.\\
 
-Javier Arranz Andrés, compañero del departamento, realiza un ensayo mediante DSC. Las medidas se hicieron en un calorímetro TA Instruments Q20 con sistema de enfriamiento y bajo atmósfera de nitrógeno. El aparato se calibró con Indio como sustancia de referencia ($Tm = 156.6 ^o C$, $\delta H = 28.45 J/g$). En el ensayo se sometió al polímero a una fusión a $20 ^o C/min$, seguida de una cristalización y una segunda fusión, a la velocidad de $5 ^o C/min$.\\
+Estos ensayos son realizados por Javier Arranz Andrés, compañero del departamento. Las medidas se hicieron en un calorímetro TA Instruments Q20 con sistema de enfriamiento y bajo atmósfera de nitrógeno. El aparato se calibró con Indio como sustancia de referencia ($Tm = 156.6 ^o C$, $\delta H = 28.45 J/g$). En el ensayo se sometió al polímero a una fusión a $20 ^o C/min$, seguida de una cristalización y una segunda fusión, a la velocidad de $5 ^o C/min$.\\
 
 Se empleó el calor de fusión del PLA $100\%$ cristalino, 93 J/g \cite{DSC}. Los errores en la determinación de las temperaturas, en el cálculo de la entalpía y en el de la cristalinidad se estimaron en $\delta1 ^o C$, $\pm4 J/g$ y $\pm0.04$ respectivamente. El peso de las muestras osciló entre 6 y10 mg, y las temperaturas de transición, Tm y Tc se tomaron en el punto máximo de la curva endoterma o exoterma. La Tg se tomó a la temperatura en la que se alcanza la mitad de la diferencia de calor específico existente entre el estado amorfo vítreo y el amorfo elastómero, es decir $T_{g} = 0.5 \pm C_{p}$.\\
 
-Se incluye a continuación los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con el grado de cristalinidad del polímero, el cual difiere de uno a otro, sin embargo la diferencia está dentro del margen de error experimental. Esta diferencia puede ser un indicador de inicio de degradación, debido a que las cadenas del polímero son más pequeñas y dificultan el movimiento en sus partes extremas dificultando la cristalinidad.
+A continuación se incluyen los resultados obtenidos en el experimento. En la Figura \ref{fig:analisis_dsc} se observa cómo en condiciones térmicas de temperatura de transición vítrea (Tg) y temperatura de fusión, ambos filamentos son prácticamente iguales. Como vemos en la tabla \ref{tab:dsc2} no ocurre lo mismo con el grado de cristalinidad del polímero, el cual difiere de uno a otro, sin embargo la diferencia está dentro del margen de error experimental. Esta diferencia puede ser un indicador de inicio de degradación, debido a que las cadenas del polímero son más pequeñas y dificultan el movimiento en sus partes extremas dificultando la cristalinidad. A falta de realizar un ensayo de propiedades mecánicas de ambos filamentos y con el ensayo realizado, podemos dar como válido el pellet reciclado con la peletizadora para su uso en la extrusión del mismo.
 
 \begin{figure}[H]
     \centering
@@ -188,7 +184,6 @@ En las Tablas \ref{tab:dsc1} y \ref{tab:dsc2} podemos ver los datos obtenidos:
     \label{tab:dsc2}
 \end{table}
 
-A falta de realizar un ensayo de propiedades mecánicas de ambos filamentos y con el ensayo realizado, podemos dar como válido el pellet reciclado con la peletizadora para su uso en la extrusión del mismo.
 
 \section{Programación del PLC.}
 
@@ -258,7 +253,7 @@ Para poder controlar de forma óptima el sistema, es necesario calcular la ecuac
 P_x=  25.9459 -1.5733 \cdot 10^{-4} \cdot X - 8.18174 \cdot 10^{-9} \cdot X^2
 \end{equation}
 
-Si calculamos la transformada de Laplace del sistema, obtenemos la planta de nuestro sistema, con la cual podremos implementar el regulador PID:
+\noindent{Si calculamos la transformada de Laplace del sistema, obtenemos la planta de nuestro sistema, con la cual podremos implementar el regulador PID:}
 
 \begin{equation}
 G_s = \frac{25.95 \cdot S^2 - 0.00015733 \cdot S + 1.63635 \cdot 10^{-8}}{S^3}
@@ -329,7 +324,7 @@ Y = 3.6168 \cdot 10^{-4} \cdot X
 
 Con la Ecuación \ref{ec:recta_ADC}, se puede tener acceso al valor del diámetro que tiene el filamento. El siguiente paso entonces, será realizar el almacenamiento de los datos de la producción en un fichero para su posterior análisis.
 
-\subsection{Almacenar la información registrada en un medio físico}
+\subsection{Almacenamiento de la información registrada en un medio físico}
 \label{sec:plc_SD}
 
 Se elije un nombre de fichero en el que se usa año, mes, día y minuto para identificar la producción, es decir, tiene un formato \textit{YYMMDDmm.CSV}. El formato elegido para almacenar la información es el de valores separados por coma (CSV). El motivo por el cual se elije este formato es debido a su estandarización y que almacena los datos de forma tabular en texto plano. Gracias a esto, se puede abrir el fichero CSV con cualquier editor de texto y otros programas de hojas de cálculo, para el posterior análisis de los datos, que es uno de los objetivos del proyecto. Por lo tanto, el formato CSV es el idóneo para poder trabajar en el futuro con los datos almacenados.\\
@@ -368,7 +363,7 @@ En la tabla \ref{tab:plc_csv} se ve un ejemplo de los datos almacenados en un fi
 
 La información se almacena en la tarjeta SD interna del PLC a la cual se puede acceder se usa un servidor de transferencia de ficheros (servidor FTP), de esta manera se accede a la SD de forma remota, sin tener que extraer la tarjeta del PLC. En el ordenador, con ayuda de un software cliente FTP se accede a la IP del PLC que se encuentra en la misma red y se descarga el fichero CSV para su posterior estudio.\\
 
-La producción se puede visualizar de forma remota empleando un servidor de páginas WEB en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos (ver Figura \ref{fig:plc_visu_web}) que simulen físicamente la planta. Desde esta visualización web se puede:
+La producción se puede visualizar de forma remota empleando un servidor de páginas WEB en la que se puede acceder al estado de variables del programa y se pueden añadir gráficos que simulen físicamente la planta. Desde esta visualización web se puede:
 
 \begin{itemize}
     \item {Visualización en tiempo real temperaturas de Husillo y Dado.}
@@ -376,11 +371,4 @@ La producción se puede visualizar de forma remota empleando un servidor de pág
     \item {Controlar marcha del motor del husillo.}
     \item {Visualizar la ruta del fichero en el que se almacenará la información.}
 \end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{images/PLC/visu_online.png}
-    \caption[Visualización online del sistema.]{Visualización online del sistema.Desde una página web, tenemos acceso a las variables que controlan el proceso.}
-    \label{fig:plc_visu_web}
-\end{figure}
 

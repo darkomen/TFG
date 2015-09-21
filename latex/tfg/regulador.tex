@@ -12,20 +12,34 @@ Como se puede ver en la Figura \ref{fig:reg_mezcla} la salida de filamento que p
     \label{fig:reg_mezcla}
 \end{figure}
 
-Por ello, se decide no usar un regulador PID e intentar implementar un regulador experto, el cual, imitará las acciones que un humano tomaría para resolver el problema. Este tipo de reguladores se basan en un conocimiento previamente adquirido por una persona que ha trabajado con el sistema. Para implementear este sistema se definen una serie de reglas en las que acotaremos los diámetros del filamento en regiones, y dependiendo de si el diámetro crece o decrece, se actuará sobre la velocidad de tracción. La Figura \ref{fig:reg_reglas} muestra en más detalle las reglas que se van a utilizar en el regulador.
+Por ello, se decide no usar un regulador PID e intentar implementar un regulador experto, el cual, imitará las acciones que un humano tomaría para resolver el problema. Este tipo de reguladores se basan en un conocimiento previamente adquirido por una persona que ha trabajado con el sistema. Para implementear este sistema se definen una serie de reglas en las que acotaremos los diámetros del filamento en regiones, y dependiendo de si el diámetro crece o decrece, se actuará sobre la velocidad de tracción. La Tabla \ref{tab:reg_reglas} muestra en más detalle las reglas que se van a utilizar en el regulador.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/producciones/11082015/Diagram1.png}
-    \caption[Reglas a utilizar en el sistema experto.]{Reglas a utilizar en el sistema experto. En función de la zona en la que estemos aplicaremos un incremento positivo o negativo a la velocidad.}
-    \label{fig:reg_reglas}
-\end{figure}
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+{\bf Diámetro comprendido entre:} & {\bf \begin{tabular}[c]{@{}c@{}}Acción de control\\  en tendencia positiva\end{tabular}} & {\bf \begin{tabular}[c]{@{}c@{}}Acción de control\\  en tendencia positiva\end{tabular}} \\ \hline
+1.80 - 1.90 mm                    & V + dV*2                                                                                 & V - dV*2                                                                                 \\
+1.75 - 1.80 mm                    & V + dV                                                                                     & V - dV                                                                                     \\
+1.70 - 1.75 mm                    & V + dV                                                                                     & V - dV                                                                                     \\
+1.60 - 1.70 mm                    & V + dV*2                                                                                 & V - dV*2                                                                                  
+\end{tabular}
+\caption[Reglas a utilizar en el sistema experto.]{Reglas a utilizar en el sistema experto. En función de la zona en la que estemos aplicaremos un incremento positivo o negativo a la velocidad.}
+\label{tab:reg_reglas}
+\end{table}
+
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{images/producciones/11082015/Diagram1.png}
+%    \caption[Reglas a utilizar en el sistema experto.]{Reglas a utilizar en el sistema experto. En función de la zona en la que estemos aplicaremos un incremento positivo o negativo a la velocidad.}
+%    \label{fig:reg_reglas}
+%\end{figure}
 
 Separamos en cuatro tramos los diámetros comprendidos entre $1.60mm$ y $1.90mm$, así mismo, también diferenciamos el sentido de avance entre las zonas, tanto si es ascendente como descendente. De esta manera podremos tener un control más preciso sobre la velocidad, pudiendo diferenciar tramo y la tendencia que toma el diámetro.
 
 En el Anexo \ref{ane:resultados_regu} se detallan diferentes experimentos que se han realizado modificando estás reglas del regulador, para comprobar su influencia en el diámetro.\\
 
-Tomando los datos obtenidos en el Ensayo 6 \fullref{lab:4} vamos a pasar a compararlos con los datos obtenidos de dos fabricantes distintos de filamento, en la Tabla \ref{tab:compara_results}.
+Tomando los datos obtenidos en el ensayo detallado en el Anexo \fullref{lab:4} vamos a pasar a compararlos con los datos obtenidos de dos fabricantes distintos de filamento, en la Tabla \ref{tab:compara_results}.
 
 \begin{table}[H]
 	\centering
@@ -55,9 +69,9 @@ Tomando los datos obtenidos en el Ensayo 6 \fullref{lab:4} vamos a pasar a compa
     \label{fig:concl_cajas5}
 \end{figure}
 
-Como podemos observar en los datos, el diámetro de los filamentos que proporcionan empresas como BQ y formfutura, tienen unos valores mucho más estables que los obtenidos con Filastruder. Lo cual es normal debido a la maquinaría y condiciones de trabajo en los que se han realizado en los experimentos. Como se aprecia, el filamento de BQ cumple exactamente las condiciones requeridas en un principio, tener un diámetro nominal  de $1.75mm$ y estar comprendido entre los márgenes de $1.65mm$ y $1.85mm$. Sin embargo, no podemos olvidar que el objetivo principal de nuestro proyecto era crear un sistema de adquisición de datos para gestionar la calidad del filamento, es por eso, que para realizar la comparación se ha escogido una bobina que cumplía los requisitos, pudiendo así comprobar la fiabilidad de nuestro sistema.\\
+Como podemos observar en los datos, el diámetro de los filamentos que proporcionan empresas como BQ y formfutura, tienen unos valores mucho más estables que los obtenidos con Filastruder. Lo cual es normal debido a la maquinaría y condiciones de trabajo en los que se han realizado en los experimentos. Como se aprecia, el filamento de BQ cumple exactamente las condiciones requeridas en un principio: tener un diámetro nominal de $1.75mm$ estando comprendido entre los márgenes de $1.65mm$ y $1.85mm$.\\
 
-No obstante, el problema de calidad que se tiene en las bobinas es una realidad, y debido a que no se tiene una completa trazabilidad de los datos de producción, es muy dificil localizar qué bobinas son las que están defectuosas hasta que son usadas en una impresora.
+La bobina usada para el experimento cumple los requisitos de calidad impuestos por BQ, de esta manera hemos podido comprobar que los valores obtenidos por el sistema son válidos. No obstante, el problema de calidad que se tiene en las bobinas es una realidad, y debido a que no se tiene una completa trazabilidad de los datos de producción, es muy dificil localizar qué bobinas son las que están defectuosas hasta que son usadas en una impresora.
 
 \section{Discusión de los resultados obtenidos}
 

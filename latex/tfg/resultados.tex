@@ -1,21 +1,21 @@
 \chapter{Experimientos realizados}
 \label{cap:resultados}
 
-Como se ha mostrado hasta ahora, hemos desarrollado un sistema capaz de registrar la información de una serie de sensores y crear un fichero con esa información. Cuando se incia el planteamiento de este proyecto, el paso final del mismo es implementar el sistema en una linea de extrusión industrial sin embargo a la hora de implementar el funcionamiento del mismo, la empresa PELS no puede ceder una de sus líneas de extrusión para la puesta en marcha del sistema debido a la planificación de la producción; se adquiere una extrusora de laboratorio pero los plazos de entregan se alargan y no se tiene acceso a ella a la hora de validar el sistema.\\
+Como se ha mostrado hasta ahora, hemos desarrollado un sistema capaz de registrar la información de una serie de sensores y crear un fichero con esa información. Cuando se incia el planteamiento de este proyecto, el paso final del mismo es implementar el sistema en una linea de extrusión industrial sin embargo a la hora de implementar el funcionamiento del mismo, la empresa PELS no puede ceder una de sus líneas de extrusión para la puesta en marcha del sistema debido a la planificación de la producción. Por lo tanto, se adquiere una extrusora de laboratorio pero los plazos de entregan se alargan y no se tiene acceso a ella a la hora de validar el sistema.\\
 
 Por estos motivos se decide hacer uso de una maqueta de extrusora de filamento para poder comprobar como con el sistema diseñado podemos realizar un estudio avanzado de los problemas que tenemos a la hora de fabricar filamento. De esta manera, podremos validar nuestro sistema y adquirir la experiencia necesaria para cuando el sistema se implemente en una línea de extrusión industrial. \\
 
-A continuación vamos a ver distintos ensayos que se han realizado con el sistema. El objetivo de estos ensayos es demostrar que nuestro sistema es válido para registrar la información que le indiquemos y su posterior análisis. También se abre una investigación sobre la influencia de distintos tipos de regulador sobre el tamaño del diámetro final (lazo de control), a pesar de que no es el objetivo principal del proyecto si es un objetivo secundario que ha surgido con la realización del mismo.
+A continuación vamos a ver distintos ensayos que se han realizado con el sistema. El objetivo de estos ensayos es demostrar que nuestro sistema es válido para caraterizar los parámetros de calidad del hilo y su posterior análisis. También se abre una línea de investigación sobre la influencia de distintos tipos de regulador sobre el tamaño del diámetro final (lazo de control), a pesar de que no es el objetivo principal del proyecto si es un objetivo secundario que ha surgido con la realización del mismo.
 
 \section{Validación del sistema sin tractora}
 \label{sec:FSB}
 
-Como primera aproximación e intentando asemejar el esquema de producción vista en el capítulo \ref{cap:descrip} se va a seguir el esquema mostrado en la Figura \ref{fig:esquemap_FSB}.
+Como primera aproximación, e intentando asemejar el esquema de producción vista en el Capítulo \ref{cap:descrip} se va a seguir el esquema mostrado en la Figura \ref{fig:esquemap_FSB}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/producciones/Diagram1.png}
-    \caption[Esquema de producción sin tractora.]{Esquema de producción sin tractora. Se tienen los elementos: Extrusora, sensor de diámetro y bobinadora.}
+    \caption[Esquema de producción sin tractora.]{Esquema de producción sin tractora. Se tienen los elementos: extrusora, sensor de diámetro y bobinadora.}
     \label{fig:esquemap_FSB}
 \end{figure}
 
@@ -43,9 +43,9 @@ La boquilla de la filastruder es de 3mm. De esta manera se tiene margen suficien
 
 \subsection{Condiciones del ensayo}
 
-Vamos a comprobar el funcionamiento del sistema con el control de regulación de la propia filawinder, en la que intenta mantener el filamento en una determinada altura y en función de esa altura, aplicar más o menos velocidad de bobinado. Para este primer ensayo se usarán todos los pellets reciclados como materia prima, no se mezclará con PLA transparente, para así ver si el funcionamiento de la filastruder es el correcto.\\
+Vamos a comprobar el funcionamiento del sistema con el control de regulación de una bobinadora. Para simular el uso de una bobinadora real, se usa un kit DIY llamado filawinder (ver Anexo \ref{ane:filawinder} el cual dispone de un control en el que mantiene al filamento con una tensión constante regulando la velocidad de bobinado. Para este primer ensayo se usarán todos los pellets reciclados como materia prima, no se mezclará con PLA transparente, para así ver si el funcionamiento de la filastruder es el correcto.\\
 
-Una vez llegado a la consigna de temperatura de 150ºC se comienza a extruir PLA reciclado y se almacena en la bobina. A simple vista, se ve que la velocidad mínima de bobinado hace que el filamento salga demasiado delgado y se generan demasiadas tensiones en el bobinado del mismo. No obstante, analizaremos los resultados obtenidos. Para el análisis del fihero CSV generado, se usará la herramienta IPython con las librerias, Numpy y Scypi, con los que de manera rápida obtendremos unas conclusiones.\\
+Una vez llegado a la consigna de temperatura de 135ºC se comienza a extruir PLA reciclado y se almacena en la bobina. A simple vista, se ve que la velocidad mínima de bobinado hace que el filamento salga demasiado delgado y se generan demasiadas tensiones en el bobinado del mismo. No obstante, analizaremos los resultados obtenidos. Para el análisis del fihero CSV generado, se usará la herramienta IPython con las librerias, Numpy y Scipy, con los que de manera rápida obtendremos unas conclusiones.\\
 
 Las condiciones iniciales del ensayo son:
 
@@ -64,7 +64,7 @@ Las medidas obtenidas en el ensayo se muestran en la Tabla \ref{tab:result1}, as
 	\centering
 	\begin{tabular}{ccc}
 		{\bf } & {\bf Diámetro X} & {\bf Diámetro Y} \\ \hline
-		Muestras & 1110.000000 & 1110.000000 \\
+		Muestras & 1110 & 1110 \\
 		Media (mm) & 1.17 & 0.91 \\
 		Desviación estandar & 0.39 & 0.51 \\
 		Mínimo (mm) & 0.01 & 0.00 \\
@@ -87,7 +87,7 @@ Sólo un pequeño número de muestras están por dentro de los márgenes de cali
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/producciones/16062015/output_10_1.png}
-    \caption{Diagrama de cajas de las medidas de los ejes X e Y.}
+    \caption{Diagrama de cajas de las medidas de los ejes X e Y. La banda de color representa los límites de calidad en los que se debe encontrar el diámetro del filamento.}
     \label{fig:prod_boxplot}
 \end{figure}
 
@@ -105,9 +105,7 @@ En una de las pruebas de extrusión de filamento, se va estirando a mano según 
     \label{fig:esquemap_FST}
 \end{figure}
 
-Con el conocimiento adquirido al diseñar la peletizadora (ver Anexo \ref{ane:peletizadora}), se diseña una unidad tractora que irá colocada después de la filastruder, la cual, deberá ir traccionando del filamento independientemente del diámetro del mismo. Así mismo, deberemos ser capaces de regular la velocidad de una forma más precisa que como lo hicimos con la peletizadora. En el Anexo \ref{ane:tractora} se detalla el proceso seguido al diseñar la tractora.\\
-
-Una vez se tiene un primer prototipo de la tractora, podemos instalarla en la maqueta (ver Figura \ref{fig:montaje_final}).
+Con el conocimiento adquirido al diseñar la peletizadora (ver Anexo \ref{ane:peletizadora}), se diseña una unidad tractora que irá colocada después de la filastruder, la cual, deberá ir traccionando del filamento independientemente del diámetro del mismo. Así mismo, deberemos ser capaces de regular la velocidad de una forma más precisa que como lo hicimos con la peletizadora. En el Anexo \ref{ane:tractora} se detalla el proceso seguido al diseñar la tractora. Una vez se tiene un primer prototipo de la tractora, podemos instalarla en la maqueta (ver Figura \ref{fig:montaje_final}).
 
 \begin{figure}[H]
     \centering

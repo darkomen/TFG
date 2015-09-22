@@ -10,10 +10,12 @@ Una línea de extrusión completa está compuesta por distintos componentes. En 
     \label{fig:esquema_extrusora}
 \end{figure}
 
+Según el sistema de control implementado en la extrusora, se lee el diámetro del filamento antes o después el pulmón, que es el encargado de ir almacenando una cantidad de filamento antes de bobinar. Asímismo, se aplica una acción de control a un motor, o bien al de la extrusora o bien al de la tractora. Esta decisión tiene sus ventajas e inconvenientes. Variando la velocidad de la extrusora se influye directamente en el tiempo en el que el material se encuentra dentro del husillo, afectando directamente a la calidad del filamento, ya que no todo el material ha estado el mismo tiempo en el husillo.\\
+
 En una línea de extrusión convencional, se tiene acceso visual a los parámetros indicados, sin embargo no queda registrado en ningún lugar de cuales han sido. Hasta que la extrusión de filamento no se ha extendido, no era necesario tener en detalle estos valores, ya que eran pocos los parámetros que afectaban a la calidad del perfil extruido. Sin embargo, en la extrusión de filamento, son muchos los valores que pueden afectar a la calidad del producto final.\\
 
 Por estos motivos y poder tener una gestión de calidad del producto fabricado, se decide desarrollar un sistema de adquisición de datos para que se pueda hacer una trazabilidad completa de los parámetros de fabricación.\\
-
+\pagebreak
 \section{Planificación}
 \label{sec:planificacion}
 
@@ -110,9 +112,9 @@ Para poder demostrar que el sistema a desarrollar es válido para resolver el pr
 
 Debido a ello, se decide adquirir una extrusora de laboratorio y poder implementar el sistema en ella desde su instalación por parte del distribuidor. Sin embargo, los plazos de entrega estipulados, se alejan de la fecha de presentación del presente proyecto y por ese motivo se decide usar una extrusora casera que se tiene en el departamento de robótica e innovación de BQ (ver Figura \ref{fig:hardware_filastruder}).
 
-    \begin{figure}[H]
+    \begin{figure}[!hd]
             \centering
-            \includegraphics[width=0.6\textwidth]{images/filaextruder/IMG_20150313_11163.jpg}
+            \includegraphics[width=0.5\textwidth]{images/filaextruder/IMG_20150313_11163.jpg}
             \caption[Maqueta de filastruder montada]{Maqueta de filastruder montada. (1) Boquilla y calefactor de la extrusora. (2) Tolva de alimentación de material. (3) Motor para mover el husillo. (4) Controlador de temperatura.}
             \label{fig:hardware_filastruder}
     \end{figure}

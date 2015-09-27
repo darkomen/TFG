@@ -1,7 +1,7 @@
 \chapter{Introducción y objetivos}
 \label{cap:introduccion}
 
-En la actualidad, la empresa BQ se ha especializado en fabricar y distribuir impresoras 3D junto con sus consumibles. En 2013, se creó un departamento de Innovación y Desarrollo, encabezado por Juan Gonzalez y Alberto Valero. En ese comienzo se distribuye material relacionado con las impresoras 3D para que cualquier persona pueda contruirse una impresora 3D. En esta primera etapa, este material no es fabricado por BQ directamente, tan solo realiza la tarea de distribuidor.\\
+En la actualidad, la empresa BQ se ha especializado en fabricar y distribuir impresoras 3D junto con sus consumibles. En 2013, se creó un departamento de Innovación y Desarrollo, encabezado por Juan González y Alberto Valero. En ese comienzo se distribuye material relacionado con las impresoras 3D para que cualquier persona pueda construirse una impresora 3D. En esta primera etapa, este material no es fabricado por BQ directamente, tan solo realiza la tarea de distribuidor.\\
 
 A medida que BQ adquiere experiencia en el mercado, empieza a crear una línea de investigación para desarrollar sus propias impresoras 3D, como es el caso de la impresora Witbox y la impresora Prusa Hephestos (ver Figura \ref{fig:impresoras_bq}). En este caso BQ tiene un papel importante a lo largo del desarrollo del producto, desde la elección de las características finales del mismo, así como el aspecto final del packaging, es decir, BQ pasa de tener un papel de distribuidor a ser la parte principal del desarrollo del producto.
 
@@ -22,7 +22,7 @@ A medida que BQ adquiere experiencia en el mercado, empieza a crear una línea d
     \label{fig:impresoras_bq}
 \end{figure}
 
-A la vez que se venden las impresoras 3D, BQ también vende el principal consumible para que las impresoras 3D puedan funcionar, plástico en forma de filamento. Este plástico se distribuye en unas bobinas (ver Figura \ref{fig:estado_filamento}), en las que está almacenado un hilo continuo de plástico con un diámetro específico, en este caso, $1.75mm$. Al igual que en el caso de las impresoras en un primer momento BQ distribuye fulamento fabricado por terceros, pero una vez que BQ tiene un puesto en el mercado de las impresoras 3D, decide entonces crear su propio filamento y tener más controlado la calidad del filamento que vende.
+A la vez que se venden las impresoras 3D, BQ también vende el principal consumible para que las impresoras 3D puedan funcionar, plástico en forma de filamento. Este plástico se distribuye en unas bobinas (ver Figura \ref{fig:estado_filamento}), en las que está almacenado un hilo continuo de plástico con un diámetro específico, en este caso, $1.75mm$. Al igual que en el caso de las impresoras en un primer momento BQ distribuye filamento fabricado por terceros, pero una vez que BQ tiene un puesto en el mercado de las impresoras 3D, decide entonces crear su propio filamento y tener más controlado la calidad del filamento que vende.
 
 \begin{figure}[!ht]
     \centering
@@ -31,7 +31,7 @@ A la vez que se venden las impresoras 3D, BQ también vende el principal consumi
     \label{fig:estado_filamento}
 \end{figure}
 
-Por diversos motivos BQ decide sub-contratar el proceso de fabricación a una empresa experta en la extrusión de plásticos pero formando parte en el proceso de calidad del filamento producido. Esta empresa es PESL especialista en extrusión de perfilería de plástico. BQ junto a PESL empiezan a trabajar en la fabricación de un filamento que cumpla las condiciones de calidad necesarias para el proceo de impresión 3D. En una primera aproximación estas condiciones son, el tipo de material y que el diámetro final esté comprendido en un margen de tolerancias.\\
+Por diversos motivos BQ decide sub-contratar el proceso de fabricación a una empresa experta en la extrusión de plásticos pero formando parte en el proceso de calidad del filamento producido. Esta empresa es PESL especialista en extrusión de perfilería de plástico. BQ junto a PESL empiezan a trabajar en la fabricación de un filamento que cumpla las condiciones de calidad necesarias para el proceso de impresión 3D. En una primera aproximación estas condiciones son, el tipo de material y que el diámetro final esté comprendido en un margen de tolerancias.\\
 
 Durante las pruebas iniciales previas a la comercialización del filamento, se aprecia que no todas las bobinas del mismo lote de fabricación tienen la misma calidad, llegando a darse el caso que en una misma bobina, no todo el filamento es igual. El principal problema se encuentra en el diámetro del filamento no es constante (ver Figura \ref{fig:muestra_filamento}).
 
@@ -44,9 +44,9 @@ Durante las pruebas iniciales previas a la comercialización del filamento, se a
 
 Este problema es importante ya que las impresoras dejan de imprimir pasado un tiempo, puesto que si el diámetro nominal del filamento sobrepasa un determinado rango de valores, tanto por exceso como por déficit, se producen atascos en la impresora. Estos atascos, en el mejor de los casos, sólo supone la limpieza del extrusor de la impresora y se puede volver a utilizar, pero en ocasiones el atasco puede deja inservible el extrusor y es necesario reemplazarlo.\\
 
-Desde BQ se propone instalar un sistema de adquisición de datos que centralice todos los parámetros de producción de filamento como son temperaturas, velociades de producción y diámetro final del filamento y así tener un sistema de gestión de calidad robusto y escalable en caso de que las líneas de producción aumentasen en un futuro. Sin embargo tras una valoración económica inicial en la que no ser termina de ver claro la aceptación del producto por parte de PESL, se decide afrontar una implementación parcial del sistema de adquisición de datos añadiendo un registro de los diámetros de la producción en un ordenador local e incorporando un elemento mecánico por el cual pasa el filamento. De manera que si este supera un diámetro máximo se parte y la producción se detiene. Adicionalmente el operador puede introducir de forma manual los parámetros de producción menos relevantes del proceso para tener los registros almacenados.\\
+Desde BQ se propone instalar un sistema de adquisición de datos que centralice todos los parámetros de producción de filamento como son temperaturas, velocidades de producción y diámetro final del filamento y así tener un sistema de gestión de calidad robusto y escalable en caso de que las líneas de producción aumentasen en un futuro. Sin embargo tras una valoración económica inicial en la que no ser termina de ver claro la aceptación del producto por parte de PESL, se decide afrontar una implementación parcial del sistema de adquisición de datos añadiendo un registro de los diámetros de la producción en un ordenador local e incorporando un elemento mecánico por el cual pasa el filamento. De manera que si este supera un diámetro máximo se parte y la producción se detiene. Adicionalmente el operador puede introducir de forma manual los parámetros de producción menos relevantes del proceso para tener los registros almacenados.\\
 
-Gracias a que cada bobina contiene un código QR en el que, entre otra información, se incluye el número de lote de fabricación, se puede trazar el proceso de fabricación para estudiar los datos obtenidos en caso de ser necesario. Sin embargo al ser una implementación local y poco flexible, el proceso de recuperación de la información para los diversos anñalisis se dificulta.\\
+Gracias a que cada bobina contiene un código QR en el que, entre otra información, se incluye el número de lote de fabricación, se puede trazar el proceso de fabricación para estudiar los datos obtenidos en caso de ser necesario. Sin embargo al ser una implementación local y poco flexible, el proceso de recuperación de la información para los diversos análisis se dificulta.\\
 
 Cómo finalmente la aceptación del filamento por parte del mercado ha sido buena, se empiezan a aumentar las líneas de extrusión, desde BQ se decide apostar en el desarrollo del sistema de adquisición de datos. Siendo sus requisitos principales:
 
@@ -64,12 +64,12 @@ A continuación, se detallan los objetivos a conseguir en el proyecto:
 
 \begin{itemize}
     \item Implementar un sistema capaz de adquirir los parámetros del proceso de fabricación del filamento.
-    \item Que el sistema de adquisición pueda ser facilmente adaptado a cualquier línea de extrusión y sea escalable a cualquier número de línea de extrusión.
+    \item Que el sistema de adquisición pueda ser fácilmente adaptado a cualquier línea de extrusión y sea escalable a cualquier número de línea de extrusión.
     \item Estudio de los datos adquiridos y desarrollo del modelo teórico de la planta.
 \end{itemize}
 \label{Listado_objetivos}
 
-Una vez que el sistema diseñado sea capaz de almacenar la información, será necesario instalarlo en una línea de extrusión con el fin de servir como herramienta de control de calidad y a su vez que permita la adquisicón de datos para poder inferir un modelo de planta, con el que poder empezar a trabajar en reguladores que ayuden a minimizaer los errores producidos durante la fabricación de filamento en lazo abierto.\\
+Una vez que el sistema diseñado sea capaz de almacenar la información, será necesario instalarlo en una línea de extrusión con el fin de servir como herramienta de control de calidad y a su vez que permita la adquisición de datos para poder inferir un modelo de planta, con el que poder empezar a trabajar en reguladores que ayuden a minimizar los errores producidos durante la fabricación de filamento en lazo abierto.\\
 \newpage
 \section{Organización de este documento}
 \label{sec:organizacion}

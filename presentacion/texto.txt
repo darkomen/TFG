@@ -1,0 +1,41 @@
+Buenos días, soy Santiago Löpez Pina, estudiante del grado de ingeniería electrónica industrial y automática, y antes que nada, agradecerles a todos ustedes la asistencia a la presentación de mi trabajo final de grado que tiene como título: Sistema de adquisición de datos y modelado parcial de sistema de extrusión de filamento, el cual ha sido tutorizado por Victor gonzalez pacheco en la universidad carlos III y or Jose Emilio Torres en la empresa BQ.
+
+A lo largo de la presenteación desarrollaremos los siguientes puntos.
+
+Veremos cual es el problema a que se nos plantea y por que motivo es importante tomar una medida para solucionarlo.
+
+En el siguiente capítulo veremos cuales son los objetivos marcados y que deberemos de cumplir con este trabajo final de grado.
+
+A continuación veremos el desarrollo que ha tenido el proyecto.
+
+Una vez desarrollado el sistema, veremos cómo se ha comprobado que es un sistema válido y cumple con los objetivos propuestos al inicio.
+
+Para terminar, veremos cuales son los trabajos futuros y derivados que ha conllevado la realización de este proyecto.
+
+En los últimos años han tenido un gran auge las denominadas impresoras 3D maquinas capaces de crear un objeto de la nada. Este auge ha sido debido a la liberación de las patetens de 1980 que restringían su uso, lo cual ha conllevado a que la gente pueda investigar en profundida sobre el funcionamiento de estas máquinas, llegando a crear modelos que una persona es capaz de crear una impresora 3D. son las denominadas impresoras 3D do it yourself o hazlo tu mismo.
+Esto ha creado un nuevo modelo de fabricación, en el que ya no son las grandes empresas las encargadas de fabricar los objetos que el cliente demanda. si no que es el usuario que en su casa es capaz de fabricar la pieza que quiera ,y más importante, en el momento que quiera.
+
+La mayoría de las impresoras que se han extendido, usan una fabricación aditiva también conocido por las siglas FDM. La principal materia prima que usan son poli´meros plásticos, los cuales tienen una temperatura de fusión muy baja. Y la manera en la que se distribuye este polímero es en forma de filamento.
+
+En la imagen de la izquierda, podemos ver un esquema de funcionamiento de estas impresoras. el elemento 1 representa el fusor, el cual está por encima de la temperatura de fusión y va calentando el filamento a medida que se mueve en los tres ejes cartersianos (X, Y, Z). 
+El elemento 2 representa el filamento una vez que ha pasado por el fusor y es depositado en distintas capas que conforman el objeto final. Por último el elemento 3 repeesenta la superficie plana en la que se apoyan las capas del objeto.
+
+Como se ha dicho, un objeto creado en una impresora 3D está formado por un número finito de capas lo cual crea una aproximación del objeto real. En la imagen de la derecha, vemos como la forma deseada es un semicirculo, pero la pieza obtenida no es ciertamente un semicirculo
+
+El filamento creado para las impresoras 3D es creado mediante el proceso de extrusión. Este proceso está asentado en la industria y su funcionamiento es el siguiente.
+
+Se introducen pellets de plástico en la tolva de alimentación de una extrusora. Esta extrusora está compuesta por una cámara caliente y un husillo que se va moviendo.  Con su movimiento, va introduciendo los pellets al interior de la cámara, dnde se funden y se compactan hasta formar una masa. Esa masa es comprimida hasta el final de la extrusora, en donde hay un taladro, por el cual sale el plástico en forma de filamento. Como digo, esta técnica de fabricación está extendida y se suele usar para crear objetos con un perfil constante. Sin embargo, este filamento va a sufrir un segundo refundido a la hora de imprimir, por lo que es muy importante que los parámetros de velocidad,temperaturas y diámetro sean muy precisas.
+
+BQ subcontrata la fabricación de su propio filamento de PLA y de 1.75 mm de diametro, formando parte activa del control de caliadd del mismo. Uno de los requisitos de calidad impuestos por BQ es que el diámetro nominal del filamento esté dentro de un rango, del cual no se puede sobrepasar ya que puede ocasionar daños en las impresoras de los usuarios. Actualmente dispones de 3 líneas de extrusión con vistas a aumentar el numero.
+
+Durante las primeras pruebas de fabricación previas a la comercialización, se detectan problemas en el filamento fabricado. El diámetro del filamento no es constante y supera los márgenes de calidad. Como se aprecia en la imagen, en un pequeño tramo de filamento, el diámetro es muy irregular.
+
+Es entonces cuando se hace una implementación parcial de un sistema de adquisición de datos propuesta por BQ en las líneas de extrusión. Este sistema registra de manera automtica el dimaetro del filamento, en un ordenador local nistalado en la fábrica. También se añade un elemento mecánico, el cual hará partir el filamento en caso de que este sobrepase un diámetro máximo. También se pueden añadir los datos a mano, mas relevantes de la producción como son temperaturas y velocidades. El sistema funciona y minimiza el problema, pero tiene varias limitaciones, como son que los datos son poco accesibles de forma remota, y no todos los parámetros quedan registrados.
+
+Debido a que la aceptación por parte del mercado en la venta de filamento es buena, se decide desarrollar un sistema de adquisición de datos que registre la fecha de fabricación del filamento. Diámetro del filamento fabricado. Parámetors más influyentes en la fabricaicón como puede ser temperaturas y velocidades. Y sobretodo que esos datos sean accesibles de forma remota, y no sea necesario estar en la fábrica para poder obtenerlos.
+
+Por ello, los objetivos de este proyecto son:
+
+Desarrollar un sistema capaz de adquirir los parámetros de la producción.
+El sistema debe ser p esaclabe y ampliable, para que de este modo, sea facilmente adaptable a cualquier línea de extrusión, sin importar el fabricante.
+Acceso remoto a los datos almacenados por el sistema para poder esstudiarlos y desarrollar el modelo teórico de la planta.

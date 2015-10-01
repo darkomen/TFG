@@ -44,3 +44,5 @@ Una vez que se tiene el sistema preparado, se buscan una extrusoras donde instal
 
 AL usar esta extrusora, surgen nuevos problemas, como por ejemplo, ¿Cómo medir el sensor de diámetro? ya que en un principio la línea de extrusión traería el suyo propio y nosotros no disponemos de ninguno. Otro problema es la adquisición de los pellets de PLA para poder hacer filamento.
 
+Para el sensor de diámetro usamos un proyecto opensource el cual consiste 
+

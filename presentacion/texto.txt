@@ -1,4 +1,8 @@
-Buenos días, soy Santiago Löpez Pina, estudiante del grado de ingeniería electrónica industrial y automática, y antes que nada, agradecerles a todos ustedes la asistencia a la presentación de mi trabajo final de grado que tiene como título: Sistema de adquisición de datos y modelado parcial de sistema de extrusión de filamento, el cual ha sido tutorizado por Victor González pacheco en la universidad Carlos III y or Jose Emilio Torres en la empresa BQ.
+Antes de empezar, agradecerles a todos ustedes la asistencia  a la defensa de mi trabajo final de grado, el cual ha sido tutorizado por Víctor González Pacheco en la universidad Carlos III y por Jose Emilio Torres en la empresa BQ.
+
+
+El proyecto ha consistido en desarrollar un sistema de adquisición de datos en una línea de extrusión, para poder caracterizar el filamento fabricado y que será usado en las impresoras 3D. Con este sistema seremos capaces de detectar problemas que haya a la hora de fabricar filamento y poder tener un control automático sobre los parámetros más influyentes en la calidad del filamento a la hora de su fabricación. 
+
 
 A lo largo de la presentación desarrollaremos los siguientes puntos.
 
@@ -14,7 +18,7 @@ Para terminar, veremos cuales son los trabajos futuros y derivados que ha conlle
 
 En los últimos años han tenido un gran auge las denominadas impresoras 3D máquinas capaces de crear un objeto de la nada. La mayoría de las impresoras que se han extendido, usan una fabricación aditiva también conocido por las siglas FDM. La principal materia prima que usan son polímeros plásticos, los cuales tienen una temperatura de fusión muy baja. Y la manera en la que se distribuye este polímero es en forma de filamento.
 
-En la imagen de la, podemos ver un esquema de funcionamiento de estas impresoras. el elemento 1 representa el fusor, el cual está por encima de la temperatura de fusión y va calentando el filamento a medida que se mueve en los tres ejes cartersianos (X, Y, Z). 
+En la figura podemos ver un esquema de funcionamiento de estas impresoras. el elemento 1 representa el fusor, el cual está por encima de la temperatura de fusión y va calentando el filamento a medida que se mueve en los tres ejes cartersianos (X, Y, Z). 
 El elemento 2 representa el filamento una vez que ha pasado por el fusor y es depositado en distintas capas que conforman el objeto final. Por último el elemento 3 repeesenta la superficie plana en la que se apoyan las capas del objeto.
 
 El filamento creado para las impresoras 3D es creado mediante el proceso de extrusión. Este proceso está asentado en la industria y su funcionamiento es el siguiente.
@@ -42,7 +46,20 @@ Por ello, se decide usar un PLC industrial, ya que cumple todos los requisitos i
 
 Una vez que se tiene el sistema preparado, se buscan una extrusoras donde instalar el sistema y realizar su programación. Se pide a la empresa que realizar el filamento si se podría utilizar una línea de extrusión, sin embargo, por planificación de la producción, es imposible dejarnos una línea para hacer pruebas, por tanto se busca otra solución. En el departamento de robótica, se adquiere una extrusora de laboratorio, la cual tiene menor capacidad de producción que una extrusora industrial, pero nuestro sistema es completamente válido para esta extrusora. Sin embargo por retrasos en los tiempos de entrega, no se tiene a la hora de presentar el proyecto. Por ello, se decide usar una extrusora casera. Esta extrusora tiene como nombre Filastruder y se distribuye en formato kit para que el usuario final realice el montaje. Aunque la calidad del filamento que da no es buena, nos sirve para comprobar la validez del sistema.
 
-AL usar esta extrusora, surgen nuevos problemas, como por ejemplo, ¿Cómo medir el sensor de diámetro? ya que en un principio la línea de extrusión traería el suyo propio y nosotros no disponemos de ninguno. Otro problema es la adquisición de los pellets de PLA para poder hacer filamento.
+AL tener que usar nuestra propia extrusora casera, tenemos que saber como funciona una línea de extrusión industrial. En la figura vemos el diagrama de flujo que sigue una extrusora.
+A raíz de esto nos surgen varias preguntas, ¿que pellets vamos a usar para fabricar el filamento?, ¿cómo vamos a traccionar del filamento que va saliendo? Y más importante todavía, ¿Cómo vamos a medir el filamento? Es por ello que necesito solucionar estos problemas realizando pequeños proyectos.
+
 
 Para el sensor de diámetro usamos un proyecto opensource el cual consiste 
+
+Para comprobar que nuestro sistema es válido, se realizan distintas producciones de filamento, en las que se registran los parámetros antes indicados. Fecha de producción, Temperaturas de la extrusora, y diámetros, con estos datos somos capaces de estudiarlos y ver la tendencia que tiene el hilo en la producción. En la figura, vemos la representación del diámetro del filamento en una producción y vemos como la mayoría de las muestras sobre pasan los rangos impuestos por BQ. Durante las producciones, comprobamos que la velocidad de extrusion de la filastruder, parecia no ser del todo constante llegando en ocasiones a descender su velocidad drásticamente. Por ello, instalamos un sensor inductivo en el eje de giro de la filastruder y pudimos comprobar efectivamente que la velocidad no era constante, y variaba entre 2 RPM y 1 RPM.
+
+Por último, con nuestro sistema de adquisición de datos, podemos comprobar de manera rápida los diámetros que tienen filamentos de distintos fabricantes. EN la figura vemos filamento de dos fabricantes y el creado por nosotros en la filastruder.
+
+
+Para concluir podemos confirmar que el sistema de adquisición creado es capaz de obtener los datos más importantes que caracterizan la calidad de un filamento. Con estos datos podremos trabajar a posteriori y tener una trazabilidad del filamento completa en caso de que se reciba alguna reclamación por parte de los clientes. Debido a que el proyecto se ha debido implementar sobre una línea de extorsión casera,podemos afirmar que se han acometido todas las fases del proceso de fabricación del PLA. Al tener la extrusora casera, se han fabricado las herramientas necesarias para generar pellets de filamento reciclado (peletizadora) y poder comprobar su correcto uso a la hora de extruirlo.
+
+Así mismo, este proyecto sirve para BQ como un primer demostrar de que este sistema puede ser usado en sus lineas de extrusión de filamento, y debido a cómo se ha desarrollado, el sistema que se entrega con este proyecto es la unidad mínima de control para un sistema mucho más amplio y en BQ se va a empezar a implementar en las líneas de extorsión futuras que se adquieran.
+
+También se ha empezado un estudio en el que se comprueba como las condiciones de almacenamiento del PLA pueden afectar a la calidad del filamento. En el estudio, primero se mide el diámetro que tiene un tramo de filamento, posteriormente a este tramo se le someten a diversas pruebas térmicas, como pueden ser almacenamiento en agua fría o en un horno a 80 grados y posteriormente se vuelve a medir el diámetro para comprobar si ha habido alguna modificación.
 

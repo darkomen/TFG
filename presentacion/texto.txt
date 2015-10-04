@@ -1,6 +1,5 @@
 Antes de empezar, agradecerles a todos ustedes la asistencia  a la defensa de mi trabajo final de grado, el cual ha sido tutorizado por Víctor González Pacheco en la universidad Carlos III y por Jose Emilio Torres en la empresa BQ.
 
-
 El proyecto ha consistido en desarrollar un sistema de adquisición de datos en una línea de extrusión, para poder caracterizar el filamento fabricado y que será usado en las impresoras 3D. Con este sistema seremos capaces de detectar problemas que haya a la hora de fabricar filamento y poder tener un control automático sobre los parámetros más influyentes en la calidad del filamento a la hora de su fabricación. 
 
 
@@ -48,7 +47,6 @@ Una vez que se tiene el sistema preparado, se buscan una extrusoras donde instal
 
 AL tener que usar nuestra propia extrusora casera, tenemos que saber como funciona una línea de extrusión industrial. En la figura vemos el diagrama de flujo que sigue una extrusora.
 A raíz de esto nos surgen varias preguntas, ¿que pellets vamos a usar para fabricar el filamento?, ¿cómo vamos a traccionar del filamento que va saliendo? Y más importante todavía, ¿Cómo vamos a medir el filamento? Es por ello que necesito solucionar estos problemas realizando pequeños proyectos.
-
 
 Para el sensor de diámetro usamos un proyecto opensource el cual consiste 
 
